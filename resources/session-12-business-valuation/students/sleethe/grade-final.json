@@ -1,0 +1,357 @@
+{
+  "student_name": "Ethan Sleeth",
+  "username": "sleethe",
+  "org_defined_id": "038097599",
+  "transcript_length": 2980,
+  "overall_grade": 80.37500000000001,
+  "passed_criteria": 16,
+  "partial_criteria": 7,
+  "failed_criteria": 1,
+  "driver_stages_demonstrated": {
+    "D": true,
+    "R": true,
+    "I": true,
+    "V": true,
+    "E": true,
+    "R2": true
+  },
+  "feedback": "Excellent application of the DRIVER framework throughout your work. You clearly demonstrated 6 stages: D, R, I, V, E, R2.\n\n\nSTRENGTHS:\n- Financial Concepts Accuracy: The student explicitly constructs free cash flows, uses a Gordon-growth terminal value, and specifies a discount rate (WACC = 9%) while running scenario and sensitivity analyses. These elements show a thorough, applied understanding of introductory DCF methodology across DRIVER stages, meeting the PASS standard.\n- Financial Concepts Accuracy: The student explicitly identifies the FCF components and gives the correct formula (EBITDA → –D&A → NOPAT → FCF = NOPAT + D&A – CapEx – ΔNWC) and implements it in scenario DCFs, then uses those FCFs to derive enterprise value—demonstrating both component mastery and the understanding that FCF drives value to capital providers. These show a thorough, applied grasp meeting PASS criteria.\n- Financial Concepts Accuracy: The student explicitly states a Terminal Value calculation method (Gordon Growth) and shows they parameterized it in the model. They also demonstrate awareness of TV magnitude by sensitivity testing and tracking the terminal value share, satisfying both required points with implementation and validation steps.\n\n\nAREAS FOR IMPROVEMENT:\n- Financial Concepts Accuracy: The student clearly distinguishes an explicit 5-year forecast from a terminal period (Gordon Growth referenced) and uses scenario and sensitivity analysis to constrain terminal assumptions, showing correct conceptual multi-stage reasoning. However, the submission lacks detailed, numeric year-by-year growth paths and an explicit justified terminal growth rate, so treatment is correct but not sufficiently thorough for a full PASS.\n- Financial Concepts Accuracy: The transcript reports enterprise value outcomes and an EV bid but contains no mention of subtracting net debt (or debt less cash) to derive equity value, nor dividing equity value by shares outstanding to get price per share. Therefore the required EV→Equity bridge steps are missing.\n- Financial Concepts Accuracy: The student constructs enterprise free cash flows and explicitly states a base WACC (9%) and an alternative (10%), and they run WACC sensitivities, showing correct application as the discounting lever. However, they do not provide a clear justification or derivation for the chosen 9% (e.g., industry average or calculated CAPM/debt structure), so the treatment is correct but not fully defended.",
+  "criteria": [
+    {
+      "criterion_id": "concept_dcf_methodology",
+      "criterion_name": "Discounted Cash Flow (DCF) Methodology (Introductory Level).",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"FCF is built step-by-step: Start with EBITDA Subtract D&A to get EBIT Apply taxes to get NOPAT Then: FCF = NOPAT + D&A – Capex – ΔNWC Terminal value uses the Gordon Growth model, and every assumption is parameterized so I can change it quickly in the video.\"",
+        "\"Next is Represent, where I map the plan, then Implement, where I run the valuation in Python. I build a 5-year forecast with three scenarios: Downside, Base, Upside.\"",
+        "\"Base WACC = 9% ... I test valuation across: WACC changes Terminal growth changes\""
+      ],
+      "driver_alignment": "- Define & Discover: documented capital assumptions (Base WACC = 9%) and growth/scale assumptions used as inputs.\n- Implement: built and ran the DCF in Python with scenario forecasts and explicit FCF construction.\n- Validate: stress-tested valuation via sensitivity on WACC and terminal growth to confirm behavior.",
+      "reasoning": "The student explicitly constructs free cash flows, uses a Gordon-growth terminal value, and specifies a discount rate (WACC = 9%) while running scenario and sensitivity analyses. These elements show a thorough, applied understanding of introductory DCF methodology across DRIVER stages, meeting the PASS standard."
+    },
+    {
+      "criterion_id": "concept_fcf_calculation",
+      "criterion_name": "Free Cash Flow Calculation concept.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"FCF is built step-by-step: Start with EBITDA Subtract D&A to get EBIT Apply taxes to get NOPAT Then: FCF = NOPAT + D&A – Capex – ΔNWC\"",
+        "\"Next is Represent, where I map the plan, then Implement, where I run the valuation in Python. I build a 5-year forecast with three scenarios: Downside, Base, Upside.\"",
+        "\"DRIVER forced me to document assumptions before implementation and separate standalone value from synergy value.\""
+      ],
+      "driver_alignment": "- Define & Discover: documented capital assumptions and deal context that inform FCF inputs (e.g., growth, WACC, capex plans).\n- Represent & Implement: explicitly lays out the stepwise FCF construction and applies it in multi-scenario DCF runs.\n- Reflect: uses the FCF-based DCF results to derive enterprise value and separate standalone vs. synergy value, validating conceptual use of FCF.",
+      "reasoning": "The student explicitly identifies the FCF components and gives the correct formula (EBITDA → –D&A → NOPAT → FCF = NOPAT + D&A – CapEx – ΔNWC) and implements it in scenario DCFs, then uses those FCFs to derive enterprise value—demonstrating both component mastery and the understanding that FCF drives value to capital providers. These show a thorough, applied grasp meeting PASS criteria."
+    },
+    {
+      "criterion_id": "concept_terminal_value",
+      "criterion_name": "Terminal Value Concept.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Terminal value uses the Gordon Growth model, and every assumption is parameterized so I can change it quickly in the video.\"",
+        "\"I test valuation across: WACC changes Terminal growth changes This confirms valuation behaves logically, and I track the terminal value share to make sure the result isn't driven by unrealistic terminal assumptions.\"",
+        "\"Next is Represent, where I map the plan, then Implement, where I run the valuation in Python.\""
+      ],
+      "driver_alignment": "Implement (explicitly runs the valuation and builds the TV in the model), Validate (sensitivity testing of WACC and terminal growth and tracking TV share), Reflect (comments on process discipline and separating standalone value from synergies).",
+      "reasoning": "The student explicitly states a Terminal Value calculation method (Gordon Growth) and shows they parameterized it in the model. They also demonstrate awareness of TV magnitude by sensitivity testing and tracking the terminal value share, satisfying both required points with implementation and validation steps."
+    },
+    {
+      "criterion_id": "concept_multi_stage_growth",
+      "criterion_name": "Multi-Stage Growth reasoning.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"I build a 5-year forecast with three scenarios: Downside, Base, Upside.\"",
+        "\"First is Define & Discover, where I document facts and assumptions before building the model.\"",
+        "\"I test valuation across: WACC changes Terminal growth changes... and I track the terminal value share to make sure the result isn't driven by unrealistic terminal assumptions.\""
+      ],
+      "driver_alignment": "Discover — documented growth facts/assumptions (revenue, growth levers);  \nRepresent/Implement — explicit 5-year forecast and scenario setup;  \nValidate — sensitivity on terminal growth/WACC and tracking terminal value share.",
+      "reasoning": "The student clearly distinguishes an explicit 5-year forecast from a terminal period (Gordon Growth referenced) and uses scenario and sensitivity analysis to constrain terminal assumptions, showing correct conceptual multi-stage reasoning. However, the submission lacks detailed, numeric year-by-year growth paths and an explicit justified terminal growth rate, so treatment is correct but not sufficiently thorough for a full PASS."
+    },
+    {
+      "criterion_id": "concept_ev_vs_equity",
+      "criterion_name": "Enterprise Value vs. Equity Value Bridge.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.0,
+      "level": "FAIL",
+      "evidence": [
+        "\"The overlap points to an enterprise value clustering around roughly the $12.5B–$13B range.\"",
+        "\"Suggested bid: ~$12.8B EV\"",
+        "\"DRIVER forced me to document assumptions before implementation and separate standalone value from synergy value.\""
+      ],
+      "driver_alignment": "Implement (ran the valuation / DCF producing an EV), Evolve (synthesized results into an EV-based bid), Reflect (discussed separating standalone vs. synergy value). These stages show EV-focused outputs but contain no bridge to equity value or per-share conversion.",
+      "reasoning": "The transcript reports enterprise value outcomes and an EV bid but contains no mention of subtracting net debt (or debt less cash) to derive equity value, nor dividing equity value by shares outstanding to get price per share. Therefore the required EV→Equity bridge steps are missing."
+    },
+    {
+      "criterion_id": "concept_wacc_application",
+      "criterion_name": "WACC Application.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Base WACC = 9% / Management wants 10% rollover\"",
+        "\"FCF is built step-by-step: Start with EBITDA ... Then: FCF = NOPAT + D&A – Capex – ΔNWC\"",
+        "\"I test valuation across: WACC changes\""
+      ],
+      "driver_alignment": "Discover: documented the capital assumption (Base WACC = 9%).  \nImplement: built FCFF and ran the DCF in Python.  \nValidate: performed WACC sensitivity testing to show impact on valuation.",
+      "reasoning": "The student constructs enterprise free cash flows and explicitly states a base WACC (9%) and an alternative (10%), and they run WACC sensitivities, showing correct application as the discounting lever. However, they do not provide a clear justification or derivation for the chosen 9% (e.g., industry average or calculated CAPM/debt structure), so the treatment is correct but not fully defended."
+    },
+    {
+      "criterion_id": "concept_comparables",
+      "criterion_name": "Comparable Methodology (Introductory Level).",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Market references (show PE multiples chart): Industry P/E ≈ 22x Chipotle ≈ 35x (premium growth benchmark) McDonald's ≈ 25x (mature scale benchmark)\"",
+        "\"First is Define & Discover, where I document facts and assumptions before building the model.\"",
+        "\"On the football field, I compare: DCF range Trading comps range Precedent transactions range ... enterprise value clustering around roughly the $12.5B–$13B range.\""
+      ],
+      "driver_alignment": "- Discover: identified relevant peers and presented P/E benchmarks (Chipotle, McDonald's, industry).\n- Implement/Represent: built the valuation model and parameterized assumptions to run scenarios.\n- Evolve: synthesized trading comps into a trading-comps range and an EV clustering on the football field.",
+      "reasoning": "The student clearly selected appropriate peers and presented P/E multiples, demonstrating conceptual comparable selection (Discover). They also produced a trading-comps range and an EV outcome (Evolve/Implement), but did not explicitly show a step-by-step application of a specific multiple to Panera's metrics (e.g., explicit EV/EBITDA or P/E calculation), so the treatment is correct but not fully detailed—hence PARTIAL."
+    },
+    {
+      "criterion_id": "concept_triangulation",
+      "criterion_name": "Valuation Triangulation / Sensitivity.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"On the football field, I compare: DCF range Trading comps range Precedent transactions range Strategic value including synergies The overlap points to an enterprise value clustering around roughly the $12.5B–$13B range.\"",
+        "\"I test valuation across: WACC changes Terminal growth changes This confirms valuation behaves logically, and I track the terminal value share to make sure the result isn't driven by unrealistic terminal assumptions.\"",
+        "\"Finally, Reflect. This reinforced that valuation isn't one exact number—it's a defensible range based on assumptions, scenarios, and stress tests.\""
+      ],
+      "driver_alignment": "Represent/Implement (built DCF and scenarios), Validate (sensitivity testing of WACC and terminal growth), and Evolve (football-field triangulation of DCF, comps, precedents and strategic value) together support the criterion.",
+      "reasoning": "The student compares multiple valuation methods (DCF, trading comps, precedents, and strategic/synergy scenarios), performs sensitivity analysis on key inputs, and presents a clustered EV range with a clear bid recommendation. This demonstrates a thorough, defensible triangulation and sensitivity treatment, meeting the PASS standard."
+    },
+    {
+      "criterion_id": "tech_dcf_model",
+      "criterion_name": "DCF Model Structure.",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "[\"I build a 5-year forecast with three scenarios: Downside, Base, Upside. ... FCF is built step-by-step: Start with EBITDA Subtract D&A to get EBIT Apply taxes to get NOPAT Then: FCF = NOPAT + D&A – Capex – ΔNWC Terminal value uses the Gordon Growth model, and every assumption is parameterized so I can change it quickly in the video.\"]",
+        "[\"Next is Represent, where I map the plan, then Implement, where I run the valuation in Python. I build a 5-year forecast with three scenarios...\"]",
+        "[\"Suggested bid: ~$12.8B EV\"]"
+      ],
+      "driver_alignment": "Represent (mapped model blueprint and projection sections), Implement (ran the DCF in Python and produced DCF tables), Validate (sensitivity tests on WACC and terminal growth confirming model behavior).",
+      "reasoning": "The submission explicitly documents identifiable DCF sections—projections/FCF build, terminal value via Gordon Growth, and a stated Base WACC—while noting parameterization and sensitivity testing. It also reports a specific numeric Enterprise Value (~$12.8B), satisfying both structural and numeric requirements."
+    },
+    {
+      "criterion_id": "tech_projection_logic",
+      "criterion_name": "Projection Logic.",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I build a 5-year forecast with three scenarios: Downside, Base, Upside.\"",
+        "\"Next is Represent, where I map the plan, then Implement, where I run the valuation in Python.\"",
+        "\"For each scenario, I project: Revenue growth EBITDA margin path Free cash flow detail\""
+      ],
+      "driver_alignment": "Represent (mapped scenarios and assumptions), Implement (built/ran the 5-year DCF in Python with parameterized assumptions), Validate (sensitivity testing of WACC/terminal growth and synergy sensitivities to confirm behavior).",
+      "reasoning": "The student explicitly constructs a 5-year forecast and three scenarios and states they project revenue growth and an EBITDA margin path (not static). The Represent/Implement descriptions plus Validate sensitivity checks show assumptions are parameterized and outputs are stress-tested, demonstrating a thorough projection logic."
+    },
+    {
+      "criterion_id": "tech_comparables_calc",
+      "criterion_name": "Comparable Multiples Calculation.",
+      "category_name": "Technical Implementation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Market references (show PE multiples chart): Industry P/E ≈ 22x Chipotle ≈ 35x (premium growth benchmark) McDonald's ≈ 25x (mature scale benchmark) This frames where Panera should reasonably land—below Chipotle, stronger than typical peers.\"",
+        "\"Next is Represent, where I map the plan, then Implement, where I run the valuation in Python. I build a 5-year forecast with three scenarios: Downside, Base, Upside.\"",
+        "\"On the football field, I compare: DCF range Trading comps range Precedent transactions range ... The overlap points to an enterprise value clustering around roughly the $12.5B–$13B range.\""
+      ],
+      "driver_alignment": "Represent & Implement — student states they built the model and ran valuation in Python (implies applying multiples); Validate — sensitivity testing; Evolve — trading comps shown on the football field to produce a comps-based range.",
+      "reasoning": "The submission clearly identifies peer multiples and reports a trading-comps range (Evolve) and includes the core metrics (e.g., EBITDA) used in valuation, showing conceptual application of multiples. However, the transcript lacks an explicit step showing Implied Value = Metric * Multiple or detailed per-peer implied-value calculations, so the treatment is correct but not fully demonstrated. Hence PARTIAL."
+    },
+    {
+      "criterion_id": "tech_sensitivity_scenario",
+      "criterion_name": "Scenario Comparison (Introductory Sensitivity).",
+      "category_name": "Technical Implementation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"I build a 5-year forecast with three scenarios: Downside, Base, Upside.\"",
+        "\"I run the valuation in Python.\"",
+        "\"I test valuation across: WACC changes Terminal growth changes\""
+      ],
+      "driver_alignment": "- Represent: defines and parameterizes multiple scenarios (Downside/Base/Upside).\n- Implement: executes the valuation model in Python to produce results.\n- Validate: runs sensitivity tests on WACC and terminal growth to show how key drivers affect value.",
+      "reasoning": "The student clearly models multiple scenarios and performs sensitivity analysis on WACC and terminal growth, demonstrating correct conceptual treatment. However, they do not present explicit per‑scenario valuation results or quantify how changing a specific driver (e.g., +/− WACC or growth) moves the valuation, so the work is correct but not sufficiently detailed for a full PASS."
+    },
+    {
+      "criterion_id": "tech_visual_summary",
+      "criterion_name": "Visual Summary of Valuation.",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I build a 5-year forecast with three scenarios: Downside, Base, Upside.\" (1:35–2:50)",
+        "\"Next is Represent, where I map the plan, then Implement, where I run the valuation in Python.\" (1:35–2:50)",
+        "\"On the football field, I compare: DCF range Trading comps range Precedent transactions range Strategic value including synergies. The overlap points to an enterprise value clustering around roughly the $12.5B–$13B range.\" (3:35–4:25)"
+      ],
+      "driver_alignment": "Represent (mapped scenarios and forecast), Implement (ran valuation and produced tables/charts in Python), Validate (sensitivity testing), and Evolve (synthesized results on a football-field summary) — together show the student produced and summarized multiple valuation outcomes.",
+      "reasoning": "The student produced scenario DCF outputs, ran the model in Python, performed sensitivities, and explicitly synthesized results into a summarized \"football field\" showing ranges and a clustered EV estimate. This meets the criterion of providing a clear table/chart summarizing valuation results."
+    },
+    {
+      "criterion_id": "integration_parameterized_inputs",
+      "criterion_name": "Parameterized Inputs.",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Revenue: $6B, growing about 8%\"",
+        "\"every assumption is parameterized so I can change it quickly in the video.\"",
+        "\"I test valuation across: WACC changes Terminal growth changes\""
+      ],
+      "driver_alignment": "Discover — documented key inputs and market multiples (growth, WACC, peers).  \nImplement — parameterized assumptions and scenario forecasting in Python.  \nValidate — ran sensitivity tests (WACC, terminal growth) showing outputs respond to input changes.",
+      "reasoning": "The student clearly defines key inputs (growth, WACC, peer multiples) in Discover and states that \"every assumption is parameterized,\" then demonstrates scenario forecasting and sensitivity testing in Implement/Validate. Those elements together show a thorough, working parameterization and that the model handles input changes, satisfying the criterion."
+    },
+    {
+      "criterion_id": "integration_scenario_capability",
+      "criterion_name": "Scenario Capability.",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"First is Define & Discover, where I document facts and assumptions before building the model.\"",
+        "\"I build a 5-year forecast with three scenarios: Downside, Base, Upside. ... Every assumption is parameterized so I can change it quickly in the video.\"",
+        "\"I test valuation across: WACC changes Terminal growth changes\" / \"I also run a synergy sensitivity to show why strategic bidders could justify higher values\" / \"On the football field, I compare: DCF range Trading comps range Precedent transactions range Strategic value including synergies\""
+      ],
+      "driver_alignment": "Discover — documented specific assumptions (revenue, margins, WACC, growth levers) that feed the model; \nImplement/Represent — built and parameterized three scenarios (Downside/Base/Upside) and a 5-year forecast; \nValidate — ran sensitivity tests (WACC, terminal growth, synergies) linking assumption changes to valuation outputs; \nEvolve — compared outcome ranges (football field) and synthesized a bid recommendation.",
+      "reasoning": "The submission clearly constructs multiple scenarios, parameterizes assumptions, and shows sensitivity testing that links those assumptions to valuation outcomes (including synergy impacts and a football-field comparison). The treatment is detailed and applied—meeting the PASS standard for thorough scenario capability."
+    },
+    {
+      "criterion_id": "integration_comprehensive_framework",
+      "criterion_name": "Comprehensive Analysis Framework.",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"First is Define & Discover, where I document facts and assumptions before building the model.\"",
+        "\"Deal Snapshot: Revenue: $6B, growing about 8% EBITDA: $900M → 15% margin Net income: $400M ... This frames where Panera should reasonably land—below Chipotle, stronger than typical peers.\"",
+        "\"On the football field, I compare: DCF range Trading comps range Precedent transactions range Strategic value including synergies\""
+      ],
+      "driver_alignment": "- Discover: documented explicit assumptions and market benchmarks (assumptions stage).\n- Implement/Represent: built parameterized DCF with scenario forecasts and Python implementation (analysis stage).\n- Validate: ran sensitivity tests on WACC/terminal growth and synergy capture (robustness of quantitative results).\n- Evolve: synthesized quantitative ranges with qualitative strategic judgment to provide a recommended bid (conclusion stage).",
+      "reasoning": "The submission clearly combines quantitative outputs (DCF, comps, precedents, sensitivities) with qualitative business judgment on strategic bidders and synergies, and it follows a logical Assumptions → Analysis → Conclusion flow as shown across Discover → Implement/Validate → Evolve. Evidence is specific (numerical deal snapshot, modeled scenarios, football-field synthesis) and demonstrates thorough, defensible integration."
+    },
+    {
+      "criterion_id": "driver_define_discover",
+      "criterion_name": "Define & Discover: Problem Framing.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"This frames where Panera should reasonably land—below Chipotle, stronger than typical peers.\"",
+        "\"Management wants 10% rollover\"",
+        "\"Bid recommendation (KKR): Suggested bid: ~$12.8B EV Walk-away price: $13.5B EV\""
+      ],
+      "driver_alignment": "Define & Discover — explicitly documents the valuation object (Panera) and deal facts/assumptions; \nEvolve — explicitly identifies the acquirer/stakeholder (KKR) and produces a bid; \nDefine & Discover also names Management as a stakeholder in capital/rollover assumptions.",
+      "reasoning": "The student explicitly frames Panera as the valuation object and documents deal assumptions in Define & Discover, names Management in capital assumptions, and explicitly identifies KKR with a recommended bid in Evolve — meeting the strict requirement for explicit stage demonstration."
+    },
+    {
+      "criterion_id": "driver_represent",
+      "criterion_name": "Represent: Methodology Selection.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"FCF is built step-by-step: Start with EBITDA Subtract D&A to get EBIT Apply taxes to get NOPAT Then: FCF = NOPAT + D&A – Capex – ΔNWCTerminal value uses the Gordon Growth model, and every assumption is parameterized so I can change it quickly in the video.\"",
+        "\"On the football field, I compare: DCF range Trading comps range Precedent transactions range Strategic value including synergies\"",
+        "\"Capital assumptions: Base WACC = 9% Management wants 10% rollover\""
+      ],
+      "driver_alignment": "- Discover: provided numerical assumptions and market multiples context (WACC, industry P/E benchmarks).\n- Represent: explicitly mapped the valuation plan and scenarios.\n- Implement: parameterized DCF mechanics and ran models in Python, enabling sensitivity testing.",
+      "reasoning": "The student explicitly outlines a DCF methodology (detailed FCF build and Gordon terminal) and states they use trading comps and precedent transactions. However, they do not explicitly specify which multiples beyond a general P/E benchmark nor cite data sources for comps or inputs, so the methodology selection and required data assumptions are only partially demonstrated."
+    },
+    {
+      "criterion_id": "driver_implement",
+      "criterion_name": "Implement: Execution.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Next is Represent, where I map the plan, then Implement, where I run the valuation in Python.\"",
+        "\"I build a 5-year forecast with three scenarios: Downside, Base, Upside.\"",
+        "\"FCF is built step-by-step: Start with EBITDA Subtract D&A to get EBIT Apply taxes to get NOPAT Then: FCF = NOPAT + D&A – Capex – ΔNWC\""
+      ],
+      "driver_alignment": "Represent + Implement: student mapped the plan and explicitly ran the valuation in Python, showing execution of planned models.  \nValidate: sensitivity analysis (WACC, terminal growth, synergy sensitivity) demonstrates systematic stress-testing of outputs.  \nEvolve: produced synthesized outputs (football field, bid recommendation) indicating completed end-to-end implementation.",
+      "reasoning": "The submission shows a systematic execution of the planned valuation models—parameterized 5-year scenarios, stepwise FCF build, and run in Python—plus validation via sensitivity tests and final synthesis. These elements meet the moderate standard for implementation, so the criterion is passed."
+    },
+    {
+      "criterion_id": "driver_validate",
+      "criterion_name": "Validate: Sanity Checks.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Now Validate. I stress-test the outputs using sensitivity analysis.\"",
+        "\"Market references (show PE multiples chart): Industry P/E ≈ 22x Chipotle ≈ 35x (premium growth benchmark) McDonald's ≈ 25x (mature scale benchmark)\"",
+        "\"On the football field, I compare: DCF range Trading comps range Precedent transactions range Strategic value including synergies\""
+      ],
+      "driver_alignment": "Validate stage — performed sensitivity analysis (WACC, terminal growth, synergy sensitivity).  \nDiscover stage — used peer multiples and market references as benchmarks.  \nEvolve stage — compared valuation ranges on a football-field synthesis.",
+      "reasoning": "The student clearly performed internal sanity checks (sensitivity tests) and compared results to peer multiples and comps, but did not cite specific external tools or data sources (e.g., Bloomberg, Capital IQ, or named calculators). Per the category standard, this is a partial pass: good external benchmarking conceptually, but lacking explicit source attribution."
+    },
+    {
+      "criterion_id": "driver_evolve_reflect",
+      "criterion_name": "Evolve & Reflect: Synthesis.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Next is Evolve, where I synthesize everything into a decision.\"",
+        "\"The overlap points to an enterprise value clustering around roughly the $12.5B–$13B range. Bid recommendation (KKR): Suggested bid: ~$12.8B EV Walk-away price: $13.5B EV\"",
+        "\"Finally, Reflect. This reinforced that valuation isn't one exact number—it's a defensible range based on assumptions, scenarios, and stress tests.\""
+      ],
+      "driver_alignment": "Evolve — synthesized DCF, trading comps, precedents, and strategic/synergy views into a clear bid range and recommendation.  \nReflect — explicitly commented on the nature and reliability of valuation outputs (range vs point estimate) and importance of documented assumptions.  \nValidate/Implement — scenario construction and sensitivity testing (WACC, terminal growth, synergy sensitivity) underpin the claimed reliability of methods.",
+      "reasoning": "The student explicitly provides a concrete bid recommendation and walk-away price and clearly states reflective conclusions about reliability (defensible range, role of assumptions, stress tests). The submission shows synthesis across valuation methods and documents validation steps that support the reflection, meeting the strict DRIVER-stage requirement."
+    },
+    {
+      "criterion_id": "comm_methodology_explanation",
+      "criterion_name": "Methodology Explanation.",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"This frames where Panera should reasonably land—below Chipotle, stronger than typical peers.\"",
+        "\"FCF is built step-by-step: Start with EBITDA Subtract D&A to get EBIT Apply taxes to get NOPAT Then: FCF = NOPAT + D&A – Capex – ΔNWC\"",
+        "\"I test valuation across: WACC changes Terminal growth changes This confirms valuation behaves logically, and I track the terminal value share to make sure the result isn't driven by unrealistic terminal assumptions.\""
+      ],
+      "driver_alignment": "- Discover: documented assumptions and peer-frame to justify choice of comparables and valuation positioning.\n- Represent/Implement: explicitly described the modeling steps and FCF build to explain how analysis was executed.\n- Validate: used sensitivity tests and terminal-value checks to justify and defend methodological choices.\n- Reflect: separated standalone value from synergies, reinforcing why specific analyses (synergy sensitivity) were run.",
+      "reasoning": "The submission clearly explains the stepwise methodology (detailed FCF construction and scenario setup) and gives reasons for method choices (peer framing, synergy sensitivity, terminal-value checks). Explanations are specific and linked to DRIVER stages, demonstrating a thorough, defensible methodological approach."
+    },
+    {
+      "criterion_id": "comm_presentation_logic",
+      "criterion_name": "Logical Flow and Presentation.",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"First is Define & Discover, where I document facts and assumptions before building the model.\"",
+        "\"Next is Represent, where I map the plan, then Implement, where I run the valuation in Python.\"",
+        "\"On the football field, I compare: DCF range Trading comps range Precedent transactions range Strategic value including synergies The overlap points to an enterprise value clustering around roughly the $12.5B–$13B range.\""
+      ],
+      "driver_alignment": "Discover (clearly lays out inputs, assumptions, and visuals), Represent/Implement (maps plan, runs Python valuation, describes FCF build and parameterization), Validate/Evolve/Reflect (sensitivity tests, synthesis on football field, and final recommendation).",
+      "reasoning": "The submission presents a clear, logical flow from documented inputs (Discover) through model implementation and outputs (Represent/Implement), validation, and a synthesized conclusion (Evolve/Reflect). Visuals and model outputs are explicitly described and parameterized, demonstrating thorough presentation and logical progression."
+    },
+    {
+      "criterion_id": "comm_recommendation",
+      "criterion_name": "Actionable Recommendation.",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The overlap points to an enterprise value clustering around roughly the $12.5B–$13B range. Bid recommendation (KKR): Suggested bid: ~$12.8B EV Walk-away price: $13.5B EV\"",
+        "\"I build a 5-year forecast with three scenarios: Downside, Base, Upside. For each scenario, I project: Revenue growth EBITDA margin path Free cash flow detail\"",
+        "\"On the football field, I compare: DCF range Trading comps range Precedent transactions range Strategic value including synergies\""
+      ],
+      "driver_alignment": "- Discover: provided deal snapshot and market reference frame to position valuation.\n- Represent/Implement: built scenario-based 5-year DCF and parameterized model inputs.\n- Validate: ran sensitivity tests (WACC, terminal growth, synergy sensitivity) to check robustness.\n- Evolve: synthesized ranges into a bid recommendation and walk-away price.",
+      "reasoning": "The student gives a clear, actionable recommendation with explicit numbers (~$12.8B bid, $13.5B walk-away) and ties it to specific analyses (scenario DCF, trading/comps, precedent ranges) and sensitivity checks. DRIVER stages show the recommendation was grounded in documented assumptions, implemented modeling, validation, and synthesis, meeting the thoroughness required for PASS."
+    }
+  ]
+}

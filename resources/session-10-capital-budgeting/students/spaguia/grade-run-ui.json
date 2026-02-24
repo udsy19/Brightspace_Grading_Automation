@@ -1,0 +1,428 @@
+{
+  "student_name": "Samantha Paguia",
+  "username": "spaguia",
+  "org_defined_id": "036278125",
+  "transcript_length": 12080,
+  "overall_grade": 31.750000000000007,
+  "passed_criteria": 6,
+  "partial_criteria": 13,
+  "failed_criteria": 10,
+  "driver_stages_demonstrated": {
+    "D": true,
+    "R": true,
+    "I": true,
+    "V": true,
+    "E": true,
+    "R2": true
+  },
+  "feedback": "Excellent application of the DRIVER framework throughout your work. You clearly demonstrated 6 stages: D, R, I, V, E, R2.\n\n\nSTRENGTHS:\n- Technical Implementation: The submission includes documented assumptions and formulas, code that computes and prints core metrics, and an explicit validation message stating the PASS condition. The combination of REPRESENT (assumptions), IMPLEMENT (computed outputs), VALIDATE (explicit pass message) and REFLECT (recommendation tied to results) demonstrates the student ran and verified the code and explained how the logic supports the stated outcome.\n- Integration of Finance and Technology: The model includes built-in sensitivity testing with multiple scenarios (revenue shock and discount rate shifts), computes decision metrics, and explicitly states accept/reject implications. The reflection explains how these sensitivities affect risk and project robustness, satisfying the criterion at a thorough level despite not varying tax rate.\n- Following the DRIVER Framework: The transcript explicitly labels and documents Stage 1 with a clear objective and parameters, and the implementation/code (modeling) is clearly in Stage 3 later. This meets the strict requirement that Define & Discover be completed and documented before modeling.\n\n\nAREAS FOR IMPROVEMENT:\n- Financial Concepts Accuracy: The submission focuses on a Starbucks project valuation and does not analyze buyback/dividend/debt reduction choices, quantify tax advantages or expected distress/optionality costs, or connect conclusions to Apple’s current balance sheet. Given the complete absence of the required capital structure trade-off analysis for Apple, this criterion is not demonstrated.\n- Financial Concepts Accuracy: No discussion identifies stakeholder winners/losers or diverging incentives, and there is no treatment of asset substitution or risk-shifting dynamics. The submission is entirely focused on cash-flow modeling and metrics, so it does not meet the criterion even at a moderate strictness level.\n- Financial Concepts Accuracy: The submission does not discuss financial leverage, DFL, or how financing choice affects ROE/EPS volatility. It also omits bankruptcy risk and coverage metrics under different debt policies. While WACC is used and varied, that alone does not satisfy leverage analysis, leading to a FAIL for this criterion.",
+  "criteria": [
+    {
+      "criterion_id": "concept_tradeoff_theory",
+      "criterion_name": "Capital structure trade-off: tax shield benefits vs. financial distress and flexibility costs across buyback/dividend/debt reduction choices.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.0,
+      "level": "FAIL",
+      "evidence": [
+        "\"Objective: Evaluate Starbucks' $12M flagship roastery over 10 years using the 8.5% WACC.\"",
+        "\"--- STAGE 3: IMPLEMENT (I) - Cash Flow Construction ---\"",
+        "\"Based on the Base Case financial model, the proposed flagship roastery should be **{recommendation}**.\""
+      ],
+      "driver_alignment": "The student executed DISCOVER, IMPLEMENT, and REFLECT stages for a project cash-flow analysis, but none addressed capital structure trade-offs, quantification of tax shields vs. distress/flexibility costs, or Apple’s balance sheet and risk profile.",
+      "reasoning": "The submission focuses on a Starbucks project valuation and does not analyze buyback/dividend/debt reduction choices, quantify tax advantages or expected distress/optionality costs, or connect conclusions to Apple’s current balance sheet. Given the complete absence of the required capital structure trade-off analysis for Apple, this criterion is not demonstrated."
+    },
+    {
+      "criterion_id": "concept_agency_conflicts",
+      "criterion_name": "Agency conflicts across stakeholders (shareholders, bondholders, management, employees, large holders).",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.0,
+      "level": "FAIL",
+      "evidence": [
+        "\"Objective: Evaluate Starbucks' $12M flagship roastery over 10 years using the 8.5% WACC.\"",
+        "\"Formulas & Data Structure: ... Free Cash Flow (FCF) = OCF - Delta NWC - CapEx + Terminal Value/WC Recovery\"",
+        "\"Based on the Base Case financial model, the proposed flagship roastery should be **{recommendation}**.\""
+      ],
+      "driver_alignment": "The student executed DISCOVER/REPRESENT/IMPLEMENT/VALIDATE/EVOLVE/REFLECT for DCF modeling and recommendation, but none of these stages addressed agency conflicts among shareholders, bondholders, management, employees, or large holders, nor asset substitution or risk-shifting tied to leverage/buybacks.",
+      "reasoning": "No discussion identifies stakeholder winners/losers or diverging incentives, and there is no treatment of asset substitution or risk-shifting dynamics. The submission is entirely focused on cash-flow modeling and metrics, so it does not meet the criterion even at a moderate strictness level."
+    },
+    {
+      "criterion_id": "concept_leverage_effects",
+      "criterion_name": "Financial leverage effects and DFL: how financing choice changes ROE/EPS volatility and downside risk.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.0,
+      "level": "FAIL",
+      "evidence": [
+        "\"Formulas & Data Structure: 2. Operating Cash Flow (OCF) = (Revenue - OpEx - Depr) * (1-T) + Depr\" (no interest, EPS, or ROE; unlevered approach)",
+        "\"--- STAGE 3: IMPLEMENT (I) - Cash Flow Construction ---\" (cash-flow build includes EBIT, Taxes, NOPAT, OCF but no interest expense, debt, EPS, ROE, or DFL)",
+        "\"Changes in the WACC (+/- 2%) only affect the NPV, not the cash flows or IRR.\" (mentions financing cost sensitivity but no leverage effects on ROE/EPS volatility or downside/bankruptcy risk)"
+      ],
+      "driver_alignment": "Implement stage builds unlevered cash flows without financing structure, so DFL/EPS/ROE impacts are not analyzed. Reflect stage provides an executive recommendation without addressing leverage-driven volatility, coverage metrics, or bankruptcy risk. Discover stage sets WACC but does not specify debt/equity choices or their implications.",
+      "reasoning": "The submission does not discuss financial leverage, DFL, or how financing choice affects ROE/EPS volatility. It also omits bankruptcy risk and coverage metrics under different debt policies. While WACC is used and varied, that alone does not satisfy leverage analysis, leading to a FAIL for this criterion."
+    },
+    {
+      "criterion_id": "concept_value_and_signaling",
+      "criterion_name": "Value impact and signaling logic (apply ideas, no need to cite theory names).",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Changes in the WACC (+/- 2%) only affect the NPV, not the cash flows or IRR.\"",
+        "\"--- STAGE 3: IMPLEMENT (I) - Cash Flow Construction ---\"",
+        "\"2. Operating Cash Flow (OCF) = (Revenue - OpEx - Depr) * (1-T) + Depr\""
+      ],
+      "driver_alignment": "- REPRESENT: Clearly separates operating cash flow from financing by defining OCF independent of financing costs.\n- IMPLEMENT: Builds cash flows without interest/financing items, aligning with operating vs financing separation.\n- REFLECT: States that WACC changes affect valuation but not operating cash flows or IRR, reinforcing financing vs operating effects.",
+      "reasoning": "The student appropriately distinguishes operating value drivers from financing effects (e.g., OCF independent of financing; WACC only affecting NPV), showing basic grasp of value impact vs financing effects. However, there is no discussion of signaling implications of buybacks, dividends, or acquisitions. Thus, coverage is correct but incomplete for this criterion."
+    },
+    {
+      "criterion_id": "concept_optimal_structure",
+      "criterion_name": "Optimal capital structure reasoning for Apple.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.0,
+      "level": "FAIL",
+      "evidence": [
+        "\"Objective: Evaluate Starbucks' $12M flagship roastery over 10 years using the 8.5% WACC.\"",
+        "\"--- STAGE 3: IMPLEMENT (I) - Cash Flow Construction ---\"",
+        "\"Project: Starbucks Flagship Roastery | Duration: 10 Years | Hurdle Rate: 8.50%\""
+      ],
+      "driver_alignment": "- Discover, Implement, and Reflect were executed for a Starbucks project valuation, not Apple’s capital structure. No stage discussed target leverage, ratings, cash policy, or how financing alternatives move Apple toward a target structure.",
+      "reasoning": "The criterion requires optimal capital structure reasoning for Apple, including target leverage/cash policy, ratings, flexibility, and evaluating alternatives relative to a target. The submission focuses on Starbucks project cash flows and uses a fixed WACC without any discussion of Apple’s leverage or capital structure policy. Hence, it does not demonstrate the required concept."
+    },
+    {
+      "criterion_id": "concept_value_creation_vs_transfer",
+      "criterion_name": "Value creation vs. value transfer assessment across alternatives.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"The project generates a strong Net Present Value (NPV) of ${npv:,.2f}, indicating it is expected to create significant economic value for Starbucks, exceeding the cost of capital.\"",
+        "\"Objective: Evaluate Starbucks' $12M flagship roastery over 10 years using the 8.5% WACC.\"",
+        "\"Strategically, a flagship roastery aligns with Starbucks' premiumization efforts and brand experience.\""
+      ],
+      "driver_alignment": "- Discover: Stated objective and cost of capital establish the opportunity cost lens.\n- Implement: Built cash flows and NPV/IRR to evidence value creation.\n- Reflect: Interpreted positive NPV/IRR and briefly noted strategic fit, but did not assess stakeholder redistribution or compare alternative capital uses.",
+      "reasoning": "The student correctly identifies and evidences value creation via NPV/IRR above WACC and briefly touches on strategic fit, satisfying a basic opportunity cost perspective. However, they do not separate genuine value creation from value transfer (e.g., cannibalization/redistribution among stakeholders) and they do not compare against alternative uses of the $12M, so coverage is incomplete for this criterion."
+    },
+    {
+      "criterion_id": "concept_governance",
+      "criterion_name": "Governance and incentive alignment implications.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.0,
+      "level": "FAIL",
+      "evidence": [
+        "\"Financial Justification: The project generates a strong Net Present Value (NPV) ... The Internal Rate of Return (IRR) ... The Discounted Payback Period...\"",
+        "\"--- STAGE 6: REFLECT (R) - Executive Recommendation --- Based on the Base Case financial model, the proposed flagship roastery should be **{recommendation}**.\"",
+        "\"Strategic Fit, Brand, and Risk: Strategically, a flagship roastery aligns with Starbucks' premiumization efforts and brand experience... the primary risk lies in sustaining the projected high-end revenue streams...\""
+      ],
+      "driver_alignment": "The DISCOVER and IMPLEMENT stages focus on modeling parameters and cash flow construction, and the REFLECT stage focuses on financial metrics and a go/no-go decision. None of these stages discuss compensation structures, debt covenants, or board oversight, nor do they connect reputation/control to governance implications.",
+      "reasoning": "No discussion connects compensation, covenants, or board oversight to the capital decision, and the brief brand mention is not tied to governance or control. Given the criterion requires explicit linkage to governance and incentive alignment, the submission lacks the necessary content despite solid financial analysis."
+    },
+    {
+      "criterion_id": "concept_stakeholder_completeness",
+      "criterion_name": "Completeness of stakeholder coverage.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.0,
+      "level": "FAIL",
+      "evidence": [
+        "\"Objective: Evaluate Starbucks' $12M flagship roastery over 10 years using the 8.5% WACC.\"",
+        "\"--- STAGE 3: IMPLEMENT (I) - Cash Flow Construction ---\"",
+        "\"Strategic Fit, Brand, and Risk: Strategically, a flagship roastery aligns with Starbucks' premiumization efforts and brand experience.\""
+      ],
+      "driver_alignment": "The DISCOVER and IMPLEMENT stages focus on project setup and cash-flow modeling; the REFLECT stage offers an executive recommendation and strategic fit. Across these stages, there is no stakeholder analysis or mention of retail shareholders, Berkshire, bondholders, management, employees with options at $170, or affected counterparties.",
+      "reasoning": "The submission does not address any of the specified stakeholders or counterparties. Even with moderate strictness allowing conceptual discussion, there is no coverage of retail shareholders, Berkshire, bondholders, management, employees with options at $170, or acquisition targets, so the criterion is not met."
+    },
+    {
+      "criterion_id": "tech_eps_sharecount",
+      "criterion_name": "EPS/share count modeling pre- and post-buyback with correct dilution and cash usage.",
+      "category_name": "Technical Implementation",
+      "score": 0.0,
+      "level": "FAIL",
+      "evidence": [
+        "\"1. Depreciation Tax Shield = Depreciation * Tax Rate\"",
+        "\"Create a DataFrame to represent the cash flow schedule\"",
+        "\"INITIAL_INVESTMENT = 12000000.0 # $12 million CapEx PROJECT_LIFE = 10 WACC = 0.085 # Hurdle Rate TAX_RATE = 0.25 WC_CHANGE = 500000.0 # Working Capital deployed at launch TERMINAL_VALUE = 3000000.0 # Salvage value at end of Year 10\""
+      ],
+      "driver_alignment": "REPRESENT — the student defines cash-flow formulas and a DataFrame focused on FCF rather than share-count/EPS modeling.  \nIMPLEMENT — the implementation loop constructs yearly cash flows (no buyback, share-count, or EPS calculations).  \nVALIDATE — validation checks NPV/IRR of project cash flows, with no post-buyback EPS/dilution analysis.",
+      "reasoning": "The submission thoroughly models project cash flows and states tax and timing assumptions, but it contains no share-count, buyback execution (price/timing), EPS pre/post calculations, or dilution mechanics. Because the criterion specifically requires EPS/share-count modeling and buyback cash usage, the work fails to meet it."
+    },
+    {
+      "criterion_id": "tech_capital_structure_updates",
+      "criterion_name": "Capital structure and cash impact calculations for each alternative.",
+      "category_name": "Technical Implementation",
+      "score": 0.0,
+      "level": "FAIL",
+      "evidence": [
+        "\"Objective: Evaluate Starbucks' $12M flagship roastery over 10 years using the 8.5% WACC.\"",
+        "\"OCF = (Revenue - OpEx - Depr) * (1-T) + Depr\"",
+        "\"Note: IRR does not change\" / \"Scenario B2: WACC -2% (6.50%)\""
+      ],
+      "driver_alignment": "- REPRESENT: defined formulas and data structure (shows focus on operating cash flows, not financing items).\n- IMPLEMENT: built detailed FCF schedule in the cash flow construction loop (implemented project cash flows but no debt or buyback lines).\n- VALIDATE: ran NPV/IRR and WACC sensitivity (tested project-level WACC effects but did not model financing alternatives or interest/credit impacts).",
+      "reasoning": "The submission builds and validates operating free cash flows and tests WACC sensitivity, but contains no modeling of buyback vs. debt paydown alternatives, no updates to net cash/debt, interest expense, or credit metrics, and no explicit linkage of financing choices to WACC or coverage ratios. Therefore it fails this criterion."
+    },
+    {
+      "criterion_id": "tech_scenario_sensitivity",
+      "criterion_name": "Scenario and sensitivity analysis on key drivers.",
+      "category_name": "Technical Implementation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"--- STAGE 5: EVOLVE (E) - Sensitivity Analysis ---\"",
+        "\"Scenario A: Revenue Reduced by 20% (WACC 8.5%)\"",
+        "\"1. **Revenue Drop (20%):** A 20% reduction in all future revenues is the most significant threat. ... Since the IRR of {irr_a:.2%} is still **above** the 8.50% WACC, the project remains financially viable even under this aggressive downside risk.\""
+      ],
+      "driver_alignment": "REPRESENT — set up cash-flow DataFrame and formulas for FCF/NPV/IRR; IMPLEMENT — constructed scenarios and recalculated metrics in code; EVOLVE — implemented multiple sensitivity runs (rev -20%, WACC ±2%) and plotted NPVs; REFLECT — discussed implications and gave recommendation based on scenarios.",
+      "reasoning": "The student provides a base case plus multiple sensitivities (revenue -20% and WACC ±2%), correctly recalculates NPV/IRR, and interprets results, so the criterion is met in part. However, they do not identify explicit breakpoints or threshold analyses (e.g., the revenue scale or WACC at which IRR falls below WACC or NPV turns negative), so the treatment is correct but not sufficiently thorough for a full PASS."
+    },
+    {
+      "criterion_id": "tech_stakeholder_quant",
+      "criterion_name": "Stakeholder impact quantification with transparent inputs.",
+      "category_name": "Technical Implementation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"INITIAL_INVESTMENT = 12000000.0 # $12 million CapEx\" (and REVENUES / OPEX_PARAMS defined in code)",
+        "\"Create a DataFrame to represent the cash flow schedule\" and \"columns = [ 'Revenue', 'COGS', 'Labor', 'Rent & Utilities', 'Marketing', 'Total OpEx', 'EBITDA', 'Depreciation', 'EBIT', 'Taxes', 'NOPAT', 'OCF', 'Delta NWC', 'CapEx/Salvage', 'FCF' ]\"",
+        "\"PASS: NPV is positive and IRR exceeds WACC.\" (and sensitivity scenarios like \"Scenario A: Revenue Reduced by 20% (WACC 8.5%)\")"
+      ],
+      "driver_alignment": "- REPRESENT (R): Provided formulas and an explicit DataFrame schema so inputs and calculated cash-flow items are transparent.\n- IMPLEMENT (I): Code cells define parameters (revenues, OPEX, capex, WC, depreciation) and build year-by-year FCFs—making assumptions traceable.\n- VALIDATE (V): Computes NPV/IRR and runs sensitivity scenarios, validating project-level value metrics.",
+      "reasoning": "The submission clearly exposes inputs and assumptions in code and constructs a traceable cash-flow schedule with NPV/IRR and sensitivity checks (hence partial credit). However, it does not quantify stakeholder-specific impacts required by the criterion: there is no analysis of ownership/wealth transfer (equity value changes or dilution), no treatment of option value (real options), and no bondholder/debt-risk metrics (debt service coverage, default probability, or impact on creditors). Therefore the work is correct and transparent but incomplete for full credit."
+    },
+    {
+      "criterion_id": "tech_reproducibility",
+      "criterion_name": "Verbal confirmation of valid code execution.",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Validation Check: PASS: NPV is positive and IRR exceeds WACC.\"",
+        "\"Formulas & Data Structure:\" / \"Create a DataFrame to represent the cash flow schedule\"",
+        "\"Objective: Evaluate Starbucks' $12M flagship roastery over 10 years using the 8.5% WACC.\" / \"Based on the Base Case financial model, the proposed flagship roastery should be **ACCEPT**.\""
+      ],
+      "driver_alignment": "REPRESENT — student states formulas and builds a DataFrame (assumptions and logic documented).  \nIMPLEMENT — code constructs (loop, calculations) produce printed metrics (implying execution).  \nVALIDATE — explicit validation print shows the student checked outputs against the WACC/NPV rule.  \nREFLECT — summary recommendation ties results back to assumptions and sensitivity analysis.",
+      "reasoning": "The submission includes documented assumptions and formulas, code that computes and prints core metrics, and an explicit validation message stating the PASS condition. The combination of REPRESENT (assumptions), IMPLEMENT (computed outputs), VALIDATE (explicit pass message) and REFLECT (recommendation tied to results) demonstrates the student ran and verified the code and explained how the logic supports the stated outcome."
+    },
+    {
+      "criterion_id": "integration_option_automation",
+      "criterion_name": "Automates comparisons across buyback, dividend, acquisition, and debt paydown options.",
+      "category_name": "Integration of Finance and Technology",
+      "score": 0.0,
+      "level": "FAIL",
+      "evidence": [
+        "\"Objective: Evaluate Starbucks' $12M flagship roastery over 10 years using the 8.5% WACC.\"",
+        "\"--- STAGE 5: EVOLVE (E) - Sensitivity Analysis ---\"",
+        "\"def calculate_npv_irr(revenue_scale, wacc_rate, base_cf): Recalculates FCF, NPV, and IRR based on new assumptions.\""
+      ],
+      "driver_alignment": "- DISCOVER sets a single-project objective, not alternative capital allocation options.\n- IMPLEMENT builds one project cash-flow model; no toggles for buyback/dividend/acquisition/debt paydown.\n- EVOLVE runs sensitivity on revenue/WACC only, not automated comparisons across the four capital allocation alternatives.",
+      "reasoning": "The student parameterizes inputs and uses a function to automate sensitivity analysis, avoiding copy-paste, but only for a single project and revenue/WACC changes. There is no conceptual or coded framework to toggle or compare buyback, dividend, acquisition, and debt paydown options, so the criterion is not met."
+    },
+    {
+      "criterion_id": "integration_visuals",
+      "criterion_name": "Verbal description of visualizations or tables that clarify stakeholder impacts and capital allocation trade-offs.",
+      "category_name": "Integration of Finance and Technology",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Incremental Free Cash Flow Schedule (in $):\"",
+        "\"--- STAGE 4: VALIDATE & VISUALIZE (V) ---\"",
+        "\"Scenario A: Revenue Reduced by 20% (WACC 8.5%)\" and \" - New NPV: ${npv_a:,.2f} ...  - New IRR: {irr_a:.2%} ...\" plus the reflection: \"This scenario results in an NPV of ${npv_a:,.2f} and an IRR of {irr_a:.2%}... Both scenarios result in a positive NPV...\""
+      ],
+      "driver_alignment": "- Visualize (Stage 4) sets up the charts and labels units (e.g., \"$ Millions\").\n- Evolve (Stage 5) verbally reports scenario results (NPV/IRR) and decisions.",
+      "reasoning": "The student labels units and scenarios and verbally summarizes scenario outcomes (NPV/IRR) tied to the visuals, showing conceptual understanding. However, they don’t clearly narrate what the charts/tables show nor connect results to stakeholder impacts or capital allocation trade-offs, so coverage is correct but basic rather than thorough."
+    },
+    {
+      "criterion_id": "integration_multistakeholder_outputs",
+      "criterion_name": "Multi-stakeholder outputs are structured and easy to adjust.",
+      "category_name": "Integration of Finance and Technology",
+      "score": 0.0,
+      "level": "FAIL",
+      "evidence": [
+        "\"Project Parameters (Parameterized for easy updating - KISS Principle)\"",
+        "\"--- STAGE 6: REFLECT (R) - Executive Recommendation ---\"",
+        "\"Final Recommendation: **ACCEPT** the proposed $12 million roastery project.\""
+      ],
+      "driver_alignment": "- Discover/Represent: Parameters are adjustable, supporting ease of updates.\n- Reflect: Provides an executive-focused output, but no separate outputs for other stakeholders.\n- Implement/Evolve: Build and sensitivity outputs are generic, not stakeholder-specific, and no assumptions are logged by stakeholder impact.",
+      "reasoning": "The work shows adjustability via parameterization and delivers an executive summary, but it does not separate outputs by stakeholder group nor log assumptions tied to specific stakeholder impacts. Given the criterion explicitly requires multi-stakeholder structuring and assumption logging, the submission falls short despite correct modeling and sensitivity analysis."
+    },
+    {
+      "criterion_id": "integration_sensitivity_engine",
+      "criterion_name": "Sensitivity/stress testing built into the model.",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"--- STAGE 5: EVOLVE (E) - Sensitivity Analysis ---\"",
+        "\"Scenario A: Revenue Reduced by 20% (WACC 8.5%) ... - New NPV: ... - New IRR: ... (Decision: 'REJECT' if irr_a < WACC else 'ACCEPT')\"",
+        "\"Scenario B1: WACC +2% (10.50%) ... Scenario B2: WACC -2% (6.50%)\"",
+        "\"Sensitivity Analysis Summary: 1. Revenue Drop (20%): ... project remains financially viable ... 2. WACC Change (±2%): ... confirming the project is robust to small changes in financing costs.\""
+      ],
+      "driver_alignment": "- EVOLVE: Implements scenario analysis (revenue -20%, WACC ±2%), recalculating FCF/NPV/IRR and visualizing NPVs.\n- REFLECT: Interprets how sensitivities affect viability and risk (viability under downside, robustness to financing changes).",
+      "reasoning": "The model includes built-in sensitivity testing with multiple scenarios (revenue shock and discount rate shifts), computes decision metrics, and explicitly states accept/reject implications. The reflection explains how these sensitivities affect risk and project robustness, satisfying the criterion at a thorough level despite not varying tax rate."
+    },
+    {
+      "criterion_id": "integration_assumption_logging",
+      "criterion_name": "Data provenance and assumption logging.",
+      "category_name": "Integration of Finance and Technology",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Project Parameters (Parameterized for easy updating - KISS Principle)\"",
+        "\"--- STAGE 1: DEFINE & DISCOVER (D&D) ---\"",
+        "\"Project: Starbucks Flagship Roastery | Duration: 10 Years | Hurdle Rate: 8.50%\""
+      ],
+      "driver_alignment": "- DISCOVER: Centralizes key assumptions and states them up front.\n- IMPLEMENT: Uses the centralized parameters throughout the model.\n- REFLECT: Echoes key assumptions (duration, WACC) in the executive summary.",
+      "reasoning": "The student clearly centralizes assumptions and echoes key ones in outputs (objective, WACC, horizon), satisfying the assumption logging aspect. However, they do not provide verbal/source citations for figures (e.g., no Apple or peer data sources), only noting items are “Defined by the assignment,” so data provenance is insufficient. Hence, this meets the criterion only partially."
+    },
+    {
+      "criterion_id": "driver_define_discover",
+      "criterion_name": "Define & Discover completed before modeling and documented.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"--- STAGE 1: DEFINE & DISCOVER (D&D) ---\"",
+        "\"Objective: Evaluate Starbucks' $12M flagship roastery over 10 years using the 8.5% WACC.\"",
+        "\"--- STAGE 3: IMPLEMENT (I) - Cash Flow Construction ---\""
+      ],
+      "driver_alignment": "The DEFINE & DISCOVER (D) stage is explicitly declared and documents objectives and project parameters. The REPRESENT (R) stage follows, and the IMPLEMENT (I) stage header appears later, demonstrating the D-stage occurred prior to modeling.",
+      "reasoning": "The transcript explicitly labels and documents Stage 1 with a clear objective and parameters, and the implementation/code (modeling) is clearly in Stage 3 later. This meets the strict requirement that Define & Discover be completed and documented before modeling."
+    },
+    {
+      "criterion_id": "driver_represent",
+      "criterion_name": "Represent stage maps approach, options, and data needs prior to implementation.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Formulas & Data Structure:\"",
+        "\"Create a DataFrame to represent the cash flow schedule\"",
+        "\"--- STAGE 3: IMPLEMENT (I) - Cash Flow Construction ---\""
+      ],
+      "driver_alignment": "Represent stage — defined formulas, data structure, and explicit FCF formula before coding. Implement stage — code constructs the DataFrame and populates cash flows per the plan. (Evolve and Validate stages then apply scenarios and compute metrics, showing linkage from plan to outputs.)",
+      "reasoning": "The submission explicitly documents models, formulas, and a data schema in the Represent stage and then implements those artifacts in the Implement stage (cash-flow loop, metric calculations, and scenario tests). This shows a systematic plan-to-implementation workflow consistent with the DRIVER framework."
+    },
+    {
+      "criterion_id": "driver_implement",
+      "criterion_name": "Implement stage executes the planned analysis with traceable steps.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"--- STAGE 3: IMPLEMENT (I) - Cash Flow Construction ---\"",
+        "\"for year in range(1, PROJECT_LIFE + 1):\"",
+        "\"Create a DataFrame to represent the cash flow schedule\""
+      ],
+      "driver_alignment": "Represent (R) — defined formulas and created a DataFrame to hold the planned cash flow structure; Implement (I) — executed a year-by-year loop populating that DataFrame with revenues, OPEX, depreciation, taxes, OCF, and FCF; Validate (V) and Evolve (E) — computed metrics (NPV, IRR, payback), ran validation checks, and performed sensitivity scenarios tying execution back to goals.",
+      "reasoning": "The submission shows a systematic, traceable implementation that follows the Represent plan (DataFrame and formulas) and executes it step-by-step (year loop, intermediate prints). Results are validated and stressed via metrics and sensitivity analysis, demonstrating full alignment with the planned analysis."
+    },
+    {
+      "criterion_id": "driver_validate",
+      "criterion_name": "Validate stage tests calculations, sensitivities, and reasonableness.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\" --- STAGE 4: VALIDATE & VISUALIZE (V) ---\"",
+        "\"PASS: NPV is positive and IRR exceeds WACC.\"",
+        "\"Scenario A: Revenue Reduced by 20% (WACC 8.5%)\""
+      ],
+      "driver_alignment": "Validate (V) stage shows an explicit validation check (NPV/IRR pass/fail); Evolve (E) stage provides sensitivity testing (revenue shock, WACC ±2%); Reflect (R) stage applies those results to a recommendation.",
+      "reasoning": "The student performed internal reasonableness checks and explicit sensitivity analyses (Validate + Evolve), but did not cite or compare outputs to any external tools/sources nor mention specific reasonableness bounds or fixes/adjustments discovered during validation. That meets partial credit under the moderate standard."
+    },
+    {
+      "criterion_id": "driver_evolve",
+      "criterion_name": "Evolve stage identifies improvements or extensions.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"--- STAGE 5: EVOLVE (E) - Sensitivity Analysis ---\"",
+        "\"Scenario A: Revenue Reduced by 20% (WACC 8.5%)\"",
+        "\"Sensitivity Analysis Summary: 1. **Revenue Drop (20%):** ... 2. **WACC Change (±2%):** Changes in the WACC (+/- 2%) only affect the NPV, not the cash flows or IRR.\""
+      ],
+      "driver_alignment": "- EVOLVE: Explicitly labeled and implements sensitivity scenarios (revenue shock, WACC shifts).\n- IMPLEMENT/REPRESENT: Parameterized model and data structures enable scenario recalculation.\n- REFLECT: Links sensitivity results to strategic risks and project recommendation, touching on broader finance implications.",
+      "reasoning": "The student explicitly implemented an Evolve stage with multiple sensitivity scenarios (revenue and WACC), demonstrating partial fulfillment and a connection to financing cost. However, they did not explicitly propose future refinements or extensions (e.g., additional scenario types, Monte Carlo, external data pulls, or a roadmap), so the criterion is not fully met."
+    },
+    {
+      "criterion_id": "driver_reflect",
+      "criterion_name": "Reflect stage distills lessons about incentives and capital allocation.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Based on the Base Case financial model, the proposed flagship roastery should be **ACCEPT** the proposed $12 million roastery project.\"",
+        "\"Financial Justification: The project generates a strong **Net Present Value (NPV) of ${npv:,.2f}**, indicating it is expected to create significant economic value for Starbucks, exceeding the cost of capital.\"",
+        "\"Strategic Fit, Brand, and Risk: Strategically, a flagship roastery aligns with Starbucks' premiumization efforts and brand experience. While the financial results are strong, the primary risk lies in *sustaining the projected high-end revenue streams*, which is highly sensitive to market downturns and competition.\""
+      ],
+      "driver_alignment": "- Reflect (R): Provided an executive recommendation, financial justification, and risk/strategic comments — the explicit Reflect stage content assessed lessons.\n- Evolve (E): Sensitivity analysis results (revenue drop, WACC scenarios) were referenced in the reflection to justify capital allocation robustness.\n- Validate (V): Validation outcome (PASS/ACCEPT) fed into the executive recommendation.",
+      "reasoning": "The student explicitly provides a Reflect-stage executive recommendation grounded in capital-allocation metrics (NPV, IRR) and cites sensitivity results, so there is a clear linkage to capital-allocation decision-making. However, the reflection does not explicitly distill lessons about incentives or link findings to stakeholder tensions (e.g., manager vs. shareholder incentives, supply-chain or community stakeholders), so the criterion is only partially met."
+    },
+    {
+      "criterion_id": "comm_narrative_clarity",
+      "criterion_name": "Narrative explains agency conflicts, trade-offs, and rationale across options.",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Strategically, a flagship roastery aligns with Starbucks' premiumization efforts and brand experience. While the financial results are strong, the primary risk lies in *sustaining the projected high-end revenue streams*, which is highly sensitive to market downturns and competition.\"",
+        "\"Scenario A: Revenue Reduced by 20% (WACC 8.5%)\"",
+        "\"Final Recommendation: **ACCEPT** the proposed $12 million roastery project.\""
+      ],
+      "driver_alignment": "Stage 1 (DEFINE/DISCOVER) set the stakeholder objective and constraints; Stage 3 (IMPLEMENT) produced the quantitative scenarios; Stage 5 (EVOLVE) supplied sensitivity trade-offs (revenue/WACC scenarios); Stage 6 (REFLECT) presented the executive recommendation and risk note — together showing trade-off analysis but no explicit treatment of agency conflicts.",
+      "reasoning": "The submission clearly frames pros (positive NPV/IRR, strategic fit) and cons/uncertainties (revenue sustainability, sensitivity tests), demonstrating trade-off reasoning and stakeholder-oriented framing (PARTIAL). However, it lacks explicit discussion of agency conflicts (e.g., management vs. shareholder incentives, alternative governance/options) and offers a single decisive recommendation without exploring alternative courses of action in depth, so it is not a thorough (PASS) treatment."
+    },
+    {
+      "criterion_id": "comm_assumptions_transparency",
+      "criterion_name": "Transparent assumptions, data sources, and limitations.",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Revenue Schedule (Defined by the assignment)\"",
+        "\"--- STAGE 3: IMPLEMENT (I) - Cash Flow Construction ---\"",
+        "\"While the financial results are strong, the primary risk lies in *sustaining the projected high-end revenue streams*, which is highly sensitive to market downturns and competition.\""
+      ],
+      "driver_alignment": "Discover (defined project parameters and revenue as assignment inputs), Implement (constructed cash flows from those parameters), and Reflect (identified revenue sustainability risk and ran sensitivity scenarios) — together show the DRIVER workflow and partial treatment of assumptions/limits.",
+      "reasoning": "The student clearly documents internal input assumptions (parameters and that revenues are \"defined by the assignment\") and implements them (IMPLEMENT stage) and acknowledges a key model limitation (revenue sustainability) in REFLECT with sensitivity analysis. However, they do not state external data sources or any peer/benchmark figures and provide only a brief note on limitations, so the treatment is correct but incomplete."
+    },
+    {
+      "criterion_id": "comm_visuals",
+      "criterion_name": "Visuals/tables are verbally described to support comprehension.",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Incremental Free Cash Flow Schedule (in $):\"",
+        "\"plt.title('Project Free Cash Flows Over Time ($ Millions)')\"",
+        "\"Scenario A: Revenue Reduced by 20% (WACC 8.5%)\""
+      ],
+      "driver_alignment": "- REPRESENT (Stage 2): created and labeled a cash-flow table.\n- IMPLEMENT (Stage 3): constructed year-by-year FCFs and printed scenario numeric outputs.\n- VALIDATE & VISUALIZE (Stage 4): generated plotted visuals with axis labels/units.\n- REFLECT (Stage 6): discussed scenario results in the executive recommendation.",
+      "reasoning": "The submission includes tables and labeled charts and prints scenario headings and numeric outcomes, showing awareness of units and scenarios (partial verbal signaling). However, the student did not verbally describe or interpret the visuals in prose (no explicit walkthrough of axes/timing, stakeholder or EPS impact tied to the charts), so treatment is correct but limited."
+    },
+    {
+      "criterion_id": "comm_video",
+      "criterion_name": "Video transcript quality and coverage of DRIVER stages with code.",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"--- STAGE 1: DEFINE & DISCOVER (D&D) ---\" \"Objective: Evaluate Starbucks' $12M flagship roastery over 10 years using the 8.5% WACC.\"",
+        "\"--- STAGE 3: IMPLEMENT (I) - Cash Flow Construction ---\" \"for year in range(1, PROJECT_LIFE + 1):\"",
+        "\"Based on the Base Case financial model, the proposed flagship roastery should be **{recommendation}**.\""
+      ],
+      "driver_alignment": "- DEFINE & DISCOVER: clearly states objective and parameters (project scope, WACC, capex).\n- REPRESENT: constructs a labeled DataFrame and formulas (cash flow structure) to organize outputs.\n- IMPLEMENT: shows iterative code building annual cash flows (loop and line-item calculations) and prints results.\n- VALIDATE & VISUALIZE: computes and prints core metrics (NPV, IRR, payback) and a validation check.\n- EVOLVE: includes sensitivity scenarios (revenue scale, WACC) via reusable function.\n- REFLECT: provides an executive recommendation tied to the computed metrics and sensitivity outcomes.",
+      "reasoning": "The transcript presents all DRIVER stages in order with accompanying code and printed outputs (depreciation, FCF schedule, NPV/IRR, validation and recommendation). It includes sensitivity analysis and a clear executive recommendation, demonstrating thorough coverage, focused decision logic, and professional pacing."
+    },
+    {
+      "criterion_id": "comm_recommendations",
+      "criterion_name": "Actionable recommendations grounded in the analysis.",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Final Recommendation: **ACCEPT** the proposed $12 million roastery project.\"",
+        "\"1. **Revenue Drop (20%):** A 20% reduction in all future revenues is the most significant threat. This scenario results in an NPV of ${npv_a:,.2f} and an IRR of {irr_a:.2%}. Since the IRR of {irr_a:.2%} is still **above** the 8.50% WACC, the project remains financially viable even under this aggressive downside risk.\"",
+        "\"Strategic Fit, Brand, and Risk: Strategically, a flagship roastery aligns with Starbucks' premiumization efforts and brand experience. While the financial results are strong, the primary risk lies in *sustaining the projected high-end revenue streams*, which is highly sensitive to market downturns and competition.\""
+      ],
+      "driver_alignment": "- DISCOVER: defined objective and parameters (project scope, WACC) to frame recommendations.\n- IMPLEMENT: built detailed cash flows and ran sensitivity scenarios (rev -20%, WACC ±2%) that underpin the recommendation.\n- REFLECT: produced the executive recommendation and discussed strategic fit and risks.",
+      "reasoning": "The student gives a clear, data-backed preferred option (ACCEPT) and runs relevant sensitivity tests that identify conditions (revenue decline, WACC changes) affecting viability. However, the recommendation lacks actionable triggers/thresholds for changing the decision and provides only high-level stakeholder/strategic discussion without governance, mitigation actions, or stakeholder-impact specifics, so it is correct but incomplete."
+    }
+  ]
+}

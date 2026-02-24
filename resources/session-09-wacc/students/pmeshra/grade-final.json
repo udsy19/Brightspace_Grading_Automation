@@ -1,0 +1,287 @@
+{
+  "student_name": "Princess Meshram",
+  "username": "pmeshra",
+  "org_defined_id": "036277056",
+  "transcript_length": 9567,
+  "overall_grade": 96.66666666666669,
+  "passed_criteria": 16,
+  "partial_criteria": 3,
+  "failed_criteria": 0,
+  "driver_stages_demonstrated": {
+    "D": true,
+    "R": true,
+    "I": true,
+    "V": true,
+    "E": true,
+    "R2": true
+  },
+  "feedback": "Excellent application of the DRIVER framework throughout your work. You clearly demonstrated 6 stages: D, R, I, V, E, R2.\n\n\nSTRENGTHS:\n- Financial Concepts Accuracy: The student demonstrates a thorough, correct understanding of the WACC formula and its components (weights, CAPM for r_e, after-tax r_d), implements these in code with explicit inputs, and interprets results with sensitivity and peer comparisons. The work is detailed, applied (project-level WACCs, debt issuance effect), and aligns with validation and evolution stages, satisfying the PASS criteria.\n- Financial Concepts Accuracy: The student correctly states and implements CAPM, uses appropriate inputs to compute a numeric cost of equity (11.65%), and applies it to both firm- and project-level analyses. The clear formula presentation, coding implementation, and application across scenarios demonstrate thorough understanding consistent with PASS.\n- Financial Concepts Accuracy: The student correctly defines and implements the after-tax cost of debt (r_d*(1−T)), computes the numeric after-tax rate (4.58%), and demonstrates the tax-shield benefit via WACC changes and sensitivity analysis. The clear formula representation, coding implementation, and applied interpretation across scenarios meet the thoroughness required for PASS.\n\n\nAREAS FOR IMPROVEMENT:\n- Following the DRIVER Framework: The student performs external validation by comparing results to peer WACCs and an industry range and interprets the differences, showing purposeful validation. However, they do not cite specific external sources/tools (e.g., databases or websites) used to obtain the peer numbers, so the validation is correct but not fully documented, yielding PARTIAL.\n- Following the DRIVER Framework: The student explicitly recognizes that moderate additional debt can lower WACC and that different projects merit different hurdle rates, demonstrating applied insight. However, the discussion stops short of a thorough optimal-capital-structure analysis (no explicit trade-off discussion, target leverage, quantified limits, or firm-level financing recommendation), so the treatment is correct but incomplete, yielding PARTIAL.\n- Clear Communication and Explanation: The student clearly explains the primary trade-off (debt lowers WACC via a tax shield) and demonstrates it with a sensitivity analysis and interpretation. However, the discussion stops short of a thorough trade-off analysis — it lacks explicit treatment of increased financial distress risk, the mechanics of rising equity cost with leverage (levered beta adjustments), or a quantified optimal leverage target — so the treatment is correct but incomplete, yielding PARTIAL.",
+  "criteria": [
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "WACC Formula and Components: Understanding the weighted average cost of capital calculation",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The weighted average cost of capital is E over V times r e plus D over V times r d times one minus T. E over V and D over V are the market value weights of equity and debt. r e is the cost of equity, which I calculate using CAPM: r e equals the risk-free rate plus beta times the market risk premium.\"",
+        "\"I define all Netflix and market inputs: equity equals 200, current debt equals 13 and then 16, beta equals 1.3, risk-free equals 4.5 percent, market risk premium equals 5.5 percent, cost of debt equals 5.8 percent, and tax rate equals 21 percent. I write a function for cost of equity using CAPM, a function for the after-tax cost of debt, and a function for WACC using the formula I just described.\"",
+        "\"Using those functions, I calculate the key numbers. The cost of equity comes out to about 11.65 percent. The after-tax cost of debt is about 4.58 percent. The current WACC, with equity 200 and debt 13, is about 11.22 percent. The new WACC, after increasing debt to 16 billion, is about 11.13 percent.\""
+      ],
+      "driver_alignment": "Represent — explicit WACC and CAPM formula presentation; clear definition of components and weights.\nImplement — translated formulas into code, set inputs, computed cost of equity, after-tax debt, and WACC.\nValidate/Evolve — compared results to peers/industry, ran sensitivity (WACC vs debt) and computed project-specific WACCs for US vs international.",
+      "reasoning": "The student demonstrates a thorough, correct understanding of the WACC formula and its components (weights, CAPM for r_e, after-tax r_d), implements these in code with explicit inputs, and interprets results with sensitivity and peer comparisons. The work is detailed, applied (project-level WACCs, debt issuance effect), and aligns with validation and evolution stages, satisfying the PASS criteria."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Cost of Equity (CAPM): Calculating equity cost using Capital Asset Pricing Model",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"r e is the cost of equity, which I calculate using CAPM: r e equals the risk-free rate plus beta times the market risk premium.\"",
+        "\"Then I define my CAPM function, which returns r f plus beta times the market risk premium as the cost of equity.\"",
+        "\"The cost of equity comes out to about 11.65 percent.\""
+      ],
+      "driver_alignment": "Represent — explicitly states the CAPM formula and components.  \nImplement — defines inputs and a CAPM function in code and computes the numeric result.  \nValidate/Evolve — applies CAPM to firm and project-specific betas (US vs international) and uses results in WACC comparisons.",
+      "reasoning": "The student correctly states and implements CAPM, uses appropriate inputs to compute a numeric cost of equity (11.65%), and applies it to both firm- and project-level analyses. The clear formula presentation, coding implementation, and application across scenarios demonstrate thorough understanding consistent with PASS."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Cost of Debt: After-tax cost of debt and the tax shield benefit",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"r d is the pre-tax cost of debt, which is the 5.8 percent bond yield. Then I multiply r d by one minus the tax rate to capture the tax shield on interest.\"",
+        "\"I define an after-tax cost of debt function as r d times one minus the tax rate.\"",
+        "\"The after-tax cost of debt is about 4.58 percent.\" / \"When I add some cheap, tax-deductible debt, WACC falls slightly from 11.22 percent to 11.13 percent. That matches the idea that moderate leverage plus the tax shield can reduce the blended cost of capital.\""
+      ],
+      "driver_alignment": "Represent — explicitly states pre-tax r_d and the (1 − T) tax shield adjustment.  \nImplement — implements an after-tax cost-of-debt function and computes the numeric after-tax rate.  \nValidate/Evolve — applies the after-tax debt in WACC calculations and a debt-sensitivity analysis, interpreting the tax-shield effect on WACC.",
+      "reasoning": "The student correctly defines and implements the after-tax cost of debt (r_d*(1−T)), computes the numeric after-tax rate (4.58%), and demonstrates the tax-shield benefit via WACC changes and sensitivity analysis. The clear formula representation, coding implementation, and applied interpretation across scenarios meet the thoroughness required for PASS."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Tax Shield Effect: How interest deductibility reduces effective cost of debt",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"r d is the pre-tax cost of debt, which is the 5.8 percent bond yield. Then I multiply r d by one minus the tax rate to capture the tax shield on interest.\"",
+        "\"I define an after-tax cost of debt function as r d times one minus the tax rate.\"",
+        "\"The after-tax cost of debt is about 4.58 percent.\" / \"When I add some cheap, tax-deductible debt, WACC falls slightly from 11.22 percent to 11.13 percent. That matches the idea that moderate leverage plus the tax shield can reduce the blended cost of capital.\""
+      ],
+      "driver_alignment": "Represent — explicitly states the tax-shield adjustment (r_d*(1−T)).  \nImplement — codes an after-tax cost-of-debt function and computes the numeric after-tax rate.  \nValidate/Evolve — applies the tax-shield in WACC calculations, sensitivity analysis, and interprets its effect on WACC.",
+      "reasoning": "The student correctly explains and implements the tax-shield (r_d*(1−T)), computes the after-tax cost of debt (4.58%), and demonstrates its impact on WACC with numerical examples and sensitivity analysis. The combination of formula, code implementation, numeric result, and interpretation meets the thoroughness required for PASS."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "WACC as Hurdle Rate: Using WACC for investment decision-making",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"WACC is basically the average price of money that Netflix pays to shareholders and lenders. It's the minimum return Netflix should earn on new projects so that both groups are satisfied.\"",
+        "\"I plug these betas into CAPM and then into the WACC formula. That gives me a US project WACC of about 11.22 percent... and an international project WACC of about 12.25 percent... That means safer, core US projects only need to beat about 11.2 percent to create value, while riskier international projects must beat around 12.3 percent...\"",
+        "\"I use these functions to calculate Netflix's current WACC and its new WACC after issuing the extra 3 billion of debt... When I add some cheap, tax-deductible debt, WACC falls slightly from 11.22 percent to 11.13 percent. That matches the idea that moderate leverage plus the tax shield can reduce the blended cost of capital.\""
+      ],
+      "driver_alignment": "Represent — defines WACC conceptually as the project hurdle and shows the formula.  \nImplement — computes firm and project-specific WACCs and runs sensitivity analysis.  \nValidate/Evolve — compares WACC to peers, interprets hurdle implications for project selection, and discusses capital-structure choices to lower the hurdle.",
+      "reasoning": "The student clearly frames WACC as the investment hurdle, computes numeric WACCs for firm and project-level decisions, and uses sensitivity and peer comparisons to interpret which projects will clear the hurdle and how funding choices affect it. This applied, multi-stage treatment is thorough and meets PASS standards."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Correct WACC calculation with all components",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I define an after-tax cost of debt function as r d times one minus the tax rate. I also define a WACC function that takes equity, debt, the cost of equity and the after-tax cost of debt, and computes E over V times r e plus D over V times r d after tax.\"",
+        "\"Still in Represent, I outline my implementation plan for Python. I define all Netflix and market inputs: equity equals 200, current debt equals 13 and then 16, beta equals 1.3, risk-free equals 4.5 percent, market risk premium equals 5.5 percent, cost of debt equals 5.8 percent, and tax rate equals 21 percent.\"",
+        "\"The cost of equity comes out to about 11.65 percent. The after-tax cost of debt is about 4.58 percent. The current WACC, with equity 200 and debt 13, is about 11.22 percent. The new WACC, after increasing debt to 16 billion, is about 11.13 percent.\""
+      ],
+      "driver_alignment": "Represent — explicitly states the WACC formula and component calculations (CAPM, after-tax debt, market-value weights).  \nImplement — describes personal coding steps in Colab (defining inputs, writing CAPM/after-tax/WACC functions, running calculations and plots).  \nValidate — checks numeric outputs against peers/industry and interprets results.",
+      "reasoning": "The student explicitly documents formula components, shows block-level implementation (CAPM function, after-tax debt function, WACC function), provides numeric outputs from their run, and interprets/validates results—demonstrating personal execution and understanding required by the strict technical standard."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "CAPM implementation for cost of equity",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Then I define my CAPM function, which returns r f plus beta times the market risk premium as the cost of equity.\"",
+        "\"Now I move into the Implement stage and switch to my Colab notebook... First I define all the input variables... Then I define my CAPM function...\"",
+        "\"The cost of equity comes out to about 11.65 percent.\""
+      ],
+      "driver_alignment": "Represent — states the CAPM formula and required inputs explicitly.  \nImplement — documents using a Colab notebook, defining inputs and implementing a CAPM function that returns rf + beta*MRP.  \nValidate — reports the computed numeric output (11.65%) and uses it in downstream WACC validation/sensitivity analysis.",
+      "reasoning": "The student explicitly implemented a CAPM function, listed inputs, executed the code in Colab, and reported/validated the numeric cost-of-equity result. The block-level description of the function's purpose and the demonstrated run-output satisfy the strict technical requirements for PASS."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Market value determination for weights",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I use market values of equity and debt for the capital structure weights.\"",
+        "\"First I define all the input variables from the assignment: equity 200, current debt 13, new debt 16, beta 1.3, risk-free rate 0.045, market risk premium 0.055, cost of debt 0.058, and tax rate 0.21.\"",
+        "\"I write a function for cost of equity using CAPM, a function for the after-tax cost of debt, and a function for WACC... The current WACC, with equity 200 and debt 13, is about 11.22 percent.\""
+      ],
+      "driver_alignment": "Represent — explicitly states choice to use market-value weights and shows the WACC formula.  \nImplement — documents Colab execution: defined market-value inputs and implemented WACC-related functions.  \nValidate — runs the code, reports numeric WACC, and compares/validates results against peers/industry.",
+      "reasoning": "The student explicitly selected market values for E and D, provided numeric market-value inputs, implemented and ran WACC functions in Colab, and reported/validated the output—meeting the strict requirement for personal execution, block-level implementation, and ownership of the market-value weighting decision."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Sensitivity analysis on key inputs",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"After that I run a simple sensitivity analysis where I vary total debt, recompute WACC for each level, and plot WACC versus debt.\"",
+        "\"Now I move into the Implement stage and switch to my Colab notebook... First I define all the input variables... Then I define my CAPM function... I define an after-tax cost of debt function... I also define a WACC function...\"",
+        "\"Because I keep the cost of equity and cost of debt constant in this simple model and only apply the tax shield, the line slopes downward. As Netflix adds more cheap, tax-deductible debt, the average cost of capital falls.\""
+      ],
+      "driver_alignment": "Represent — planned the sensitivity analysis and identified which inputs to vary (debt, beta).  \nImplement — executed in Colab, defined input variables and modular functions (CAPM, after-tax debt, WACC), and ran the debt sweep/plot.  \nValidate — interpreted numeric results and the plotted relationship to draw conclusions about leverage and WACC.",
+      "reasoning": "The student explicitly implemented and ran a sensitivity analysis (debt sweep) in Colab, documented the functions and inputs used, and interpreted the plotted results; this demonstrates personal execution, block-level understanding, and validation of outputs required by the strict technical standard."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Any Automation of WACC calculations",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I write a function for cost of equity using CAPM, a function for the after-tax cost of debt, and a function for WACC using the formula I just described.\"",
+        "\"Now I move into the Implement stage and switch to my Colab notebook. First I define all the input variables... Then I define my CAPM function...\"",
+        "\"After that I run a simple sensitivity analysis where I vary total debt, recompute WACC for each level, and plot WACC versus debt.\""
+      ],
+      "driver_alignment": "Represent — planned modular functions (CAPM, after-tax debt, WACC) and reuse for scenarios.  \nImplement — executed the automation in Colab, defined inputs and implemented functions.  \nValidate/Evolve — used automated outputs in sensitivity analysis and project-level WACC comparisons.",
+      "reasoning": "The student clearly automated WACC calculations by implementing reusable functions in Colab, running them to produce numeric results, and applying them across scenarios (debt sweep and project-specific WACCs). This applied automation with validation and reuse meets the PASS standard."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Define & Discover: Clear understanding of cost of capital problem and Netflix financing decision",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"My job is to calculate Netflix's current WACC, see how WACC changes after adding that 3 billion of debt, decide if US content versus international content should use different discount rates, compare Netflix's WACC to Disney's 8.2 percent and Amazon's 9.5 percent, and then recommend how Netflix should fund the 5 billion, whether with more debt or more equity.\"",
+        "\"Next I summarize the numbers given in the assignment. Netflix's equity value is about 200 billion dollars. The market value of debt is 13 billion dollars. The equity beta is 1.3... The risk-free rate is 4.5 percent and the market risk premium is 5.5 percent. If Netflix issues 3 billion more in debt, total debt will be 16 billion.\"",
+        "\"I also state my assumptions. I use market values of equity and debt for the capital structure weights. I assume the new 3 billion of debt comes at roughly the same 5.8 percent yield. I assume equity stays around 200 billion in my scenarios, and there is no preferred stock or convertibles.\""
+      ],
+      "driver_alignment": "Discover — explicitly restates the problem, objectives, and decision question (5B investment, 3B debt, funding choice).  \nRepresent — translates the discovery into concrete inputs and assumptions (market values, rates, beta) to be used in analysis.",
+      "reasoning": "The student clearly and explicitly defines the cost-of-capital problem, outlines the decision to be made, and lists the numeric inputs and assumptions needed to proceed, satisfying the Define & Discover requirements. The documented objectives and assumptions show ownership and readiness to implement the analytical steps."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Represent: Quality framework mapping capital structure components to WACC",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The weighted average cost of capital is E over V times r e plus D over V times r d times one minus T. E over V and D over V are the market value weights of equity and debt. r e is the cost of equity, which I calculate using CAPM: r e equals the risk-free rate plus beta times the market risk premium. r d is the pre-tax cost of debt, which is the 5.8 percent bond yield. Then I multiply r d by one minus the tax rate to capture the tax shield on interest.\"",
+        "\"Still in Represent, I outline my implementation plan for Python. I define all Netflix and market inputs: equity equals 200, current debt equals 13 and then 16, beta equals 1.3, risk-free equals 4.5 percent, market risk premium equals 5.5 percent, cost of debt equals 5.8 percent, and tax rate equals 21 percent. I write a function for cost of equity using CAPM, a function for the after-tax cost of debt, and a function for WACC using the formula I just described.\"",
+        "\"Because I keep the cost of equity and cost of debt constant in this simple model and only apply the tax shield, the line slopes downward. As Netflix adds more cheap, tax-deductible debt, the average cost of capital falls.\""
+      ],
+      "driver_alignment": "Represent — explicitly maps each capital-structure component to WACC terms (E/V, D/V, r_e via CAPM, r_d pre-tax, tax shield).  \nImplement — translates the representation into concrete inputs and modular functions (CAPM, after-tax debt, WACC).  \nValidate — uses the mapping in sensitivity analysis to interpret how changes in debt affect WACC.",
+      "reasoning": "The student explicitly presents the WACC formula and clearly maps capital-structure components (market-value weights, CAPM cost of equity, pre-tax cost of debt, tax shield) to implementation steps and inputs, then implements these in code and interprets results. This block-level mapping and practical application satisfy the strict Represent requirements."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Implement: Systematic calculation of WACC with sensitivity analysis",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"First I define all the input variables from the assignment: equity 200, current debt 13, new debt 16, beta 1.3, risk-free rate 0.045, market risk premium 0.055, cost of debt 0.058, and tax rate 0.21. Then I define my CAPM function...\"",
+        "\"After that I run a simple sensitivity analysis where I vary total debt, recompute WACC for each level, and plot WACC versus debt.\"",
+        "\"The cost of equity comes out to about 11.65 percent. The after-tax cost of debt is about 4.58 percent. The current WACC, with equity 200 and debt 13, is about 11.22 percent. The new WACC, after increasing debt to 16 billion, is about 11.13 percent.\""
+      ],
+      "driver_alignment": "Implement — documents input definition, modular functions (CAPM, after-tax debt, WACC) and Colab execution.  \nRepresent — mapped plan to compute firm and project WACCs and to run scenarios.  \nValidate — ran sensitivity sweep and plotted results, then interpreted outcomes.",
+      "reasoning": "The student follows a clear, systematic implementation: they specified inputs, built reusable functions, executed calculations in Colab, and performed a structured sensitivity analysis (debt sweep) with plotted results and interpretation. This organized workflow and multiple outputs (numeric results and plot) satisfy the Implement criterion."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Validate: Cross-checking with industry benchmarks and peer companies",
+      "category_name": "Following the DRIVER Framework",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"I compare these to industry and peers.\"",
+        "\"Finally, I note peer benchmarks: Disney's WACC of 8.2 percent, Amazon's WACC of 9.5 percent, and the media industry WACC range of 8 to 10 percent. I will use these later to check whether my WACC estimate for Netflix makes sense.\"",
+        "\"From my code I have cost of equity around 11.65 percent... My estimate for Netflix, around 11.2 percent, is higher than all of these, which makes sense.\""
+      ],
+      "driver_alignment": "Validate — student explicitly compares computed WACC to peer benchmarks and an industry range and uses that comparison to judge plausibility.",
+      "reasoning": "The student performs external validation by comparing results to peer WACCs and an industry range and interprets the differences, showing purposeful validation. However, they do not cite specific external sources/tools (e.g., databases or websites) used to obtain the peer numbers, so the validation is correct but not fully documented, yielding PARTIAL."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "Evolve: Recognition of WACC applications in capital budgeting and valuation",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I plug these betas into CAPM and then into the WACC formula. That gives me a US project WACC of about 11.22 percent... and an international project WACC of about 12.25 percent... That means safer, core US projects only need to beat about 11.2 percent to create value, while riskier international projects must beat around 12.3 percent...\"",
+        "\"Carefully adding more debt should lower Netflix's WACC, at least up to a point, and make more projects positive NPV.\"",
+        "\"WACC is basically the average price of money that Netflix pays to shareholders and lenders. It's the minimum return Netflix should earn on new projects so that both groups are satisfied.\""
+      ],
+      "driver_alignment": "Evolve — explicitly applies WACC to project-level decision rules (divisional/ project-specific WACCs) and capital-structure strategy.  \nRepresent/Implement — computed project WACCs via CAPM inputs and applied them in calculations.  \nValidate — interpreted how changes in WACC affect project selection (NPV) and compared to peers.",
+      "reasoning": "The student explicitly demonstrates how WACC is used as a hurdle rate in capital budgeting (firm- and project-level WACCs), computes and contrasts US vs international project rates, and links capital-structure changes to project NPV outcomes. This clear, actionable Evolve-stage reasoning meets the strict requirement for explicit demonstration."
+    },
+    {
+      "criterion_id": "criterion_6",
+      "criterion_name": "Reflect: Insights on optimal capital structure and financing strategy",
+      "category_name": "Following the DRIVER Framework",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Carefully adding more debt should lower Netflix's WACC, at least up to a point, and make more projects positive NPV.\"",
+        "\"Using project-specific WACCs helped me connect finance theory to strategy: US content can use the firm WACC, while riskier international content should use a higher discount rate.\"",
+        "\"I learned how to translate the WACC and CAPM formulas from class into simple Python functions and see how changing inputs like debt level and beta change the company's hurdle rate.\""
+      ],
+      "driver_alignment": "Evolve — student applies WACC to capital-budgeting and suggests leverage can lower WACC and increase NPV.  \nReflect — student summarizes lessons learned about capital structure and project-level discounting.  \nRepresent/Implement — provided inputs, computed scenarios, and used results to form strategic observations.",
+      "reasoning": "The student explicitly recognizes that moderate additional debt can lower WACC and that different projects merit different hurdle rates, demonstrating applied insight. However, the discussion stops short of a thorough optimal-capital-structure analysis (no explicit trade-off discussion, target leverage, quantified limits, or firm-level financing recommendation), so the treatment is correct but incomplete, yielding PARTIAL."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Clear explanation of WACC calculation methodology",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The weighted average cost of capital is E over V times r e plus D over V times r d times one minus T. E over V and D over V are the market value weights of equity and debt. r e is the cost of equity, which I calculate using CAPM: r e equals the risk-free rate plus beta times the market risk premium.\"",
+        "\"Still in Represent, I outline my implementation plan for Python. I define all Netflix and market inputs: equity equals 200, current debt equals 13 and then 16, beta equals 1.3, risk-free equals 4.5 percent, market risk premium equals 5.5 percent, cost of debt equals 5.8 percent, and tax rate equals 21 percent. I write a function for cost of equity using CAPM, a function for the after-tax cost of debt, and a function for WACC using the formula I just described.\"",
+        "\"The cost of equity comes out to about 11.65 percent. The after-tax cost of debt is about 4.58 percent. The current WACC, with equity 200 and debt 13, is about 11.22 percent. The new WACC, after increasing debt to 16 billion, is about 11.13 percent.\""
+      ],
+      "driver_alignment": "Represent — clearly states the WACC formula and maps each capital-structure component to the formula.  \nImplement — documents inputs, functions (CAPM, after-tax debt, WACC), and execution plan in code.  \nValidate/Reflect — computes numeric outputs and uses them in sensitivity and project-level analyses.",
+      "reasoning": "The student presents a clear, stepwise methodology (formula, component definitions, assumptions), implements it systematically (explicit inputs and modular functions), and reports numeric results used for interpretation. The combination of conceptual mapping and applied calculations demonstrates a thorough, well-explained WACC methodology."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Logical presentation of capital structure trade-offs",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Debt is cheaper than equity, and because interest is tax-deductible, the effective after-tax cost of debt is even lower, about 4.6 percent in my model.\"",
+        "\"After that I run a simple sensitivity analysis where I vary total debt, recompute WACC for each level, and plot WACC versus debt... the line slopes downward.\"",
+        "\"Carefully adding more debt should lower Netflix's WACC, at least up to a point, and make more projects positive NPV.\""
+      ],
+      "driver_alignment": "Represent — maps tax shield and debt/equity roles into the WACC framework.  \nImplement — executes a debt-sweep sensitivity (WACC vs debt) to illustrate effects.  \nEvolve/Validate — interprets outcomes and compares to peers, noting potential benefits of added leverage.",
+      "reasoning": "The student clearly explains the primary trade-off (debt lowers WACC via a tax shield) and demonstrates it with a sensitivity analysis and interpretation. However, the discussion stops short of a thorough trade-off analysis — it lacks explicit treatment of increased financial distress risk, the mechanics of rising equity cost with leverage (levered beta adjustments), or a quantified optimal leverage target — so the treatment is correct but incomplete, yielding PARTIAL."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Effective video presentation demonstrating understanding",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"My job is to calculate Netflix's current WACC, see how WACC changes after adding that 3 billion of debt, decide if US content versus international content should use different discount rates, compare Netflix's WACC to Disney's 8.2 percent and Amazon's 9.5 percent, and then recommend how Netflix should fund the 5 billion...\"",
+        "\"The weighted average cost of capital is E over V times r e plus D over V times r d times one minus T. E over V and D over V are the market value weights of equity and debt. r e is the cost of equity, which I calculate using CAPM...\"",
+        "\"The cost of equity comes out to about 11.65 percent. The after-tax cost of debt is about 4.58 percent. The current WACC, with equity 200 and debt 13, is about 11.22 percent. The new WACC, after increasing debt to 16 billion, is about 11.13 percent.\""
+      ],
+      "driver_alignment": "Discover — clear statement of the problem and objectives.  \nRepresent — concise explanation of formulas and inputs.  \nImplement — described coding approach, inputs, and computed outputs.  \nValidate/Reflect — compared to peers, ran sensitivity, and summarized learnings.",
+      "reasoning": "The video transcript presents a well-structured, logical walkthrough: it restates the assignment, explains the WACC methodology, documents inputs and implementation, reports numeric results, runs sensitivity checks, and reflects on implications. This clear, complete presentation demonstrates effective communication of both methodology and interpretation, meeting PASS."
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "student_name": "Anvitha Mandhadi",
+  "username": "amandhad",
+  "org_defined_id": "036568738",
+  "transcript_length": 9100,
+  "overall_grade": 94.87500000000001,
+  "passed_criteria": 21,
+  "partial_criteria": 3,
+  "failed_criteria": 0,
+  "driver_stages_demonstrated": {
+    "D": true,
+    "R": true,
+    "I": true,
+    "V": true,
+    "E": true,
+    "R2": true
+  },
+  "feedback": "Excellent application of the DRIVER framework throughout your work. You clearly demonstrated 6 stages: D, R, I, V, E, R2.\n\n\nSTRENGTHS:\n- Financial Concepts Accuracy: The student clearly constructs a DCF from projected unlevered free cash flows, normalizes terminal cash flow, and applies an explicit unlevered WACC (9%) with sensitivity testing. This demonstrates a thorough, correct introductory treatment meeting the criterion.\n- Financial Concepts Accuracy: The student explicitly lists and models EBIT/NOPAT flow items (depreciation, capex, working capital, taxes) and constructs normalized unlevered free cash flows in the DCF. Their use of unlevered WACC and enterprise-value framing demonstrates understanding that FCF is cash available to all providers of capital, meeting the thoroughness required for a PASS.\n- Financial Concepts Accuracy: The student explicitly implements a terminal value calculation (normalized steady‑state FCF then Gordon growth) and documents key checks (g < WACC). They also report terminal value contribution and run sensitivities to WACC and growth, demonstrating awareness of the terminal value's dominant influence—meeting the thoroughness required for PASS.\n\n\nAREAS FOR IMPROVEMENT:\n- Financial Concepts Accuracy: The student demonstrates awareness of net debt and consistently reports and uses enterprise value, but the submission does not explicitly show subtracting net debt to derive Equity Value or dividing by share count to produce a Price Per Share. Thus the understanding is correct but incomplete — PARTIAL.\n- Following the DRIVER Framework: The student clearly defines the valuation object (Panera Bread), the acquisition context, and repeatedly names KKR as the financial sponsor—satisfying those elements of problem framing. However, the submission does not explicitly identify \"Management\" (or equivalent internal stakeholder) as required; under the strict DRIVER standards this omission prevents a full pass.\n- Following the DRIVER Framework: The student clearly performed external market validation using trading comps and precedent transactions and ran sensitivity/scenario checks (Validate and Represent stages). However they did not name specific external data sources, vendors, or tools (e.g., Bloomberg, Capital IQ, specific companies), so external validation is present but not fully specific — hence PARTIAL.",
+  "criteria": [
+    {
+      "criterion_id": "concept_dcf_methodology",
+      "criterion_name": "Discounted Cash Flow (DCF) Methodology (Introductory Level).",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The run DCF function builds a 5-year projection for any scenario and buyer type.\"",
+        "\"I used a unlevered whack of 9% which avoids distortion from buyer specific capital structures.\"",
+        "\"So this normalized steadystate cash flow is then grown at a terminal growth rate and capitalized using the Gordon growth formula.\" / \"to arrive at unlevered free cash flow.\""
+      ],
+      "driver_alignment": "- Implement: built and described a 5-year DCF projection function and cash flow mechanics.\n- Represent: model structured around drivers (store count, sales per store) to compute unlevered free cash flow.\n- Validate/Reflect: terminal normalization, Gordon formula, and sensitivities (including WACC) used to validate valuation.",
+      "reasoning": "The student clearly constructs a DCF from projected unlevered free cash flows, normalizes terminal cash flow, and applies an explicit unlevered WACC (9%) with sensitivity testing. This demonstrates a thorough, correct introductory treatment meeting the criterion."
+    },
+    {
+      "criterion_id": "concept_fcf_calculation",
+      "criterion_name": "Free Cash Flow Calculation concept.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Essentially revenue is calculated as store count times sales per store ... explicitly model maintenance capex, growth capex per new store depreciation, working capital investment and taxes to arrive at unlevered free cash flow.\"",
+        "\"I structured the analysis using the driver framework define discover represent implement validate and reflect...\"",
+        "\"I used a unlevered whack of 9% which avoids distortion from buyer specific capital structures.\""
+      ],
+      "driver_alignment": "- Represent: explicit breakdown of FCF components (EBIT/NOPAT flow via depreciation, capex, working capital, taxes).\n- Implement: run DCF function builds multi-year unlevered FCF projections.\n- Discover/Define: choice of unlevered WACC and enterprise-value focus shows FCF is treated as cash to all capital providers.\n- Reflect: conclusions reference valuation grounded in free cash flow generation.",
+      "reasoning": "The student explicitly lists and models EBIT/NOPAT flow items (depreciation, capex, working capital, taxes) and constructs normalized unlevered free cash flows in the DCF. Their use of unlevered WACC and enterprise-value framing demonstrates understanding that FCF is cash available to all providers of capital, meeting the thoroughness required for a PASS."
+    },
+    {
+      "criterion_id": "concept_terminal_value",
+      "criterion_name": "Terminal Value Concept.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Instead of blindly growing a year five free cash flow I remove growth capex from year 5 to estimate a steady state free cash flow. So this reflects the assumption that Panera cannot expand at the same price or same pace forever avoiding the overstating terminal value. And so this normalized steadystate cash flow is then grown at a terminal growth rate and capitalized using the Gordon growth formula.\"",
+        "\"I applied terminal growth rate of 2.5% with an explicit quadril that terminal growth must remain below whack to prevent mathematical and economic inconsistency.\"",
+        "\"For each case, I report the enterprise value implied LTM EV to EBIDA multiples and terminal value contribution. I then perform a two-way sensitivity analysis across the whack and the terminal growth. And this demonstrates how sensitive valuation is to macro assumptions...\""
+      ],
+      "driver_alignment": "- Discover: defined terminal growth (2.5%) and WACC relationship (g < WACC) as core assumptions.\n- Represent/Implement: implemented terminal value via normalized steady‑state FCF and Gordon growth in the DCF code.\n- Validate/Reflect: reported terminal value contribution and ran sensitivity analyses showing TV's impact on total value.",
+      "reasoning": "The student explicitly implements a terminal value calculation (normalized steady‑state FCF then Gordon growth) and documents key checks (g < WACC). They also report terminal value contribution and run sensitivities to WACC and growth, demonstrating awareness of the terminal value's dominant influence—meeting the thoroughness required for PASS."
+    },
+    {
+      "criterion_id": "concept_multi_stage_growth",
+      "criterion_name": "Multi-Stage Growth reasoning.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"So the run DCF function builds a 5-year projection for any scenario and buyer type.\"",
+        "\"I structured the analysis using the driver framework define discover represent implement validate and reflect and I use a triangle value triangulate value using a DCF trading comps precedent transaction scenario analysis sensitivities and a final football field synthesis.\"",
+        "\"So instead of blindly growing a year five free cash flow I remove growth capex from year 5 to estimate a steady state free cash flow.\""
+      ],
+      "driver_alignment": "- Discover: specified WACC and terminal growth constraint (terminal growth must remain below WACC).\n- Implement/Represent: implemented an explicit 5-year projection driven by store-level drivers and scenario-specific growth schedules.\n- Reflect/Validate: normalized terminal value and ran sensitivity analysis across WACC and terminal growth to validate assumptions.",
+      "reasoning": "The student clearly distinguishes an explicit 5-year forecast from a normalized terminal period and documents the mechanics (removing growth capex, then applying a 2.5% terminal growth below WACC). They also implement scenario-specific short-term growth schedules and sensitivity testing, demonstrating thorough, reasonable multi-stage growth reasoning."
+    },
+    {
+      "criterion_id": "concept_ev_vs_equity",
+      "criterion_name": "Enterprise Value vs. Equity Value Bridge.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Finally, I define Panera's LTM operating profile revenue of $6 billion IBIDA of $9 million net income of $400 million and net debt of $500 million.\"",
+        "\"I convert all multip all valuation outputs into enterprise value ensuring consistency with the DCF.\"",
+        "\"So, our disciplined walkway price is 12.8 billion in enterprise value, which corresponds to 14.2 times LTM EV to Ebido multiple.\""
+      ],
+      "driver_alignment": "- Discover: identified net debt explicitly (supports awareness of EV ↔ equity bridge).\n- Implement: converted multiples into enterprise value and ran DCF scenarios (shows working with EV).\n- Reflect: reported final recommended enterprise value (applies results to decision).",
+      "reasoning": "The student demonstrates awareness of net debt and consistently reports and uses enterprise value, but the submission does not explicitly show subtracting net debt to derive Equity Value or dividing by share count to produce a Price Per Share. Thus the understanding is correct but incomplete — PARTIAL."
+    },
+    {
+      "criterion_id": "concept_wacc_application",
+      "criterion_name": "WACC Application.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I used a unlevered whack of 9% which avoids distortion from buyer specific capital structures.\"",
+        "\"So the run DCF function builds a 5-year projection for any scenario and buyer type.\"",
+        "\"I then perform a two-way sensitivity analysis across the whack and the terminal growth.\""
+      ],
+      "driver_alignment": "- Discover: explicitly states the core assumption (unlevered WACC = 9%) when defining the problem and assumptions.\n- Implement/Represent: applies that WACC within the run DCF projection to value enterprise cash flows.\n- Validate: runs sensitivity analysis on WACC and terminal growth and triangulates with market comps/transactions.",
+      "reasoning": "The student clearly applies an unlevered WACC (9%) as the discount rate for the FCFF-based DCF and justifies using an unlevered rate to avoid buyer-specific capital structure distortion. They also validate the choice via sensitivity testing and market triangulation, demonstrating thorough and defensible treatment of the WACC application."
+    },
+    {
+      "criterion_id": "concept_comparables",
+      "criterion_name": "Comparable Methodology (Introductory Level).",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I use a pure set of seven comparable restaurant companies and extract first quartile median and third quartile EV to IBITA and PE multiples.\"",
+        "\"I structured the analysis using the driver framework define discover represent implement validate and reflect and I use a triangle value triangulate value using a DCF trading comps precedent transaction scenario analysis sensitivities and a final football field synthesis.\"",
+        "\"I convert all multip all valuation outputs into enterprise value ensuring consistency with the DCF. President transaction are anchored at 12 to 15 times IBIDA which establishes a realistic acquisition range observed in the market.\""
+      ],
+      "driver_alignment": "Represent — built the comparable/multiple methodology into the model; Validate — used trading comps and precedent transactions to triangulate and test the DCF; Reflect — synthesized multiples into the football-field and final recommendation.",
+      "reasoning": "The student clearly selected a relevant peer set (seven restaurant comparables), applied EV/EBITDA and P/E multiples, converted multiples into enterprise value, and anchored precedent-transaction multiples (12–15x EBITDA). The depth (quartiles, conversion consistency, and integration into a football-field triangulation) demonstrates a thorough, competent comparable methodology consistent with a PASS."
+    },
+    {
+      "criterion_id": "concept_triangulation",
+      "criterion_name": "Valuation Triangulation / Sensitivity.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I structured the analysis using the driver framework define discover represent implement validate and reflect and I use a triangle value triangulate value using a DCF trading comps precedent transaction scenario analysis sensitivities and a final football field synthesis.\"",
+        "\"I then perform a two-way sensitivity analysis across the whack and the terminal growth. And this demonstrates how sensitive valuation is to macro assumptions and confirms so that my recommendation is not driven by a single optimistic input.\"",
+        "\"We recommend a financial bid range of 11.69 billion to 12.80 billion in enterprise value. The strategic buyer base case is 12.58 billion which implies a synergy value of 0.50–0.65 billion relative to the financial buyer valuation.\""
+      ],
+      "driver_alignment": "- Discover: defined the valuation question and key assumptions (buyer types, WACC, terminal growth).\n- Implement: built and ran a DCF model and scenario-specific projections.\n- Validate: ran trading comps and precedent transactions, two-way sensitivity analyses, and synthesized results in a football-field.\n- Reflect: translated triangulated results into a clear recommended bid range and rationale.",
+      "reasoning": "The student clearly triangulated valuation using DCF, trading comps, and precedent transactions, ran sensitivity analyses, and explicitly justified which valuation (financial-buyer DCF constrained by precedents, below strategic-synergy value) is most appropriate for KKR. This is a thorough, well-supported treatment meeting the PASS standard."
+    },
+    {
+      "criterion_id": "tech_dcf_model",
+      "criterion_name": "DCF Model Structure.",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"So the run DCF function builds a 5-year projection for any scenario and buyer type.\"",
+        "\"I structured the analysis using the driver framework define discover represent implement validate and reflect and I use a triangle value triangulate value using a DCF trading comps precedent transaction scenario analysis sensitivities and a final football field synthesis.\"",
+        "\"So, our disciplined walkway price is 12.8 billion in enterprise value, which corresponds to 14.2 times LTM EV to Ebido multiple.\""
+      ],
+      "driver_alignment": "Represent — model built from store-level drivers (projections); Implement — run DCF function implements projection and valuation logic; Validate — scenario runs, sensitivities and comps check terminal/WACC assumptions; Reflect — produces final enterprise value recommendation.",
+      "reasoning": "The submission explicitly describes projection mechanics (5-year driver-based forecast), terminal value normalization and discounting assumptions (unlevered WACC stated elsewhere in transcript), and reports specific enterprise value outcomes (e.g., $12.8B and $11.93B). Coverage is thorough and concrete across projections, TV, WACC, PV/EV, so it meets the PASS standard."
+    },
+    {
+      "criterion_id": "tech_projection_logic",
+      "criterion_name": "Projection Logic.",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "[\"So the run DCF function builds a 5-year projection for any scenario and buyer type.\"]",
+        "[\"the value model is structured around a store level operating driver.\"]",
+        "[\"So, first, store count grows based on the scenario specific assumptions based upside or downside, which directly affects the revenue. The sales per store grows each year using a defined growth schedule scaled up or down by scenario. Ibida is calculated by using margin expansion assumptions again adjusted by scenario.\"]"
+      ],
+      "driver_alignment": "Represent — model built around store-level drivers (revenue = stores × sales per store) showing projection logic.\nImplement — run DCF builds the 5-year projection and applies scenario-specific growth/margin schedules.\nValidate — student runs all combinations of buyer type and operating scenario to test evolving projections.",
+      "reasoning": "The student explicitly implements a 5-year projection and demonstrates dynamic revenue and EBITDA evolution (store growth, sales-per-store schedules, margin expansion, synergies) and normalizes terminal value. Scenario runs and validation further confirm the projections are not static, meeting the criterion thoroughly."
+    },
+    {
+      "criterion_id": "tech_comparables_calc",
+      "criterion_name": "Comparable Multiples Calculation.",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I use a pure set of seven comparable restaurant companies and extract first quartile median and third quartile EV to IBITA and PE multiples.\"",
+        "\"I convert all multip all valuation outputs into enterprise value ensuring consistency with the DCF.\"",
+        "\"Here is the comparative multiple summary table, the multiple valuation ranges converted to enterprise value table, the DCF scenario, the DCF sensitivity... and then my final executive recommendation\" (also: \"precedent transaction are anchored at 12 to 15 times IBIDA which establishes a realistic acquisition range observed in the market.\")"
+      ],
+      "driver_alignment": "- Validate: explicitly runs market comps, extracts quartile multiples, and reports ranges.\n- Represent: converts multiples into enterprise value tables/football-field to present implied values and ranges.",
+      "reasoning": "The student clearly extracted peer EV/EBITDA and P/E quartile multiples, converted those multiples into implied enterprise values, and presented a range (tables and football-field) anchored by quartiles and precedent transaction banding. This demonstrates a thorough, correct treatment of comparable multiples calculation consistent with the DRIVER evidence."
+    },
+    {
+      "criterion_id": "tech_sensitivity_scenario",
+      "criterion_name": "Scenario Comparison (Introductory Sensitivity).",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"To validate the model, I run all the combination of buyer type and operating scenario.\"",
+        "\"So, the run DCF function builds a 5-year projection for any scenario and buyer type.\"",
+        "\"The strategic buyer base case is 12.58 billion which implies a synergy value of 0.5 0.65 billion relative to the financial buyer valuation. that that represents a 5.4% premium over financial buyer's intrinsic value\""
+      ],
+      "driver_alignment": "- Implement: the student implemented a run_DCF function that explicitly projects for different scenarios and buyer types.\n- Validate: they executed all combinations of buyer type and operating scenario and produced a scenario summary table.\n- Represent: the model is structured around driver-level assumptions (store count, sales per store) enabling sensitivity to growth/WACC.",
+      "reasoning": "The submission calculates values across multiple scenarios (base/upside/downside and financial vs strategic buyers) and runs sensitivities (including a two-way WACC × terminal growth). It also quantifies how a key driver—synergies/strategic assumptions—changes value (explicit synergy delta and % premium), meeting the criterion thoroughly."
+    },
+    {
+      "criterion_id": "tech_visual_summary",
+      "criterion_name": "Visual Summary of Valuation.",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Now going on to the scenario summary table. To validate the model, I run all combination of buyer type and operating scenario. And this allows me to compare the base upside and the downside outcomes for both financial and strategic buyers.\"",
+        "\"All valuation methods are then synthesized, ... in a football field analysis, which is a core rubric requirement. So this chart visualizes com visually compares value ranges from trading comps, presidented transaction, financial buyer DC, and strategic buyer DCFS.\"",
+        "\"I have the comparative multiple summary table, the multiple valuation ranges converted to enterprise value table, the DCF scenario, the DCF sensitivity chart and then my final executive recommendation and I also have the football field triangulation chart for you to see for your reference as well.\""
+      ],
+      "driver_alignment": "- REPRESENT: Describes structured outputs (comparative multiple summary table, valuation ranges) that summarize model results.\n- IMPLEMENT: The run DCF function and conversion steps produced the numerical results fed into summary tables/charts.\n- VALIDATE: Running all buyer × scenario combinations and sensitivities produced the scenario summary table and inputs to the visual summary.\n- REFLECT: Final executive recommendation and overlaid bid range on the football field show synthesis of summarized valuation results.",
+      "reasoning": "The student clearly produced and described summary tables and charts (scenario summary table, comparative multiples table, DCF sensitivity chart, and a football-field synthesis) that aggregate the different valuation results. Multiple DRIVER stages (Represent, Implement, Validate, Reflect) are evidenced, showing thorough, coherent presentation of the visual summary."
+    },
+    {
+      "criterion_id": "integration_parameterized_inputs",
+      "criterion_name": "Parameterized Inputs.",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I used a unlevered whack of 9% which avoids distortion from buyer specific capital structures. I applied terminal growth rate of 2.5%...\"",
+        "\"So the run DCF function builds a 5-year projection for any scenario and buyer type.\"",
+        "\"I then perform a two-way sensitivity analysis across the whack and the terminal growth. And this demonstrates how sensitive valuation is to macro assumptions...\""
+      ],
+      "driver_alignment": "- Discover: explicitly defines key inputs and assumptions (WACC, terminal growth, synergies).\n- Implement: run DCF function is parameterized to accept scenarios and buyer types.\n- Validate/Evolve: runs all combinations of scenarios and a two-way sensitivity across WACC and terminal growth to show model responds to input changes.",
+      "reasoning": "The student explicitly defines key inputs (WACC, terminal growth, multiples) and shows a parameterized DCF function that runs multiple scenarios and sensitivities. The combination of defined parameters (Discover), a reusable run DCF implementation (Implement), and comprehensive scenario/sensitivity runs (Validate/Evolve) demonstrates robust handling of parameterized inputs, meeting the thoroughness required for a PASS."
+    },
+    {
+      "criterion_id": "integration_scenario_capability",
+      "criterion_name": "Scenario Capability.",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"To validate the model, I run all combination of buyer type and operating scenario. Um and this allows me to compare the base of the model with the upside and downside outcomes for both financial and um strategic buyers.\"",
+        "\"So the run DCF function builds a 5-year projection for any scenario and buyer type.\"",
+        "\"I used a unlevered whack of 9% which avoids distortion from buyer specific capital structures. I applied terminal growth rate of 2.5% ... I also defined strategic synergies as 10% of LTM IBIDA with only 80% capture probability ... Instead of blindly growing a year five free cash flow I remove growth capex from year 5 to estimate a steady state free cash flow.\""
+      ],
+      "driver_alignment": "Discover — defined the core problem and explicit assumptions (WACC, terminal growth, synergy treatment). Implement — described and coded a run_DCF that projects multiple scenarios and buyer types. Evolve/Validate — ran scenario matrix, two‑way sensitivities, and isolated synergy delta to compare outcomes and link assumptions to valuation.",
+      "reasoning": "The submission shows thorough scenario capability: multiple operating scenarios and buyer types are modeled and compared, with sensitivities and a synergy delta reported. Key assumptions (WACC, terminal growth, synergy size/ramp/capture, terminal normalization) are explicitly stated and tied to valuation mechanics, meeting the PASS standard."
+    },
+    {
+      "criterion_id": "integration_comprehensive_framework",
+      "criterion_name": "Comprehensive Analysis Framework.",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I used a unlevered whack of 9% ... I also defined Panera's LTM operating profile revenue of $6 billion IBIDA of $9 million net income of $400 million and net debt of $500 million. Finally, I define strategic synergies as 10% of LTM IBIDA with only 80% capture probability and RAM starting at zero in year 1 and reflecting realistic integration delays.\"",
+        "\"I structured the analysis using the driver framework define discover represent implement validate and reflect and I use a triangle value triangulate value using a DCF trading comps precedent transaction scenario analysis sensitivities and a final football field synthesis.\"",
+        "\"Our disciplined walk‑away price is 12.8 billion in enterprise value... We recommend a financial bid range of 11.69 billion to 12.80 billion in enterprise value... By refusing to pay for the full synergy premium KKR preserves IRR discipline and avoids integration risk...\""
+      ],
+      "driver_alignment": "Discover (problem definition and assumptions), Represent/Implement (store‑level DCF model and code implementation), Validate/Evolve (scenario runs, sensitivities, triangulation across DCF/comps/transactions), Reflect (executive recommendation and bid range tying quantitative outputs to business judgment).",
+      "reasoning": "The submission clearly combines quantitative outputs (WACC, financials, DCF, sensitivities, football‑field triangulation) with qualitative business judgment (synergy capture probability, integration delays, refusing to pay full synergy). The analysis is presented in a logical Assumptions -> Model/Analysis -> Conclusion flow and includes specific numeric recommendations, meeting the thoroughness required for a PASS."
+    },
+    {
+      "criterion_id": "driver_define_discover",
+      "criterion_name": "Define & Discover: Problem Framing.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"I'll walk through my full valuation model for Panera Bread build to determine disciplined acquisition price for KKR.\"",
+        "\"The core problem is what is Panera Brad's worth to a financial sponsor like KKR and how does that compared to a value of a strategic buyer that could justify using synergies.\"",
+        "\"I structured the analysis using the driver framework define discover represent implement validate and reflect and I use a triangle value triangulate value using a DCF trading comps precedent transaction scenario analysis sensitivities and a final football field synthesis.\""
+      ],
+      "driver_alignment": "The Define and Discover stages are explicitly stated and framed (problem statement, assumptions, LTM metrics), and the student explicitly references using the DRIVER framework to structure the work.",
+      "reasoning": "The student clearly defines the valuation object (Panera Bread), the acquisition context, and repeatedly names KKR as the financial sponsor—satisfying those elements of problem framing. However, the submission does not explicitly identify \"Management\" (or equivalent internal stakeholder) as required; under the strict DRIVER standards this omission prevents a full pass."
+    },
+    {
+      "criterion_id": "driver_represent",
+      "criterion_name": "Represent: Methodology Selection.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I structured the analysis using the driver framework define discover represent implement validate and reflect and I use a triangle value triangulate value using a DCF trading comps precedent transaction scenario analysis sensitivities and a final football field synthesis.\"",
+        "\"I used a unlevered whack of 9% which avoids distortion from buyer specific capital structures. I applied terminal growth rate of 2.5% ... I also defined Panera's LTM operating profile revenue of $6 billion IBIDA of $9 million net income of $400 million and net debt of $500 million. Finally, I define strategic synergies as 10% of LTM IBIDA with only 80% capture probability...\"",
+        "\"I use a pure set of seven comparable restaurant companies and extract first quartile median and third quartile EV to IBITA and PE multiples.\""
+      ],
+      "driver_alignment": "- Represent: explicitly states methodology selection (DCF, trading comps, precedent transactions, sensitivities, football-field synthesis) and models value at a store-driver level.\n- Discover: provides explicit quantitative assumptions and LTM operating metrics used as inputs.\n- Validate: documents market checks (seven comparables, quartile multiples) and sensitivity analysis that support method selection.",
+      "reasoning": "The student explicitly lists valuation methods (DCF, trading comps, precedent transactions) and describes how the DCF is implemented. They also provide clear, specific input assumptions and data sources (WACC, terminal growth, LTM metrics, comparable set and multiples), satisfying the strict requirement for explicit methodology and assumptions."
+    },
+    {
+      "criterion_id": "driver_implement",
+      "criterion_name": "Implement: Execution.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"So the run DCF function builds a 5-year projection for any scenario and buyer type.\"",
+        "\"The value model is structured around a store level operating driver.\"",
+        "\"To validate the model, I run all the combination of buyer type and operating scenario.\""
+      ],
+      "driver_alignment": "Implement: student describes the implemented run_DCF function and how cash flows and buyer-specific adjustments (synergies, probability, taxes, capex, depreciation, working capital) are calculated.  \nRepresent: model built around store-level drivers (store count × sales per store) demonstrating a structured implementation.  \nValidate: student runs combinations of buyer types and scenarios and performs sensitivities, showing systematic execution and output generation.",
+      "reasoning": "The submission demonstrates a systematic, executed implementation: a coded DCF function, detailed driver-based model (taxes, capex, depreciation, WC), buyer-specific logic for synergies, and comprehensive scenario/sensitivity outputs (tables/charts). This meets the moderate standard for implementation execution."
+    },
+    {
+      "criterion_id": "driver_validate",
+      "criterion_name": "Validate: Sanity Checks.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"To validate the model, I run all the combination of buyer type and operating scenario.\"",
+        "\"I use a pure set of seven comparable restaurant companies and extract first quartile median and third quartile EV to IBITA and PE multiples.\"",
+        "\"All valuation methods are then synthesized, let me just scroll down for you, in a football field analysis, which is a core rubric requirement.\""
+      ],
+      "driver_alignment": "Validate stage: explicitly describes running scenario combinations and sensitivity checks. Represent stage: uses external market comparables and precedent transactions to benchmark DCF outputs. Reflect stage: synthesizes results into a football-field and recommendation.",
+      "reasoning": "The student clearly performed external market validation using trading comps and precedent transactions and ran sensitivity/scenario checks (Validate and Represent stages). However they did not name specific external data sources, vendors, or tools (e.g., Bloomberg, Capital IQ, specific companies), so external validation is present but not fully specific — hence PARTIAL."
+    },
+    {
+      "criterion_id": "driver_evolve_reflect",
+      "criterion_name": "Evolve & Reflect: Synthesis.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"So, our disciplined walkway price is 12.8 billion in enterprise value, which corresponds to 14.2 times LTM EV to Ebido multiple. ... We recommend a financial bid range of 11.69 billion to 12.80 billion in enterprise value.\"",
+        "\"I structured the analysis using the driver framework define discover represent implement validate and reflect and I use a triangle value triangulate value using a DCF trading comps precedent transaction scenario analysis sensitivities and a final football field synthesis.\"",
+        "\"This demonstrates how sensitive valuation is to macro assumptions and confirms so that my recommendation is not driven by a single optimistic input.\" / \"Instead of blindly growing a year five free cash flow I remove growth capex from year 5 to estimate a steady state free cash flow.\""
+      ],
+      "driver_alignment": "- Evolve/Reflect: student synthesizes outputs into a clear bid range and explicitly discusses method limitations (terminal normalization, synergy capture probability).\n- Validate: sensitivity analysis and scenario runs used to assess method reliability.\n- Represent: triangulation across DCF, comps, and precedent transactions shown to support synthesis.",
+      "reasoning": "The submission gives an explicit executive recommendation (bid range and anchor) and clearly reflects on method reliability via triangulation, sensitivity analysis, and terminal normalization. The student explicitly cites DRIVER stages and demonstrates validation steps, meeting the strict requirement for explicit methodological demonstration."
+    },
+    {
+      "criterion_id": "comm_methodology_explanation",
+      "criterion_name": "Methodology Explanation.",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I used a unlevered whack of 9% which avoids distortion from buyer specific capital structures. I applied terminal growth rate of 2.5% with an explicit quadril that terminal growth must remain below whack to prevent mathematical and economic inconsistency.\"",
+        "\"I structured the analysis using the driver framework define discover represent implement validate and reflect and I use a triangle value triangulate value using a DCF trading comps precedent transaction scenario analysis sensitivities and a final football field synthesis.\"",
+        "\"So the run DCF function builds a 5-year projection for any scenario and buyer type. So, first, store count grows based on the scenario specific assumptions based upside or downside, which directly affects the revenue... For strategic buyer only, I layer in IBIDA synergies using a RAM schedule and probability haircut. And financial buyers receive no synergies...\""
+      ],
+      "driver_alignment": "- Discover: clear problem framing and explicit assumptions (WACC, terminal growth, synergies) that justify method choices.\n- Represent/Implement: detailed description of model structure and stepwise DCF implementation (store counts, sales per store, EBITDA, depreciation, taxes, synergy ramp/probability).\n- Validate/Reflect: scenario runs, sensitivity analysis, and triangulation (comps, precedents, football field) that demonstrate method selection and robustness.",
+      "reasoning": "The student explains why key methodological choices were made (e.g., unlevered WACC, terminal normalization, no synergy for financial buyer) and walks through concrete modeling steps (5‑year DCF construction, synergy ramping, tax/depreciation treatment). The explanation is specific, thorough, and supported across DRIVER stages, meeting the PASS standard."
+    },
+    {
+      "criterion_id": "comm_presentation_logic",
+      "criterion_name": "Logical Flow and Presentation.",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I'll start by defining the problem and assumptions and walk through how the model is constructed in code and finally conclude with an executive level bid recommendation.\"",
+        "\"Here are all of my assumptions and my parameters. This is the define part ... and then I have the DCF model which I kind of explain in detail for you.\"",
+        "\"This chart visualizes com visually compares value ranges from trading comps, precedent transaction, financial buyer DC, and strategic buyer DCFS ... I explicitly overlay KKR's recommended bid range.\""
+      ],
+      "driver_alignment": "The Discover stage establishes problem and assumptions (logical starting point); Represent/Implement stages explain the model structure and code (inputs → process → outputs); Validate (scenario runs, sensitivities, comps, football field) and Reflect stages present outputs and an executive recommendation (conclusion), together demonstrating a clear end-to-end flow and verbal description of visuals.",
+      "reasoning": "The student presents a clear, ordered narrative from problem definition through model construction, validation, and recommendation, and repeatedly narrates the on-screen assumptions, model, tables, and charts. This satisfies the criterion thoroughly (descriptive verbalization of visuals and logical progression), so PASS is warranted."
+    },
+    {
+      "criterion_id": "comm_recommendation",
+      "criterion_name": "Actionable Recommendation.",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"So, our disciplined walkway price is 12.8 billion in enterprise value, which corresponds to 14.2 times LTM EV to Ebido multiple. ... We recommend a financial bid range of 11.69 billion to 12.80 billion in enterprise value.\"",
+        "\"I structured the analysis using the driver framework define discover represent implement validate and reflect and I use a triangle value triangulate value using a DCF trading comps precedent transaction scenario analysis sensitivities and a final football field synthesis.\"",
+        "\"I then perform a two-way sensitivity analysis across the whack and the terminal growth. And this demonstrates how sensitive valuation is to macro assumptions and confirms so that my recommendation is not driven by a single optimistic input.\""
+      ],
+      "driver_alignment": "Discover (defined problem and key assumptions), Represent/Implement (store-level DCF model and scenario construction), Validate (comps, precedent transactions, two-way sensitivities, football-field triangulation), Reflect (executive bid recommendation).",
+      "reasoning": "The student provides a concrete, numeric recommendation (enterprise value and bid range) and directly ties it to their analytic work (driver-based DCF, comps/transactions, sensitivity analysis, and synergy assessment). Multiple DRIVER stages document both the modeling approach and validation steps that support the actionable recommendation, meeting the thoroughness required for a PASS."
+    }
+  ]
+}

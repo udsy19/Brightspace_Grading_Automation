@@ -1,0 +1,51 @@
+# Book settings
+title: ESSENTIALS OF FINANCIAL MANAGEMENT IN THE AGE OF AI
+author: Dr. Cinder Zhang
+logo: 'images/DRIVER-FinancialManagement-Cover.png'
+subtitle: 'TVM to Corporate Finance — A DRIVER Guide with Python Labs and AI-Powered Problem-Solving'
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: 'off'  # Since we're using markdown files initially
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: financial_management_book.tex
+
+# Copyright information
+copyright: "2023-2025, Dr. Cinder Zhang. Licensed under CC BY-NC-ND 4.0"
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/Cinder-s-Financial-Analytics/DRIVER-FinancialManagement
+  path_to_book: textbook_jupyter_book_source
+  branch: main
+
+# Add GitHub buttons to your book
+html:
+  use_issues_button: true
+  use_repository_button: true
+  analytics:
+    google_analytics_id: G-L4ECYP90Q4
+  extra_footer: |
+    <p>
+      Connect with the author on <a href="https://www.linkedin.com/in/cinder-zhang/">LinkedIn</a>
+    </p>
+
+
+sphinx:
+  extra_extensions:
+    - sphinxcontrib.mermaid
+  config:
+    mermaid_version: latest
+    mermaid_init_js: |
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        flowchart: {
+          htmlLabels: true,
+          useMaxWidth: false
+        }
+      });

@@ -1,0 +1,539 @@
+{
+  "student_name": "Anushka Wayse",
+  "username": "wayse",
+  "org_defined_id": "037494252",
+  "transcript_length": 10761,
+  "overall_grade": 82.3888888888889,
+  "passed_criteria": 26,
+  "partial_criteria": 10,
+  "failed_criteria": 1,
+  "driver_stages_demonstrated": {
+    "D": true,
+    "R": true,
+    "I": true,
+    "V": true,
+    "E": true,
+    "R2": true
+  },
+  "feedback": "Excellent application of the DRIVER framework throughout your work. You clearly demonstrated 6 stages: D, R, I, V, E, R2.\n\n\nSTRENGTHS:\n- Financial Concepts Accuracy: The student thoroughly explains NPV, builds FCF components including initial outlay, working capital timing, and after-tax terminal value, and explicitly applies WACC to discount cash flows. They provide a computed NPV and sensitivity outcomes, demonstrating strong conceptual and applied mastery aligned with multiple DRIVER stages.\n- Financial Concepts Accuracy: The student clearly articulates the NPV decision rule (accept if NPV > 0 using the WACC) and applies it consistently across base and sensitivity scenarios, including rejecting when NPV is negative. Multiple stages (Discover, Implement, Validate) show thorough, correct application, demonstrating strong conceptual grasp and comprehensive treatment.\n- Financial Concepts Accuracy: The student accurately defined FCF as OCF minus capital expenditures and changes in working capital, and explicitly addressed timing and tax treatment for WC and terminal value. Their Represent and Implement stages show clear application of the formula within a cash flow model, meeting the thoroughness required for a PASS under moderate strictness.\n\n\nAREAS FOR IMPROVEMENT:\n- Financial Concepts Accuracy: The student correctly computed and applied IRR, presented base and scenario results, and showed awareness that IRR is independent of WACC. However, they did not explicitly define IRR as the discount rate that sets NPV to zero or verify NPV≈0 at the reported IRRs, limiting depth. Thus, the treatment is correct but basic, meriting PARTIAL.\n- Financial Concepts Accuracy: The student shows solid conceptual understanding by planning for both simple and discounted payback, computing them, and then diagnosing and correcting the logic error with a reasonable estimate and rationale. However, the Implement stage includes incorrect reported payback values and no finalized corrected discounted payback, leaving gaps in accuracy and completeness. Therefore, the treatment is correct but incomplete, warranting a PARTIAL.\n- Financial Concepts Accuracy: The student correctly includes PI, applies the acceptance threshold, and recognizes initial outlay composition, showing basic conceptual understanding. However, they neither define the PI formula (PV of benefits divided by initial investment) nor demonstrate its calculation, and the reported PI (1.347) appears inconsistent with the stated NPV and initial outlay, indicating accuracy gaps. This supports a correct-but-incomplete treatment, warranting PARTIAL.",
+  "criteria": [
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Net Present Value (NPV): Calculating present value of future cash flows minus initial investment",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Net Present Value (NPV): Net Present Value = t=1 ∑ N​ (1 + Weighted AVerage Cost of Capital) Free Cash Flow at Time − Initial Outlay N = Number of Periods (N=10)\"",
+        "\"Year 0: Calculate total initial outlay = −Investment−Net Working Capital. Year 10: Add the Non-Operating Terminal Cash Flows: Recovery of Net Working Capital and Terminal Value (after tax on the salvage gain).\"",
+        "\"Base Case Capital Budgeting Metrics (WACC = 8.5%) ... Net Present Value (NPV) $3,022,514.85 > $0 Accept\""
+      ],
+      "driver_alignment": "- Discover: Correctly identifies timing for working capital and terminal value taxation.\n- Represent: Defines the NPV formula and lays out FCF construction and discounting by WACC.\n- Implement: Computes NPV using the modeled cash flows and reports the result.\n- Validate: Tests NPV under sensitivity scenarios, confirming understanding of drivers.",
+      "reasoning": "The student thoroughly explains NPV, builds FCF components including initial outlay, working capital timing, and after-tax terminal value, and explicitly applies WACC to discount cash flows. They provide a computed NPV and sensitivity outcomes, demonstrating strong conceptual and applied mastery aligned with multiple DRIVER stages."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "NPV Decision Rule: Understanding when to accept or reject projects based on NPV",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The analysis must determine if the project creates shareholder value (positive NPV) or if the funds should be deployed elsewhere.\"",
+        "\"Base Case Capital Budgeting Metrics (WACC = 8.5%) ... Net Present Value (NPV) $3,022,514.85 > $0 Accept\"",
+        "\"Scenario A: Revenue -20% ... NPV ... -2.75 ... Recommendation REJECT\""
+      ],
+      "driver_alignment": "- Discover: States the NPV decision rule and links acceptance to positive NPV versus redeploying funds.\n- Represent: Specifies NPV methodology using WACC as the discount rate.\n- Implement: Computes NPV and applies the accept rule explicitly.\n- Validate: Applies the rule under scenarios, rejecting when NPV turns negative.\n- Reflect: Final recommendation grounded in positive NPV.",
+      "reasoning": "The student clearly articulates the NPV decision rule (accept if NPV > 0 using the WACC) and applies it consistently across base and sensitivity scenarios, including rejecting when NPV is negative. Multiple stages (Discover, Implement, Validate) show thorough, correct application, demonstrating strong conceptual grasp and comprehensive treatment."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Internal Rate of Return (IRR): Computing the discount rate that makes NPV equal zero",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Base Case Capital Budgeting Metrics (WACC = 8.5%) ... Internal Rate of Return (IRR) 13.25% > 8.50% Accept\"",
+        "\"The model was implemented using Python's numpy-financial ... library to execute the cash flow projections and metric calculations.\"",
+        "\"Scenario A: Revenue -20% ... IRR (3.88%) ... B: WACC +2% ... IRR 13.25%\""
+      ],
+      "driver_alignment": "- Represent: Planned to compute IRR from the FCF array.\n- Implement: Used numpy-financial to compute IRR and reported results.\n- Validate: Sensitivity shows IRR changes with revenue but not with WACC, indicating conceptual understanding.",
+      "reasoning": "The student correctly computed and applied IRR, presented base and scenario results, and showed awareness that IRR is independent of WACC. However, they did not explicitly define IRR as the discount rate that sets NPV to zero or verify NPV≈0 at the reported IRRs, limiting depth. Thus, the treatment is correct but basic, meriting PARTIAL."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Payback Period: Determining time required to recover initial investment",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Key Questions to Answer: Does the project generate a positive Net Present Value (NPV) using the 8.5% hurdle rate? How long does it take to recover the initial $12.5M cash outlay (Discounted Payback Period)?\"",
+        "\"Step 3: Core Metric Calculation (Base Case) Use the Free Cash Flow array and the Base Weighted Average Cost of Capital (8.5%) to compute the NPV, IRR, Discounted Payback, and Profitability Index (PI).\"",
+        "\"Technical Critique: Payback Period Error ... A payback period of 0.52 years is mathematically incorrect. The actual simple payback period should be closer to 5.2 years.\""
+      ],
+      "driver_alignment": "- Discover: Identifies payback period as a key question to answer.\n- Represent: Plans to compute both simple and discounted payback.\n- Implement: Reports payback results (though incorrect).\n- Evolve: Diagnoses the error, explains why, and provides an approximate corrected simple payback.",
+      "reasoning": "The student shows solid conceptual understanding by planning for both simple and discounted payback, computing them, and then diagnosing and correcting the logic error with a reasonable estimate and rationale. However, the Implement stage includes incorrect reported payback values and no finalized corrected discounted payback, leaving gaps in accuracy and completeness. Therefore, the treatment is correct but incomplete, warranting a PARTIAL."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "Profitability Index: Calculating present value of benefits divided by initial investment",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Step 3: Core Metric Calculation (Base Case) Use the Free Cash Flow array and the Base Weighted Average Cost of Capital (8.5%) to compute the NPV, IRR, Discounted Payback, and Profitability Index (PI).\"",
+        "\"Base Case Capital Budgeting Metrics (WACC = 8.5%) ... Profitability Index (PI) 1.347 > 1.0 Accept\"",
+        "\"Year 0: Calculate total initial outlay = −Investment−Net Working Capital.\""
+      ],
+      "driver_alignment": "- Represent: Identifies PI as a core metric to compute.\n- Implement: Reports a PI value and uses the correct acceptance rule (>1.0).\n- Discover/Represent: Clarifies initial outlay components (investment + working capital), relevant to PI denominator.",
+      "reasoning": "The student correctly includes PI, applies the acceptance threshold, and recognizes initial outlay composition, showing basic conceptual understanding. However, they neither define the PI formula (PV of benefits divided by initial investment) nor demonstrate its calculation, and the reported PI (1.347) appears inconsistent with the stated NPV and initial outlay, indicating accuracy gaps. This supports a correct-but-incomplete treatment, warranting PARTIAL."
+    },
+    {
+      "criterion_id": "criterion_6",
+      "criterion_name": "Free Cash Flow Calculation: Operating cash flow less capital expenditures and working capital changes",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Operating Cash Flow (OCF): OCF = (Revenues − COGS − Operating Costs − Depreciation) × (1 − t) + Depreciation\"",
+        "\"Free Cash Flow (FCF): Free Cash Flow = Operating Cash Flow − Capital Expenditure − ΔNet WorkingCapital + Terminal Cash Flow\"",
+        "\"We must explicitly verify that the $500,000 Working Capital is an outflow at Year 0 and a recapture (inflow) at Year 10.\""
+      ],
+      "driver_alignment": "- Discover: Identified and verified correct timing of working capital flows.\n- Represent: Provided explicit OCF and FCF formulas detailing OCF less CapEx and ΔNWC.\n- Implement: Built the model to calculate FCF per year and handled special cash flows (initial outlay and terminal WC recovery).",
+      "reasoning": "The student accurately defined FCF as OCF minus capital expenditures and changes in working capital, and explicitly addressed timing and tax treatment for WC and terminal value. Their Represent and Implement stages show clear application of the formula within a cash flow model, meeting the thoroughness required for a PASS under moderate strictness."
+    },
+    {
+      "criterion_id": "criterion_7",
+      "criterion_name": "Incremental Cash Flows: Identifying only cash flows caused by the project",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"We must explicitly verify that the $500,000 Working Capital is an outflow at Year 0 and a recapture (inflow) at Year 10. Additionally, we must confirm that the $3 million Terminal Value is treated as a taxable cash inflow at the end of the project life...\"",
+        "\"The analysis will be centered on calculating the Incremental Free Cash Flow (FCF)... Operating Cash Flow (OCF): OCF = (Revenues − COGS − Operating Costs − Depreciation) × (1 − t) + Depreciation. Free Cash Flow (FCF): Free Cash Flow = Operating Cash Flow − Capital Expenditure − ΔNet Working Capital + Terminal Cash Flow\"",
+        "\"Step 2: Incremental Cash Flow Schedule Construction... Year 0: Calculate total initial outlay = −Investment−Net Working Capital. Year 10: Add... Recovery of Net Working Capital and Terminal Value (after tax on the salvage gain).\""
+      ],
+      "driver_alignment": "- Discover: Identifies and verifies incremental items (WC timing, after-tax terminal value).\n- Represent: Defines incremental FCF methodology and formulas excluding financing flows.\n- Implement: States creation of a Base Case Incremental Cash Flow Schedule using the defined approach.",
+      "reasoning": "The student thoroughly identifies only project-caused cash flows: initial capex, NWC outflow and recovery, after-tax terminal value, and operating cash flows before financing (no interest). They explicitly structure Year 0 and Year 10 special flows and use a correct incremental FCF formula. Depth across D/R/I stages supports full mastery, warranting a PASS."
+    },
+    {
+      "criterion_id": "criterion_8",
+      "criterion_name": "Operating Cash Flow: EBIT × (1-T) + Depreciation calculation",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Operating Cash Flow (OCF): OCF = (Revenues − COGS − Operating Costs − Depreciation) × (1 − t) + Depreciation\"",
+        "\"Step 2: Incremental Cash Flow Schedule Construction... dynamically calculate: Revenues, COGS... Depreciation, Taxable Income (EBIT), Taxes, and Free Cash Flow.\"",
+        "\"Base Case Incremental Cash Flow Schedule Year Revenue Op. Costs Depreciation EBT Taxes Net Income OCF ΔWC/TV Project CF\""
+      ],
+      "driver_alignment": "- Represent: Clearly states the correct OCF formula (EBIT × (1−T) + Depreciation).\n- Implement: Describes computing EBIT, taxes, and using depreciation in cash flow construction.\n- Evolve: Discusses depreciation method implications, reinforcing conceptual grasp of the tax shield.",
+      "reasoning": "The student correctly defines OCF as EBIT × (1−T) + Depreciation and integrates EBIT and depreciation into the planned cash flow build, showing sound conceptual understanding. However, they do not demonstrate the calculation with actual OCF figures, and the schedule lacks numerical detail, so treatment is not thorough enough for a PASS."
+    },
+    {
+      "criterion_id": "criterion_9",
+      "criterion_name": "Terminal Value: Treatment of salvage value and working capital recovery",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"We must explicitly verify that the $500,000 Working Capital is an outflow at Year 0 and a recapture (inflow) at Year 10.\"",
+        "\"Special Cash Flows: Year 0: Calculate total initial outlay = −Investment−Net Working Capital. Year 10: Add the Non-Operating Terminal Cash Flows: Recovery of Net Working Capital and Terminal Value (after tax on the salvage gain). Since the Book Value is $0, the entire $3M is a taxable gain.\"",
+        "\"Action: Confirm the tax treatment of the asset... Consequently, the entire $3M Terminal Value will be treated as a taxable gain (Recapture).\""
+      ],
+      "driver_alignment": "- Discover: Identified timing and treatment of WC and terminal value as critical.\n- Represent: Specified Year 0 WC outflow and Year 10 recovery plus after-tax salvage in the plan.\n- Implement: Indicated these terminal cash flows were added in the model.\n- Evolve: Reaffirmed correct tax treatment and discussed broader terminal value considerations.",
+      "reasoning": "The student thoroughly and correctly addressed both working capital recovery (timing and sign) and the after-tax treatment of terminal/salvage value given zero book value, and integrated these into the modeling plan. Multiple DRIVER stages reinforce conceptual understanding and application, meeting a knowledgeable reviewer’s expectations for depth in this criterion."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Correct NPV and IRR calculations",
+      "category_name": "Technical Implementation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"The model was implemented using Python's numpy-financial (Python Library (Numeric Python - Financial)) library to execute the cash flow projections and metric calculations.\"",
+        "\"Net Present Value (NPV) $3,022,514.85 ... Internal Rate of Return (IRR) 13.25% ...\"",
+        "\"Step 2: Incremental Cash Flow Schedule Construction Create a loop for Years 1 through 10. Inside the loop, dynamically calculate: Revenues, COGS, Total Operating Costs (excluding depreciation), Depreciation, Taxable Income (EBIT), Taxes, and Free Cash Flow.\""
+      ],
+      "driver_alignment": "Represent — provided a clear, stepwise plan for cash-flow construction and metric calculation; Implement — stated the model was implemented in Python and produced numeric outputs; Validate & Evolve — ran sensitivity tests and identified/owned a coding logic error (payback calculation), showing partial verification.",
+      "reasoning": "The student implemented a Python model, reported explicit NPV and IRR results, and described the incremental cash-flow loop and sensitivity tests, demonstrating substantive work on the calculations (Represent, Implement, Validate). However, they did not explicitly show block-by-block code explanations or a first-person statement that they ran and verified the code step-by-step, so full strict technical-implementation requirements (explicit execution and detailed code ownership) are not fully met."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Accurate cash flow projections over project life",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The model was implemented using Python's numpy-financial (Python Library (Numeric Python - Financial)) library to execute the cash flow projections and metric calculations.\"",
+        "\"Step 2: Incremental Cash Flow Schedule Construction Create a loop for Years 1 through 10.\"",
+        "\"A critical error was found in the model's computation of the Payback Periods. ... indicates a likely logic error in how the cumulative cash flow was tracked in the underlying code, and the metric should be disregarded for the final recommendation.\""
+      ],
+      "driver_alignment": "Represent — defined the cash-flow construction approach (depreciation, OCF, FCF, terminal treatment, looped years).  \nImplement — stated personal implementation in Python with explicit model outputs (NPV, IRR, cash flow schedule).  \nValidate — ran sensitivity tests and identified/owned a coding error in payback computation, demonstrating verification and correction.",
+      "reasoning": "The student explicitly described the year-by-year cash-flow construction, implemented the model in Python and reported numerical outputs, and ran validation/sensitivity checks. They also identified and owned a specific implementation error (payback calculation), meeting the strict requirement for personal execution, block-level understanding of the cash-flow logic, and ownership — therefore PASS."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Proper treatment of depreciation and taxes",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Confirm the tax treatment of the asset. Since the $12M is depreciated straight-line over 10 years, the Book Value at Year 10 will be $0. Consequently, the entire $3M Terminal Value will be treated as a taxable gain (Recapture).\"",
+        "\"Annual Straight-Line Depreciation: Depreciation = Initial Investment / Project life\" / \"Operating Cash Flow (OCF): OCF = (Revenues − COGS − Operating Costs − Depreciation) × (1 − t) + Depreciation\"",
+        "\"The model was implemented using Python's numpy-financial (Python Library (Numeric Python - Financial)) library to execute the cash flow projections and metric calculations.\""
+      ],
+      "driver_alignment": "- Define (D): explicitly states tax treatment and depreciation schedule assumptions (book value = 0 → taxable terminal gain).\n- Represent (R): specifies depreciation formula and OCF incorporating depreciation and taxes (block-level methodology).\n- Implement (I) & Validate (V): reports actual Python implementation and asserts the terminal-value tax treatment was correctly applied and tested via sensitivity analysis.",
+      "reasoning": "The student explicitly defined straight-line depreciation, integrated depreciation into the OCF and tax calculations, implemented the model in Python, and validated terminal-value tax treatment—meeting the strict requirement for explicit methodology and execution ownership. They also acknowledged and owned a separate coding error (payback), demonstrating responsibility and verification."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Sensitivity analysis on key assumptions",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Step 4: Sensitivity Analysis Implementation Create parameterized functions to re-run Step 2 and 3 for the two required scenarios: Scenario A: Revenue multiplier set to 0.8 (20% reduction). Scenario B: WACC set to 6.5% and 10.5%. Summarize the impact on NPV and IRR.\"",
+        "\"The model was implemented using Python's numpy-financial (Python Library (Numeric Python - Financial)) library to execute the cash flow projections and metric calculations.\"",
+        "\"A: Revenue -20% 8.50% 0.80 -2.75 3.88% REJECT\" and \"A critical error was found in the model's computation of the Payback Periods... This indicates a likely logic error in how the cumulative cash flow was tracked in the underlying code, and the metric should be disregarded for the final recommendation.\""
+      ],
+      "driver_alignment": "- Represent: Explicit plan to implement parameterized sensitivity functions and which scenarios to run.\n- Implement: Student states they executed the model in Python (numpy-financial) and parameterized variables.\n- Validate: Student ran the two sensitivity tests, reported quantitative outcomes, interpreted risk, and identified/owned a model error.",
+      "reasoning": "The submission explicitly planned, implemented, and ran the required sensitivity analyses (revenue -20% and WACC shifts), reported numeric impacts on NPV/IRR, and interpreted the results (identifying revenue as critical risk). The student also demonstrated ownership by diagnosing a model error, supporting that they executed and validated the sensitivity work rather than just describing it."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "Scenario modeling (best/base/worst cases)",
+      "category_name": "Technical Implementation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Step 4: Sensitivity Analysis Implementation Create parameterized functions to re-run Step 2 and 3 for the two required scenarios: Scenario A: Revenue multiplier set to 0.8 (20% reduction). Scenario B: WACC set to 6.5% and 10.5%.\"",
+        "\"The model was implemented using Python's numpy-financial (Python Library (Numeric Python - Financial)) library to execute the cash flow projections and metric calculations.\"",
+        "\"Scenario WACC Rev Multiplier NPV Impact ($M) IRR Impact (%) Recommendation Base Case 8.50% 1.00 3.02 13.25% ACCEPT A: Revenue -20% 8.50% 0.80 -2.75 3.88% REJECT B: WACC +2% 10.50% 1.00 1.63 13.25% ACCEPT B: WACC -2% 6.50% 1.00$= 4.64 13.25% ACCEPT\""
+      ],
+      "driver_alignment": "- Represent: defined explicit scenario plan (revenue multiplier and WACC variations).\n- Implement: reported use of Python and numpy-financial to run the model.\n- Validate: produced sensitivity results (base, revenue -20%, WACC ±2%) and interpreted impacts.\n- Evolve: acknowledged and owned a coding error in payback calculation (shows some debugging/ownership).",
+      "reasoning": "The student implemented and reported scenario analyses (base and a clear worst-case revenue scenario plus WACC variations) and produced numeric results, demonstrating partial mastery. However, they did not explicitly present a clear best-case revenue scenario nor the required block-by-block/code-level explanation or an explicit \"I ran and verified\" personal-execution statement demanded by the strict Technical Implementation standard, so the work only partially satisfies the criterion."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Automation of capital budgeting calculations",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Goal: The objective is to build a transparent, dynamic Python-based cash-flow model to calculate NPV, IRR, and Payback Period...\"",
+        "\"The model was implemented using Python's numpy-financial (Python Library (Numeric Python - Financial)) library to execute the cash flow projections and metric calculations.\"",
+        "\"Create a loop for Years 1 through 10... Use the Free Cash Flow array and the Base Weighted Average Cost of Capital (8.5%) to compute the NPV, IRR, Discounted Payback, and Profitability Index (PI). Create parameterized functions to re-run Step 2 and 3 for the two required scenarios...\""
+      ],
+      "driver_alignment": "- Discover: Set the goal to automate NPV/IRR/Payback via a dynamic Python model.\n- Represent: Detailed plan for variables, loops, arrays, and parameterized sensitivity functions.\n- Implement: Executed with numpy-financial to automate calculations.\n- Validate: Automated scenario outputs reported for WACC and revenue sensitivity.\n- Evolve: Identified a payback period logic error, demonstrating QA of the automated metric.",
+      "reasoning": "The student thoroughly automated capital budgeting calculations using Python and numpy-financial, detailing variables, looping over years, assembling FCF arrays, computing NPV/IRR/PI/discounted payback, and parameterizing sensitivity scenarios. Multiple automated outputs were presented and a logic bug in payback was critically identified in Evolve. Given the comprehensive, technology-driven approach and QA, this meets a PASS under moderate strictness."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Dynamic scenario and sensitivity analysis",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Step 4: Sensitivity Analysis Implementation Create parameterized functions to re-run Step 2 and 3 for the two required scenarios: Scenario A: Revenue multiplier set to 0.8 (20% reduction). Scenario B: WACC set to 6.5% and 10.5%. Summarize the impact on NPV and IRR.\"",
+        "\"The process will be conducted in a sequential, calculated manner, leveraging a Python function to parameterize the assumptions\"",
+        "\"A 20% reduction in revenue (Scenario A) causes the NPV to become significantly negative (-$2.75 Million) and the IRR (3.88%) to fall far below the 8.5% hurdle rate... Even if the WACC increases by 200bps to 10.5%, the NPV remains positive at $1.63 million.\""
+      ],
+      "driver_alignment": "- Discover: Identified key questions on revenue -20% and WACC shifts to test.\n- Represent: Planned parameterized, scenario-reRunnable functions.\n- Implement: Built Python model enabling dynamic re-runs.\n- Validate: Executed and interpreted scenario results with quantified impacts.\n- Evolve: Proposed deeper stress-testing and NPV=0 break-even analysis.",
+      "reasoning": "The student conducted a thorough, dynamic sensitivity analysis with multiple scenarios (revenue shortfall and WACC shifts), implemented via parameterized Python functions, and provided quantified impacts and interpretations. The work spans planning, execution, and next-step stress-testing, demonstrating strong conceptual and applied grasp of dynamic scenario/sensitivity analysis."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Cash flow modeling with multiple phases",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"We must explicitly verify that the $500,000 Working Capital is an outflow at Year 0 and a recapture (inflow) at Year 10... confirm that the $3 million Terminal Value is treated as a taxable cash inflow at the end of the project life\"",
+        "\"Step 2: Incremental Cash Flow Schedule Construction... Create a loop for Years 1 through 10... Special Cash Flows: Year 0... Year 10: Add the... Recovery of Net Working Capital and Terminal Value (after tax on the salvage gain).\"",
+        "\"Hypothesis: Given the high initial investment ($12M) relative to the Year 1 revenue ($8M)... the surge in revenue during Years 2-5 ($11M)... Key Questions... How does the reduction of revenue in Years 6-10 impact the total value creation?\""
+      ],
+      "driver_alignment": "- Discover: Identified timing of WC and taxable terminal value (phase-specific flows).\n- Represent: Designed a looped multi-year cash flow with special treatment for Year 0 and Year 10.\n- Implement: Built the model in Python to compute phased cash flows and metrics.\n- Validate: Tested sensitivity to revenue and WACC across the horizon.\n- Evolve: Critiqued payback logic and proposed deeper stress testing on revenue phases.",
+      "reasoning": "The student thoroughly modeled multi-phase cash flows: distinct Year 0 outlay, varying revenues across Years 1–5 vs. 6–10, and terminal-year WC recovery and taxable salvage. They articulated formulas, structured a phased loop in Python, and validated with scenario analysis. Despite a payback metric error, the multi-phase cash flow design is clear and comprehensive, meeting a PASS under moderate strictness."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Visualization of NPV sensitivity to key drivers",
+      "category_name": "Integration of Finance and Technology",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "“Sensitivity Analysis Summary… Base Case 8.50% 1.00 3.02 13.25%… A: Revenue -20%… -2.75 3.88%… B: WACC +2%… 1.63…”",
+        "“Step 4: Sensitivity Analysis Implementation… Scenario A: Revenue multiplier set to 0.8… Scenario B: WACC set to 6.5% and 10.5%. Summarize the impact on NPV and IRR.”",
+        "“Interpretation of Risk… A 20% reduction in revenue… causes the NPV to become significantly negative (-$2.75 Million)… WACC Robustness… Even if the WACC increases by 200bps to 10.5%, the NPV remains positive at $1.63 million.”"
+      ],
+      "driver_alignment": "- Represent: Planned parameterized sensitivity on revenue and WACC.\n- Implement: Executed the model and scenarios conceptually via Python.\n- Validate: Reported and interpreted sensitivity outcomes.\n- Evolve: Identified revenue shortfall as critical risk for deeper stress testing.",
+      "reasoning": "The student ran and interpreted NPV sensitivity to key drivers (revenue and WACC) with specific scenario results, meeting conceptual understanding. However, no actual visualization (e.g., charts/tornado/spider plots) was provided; results were summarized textually. This is correct but incomplete for a “visualization” criterion, thus PARTIAL."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "Demonstrates systematic investment evaluation framework",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Core Formula & Methodology... OCF = (Revenues − COGS − Operating Costs − Depreciation) × (1 − t) + Depreciation... Free Cash Flow... Net Present Value... Analytical Process (Steps)... Step 1... Step 2... Step 3... Step 4: Sensitivity Analysis Implementation\"",
+        "\"3. I - Implement (The Analysis & Code) The model was implemented using Python's numpy-financial... compute the NPV, IRR, Discounted Payback, and Profitability Index (PI).\"",
+        "\"Technical Critique: Payback Period Error... The actual simple payback period should be closer to 5.2 years... indicates a likely logic error... metric should be disregarded for the final recommendation.\""
+      ],
+      "driver_alignment": "- Discover: Defined problem, WACC, and critical cash-flow timing (WC, terminal value).\n- Represent: Laid out formulas and a stepwise plan (cash-flow construction, metrics, sensitivities).\n- Implement: Built a Python model to compute NPV/IRR/PI/Payback.\n- Validate: Performed sensitivity analyses (revenue/WACC) and interpreted risk.\n- Evolve: Identified and corrected a metric error; proposed next analytical steps.",
+      "reasoning": "The student presents a comprehensive, methodical investment evaluation framework: explicit formulas, structured steps, implementation in code, sensitivity testing, and error checking. Multiple DRIVER stages substantiate a systematic process from setup through validation and iteration, exceeding mere basic discussion."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Define & Discover: Clear understanding of Starbucks roastery investment problem and decision criteria",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "[\"Problem: Starbucks is evaluating a strategic \\\"Flagship Roastery\\\" project requiring a substantial $12 million upfront capital outlay and a $500,000 working capital injection.\"]",
+        "[\"Goal: The objective is to build a transparent, dynamic Python-based cash-flow model to calculate NPV, IRR, and Payback Period, providing a data-backed \\\"Accept\\\" or \\\"Reject\\\" recommendation that accounts for both financial metrics and sensitivity to revenue volatility.\"]",
+        "[\"Key Questions to Answer: Does the project generate a positive Net Present Value (NPV) using the 8.5% hurdle rate? How long does it take to recover the initial $12.5M cash outlay (Discounted Payback Period)? How does the reduction of revenue in Years 6-10 impact the total value creation? If revenue misses projections by 20%, does the project destroy value (turn NPV negative)? Is the project robust enough to survive a 2% increase in the cost of capital (WACC)?\"]"
+      ],
+      "driver_alignment": "Discover — explicitly defines the problem, numeric parameters, and verification steps (working capital timing, terminal value tax treatment).  \nRepresent — lays out decision criteria, metrics (NPV, IRR, Payback), and a clear analytical plan and questions to drive the model.",
+      "reasoning": "The submission explicitly and thoroughly defines the investment scope, cash-flow assumptions, decision metrics, and verification checks required to judge accept/reject, satisfying the Define & Discover requirement. The student articulated concrete questions, numerical parameters, and the goal for the model, demonstrating clear, actionable understanding."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Represent: Quality framework for projecting cash flows and evaluating investment",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The analysis will be centered on calculating the Incremental Free Cash Flow (FCF) for each year and discounting it back to the present value to find the Net Present Value (NPV).\"",
+        "\"Free Cash Flow (FCF): Free Cash Flow = Operating Cash Flow − Capital Expenditure − ΔNet WorkingCapital + Terminal Cash Flow\"",
+        "\"Year 0: Calculate total initial outlay = −Investment−Net Working Capital. Year 10: Add the Non-Operating Terminal Cash Flows: Recovery of Net Working Capital and Terminal Value (after tax on the salvage gain). Since the Book Value is $0, the entire $3M is a taxable gain.\""
+      ],
+      "driver_alignment": "Represent (explicit formulas, FCF construction, and metric definitions) supported the evaluation; Discover (problem framing and WC/TV verification) reinforced the required handling of timing; Implement and Validate (description of Python implementation and sensitivity tests) show the plan was operationalized and tested.",
+      "reasoning": "The student provides a clear, explicit framework for projecting incremental FCFs, handling working-capital timing and terminal-value tax treatment, and calculating core metrics (NPV, IRR, payback, PI) with stepwise procedures. This meets the strict DRIVER requirement for an explicit Represent stage and shows the quality methodology needed to evaluate the investment."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Implement: Systematic NPV calculation with comprehensive sensitivity analysis",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The model was implemented using Python's numpy-financial (Python Library (Numeric Python - Financial)) library to execute the cash flow projections and metric calculations.\"",
+        "\"The analysis will be centered on calculating the Incremental Free Cash Flow (FCF) for each year and discounting it back to the present value to find the Net Present Value (NPV).\"",
+        "\"The model was subjected to the two required sensitivity tests.\""
+      ],
+      "driver_alignment": "Implement: shows actual coding implementation and tool choice (numpy-financial).  \nRepresent: shows a clear, systematic plan to compute incremental FCF year-by-year and loop years 1–10.  \nValidate: shows execution of the planned sensitivity analyses (revenue -20% and WACC shifts) and reporting of resulting NPVs/IRRs.",
+      "reasoning": "The submission demonstrates a systematic implementation of the planned NPV methodology (yearly FCF construction, depreciation, terminal/wc treatment) and produces base-case and sensitivity outputs. Although a payback-period coding error was noted, the required NPV/IRR calculations and the two sensitivity tests were executed and reported, meeting the moderate IMPLEMENT standard."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Validate: Testing assumptions and comparing to investment hurdle rates",
+      "category_name": "Following the DRIVER Framework",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"This stage verifies the computed results against established financial rules and tests the robustness of the valuation using the implemented scenarios.\"",
+        "\"The model was subjected to the two required sensitivity tests.\"",
+        "\"Technical Critique: Payback Period Error A critical error was found in the model's computation of the Payback Periods.\""
+      ],
+      "driver_alignment": "Validate stage — performed internal checks (sensitivity analysis, logical sense checks) and identified model errors; Implement and Evolve stages — produced results and proposed corrective/next-step actions based on those checks.",
+      "reasoning": "The student performed meaningful internal validation (sensitivity tests, rule-of-thumb checks, and identified a payback calculation error), demonstrating understanding of validation practices. However, they did not cite or compare outputs against any external sources or tools (e.g., external calculators, industry benchmarks), so the criterion is only partially met."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "Evolve: Recognition of capital budgeting applications across corporate decisions",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Terminal Value Tax Treatment: The model correctly assumes the entire $3M Terminal Value is a taxable gain because the Book Value = 0. However, in a real scenario, the Terminal Value should reflect the after-tax sale of the asset and the present value of continued operations (a perpetuity)...\"",
+        "\"Depreciation Method: The model uses straight-line depreciation. The Modified Accelerated Cost Recovery System is typically used for tax purposes, which accelerates depreciation and creates a larger tax shield in the early years. This would increase the early-year Free Cash Flow...\"",
+        "\"Mitigation Strategy: Starbucks must implement a robust monitoring system, focusing on early-year revenue and expense control. If sales trajectories indicate a potential 20% shortfall, management must be ready to quickly cut variable costs or deploy targeted marketing...\""
+      ],
+      "driver_alignment": "Evolve — explicitly critiques assumptions (tax, depreciation, terminal value) and prescribes analytical and managerial next steps; \nValidate — sensitivity testing of revenue/WACC informed the recommended stress-tests; \nReflect — ties financial results to strategic corporate decisions (brand premiumization, monitoring/mitigation).",
+      "reasoning": "The student explicitly executed an Evolve stage: they identified accounting/tax implications (terminal value, depreciation), linked model assumptions to corporate policy and strategic decisions (marketing/brand value, monitoring), and proposed concrete next steps (break-even analysis, stress tests, mitigation). These explicit critiques and actionable recommendations satisfy the strict DRIVER requirement for recognizing capital-budgeting applications across corporate decisions."
+    },
+    {
+      "criterion_id": "criterion_6",
+      "criterion_name": "Reflect: Insights on investment decision-making and value creation",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Executive Recommendation The Starbucks Roastery project is financially attractive, creates significant shareholder value in the base case, and is strategically essential for brand premiumization.\"",
+        "\"Problem: Starbucks is evaluating a strategic 'Flagship Roastery' project requiring a substantial $12 million upfront capital outlay and a $500,000 working capital injection.\"",
+        "\"Revenue Performance is the Single Greatest Risk: The project is dangerously susceptible to market underperformance.\""
+      ],
+      "driver_alignment": "The DISCOVER stage establishes the decision context and objectives (problem, investment size, WACC). The REPRESENT stage lays out the methodological plan for valuation. IMPLEMENT and VALIDATE show the model execution and sensitivity testing that underpin conclusions. EVOLVE identifies model limitations and next steps. REFLECT synthesizes financial and strategic insights (recommendation, value creation, key risks, and mitigation).",
+      "reasoning": "The submission explicitly includes a Reflect section with a clear executive recommendation, concrete insights on value creation (NPV/IRR buffer, PI) and a prioritized risk (revenue volatility) plus mitigation actions. Define & Discover documentation is present, satisfying the critical gate; therefore the Reflect criterion is fully demonstrated."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Clear explanation of NPV methodology and decision logic",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "[\"Core Formula & Methodology The analysis will be centered on calculating the Incremental Free Cash Flow (FCF) for each year and discounting it back to the present value to find the Net Present Value (NPV). Annual Straight-Line Depreciation: Depreciation = Initial Investment / Project life Operating Cash Flow (OCF): OCF = (Revenues − COGS − Operating Costs − Depreciation) × (1 − t) + Depreciation Free Cash Flow (FCF): Free Cash Flow = Operating Cash Flow − Capital Expenditure − ΔNet WorkingCapital + Terminal Cash Flow Net Present Value (NPV): Net Present Value = t=1 ∑ N​ (1 + Weighted AVerage Cost of Capital) Free Cash Flow at Time − Initial Outlay N = Number of Periods (N=10)\"]",
+        "[\"Fact Verification - Important First Step: A common analytical error in capital budgeting is mismanaging the timing of cash flows, particularly Working Capital and Terminal Value. We must explicitly verify that the $500,000 Working Capital is an outflow at Year 0 and a recapture (inflow) at Year 10. Additionally, we must confirm that the $3 million Terminal Value is treated as a taxable cash inflow at the end of the project life, distinct from the depreciation schedule.\"]",
+        "[\"Conclusion: All three primary value metrics (NPV, IRR, PI) indicate that the roastery project should be accepted, as it is projected to create over $3.0 million in value for Starbucks.\"]"
+      ],
+      "driver_alignment": "Represent (formal methodology and formulas), Discover (cash-flow timing and tax treatment checks), Implement/Validate (calculation of NPV/IRR/PI, sensitivity tests) and Reflect (final decision logic and recommendation) — together they show end-to-end alignment of NPV methodology and decision rules.",
+      "reasoning": "The submission provides a thorough, explicit NPV methodology (FCF construction, depreciation, WC and terminal-value treatment, discounting) and clear decision logic (NPV>0, IRR>WACC, PI>1) plus sensitivity testing and a recommendation. This depth and systematic DRIVER coverage satisfy the PASS standard."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Logical presentation of cash flow projections",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Free Cash Flow (FCF): Free Cash Flow = Operating Cash Flow − Capital Expenditure − ΔNet WorkingCapital + Terminal Cash Flow\"",
+        "\"Year 0: Calculate total initial outlay = −Investment−Net Working Capital. Year 10: Add the Non-Operating Terminal Cash Flows: Recovery of Net Working Capital and Terminal Value (after tax on the salvage gain).\"",
+        "\"Payback Period Error A critical error was found in the model's computation of the Payback Periods... The actual simple payback period should be closer to 5.2 years... This indicates a likely logic error in how the cumulative cash flow was tracked... and the metric should be disregarded for the final recommendation.\""
+      ],
+      "driver_alignment": "Represent — defined core cash-flow formulas and stepwise schedule construction; Implement — executed the model in Python and produced a cash-flow schedule; Validate/Evolve — ran sensitivity tests, flagged results (NPV/IRR) and identified a specific payback calculation error and corrective next steps.",
+      "reasoning": "The submission presents clear, logical cash-flow mechanics (explicit FCF formula, Year‑0 and Year‑10 treatments) and documents implementation and outputs. The student also validated results with sensitivity analysis and candidly identified and critiqued a specific modeling error, demonstrating thorough understanding and robust presentation."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Balanced discussion of quantitative and strategic factors",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Base Case Capital Budgeting Metrics (WACC = 8.5%) Metric Value Hurdle / Target Recommendation Net Present Value (NPV) $3,022,514.85 > $0 Accept Internal Rate of Return (IRR) 13.25% > 8.50% Accept Profitability Index (PI) 1.347 > 1.0 Accept\"",
+        "\"Executive Recommendation The Starbucks Roastery project is financially attractive, creates significant shareholder value in the base case, and is strategically essential for brand premiumization.\"",
+        "\"If the Net Present Value (NPV) is marginally positive but the Internal Rate of Return (IRR) is close to the WACC (8.5%), the recommendation must rely heavily on the strategic 'Flagship' branding benefits rather than pure financial arbitrage.\""
+      ],
+      "driver_alignment": "- Discover: framed financial goals and strategic scope (defined WACC, investment, and communication plan tying strategy to metrics).  \n- Implement: calculated core quantitative metrics (NPV, IRR, PI) and implemented sensitivity scenarios.  \n- Validate: ran sensitivity tests and identified revenue vulnerability vs. WACC robustness.  \n- Reflect/Evolve: provided an executive recommendation tying quantitative results to strategic rationale and proposed mitigation/next steps.",
+      "reasoning": "The submission presents detailed quantitative analysis (clear metric values and sensitivity scenarios) and explicitly links those results to strategic considerations (branding justification, risk mitigation, and decision rule when metrics are marginal). The coverage is specific, balanced, and includes critique of assumptions, meeting the threshold for a thorough treatment."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Professional video presentation demonstrating investment analysis",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Goal: The objective is to build a transparent, dynamic Python-based cash-flow model to calculate NPV, IRR, and Payback Period, providing a data-backed 'Accept' or 'Reject' recommendation...\"",
+        "\"The model was implemented using Python's numpy-financial (Python Library (Numeric Python - Financial)) library to execute the cash flow projections and metric calculations.\"",
+        "\"Executive Recommendation The Starbucks Roastery project is financially attractive, creates significant shareholder value in the base case, and is strategically essential for brand premiumization.\""
+      ],
+      "driver_alignment": "Discover — framed the problem, goals, and communication plan; Represent — outlined stepwise methodology and formulas; Implement — documented technical execution and core metrics; Validate — performed sensitivity tests and sense checks; Evolve/Reflect — critiqued errors and delivered a clear executive recommendation.",
+      "reasoning": "The submission presents a clear, structured investment analysis with explicit goals, implemented code/library use, quantified results (NPV/IRR), sensitivity testing, and an executive recommendation, plus a candid critique of model errors. This depth and professional synthesis across DRIVER stages meets the PASS standard for a professional presentation."
+    },
+    {
+      "criterion_id": "criterion_6",
+      "criterion_name": "All project cash flow assumptions specified above",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Problem: Starbucks is evaluating a strategic 'Flagship Roastery' project requiring a substantial $12 million upfront capital outlay and a $500,000 working capital injection.\"",
+        "\"Annual Straight-Line Depreciation: Depreciation = Initial Investment / Project life\" and \"We must explicitly verify that the $500,000 Working Capital is an outflow at Year 0 and a recapture (inflow) at Year 10.\"",
+        "\"Step 1: Model Setup and Constant Calculation (Depreciation) Define all project parameters (Investment, Weighted Average Cost of Capital, Tax Rate, Revenues, Costs) as variables in Python.\" / \"Terminal Value Tax Treatment: The model correctly assumes the entire $3M Terminal Value is a taxable gain because the Book Value = 0.\""
+      ],
+      "driver_alignment": "- Discover: specified core project facts (investment, WC, horizon, WACC) and flagged timing issues.\n- Represent: formally defined cash‑flow formulae (depreciation, OCF, FCF, terminal/WC treatment) and the modeling steps.\n- Implement & Validate: implemented parameters in code and validated terminal tax and sensitivity assumptions.\n- Evolve: critiqued assumptions (depreciation method, payback computation) showing awareness of missing/alternative cash‑flow treatments.",
+      "reasoning": "The submission explicitly specifies the key cash‑flow assumptions (initial capex, working capital timing, depreciation method, terminal value tax treatment, revenue scenarios, WACC) and encodes them in the model; it also validates and critiques those assumptions. Coverage is thorough and reflective, meeting the PASS standard."
+    },
+    {
+      "criterion_id": "criterion_7",
+      "criterion_name": "Starbucks WACC: 8.5%",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"To assess the economic viability of this 10-year project, we must determine if the generated Free Cash Flows (FCF) provide a return exceeding the firm's Weighted Average Cost of Capital (WACC) of 8.5%.\"",
+        "\"The base case uses the Weighted Average Cost of Capital of 8.5% and 100% of the projected revenues.\"",
+        "\"WACC Robustness (LOW RISK): The project's value is robust to changes in the cost of capital. Even if the WACC increases by 200bps to 10.5%, the NPV remains positive at $1.63 million.\""
+      ],
+      "driver_alignment": "- Discover: identified WACC = 8.5% as the hurdle rate and framed key questions around it.\n- Implement: applied the 8.5% WACC in the Python model to compute NPV/IRR/PI.\n- Validate: performed sensitivity tests varying WACC (±200 bps) and reported impacts, supporting interpretation in Reflect.",
+      "reasoning": "The student consistently defined, applied, and evaluated the 8.5% WACC across the workflow, including sensitivity analysis and clear conclusions about robustness. While they did not derive the WACC from first principles, their clear use of it as the hurdle rate and the documented robustness tests meet the \"thorough\" communication standard for this moderate criterion."
+    },
+    {
+      "criterion_id": "criterion_8",
+      "criterion_name": "Tax rate: 25%",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Step 1: Model Setup and Constant Calculation (Depreciation) Define all project parameters (Investment, Weighted Average Cost of Capital, Tax Rate, Revenues, Costs) as variables in Python.\"",
+        "\"OCF = (Revenues − COGS − Operating Costs − Depreciation) × (1 − t) + Depreciation\"",
+        "\"Since the Book Value is $0, the entire $3M Terminal Value will be treated as a taxable gain (Recapture).\""
+      ],
+      "driver_alignment": "Discover (identified need to verify tax/treatment), Represent (included tax rate as a model parameter and explicit OCF formula using 't'), Implement/Validate (applied tax treatment to terminal value and cash flow schedule).",
+      "reasoning": "The student demonstrates clear conceptual understanding of tax treatment (included tax as a parameter, used (1−t) in OCF, and handled terminal-value taxation), but the submission does not explicitly state or show the required 25% tax rate numeric value. Therefore the treatment is correct but incomplete."
+    },
+    {
+      "criterion_id": "criterion_9",
+      "criterion_name": "10-year project life",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"To assess the economic viability of this 10-year project, we must determine if the generated Free Cash Flows (FCF) provide a return exceeding the firm's Weighted Average Cost of Capital (WACC) of 8.5%.\"",
+        "\"Step 2: Incremental Cash Flow Schedule Construction Create a loop for Years 1 through 10. Inside the loop, dynamically calculate: Revenues, COGS, Total Operating Costs (excluding depreciation), Depreciation, Taxable Income (EBIT), Taxes, and Free Cash Flow.\"",
+        "\"Since the $12M is depreciated straight-line over 10 years, the Book Value at Year 10 will be $0. Consequently, the entire $3M Terminal Value will be treated as a taxable gain (Recapture).\""
+      ],
+      "driver_alignment": "Discover (defines the 10-year horizon and key Year‑10 treatments), Represent (plans a Years 1–10 cash‑flow loop and terminal/WC handling), Implement (built the 10‑year Python cash‑flow model), Validate/Evolve (checked Year‑10 tax/recapture logic and flagged/payback issue).",
+      "reasoning": "The student explicitly set and used a 10‑year project life throughout the analysis (definition, modeling loop, depreciation, terminal/WC treatment), implemented the 10‑year cash‑flow model, ran sensitivities tied to later-year revenues, and critically reviewed Year‑10 assumptions—demonstrating thorough, well‑communicated treatment of the 10‑year project life."
+    },
+    {
+      "criterion_id": "criterion_10",
+      "criterion_name": "Comparable Starbucks store performance data",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.0,
+      "level": "FAIL",
+      "evidence": [
+        "\"Goal: The objective is to build a transparent, dynamic Python-based cash-flow model to calculate NPV, IRR, and Payback Period...\"",
+        "\"Hypothesis: Given the high initial investment ($12M) relative to the Year 1 revenue ($8M), the project will likely have a long payback period. However, the surge in revenue during Years 2-5 ($11M) should drive the NPV positive...\"",
+        "\"Revenue Performance is the Single Greatest Risk: The project is highly vulnerable to underperforming sales due to high operating leverage (high fixed costs relative to revenue).\""
+      ],
+      "driver_alignment": "- DISCOVER: Defined project scope and revenue assumptions but did not identify or request comparable-store benchmarks.\n- REPRESENT: Modeling plan focuses on cash flows, depreciation, taxes, and sensitivities—no step to incorporate comparable Starbucks store performance data.\n- IMPLEMENT/VALIDATE: Implemented and validated sensitivity analyses on internal revenue scenarios rather than comparing projections to historical or peer store performance.",
+      "reasoning": "The submission contains detailed internal revenue assumptions and sensitivity tests but includes no comparable Starbucks store performance metrics, benchmarks, or historical same-store data. Because the criterion specifically requires comparable store performance data and the DRIVER stages show modeling without any comps, the work fails this criterion."
+    },
+    {
+      "criterion_id": "criterion_11",
+      "criterion_name": "Industry benchmark returns for retail locations",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Net Present Value (NPV) $3,022,514.85 ... Internal Rate of Return (IRR) 13.25% > 8.50% Accept\"",
+        "\"WACC Robustness (LOW RISK): The project's value is robust to changes in the cost of capital. Even if the WACC increases by 200bps to 10.5%, the NPV remains positive at $1.63 million.\"",
+        "\"Value Creation and Return Buffer: The project is sound, with an IRR of 13.25% that provides a strong 4.75% buffer over the 8.5% WACC.\""
+      ],
+      "driver_alignment": "- Discover: established the WACC hurdle and project goals (used as internal benchmark).\n- Implement: calculated IRR/NPV and presented the primary returns.\n- Validate: ran WACC sensitivity to test robustness against cost-of-capital changes.",
+      "reasoning": "The student correctly computed and compared project returns to the firm's WACC and performed sensitivity on WACC, demonstrating understanding of an internal benchmark. However, they did not cite or compare the project's returns to external industry benchmarks for retail locations (typical IRRs, cap rates, or sector return expectations), so treatment of \"industry benchmark returns for retail locations\" is incomplete."
+    },
+    {
+      "criterion_id": "criterion_12",
+      "criterion_name": "Real estate and construction cost validation",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Problem: Starbucks is evaluating a strategic 'Flagship Roastery' project requiring a substantial $12 million upfront capital outlay and a $500,000 working capital injection.\"",
+        "\"Fact Verification - Important First Step: A common analytical error in capital budgeting is mismanaging the timing of cash flows, particularly Working Capital and Terminal Value. We must explicitly verify that the $500,000 Working Capital is an outflow at Year 0 and a recapture (inflow) at Year 10. Additionally, we must confirm that the $3 million Terminal Value is treated as a taxable cash inflow at the end of the project life, distinct from the depreciation schedule.\"",
+        "\"Depreciation Method: The model uses straight-line depreciation. The Modified Accelerated Cost Recovery System is typically used for tax purposes, which accelerates depreciation and creates a larger tax shield in the early years. This would increase the early-year Free Cash Flow, resulting in a higher NPV and a faster discounted payback.\""
+      ],
+      "driver_alignment": "Discover — identified and stated core cost assumptions (investment, working capital).  \nRepresent — documented modeling choices (timing of WC, terminal value tax treatment, depreciation method) and procedure.  \nImplement/Validate/Evolve — implemented assumptions in the model, validated/taxed terminal treatment, and critiqued/deferred the straight-line depreciation choice recommending MACRS and further stress tests.",
+      "reasoning": "The submission clearly documents key real-estate/construction cost assumptions (investment amount, working capital timing, terminal value) and explains their treatment in the model, plus it critiques and justifies alternative choices (depreciation method and tax implications). This depth of documentation, validation, and recommended corrections meets the PASS standard."
+    },
+    {
+      "criterion_id": "criterion_14",
+      "criterion_name": "*Refer to DRIVER Framework: Assignment Guidelines for complete documentation requirements, grading criteria, and framework application guidance.*",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Problem: Starbucks is evaluating a strategic 'Flagship Roastery' project requiring a substantial $12 million upfront capital outlay and a $500,000 working capital injection.\"",
+        "\"Core Formula & Methodology The analysis will be centered on calculating the Incremental Free Cash Flow (FCF) for each year and discounting it back to the present value to find the Net Present Value (NPV).\"",
+        "\"Payback Period Error A critical error was found in the model's computation of the Payback Periods. ... The actual simple payback period should be closer to 5.2 years.\""
+      ],
+      "driver_alignment": "The submission maps directly to DRIVER stages — Discover (clear problem, goals, and verification), Represent (detailed methodology and stepwise plan), Implement (Python-based model and metrics), Validate (sensitivity analysis and results), Evolve (identifies model error and next steps), and Reflect (executive recommendation). Each stage contributed to clear communication and explanation.",
+      "reasoning": "The student presents a thorough, stage-by-stage DRIVER application with explicit problem framing, formulas/methodology, implementation details, sensitivity validation, and an honest critique of model errors. This depth and clarity satisfy the PASS standard for Clear Communication and Explanation."
+    }
+  ]
+}

@@ -1,0 +1,539 @@
+{
+  "student_name": "Ethan Sleeth",
+  "username": "sleethe",
+  "org_defined_id": "038097599",
+  "transcript_length": 6585,
+  "overall_grade": 87.91666666666667,
+  "passed_criteria": 28,
+  "partial_criteria": 7,
+  "failed_criteria": 2,
+  "driver_stages_demonstrated": {
+    "D": true,
+    "R": true,
+    "I": true,
+    "V": true,
+    "E": true,
+    "R2": true
+  },
+  "feedback": "Excellent application of the DRIVER framework throughout your work. You clearly demonstrated 6 stages: D, R, I, V, E, R2.\n\n\nSTRENGTHS:\n- Financial Concepts Accuracy: The student accurately constructs FCFs including initial outlay, working capital, terminal value, and recovery, then discounts at the stated WACC to compute and report NPV, with validation via IRR and sensitivity analyses. This demonstrates thorough, correct application of NPV beyond a surface mention, meeting the moderate standard for depth. Minor wording slips do not undermine the clear, accurate NPV treatment.\n- Financial Concepts Accuracy: The student explicitly frames the decision in NPV terms, calculates a positive base-case NPV, and ties the accept decision to that result. They also discuss scenarios where NPV would fall (value-destroying), demonstrating correct application of the NPV accept/reject rule. Minor wording/typo issues do not undermine the clear, thorough understanding shown across stages.\n- Financial Concepts Accuracy: The student not only computed IRR but explicitly validated it by showing that substituting IRR into the NPV equation yields near zero, demonstrating correct conceptual understanding. They further applied IRR in sensitivity analysis and decision context, providing thorough, multi-faceted treatment appropriate for a PASS under the moderate standard.\n\n\nAREAS FOR IMPROVEMENT:\n- Financial Concepts Accuracy: Student correctly computed and reported both simple and discounted payback periods, showing basic understanding of recovery timing. However, there’s no explanation of calculation mechanics, cumulative cash flow crossover, thresholds, or interpretation relative to project life, so coverage is not thorough enough for a PASS in this moderate category.\n- Financial Concepts Accuracy: The student computed and reported a plausible PI (≈1.22), evidencing basic understanding and application in the Implement stage. However, they did not explain the PI formula (PV of benefits divided by initial investment) and gave a contradictory statement in the Reflect stage, preventing a thorough, accurate treatment needed for PASS.\n- Financial Concepts Accuracy: The student shows correct conceptual understanding and application of OCF (using EBIT and depreciation with taxes) and provides year-by-year OCF outputs and a validation check. However, they do not explicitly present or walk through the OCF formula EBIT × (1−T) + Depreciation with a detailed example, so coverage is basic rather than thorough.",
+  "criteria": [
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Net Present Value (NPV): Calculating present value of future cash flows minus initial investment",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The decision question is does the project create value after discounting all the future cash flows at Starbucks at an 8.5 cost of capital.\"",
+        "\"Now that I implement the code... running the script generates the cash flow table automatically... calculating the core capital budgeting metrics at Starbucks at an 8.5% WACC... the MPV is 2.69 million.\"",
+        "\"year zero the FCF is -12 million minus 0.5 million and that equals -12.5 million... Year 10 the FCF equals OCF plus 2.25 million terminal value plus 0.5 million working capital recovery.\""
+      ],
+      "driver_alignment": "Discover: Clearly frames NPV as the decision criterion with the 8.5% WACC. Implement: Builds cash flows and computes NPV programmatically. Reflect: Interprets NPV results and sensitivity implications. Validate (implicit): Cross-checks IRR by confirming NPV near zero at IRR.",
+      "reasoning": "The student accurately constructs FCFs including initial outlay, working capital, terminal value, and recovery, then discounts at the stated WACC to compute and report NPV, with validation via IRR and sensitivity analyses. This demonstrates thorough, correct application of NPV beyond a surface mention, meeting the moderate standard for depth. Minor wording slips do not undermine the clear, accurate NPV treatment."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "NPV Decision Rule: Understanding when to accept or reject projects based on NPV",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"the decision question is does the project create value after discounting all the future cash flows at Starbucks at an 8.5 cost of capital.\"",
+        "\"the MPV is 2.69 million.\"",
+        "\"I would recommend that Starbucks accept the flagship grocery project... it generates a positive MPV...\" / \"this shows the project becomes destroying if revenue underperformed meaningly.\""
+      ],
+      "driver_alignment": "- Discover: Clearly frames the NPV-based decision criterion (value creation after discounting at WACC).\n- Implement: Computes NPV and scenario NPVs to apply the rule.\n- Reflect: Uses positive NPV to recommend acceptance and notes negative/low scenarios are value-destroying.",
+      "reasoning": "The student explicitly frames the decision in NPV terms, calculates a positive base-case NPV, and ties the accept decision to that result. They also discuss scenarios where NPV would fall (value-destroying), demonstrating correct application of the NPV accept/reject rule. Minor wording/typo issues do not undermine the clear, thorough understanding shown across stages."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Internal Rate of Return (IRR): Computing the discount rate that makes NPV equal zero",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"plugging the IRR back into the MPV equation produces the MPV near zero, which confirms the accuracy of the IRR solver.\"",
+        "\"calculating the core capital budgeting metrics at Starbucks at an 8.5% WACC... The IIR or the IRR is 12.8%.\"",
+        "\"if the revenue is 20%... the IRR falls to about 3.1%.\""
+      ],
+      "driver_alignment": "- Discover: Identified need to compute IRR as a key metric.\n- Implement: Computed IRR from modeled cash flows.\n- Validate: Verified IRR by confirming NPV ≈ 0 at the IRR.\n- Evolve: Assessed IRR under sensitivity scenarios.\n- Reflect: Compared IRR to the 8.5% hurdle rate in the recommendation.",
+      "reasoning": "The student not only computed IRR but explicitly validated it by showing that substituting IRR into the NPV equation yields near zero, demonstrating correct conceptual understanding. They further applied IRR in sensitivity analysis and decision context, providing thorough, multi-faceted treatment appropriate for a PASS under the moderate standard."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Payback Period: Determining time required to recover initial investment",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"I need to uh compute the MPV, the IRR, the simple and discounted payback and the profitability index.\"",
+        "\"I also plan the Python uh architect. So one function to build the cash flow, one to calculate the metrics...\"",
+        "\"the simp simple payback is around 5.3 and then the discounted payback is around 8.2 years.\""
+      ],
+      "driver_alignment": "- Discover: Identified the need to compute both simple and discounted payback.\n- Implement: Built cash flow and metrics functions; produced specific payback values.\n- Reflect: Did not interpret or contextualize the payback periods.",
+      "reasoning": "Student correctly computed and reported both simple and discounted payback periods, showing basic understanding of recovery timing. However, there’s no explanation of calculation mechanics, cumulative cash flow crossover, thresholds, or interpretation relative to project life, so coverage is not thorough enough for a PASS in this moderate category."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "Profitability Index: Calculating present value of benefits divided by initial investment",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "“I need to uh compute the MPV, the IRR, the simple and discounted payback and the profitability index.”",
+        "“the profitability index is around 1.22 22”",
+        "“the base cap MPV is positive. The irr exceeds the 8.5 hurdle rate and the um PI is less than one.”"
+      ],
+      "driver_alignment": "- Discover: Identified PI as a required metric.\n- Implement: Reported a computed PI (~1.22), consistent with NPV and outlay.\n- Reflect: Provided an inconsistent statement (“PI is less than one”), weakening accuracy.",
+      "reasoning": "The student computed and reported a plausible PI (≈1.22), evidencing basic understanding and application in the Implement stage. However, they did not explain the PI formula (PV of benefits divided by initial investment) and gave a contradictory statement in the Reflect stage, preventing a thorough, accurate treatment needed for PASS."
+    },
+    {
+      "criterion_id": "criterion_6",
+      "criterion_name": "Free Cash Flow Calculation: Operating cash flow less capital expenditures and working capital changes",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"uh year zero the FCF is -12 million minus 0.5 million and that equals -12.5 million. Years 1 through9 the FCF is the operating cash flow. Year 10 the FCF equals OCF plus 2.25 25 million terminal value plus 0.5 million working capital recovery\"",
+        "\"So now that I implement the code... running the script generates the cash flow uh table automatically.\"",
+        "\"The project requires $500,000 of working capital at launch, which will be recovered at the end of the year 10.\""
+      ],
+      "driver_alignment": "- Discover: Defined project scope and need to build year 0–10 FCF.\n- Represent: Stated the FCF formula including capex and working capital changes.\n- Implement: Generated the cash flow table and OCF figures.\n- Validate: Confirmed cash flow signs/discounting and depreciation consistency.",
+      "reasoning": "The student clearly and correctly specifies FCF construction across years, subtracting initial capex and working capital, then adding NWC recovery and after-tax terminal value in year 10, with supporting numeric examples. Implementation and validation steps indicate proper application, satisfying a thorough, accurate treatment under moderate standards."
+    },
+    {
+      "criterion_id": "criterion_7",
+      "criterion_name": "Incremental Cash Flows: Identifying only cash flows caused by the project",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"year zero the FCF is -12 million minus 0.5 million... Years 1 through 9 the FCF is the operating cash flow. Year 10 the FCF equals OCF plus 2.25 million terminal value plus 0.5 million working capital recovery.\"",
+        "\"To answer that I need to build a year 0 to10 free cash flow statements.\"",
+        "\"The project requires $500,000 of working capital at launch, which will be recovered at the end of the year 10... Terminal value 3 million at year 10 which becomes 2.25 million after tax because the asset is fully depreciated.\""
+      ],
+      "driver_alignment": "- Discover: Identified need to build project FCFs.\n- Represent: Specified cash flow components/formula (capex, WC, OCF, after-tax terminal value).\n- Implement: Generated a cash flow table from these elements.\n- Validate: Checked signs/discounting align with capital budgeting standards.",
+      "reasoning": "The student explicitly enumerates only project-driven cash flows: initial capex, working capital invest/recovery, operating cash flows, and after-tax terminal value, without including financing flows. Their year-by-year FCF construction and after-tax treatment of salvage show thorough and accurate identification of incremental cash flows, satisfying a comprehensive treatment under the moderate standard."
+    },
+    {
+      "criterion_id": "criterion_8",
+      "criterion_name": "Operating Cash Flow: EBIT × (1-T) + Depreciation calculation",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"the depreciation straight line of 12 million over 10 years is 1.2 million per year... and then you have 25% taxes with that.\"",
+        "\"year one the OCF is around 1.2 million. Years 2 through 5 is around 2.7 million. Years 6 through 10 is around 1.8 million.\"",
+        "\"Year two, the EBIT and the OCF match my hand calculations exactly.\""
+      ],
+      "driver_alignment": "Represent: Specified depreciation schedule and tax rate needed to compute OCF. Implement: Code generated OCF values by year. Validate: Stated EBIT and OCF match hand calculations, indicating the calculation was checked.",
+      "reasoning": "The student shows correct conceptual understanding and application of OCF (using EBIT and depreciation with taxes) and provides year-by-year OCF outputs and a validation check. However, they do not explicitly present or walk through the OCF formula EBIT × (1−T) + Depreciation with a detailed example, so coverage is basic rather than thorough."
+    },
+    {
+      "criterion_id": "criterion_9",
+      "criterion_name": "Terminal Value: Treatment of salvage value and working capital recovery",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"So the terminal value 3 million at year 10 which becomes 2.25 million after tax because the asset is fully depreciated.\"",
+        "\"So now that I implement the code. Um so running the script generates the cash flow uh table automatically.\"",
+        "\"Year 10 the FCF equals OCF plus 2.25 million terminal value plus 0.5 million working capital recovery\""
+      ],
+      "driver_alignment": "- Discover: Identified working capital requirement and recovery timing.\n- Represent/Design: Explicitly modeled after-tax salvage and WC recovery in terminal year.\n- Implement: Built code to generate cash flows including terminal items.\n- Validate: Stated cash flow signs/discounting align with capital budgeting standards.",
+      "reasoning": "The student correctly and explicitly treated both after-tax salvage (fully depreciated asset) and working capital recovery, and incorporated them into terminal-year FCF. They also operationalized this in implementation and validated alignment with standards. Depth and specificity meet a thorough, PASS-level treatment."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Correct NPV and IRR calculations",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"the MPV is 2.69 million. The IIR or the IRR is 12.8%.\"",
+        "\"I plan the Python architect. So one function to build the cash flow, one to calculate the metrics or the metrics and then one to run the sensitivity scenarios.\"",
+        "\"plugging the IRR back into the MPV equation produces the MPV near zero, which confirms the accuracy of the IRR solver.\""
+      ],
+      "driver_alignment": "- Represent: explicit planning of module structure and functions (\"one function to build the cash flow...\").  \n- Implement: reported running the script and generating the cash flow table and metric outputs.  \n- Validate: verified year-by-year figures against hand calculations and checked IRR by substituting back into the NPV equation.",
+      "reasoning": "The student explicitly describes personal implementation (ran the script), block-level structure of the code, and performed concrete validations (hand-calcs match and IRR yields NPV ≈ 0). These satisfy the strict requirements for demonstrating correct NPV and IRR calculations."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Accurate cash flow projections over project life",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"So then we have the terminal value ... Year zero the FCF is -12 million minus 0.5 million and that equals -12.5 million.\"",
+        "\"So one function to build the cash flow, one to calculate the metrics or the metrics and then one to run the sensitivity scenarios.\"",
+        "\"Year two, the EBIT and the OCF match my hand calculations exactly.\""
+      ],
+      "driver_alignment": "- Represent: student explicitly defined year-by-year revenues, costs, depreciation, working capital and terminal value (cash flow formula quoted).\n- Implement: student described module architecture (functions to build cash flows, compute metrics, run scenarios) and ran the script to generate the cash flow table.\n- Validate: student verified outputs against hand calculations (EBIT/OCF) and checked IRR/NPV consistency.",
+      "reasoning": "The student explicitly modeled year-by-year FCFs, implemented code with clear function-level ownership, ran the code, and validated results against hand calculations and IRR/NPV checks. These explicit Represent→Implement→Validate actions satisfy the strict Technical Implementation requirements for accurate cash flow projections."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Proper treatment of depreciation and taxes",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"the depreciation straight line of 12 0:02:21.280,0:02:28.320 million over 10 years is 1.2 million per year. Um and then you have 25% taxes with that.\"",
+        "\"the terminal value 3 million at year 10 which becomes 2.25 million after tax because the asset is fully depreciated.\"",
+        "\"Year two, the EBIT and the OCF match my hand calculations exactly.\""
+      ],
+      "driver_alignment": "- Represent: student explicitly planned depreciation schedule and tax rate (\"depreciation straight line...1.2 million per year\", \"25% taxes\").\n- Implement: described module architecture and functions to build cash flows and metrics (\"one function to build the cash flow, one to calculate the metrics...\"), indicating block-level implementation.\n- Validate: verified results against hand calculations and checks (\"EBIT and the OCF match my hand calculations exactly\", total depreciation equals original), confirming correct treatment of depreciation and taxes.",
+      "reasoning": "The student explicitly defined straight-line depreciation, applied a 25% tax rate, adjusted the terminal sale for tax, implemented these in code functions, and validated outputs against hand calculations. These explicit statements plus validation demonstrate proper treatment of depreciation and taxes."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Sensitivity analysis on key assumptions",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I need to run a sensitivity analysis on the revenue and the WACC and then I need to combine the financial results with the strategic...\"",
+        "\"I also plan the Python architect. So one function to build the cash flow, one to calculate the metrics or the metrics and then one to run the sensitivity scenarios.\"",
+        "\"so if the revenue is 20% all revenues are ... scaled down by 20%. So the MPV drops to 3.08 million and the IRR falls to about 3.1%.\""
+      ],
+      "driver_alignment": "- REPRESENT: explicitly planned the module and stated the need to run sensitivity on revenue and WACC.  \n- IMPLEMENT: described and implemented a dedicated sensitivity-function and ran the script to generate scenarios.  \n- EVOLVE/VALIDATE: executed scenarios, produced sensitivity charts and numeric results, and interpreted the impacts on MPV and IRR.",
+      "reasoning": "The student explicitly planned, implemented, ran, and reported sensitivity tests on the key assumptions (revenue and WACC), providing numeric scenario outcomes and interpretation. They demonstrated personal execution (running the script), module-level ownership (describing the sensitivity function), and result validation — meeting the strict explicitness requirement."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "Scenario modeling (best/base/worst cases)",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"So if the revenue is 20% all revenues are scaled down by 20%. So the MPV drops to 3.08 million and the IRR falls to about 3.1%.\"",
+        "\"I plan the Python architect. So one function to build the cash flow, one to calculate the metrics or the metrics and then one to run the sensitivity scenarios.\"",
+        "\"Now that I implement the code. Um so running the script generates the cash flow uh table automatically.\" / \"Year two, the EBIT and the OCF match my hand calculations exactly.\""
+      ],
+      "driver_alignment": "- Represent: Explicit planning of module and a function dedicated to running sensitivity scenarios.\n- Implement: Student ran the script and generated sensitivity visualizations (MPV under baseline/alternate scenarios).\n- Validate: Student verified outputs (hand calculations match; IRR plugged back to confirm MPV ≈ 0), demonstrating personal execution and correctness.",
+      "reasoning": "The student explicitly planned, implemented, and validated scenario/sensitivity analysis (revenue -20% and WACC variations) and produced visual outputs. They demonstrated personal execution, block-level architecture for scenario runs, and validated results, meeting the strict DRIVER requirements for scenario modeling."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Automation of capital budgeting calculations",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"running the script generates the cash flow uh table automatically.\"",
+        "\"one function to build the cash flow, one to calculate the metrics... and then one to run the sensitivity scenarios.\"",
+        "\"I'm calculating the core capital budgeting metrics... the NPV is 2.69 million... IRR is 12.8%... profitability index... simple payback... discounted payback...\""
+      ],
+      "driver_alignment": "Implement: Defined modular functions and executed a script to automate cash flows and metrics. Validate: Checked IRR by plugging back into NPV to confirm solver accuracy. Evolve: Automated sensitivity scenarios (revenue and WACC) and visualized results.",
+      "reasoning": "The student clearly automated capital budgeting by scripting functions that generate cash flows and compute NPV, IRR, PI, and payback, with concrete results reported. They also automated sensitivity analysis and performed validation checks, demonstrating thorough, applied understanding aligned with multiple DRIVER stages."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Dynamic scenario and sensitivity analysis",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I need to run a sensitivity um analysis on the revenue and the WACC\"",
+        "\"I also plan the Python uh architect... one to run the sensitivity scenarios.\"",
+        "\"so now I want to evolve the analysis with the sensitivity test... if the revenue is 20% all revenues are uh scaled down by 20%... the MPV drops to 3.08 million and the IRR falls to about 3.1%... at 6.5% WACCC... the MPV rises to 4.24 million... at 10.5% WACCC you have a MPV remains positive at 1.35 million... I have the uh sensitivity chart MPVs under the baseline alternate scenarios\""
+      ],
+      "driver_alignment": "- Discover: Identified the need to run sensitivity on revenue and WACC.\n- Implement: Designed a function specifically to run sensitivity scenarios and produced a sensitivity chart.\n- Evolve: Executed and interpreted revenue (-20%) and WACC (6.5%, 10.5%) scenarios with quantified impacts.",
+      "reasoning": "The student conducts dynamic scenario and sensitivity analysis across multiple drivers (revenue and WACC), quantifies impacts on NPV and IRR, and presents a sensitivity chart, indicating depth and application. The implementation plan and evolution stages show deliberate tooling for scenarios and meaningful interpretation, meeting a thorough standard for a moderate category."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Cash flow modeling with multiple phases",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"the revenues year 1 8 million year two through five um you have 11 million and then year 6 through 10 9 million\"",
+        "\"I plan the Python architect. So one function to build the cash flow, one to calculate the metrics... and then one to run the sensitivity scenarios.\"",
+        "\"year zero the FCF is -12 million minus 0.5 million... Years 1 through9 the FCF is the operating cash flow. Year 10 the FCF equals OCF plus 2.25... terminal value plus 0.5 million working capital recovery\""
+      ],
+      "driver_alignment": "- Discover: Defined 10-year scope and hurdle rate.\n- Represent: Specified phased revenues/costs and distinct formulas for year 0, years 1–9 OCF, and year 10 with terminal value and WC recovery.\n- Implement: Built functions and generated a cash flow table with phased OCF results.\n- Evolve: Ran revenue and WACC sensitivities.\n- Validate: Cross-checked depreciation totals, EBIT/OCF, and IRR→NPV≈0.",
+      "reasoning": "The student thoroughly models multi-phase cash flows with explicit year partitions for revenues, costs, and special treatments for year 0 and year 10, then implements and validates this structure in code. The phased OCF outputs and sensitivity analyses demonstrate strong conceptual and applied grasp, satisfying a thorough PASS under the moderate standard."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Visualization of NPV sensitivity to key drivers",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I also display the two uh visualizations. So I have a bar chart and then I have the uh sensitivity chart MPVs under the baseline alternate scenarios which you see right here.\"",
+        "\"I need to run a sensitivity um analysis on the revenue and the WACC\" and \"one function to build the cash flow... and then one to run the sensitivity scenarios.\"",
+        "\"if the revenue is 20%... the NPV drops to 3.08 million...\"; \"at 6.5% WACC... the NPV rises to 4.24 million... at 10.5% WACC... NPV remains positive at 1.35 million.\""
+      ],
+      "driver_alignment": "- Discover: Identified need to analyze NPV sensitivity to revenue and WACC.\n- Implement: Built code and a function to run sensitivity scenarios; produced a sensitivity chart.\n- Evolve: Ran scenarios and interpreted NPV impacts across key drivers.",
+      "reasoning": "The student explicitly produced and referenced a sensitivity visualization of NPV and provided quantified results for multiple revenue and WACC scenarios, demonstrating depth beyond a surface mention. The DISCOVER, IMPLEMENT, and EVOLVE stages clearly support thoughtful setup, execution, and interpretation, satisfying a thorough treatment under moderate standards."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "Demonstrates systematic investment evaluation framework",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The decision question is does the project create value after discounting all the future cash flows at Starbucks at an 8.5 cost of capital… I need to build a year 0 to10 free cash flow statements… compute the MPV, the IRR, the simple and discounted payback and the profitability index.\"",
+        "\"I'm going to show how I defined the problem, represented it mathematically and imple implement it into my Python that validated the results and involved it with the sensibil sensitivity testing and finally reflected on what my recommendation was.\"",
+        "\"I plan the Python architect. So one function to build the cash flow, one to calculate the metrics… and then one to run the sensitivity scenarios… [then] calculating the core capital budgeting metrics… and… evolve the analysis with the sensitivity test.\""
+      ],
+      "driver_alignment": "- Discover: Frames the decision around value creation at an 8.5% WACC.\n- Represent: Specifies cash flow structure, costs, depreciation, taxes, terminal value, and formulas.\n- Implement: Modular Python functions for cash flows, metrics, and sensitivities.\n- Validate: Confirms IRR by plugging back into NPV for ~0 and checks depreciation totals.\n- Evolve: Sensitivity on revenue and WACC with quantified impacts.\n- Reflect: Concludes with a recommendation and risk emphasis.",
+      "reasoning": "The student presents a comprehensive, stepwise investment evaluation: defining the decision, constructing cash flows, computing multiple metrics, validating results, performing sensitivity analyses, and concluding with a recommendation. The modular coding plan further evidences a systematic framework. Depth and specifics meet a thorough standard appropriate for a PASS."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Define & Discover: Clear understanding of Starbucks roastery investment problem and decision criteria",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Starbucks is considering a $12 million investment to build a flagship grocery that will operate for 10 years.\"",
+        "\"The decision question is does the project create value after discounting all the future cash flows at Starbucks at an 8.5 cost of capital.\"",
+        "\"I need to build a year 0 to10 free cash flow statements. I need to uh compute the MPV, the IRR, the simple and discounted payback and the profitability index. I need to run a sensitivity analysis on the revenue and the WACC and then I need to combine the financial results with the strategic uh material recommendation.\""
+      ],
+      "driver_alignment": "- Discover: Explicit problem framing (investment size, horizon, working capital) and explicit decision criterion (discount at 8.5% WACC to assess value).\n- Represent: Planned modeling approach and required metrics (FCF build, NPV/IRR/paybacks/PI) showing how the decision question will be operationalized.\n- Implement/Validate (supporting): Descriptions of running code and validation steps indicate the discovery translated into measurable outputs.",
+      "reasoning": "The student explicitly defined the investment, time horizon, working capital treatment, hurdle rate, and posed the decision question in discover. They also listed the exact cash-flow model and decision metrics to be computed, demonstrating clear, concrete understanding and a reproducible plan to evaluate the project."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Represent: Quality framework for projecting cash flows and evaluating investment",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Before coding I structed the entire module.\"",
+        "\"So the revenues year 1 8 million year two through five um you have 11 million and then year 6 through 10 9 million ... the depreciation straight line of 12 million over 10 years is 1.2 million per year ... terminal value 3 million at year 10 which becomes 2.25 million after tax...\"",
+        "\"So I also plan the Python architect. So one function to build the cash flow, one to calculate the metrics or the metrics and then one to run the sensitivity scenarios.\" / \"Year two, the EBIT and the OCF match my hand calculations exactly. ... plugging the IRR back into the MPV equation produces the MPV near zero, which confirms the accuracy of the IRR solver.\""
+      ],
+      "driver_alignment": "The Discover stage defined the decision and required outputs (NPV, IRR, paybacks). The Represent stage is shown by the explicit cash‑flow assumptions, depreciation, terminal value and the stated cash‑flow formula. Implement and Validate stages are evidenced by the planned modular functions, running the code, and hand/IRR validation. Evolve (sensitivity testing) further demonstrates robustness of the representation.",
+      "reasoning": "The student explicitly documented a structured cash‑flow framework (detailed revenues, costs, depreciation, terminal value and working capital), planned modular code to generate and evaluate those cash flows, and personally validated outputs against hand calculations and NPV/IRR consistency. This meets the strict requirement for an explicit, owned representation of projected cash flows and investment evaluation."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Implement: Systematic NPV calculation with comprehensive sensitivity analysis",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "[\"I plan the Python architect. So one function to build the cash flow, one to calculate the metrics or the metrics and then one to run the sensitivity scenarios.\"]",
+        "[\"Now that I implement the code. Um so running the script generates the cash flow uh table automatically.\"]",
+        "[\"so now I want to evolve the analysis with the sensitivity test. Uh so if the revenue is 20% all revenues are uh scaled down by 20%.\"]"
+      ],
+      "driver_alignment": "Represent (planned modular functions and model structure), Implement (executed code to produce cash flow table and metrics), Validate (hand-calculation checks and IRR plug-back), Evolve (ran sensitivity tests on revenue and WACC and produced visualizations).",
+      "reasoning": "The submission shows a clear, systematic implementation: a planned modular architecture, automated cash-flow and metric generation, validation against hand calculations, and explicit sensitivity analysis on revenue and WACC with visual outputs. These elements satisfy the moderate-standard requirement for systematic NPV implementation with comprehensive sensitivity analysis."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Validate: Testing assumptions and comparing to investment hurdle rates",
+      "category_name": "Following the DRIVER Framework",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Starbucks WACCC is 8.5% and that becomes the hurdle rate for the evaluating project.\"",
+        "\"Year two, the EBIT and the OCF match my hand calculations exactly.\"",
+        "\"plugging the IRR back into the MPV equation produces the MPV near zero, which confirms the accuracy of the IRR solver.\""
+      ],
+      "driver_alignment": "Validate (internal checks: hand calculations and IRR→NPV consistency); Implement (calculation of metrics vs. hurdle rate); Evolve (sensitivity testing of revenue and WACC); Reflect (discussion of revenue risk vs. financial metrics).",
+      "reasoning": "The student performed solid internal validation (hand-calculation match, IRR checked via NPV) and compared IRR to the 8.5% hurdle, but did not cite or compare results to any external sources/tools. Per the moderate standard, this meets partial validation but lacks the external corroboration required for a full PASS."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "Evolve: Recognition of capital budgeting applications across corporate decisions",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"so now I want to evolve the analysis with the sensitivity test.\"",
+        "\"so if the revenue is 20% all revenues are uh scaled down by 20%. So the MPV drops to 3.08 million and the IRR falls to about 3.1%. And this shows the project becomes destroying if revenue underperformed meaningly.\"",
+        "\"the project fits Starbucks brand, the strategy and the experimental retail model. Um but the revenue risk is a dominant factor... the location, the marketing, the pricing, and the customer experience are critical.\""
+      ],
+      "driver_alignment": "Evolve — student explicitly ran sensitivity tests and reported MPV/IRR changes. Reflect — student connected financial outcomes to corporate decisions (brand fit, location, marketing, pricing, customer experience) and made a recommendation based on those links.",
+      "reasoning": "The student explicitly evolved the analysis with sensitivity testing and quantified how revenue/WACC shifts affect MPV and IRR, then tied those financial results to concrete corporate decisions and strategy. This clear, explicit linkage satisfies the criterion."
+    },
+    {
+      "criterion_id": "criterion_6",
+      "criterion_name": "Reflect: Insights on investment decision-making and value creation",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"So Starbucks is considering a $12 million investment to build a flagship grocery that will operate for 10 years.\"",
+        "\"Before coding I structed the entire module... one function to build the cash flow, one to calculate the metrics or the metrics and then one to run the sensitivity scenarios.\"",
+        "\"the revenue risk is a dominant factor. I found the project it only succeeds if the rotisserie hits its pro projected traffic and spending levels.\""
+      ],
+      "driver_alignment": "- Discover: Clearly defined project scope, cash flows, working capital, WACC and decision question (critical gate met).\n- Represent: Explicit planning/architecture of the module and functions before coding.\n- Implement/Validate/Evolve: Code run, hand-calculation checks, IRR/NPV validation, and sensitivity tests performed.\n- Reflect: Explicit insights on revenue risk, conditions for success, and a recommendation tied to financial and strategic considerations.",
+      "reasoning": "The student explicitly documented the Discover and Represent stages (meeting the strict critical gate) and ran/validated the model, then provided clear reflective insights linking financial metrics to operational risks and a recommendation. The combination of documented problem definition, planned implementation, validated outputs, sensitivity analysis, and explicit statements about revenue-driven value creation justifies a PASS."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Clear explanation of NPV methodology and decision logic",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The decision question is does the project create value after discounting all the future cash flows at Starbucks at an 8.5 cost of capital.\"",
+        "\"So then we have the terminal or the cash flow formula. So year zero the FCF is -12 million minus 0.5 million and that equals -12.5 million. Years 1 through9 the FCF is the operating cash flow. Year 10 the FCF equals OCF plus 2.25 25 million terminal value plus 0.5 million working capital recovery\"",
+        "\"I would recommend that Starbucks accept the flagship grocery project, but it generates a positive MPV in the IPR or the IRR under realistic assumptions and supports long-term brand strategy.\""
+      ],
+      "driver_alignment": "Discover — defined the decision question, horizon, initial investment, and WACC used for discounting; Implement — described building FCFs, computing NPV/IRR/PI and validating the solver; Reflect — ran sensitivity tests and formed a recommendation based on risk (revenue) and metrics.",
+      "reasoning": "The student clearly explains the NPV methodology (discount rate, FCF construction, terminal value, tax and working-capital treatment) and shows decision logic linking NPV/IRR results to a recommendation, supported by sensitivity analysis. The treatment is specific and comprehensive enough to demonstrate strong understanding, so it meets the PASS standard."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Logical presentation of cash flow projections",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"So Starbucks is considering a $12 million investment to build a flagship grocery that will operate for 10 years. The project requires $500,000 of working capital at launch, which will be recovered at the end of the year 10. Starbucks WACCC is 8.5% and that becomes the hurdle rate for the evaluating project.\"",
+        "\"So then we have the terminal value 3 million at year 10 which becomes 2.25 million after tax... So year zero the FCF is -12 million minus 0.5 million and that equals -12.5 million. Years 1 through9 the FCF is the operating cash flow. Year 10 the FCF equals OCF plus 2.25 ... plus 0.5 million working capital recovery.\"",
+        "\"So running the script generates the cash flow uh table automatically. Year one the OCF is around 1.2 million. Years 2 through 5 is around 2.7 million... and then the final year 10 is around 4.55 million. The total depreciation equals the original 12 million, confirming the straight line schedule.\""
+      ],
+      "driver_alignment": "Discover — defined project scope, horizon, working capital, and hurdle rate to frame cash flows; Implement — planned and ran code that built the cash flow table and metrics; Reflect — validated outputs (depreciation, EBIT/OCF match hand calcs) and discussed sensitivity.",
+      "reasoning": "The student presents a clear, logically structured cash-flow projection: inputs and assumptions are explicit, the FCF formula and terminal/working-capital treatments are stated, and the generated cash-flow table is validated against hand calculations. Implementation and reflection (sensitivity and validation) demonstrate a thorough, coherent presentation satisfying the criterion."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Balanced discussion of quantitative and strategic factors",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"So the MPV is 2.69 million. The IIR or the IRR is 12.8%. The profitability index is around 1.22 and then the simp simple payback is around 5.3 and then the discounted payback is around 8.2 years.\"",
+        "\"So I plan the Python architect. So one function to build the cash flow, one to calculate the metrics or the metrics and then one to run the sensitivity scenarios.\"",
+        "\"The project fits Starbucks brand, the strategy and the experimental retail model... I would recommend that Starbucks accept the flagship grocery project... But, however, revenue performance must be carefully managed. The location, the marketing, the pricing, and the customer experience are critical.\""
+      ],
+      "driver_alignment": "Discover: defined the decision question, required cash flows and metrics; Implement: planned and ran code and sensitivity scenarios to generate quantitative results; Reflect: connected quantitative outcomes to strategic considerations and risks (revenue, location, marketing).",
+      "reasoning": "The submission presents solid quantitative analysis (detailed metrics and sensitivity testing) and explicitly links findings to strategic considerations, but the strategic discussion is high-level and brief compared with the quantitative depth. This shows correct understanding of both sides but not the thorough, detailed strategic treatment required for a full PASS."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Professional video presentation demonstrating investment analysis",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Hello, my name is Ethan Sle. Um, this video I'm walking through my full driverbased capital ... I'm going to show you how I defined the problem, represented it mathematically and imple implement it into my Python that validated the results and involved it with the sensibil sensitivity testing and finally reflected on what my recommendation was.\"",
+        "\"So before coding I structed the entire module. ... I also plan the Python architect. So one function to build the cash flow, one to calculate the metrics or the metrics and then one to run the sensitivity scenarios. So this is planning that ensures the code is clean, re reproductible and uh perimeter driven.\"",
+        "\"I would recommend that Starbucks accept the flagship grocery project, but it generates a positive MPV in the IPR or the IRR under realistic assumptions and supports long-term brand strategy. But, however, revenue performance must be carefully managed.\""
+      ],
+      "driver_alignment": "Discover: clearly states the decision question, investment size, horizon, WACC and required cash flow construction.  \nImplement: describes code architecture, functions, automated generation of cash flows and validation checks.  \nReflect: runs sensitivity tests, discusses revenue risk, and gives a conditional recommendation tying financials to strategy.",
+      "reasoning": "The presentation is thorough and structured: it defines the problem, shows implementation planning and validation, reports detailed metrics, runs sensitivity analysis, and provides a reasoned recommendation with risks. These elements across Discover, Implement, and Reflect demonstrate strong, professional investment analysis consistent with a PASS."
+    },
+    {
+      "criterion_id": "criterion_6",
+      "criterion_name": "All project cash flow assumptions specified above",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"so the revenues year 1 8 million year two through five um you have 11 million and then year 6 through 0:01:53.200 10 9 million and then the operating cost um you have 40% revenue of the cogs uh labor is 2.5% or 2.5 million per year the rent and utilities is 0.8 8 million and then the marketing comes ... out to 0.3 million in year 1 and 0.1 after. Um so the depreciation straight line of 12 ... million over 10 years is 1.2 million per year. Um and then you have 25% taxes ... The terminal value 3 million at year 10...\"",
+        "\"The project requires $500,000 of working capital at launch, which will be recovered at the end of the year 10. Starbucks WACCC is 8.5% ... So then we have the terminal or the cash flow formula. So year zero the FCF is -12 million minus 0.5 million and that equals -12.5 million. Years 1 through9 the FCF is the operating cash flow. Year 10 the FCF equals OCF plus 2.25 ... terminal value plus 0.5 million working capital recovery\"",
+        "\"So I plan the Python architect. So one function to build the cash flow, one to calculate the metrics or the metrics and then one to run the sensitivity scenarios.\" / \"The total depreciation equals the original 12 million, confirming the straight line schedule.\""
+      ],
+      "driver_alignment": "- Discover: defined project scope, investment, working capital, WACC, and decision question (sets cash-flow context).  \n- Implement: planned and built cash-flow generation function and metrics calculations (explicitly specified assumptions translated into code).  \n- Reflect: validated outputs (depreciation, OCF match hand calculations) and discussed revenue risk relevance.",
+      "reasoning": "The student explicitly specified nearly all cash-flow assumptions (revenues by year bands, COGS%, labor, rent/utilities, marketing, depreciation schedule, taxes, working capital, terminal value) and documented the FCF formula and coding plan that generated and validated those cash flows. Minor phrasing/typo issues (e.g., labor/rent wording) do not obscure the comprehensive set of assumptions; under the moderate standard this constitutes thorough treatment."
+    },
+    {
+      "criterion_id": "criterion_7",
+      "criterion_name": "Starbucks WACC: 8.5%",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Starbucks WACCC is 8.5% and that becomes the hurdle rate for the evaluating project.\"",
+        "\"so then after this I'm calculating the core capital budgeting metrics at Starbucks at an 8.5% WACC. Um, so the MPV is 2.69 million. The IIR or the IRR is 12.8%...\"",
+        "\"the baseline cash flows are at 6.5% WACCC and then the MPV rises to 4.24... and then at 10.5% WACCC you have a MPV remains positive at 1.35 million and this tells us the project's very sensitive to the discount rate fluctuations...\""
+      ],
+      "driver_alignment": "Discover — defined the problem and explicitly stated the 8.5% WACC hurdle; Implement — calculated NPV/IRR using the 8.5% rate and built the code to produce results; Reflect — ran WACC sensitivity scenarios and discussed the project's sensitivity to discount rate.",
+      "reasoning": "The student clearly identified and used the 8.5% WACC as the project hurdle, calculated core metrics at that rate, and conducted sensitivity analysis across alternative WACC values, demonstrating applied understanding and interpretation. While they did not derive the WACC components, the treatment is thorough in application and analysis, meeting the moderate-standard expectations."
+    },
+    {
+      "criterion_id": "criterion_8",
+      "criterion_name": "Tax rate: 25%",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"and then you have 25% taxes with that.\"",
+        "\"the terminal value 3 million at year 10 which becomes 2.25 million after tax because the asset is fully depreciated.\"",
+        "\"So I plan the Python architect. So one function to build the cash flow, one to calculate the metrics or the metrics and then one to run the sensitivity scenarios.\""
+      ],
+      "driver_alignment": "Discover — student specified the 25% tax input when framing the problem; Implement — student built cash flows in code and applied the tax rate to terminal value; Reflect — student checked results (terminal value after tax) as part of validation and sensitivity setup.",
+      "reasoning": "The student correctly states and applies a 25% tax rate (explicitly used to reduce the terminal value) and shows it was implemented in the cash-flow code. Coverage is accurate but brief: there is no discussion of why 25% was chosen or sensitivity to tax rate, so the treatment is correct but not thorough."
+    },
+    {
+      "criterion_id": "criterion_9",
+      "criterion_name": "10-year project life",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Starbucks is considering a $12 million investment to build a flagship grocery that will operate for 10 years.\"",
+        "\"To answer that I need to build a year 0 to10 free cash flow statements.\"",
+        "\"the terminal value 3 million at year 10 which becomes 2.25 million after tax ... Year 10 the FCF equals OCF plus 2.25 ... plus 0.5 million working capital recovery\""
+      ],
+      "driver_alignment": "- Discover: explicitly defines the 10-year project life and decision framing.\n- Implement: designs and runs a year 0–10 cash flow module (functions to build cash flows and compute metrics).\n- Reflect: interprets year-10 terminal value and working-capital recovery and reports payback/discounted-payback relative to the 10-year horizon.",
+      "reasoning": "The student clearly defines and consistently uses a 10-year project horizon in problem framing, cash-flow construction, depreciation schedule, terminal-value treatment, and metric interpretation. Implementation and reflection stages show the 10-year life was operationalized and analyzed, meeting the thoroughness required for a PASS."
+    },
+    {
+      "criterion_id": "criterion_10",
+      "criterion_name": "Comparable Starbucks store performance data",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.0,
+      "level": "FAIL",
+      "evidence": [
+        "\"Starbucks is considering a $12 million investment to build a flagship grocery that will operate for 10 years.\"",
+        "\"So the revenues year 1 8 million year two through five um you have 11 million and then year 6 through 10 9 million...\"",
+        "\"the revenue risk is a dominant factor.\""
+      ],
+      "driver_alignment": "- Discover: defined the project scope and decision question (investment size, horizon, WACC) but did not cite comparable-store data.\n- Implement: built revenue and cash-flow assumptions in code (revenue by year) rather than deriving or benchmarking them from comparable Starbucks store performance.\n- Reflect: identified revenue risk as dominant, indicating awareness of performance drivers but no evidence of using comparable-store benchmarks to validate assumptions.",
+      "reasoning": "The student provides clear revenue assumptions and runs sensitivity tests, but nowhere references or uses comparable Starbucks store performance data or benchmarks to justify those assumptions. Thus the criterion (comparable store performance data) is not demonstrated."
+    },
+    {
+      "criterion_id": "criterion_11",
+      "criterion_name": "Industry benchmark returns for retail locations",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.0,
+      "level": "FAIL",
+      "evidence": [
+        "\"Starbucks WACCC is 8.5% and that becomes the hurdle rate for the evaluating project. So the decision question is does the project create value after discounting all the future cash flows at Starbucks at an 8.5 cost of capital.\"",
+        "\"so the MPV is 2.69 million. The IIR or the IRR is 12.8%. The profitability index is around 1.22\"",
+        "\"the base cap MPV is positive. The irr exceeds the 8.5 hurdle rate and the um PI is less than one. ... But, however, revenue performance must be carefully managed.\""
+      ],
+      "driver_alignment": "- Discover: defined the decision and set Starbucks' 8.5% WACC as the hurdle (frames returns assessment).  \n- Implement: computed IRR, NPV, PI and produced sensitivity results (calculated project returns).  \n- Reflect: discussed implications and revenue risk but did not reference external industry benchmarks.",
+      "reasoning": "The student computed and interpreted project returns using Starbucks' WACC and sensitivity tests, but did not cite or compare these metrics to industry benchmark returns for retail locations. Because the criterion requires addressing industry benchmark returns and no external benchmark comparison or discussion is present, the submission fails this criterion."
+    },
+    {
+      "criterion_id": "criterion_12",
+      "criterion_name": "Real estate and construction cost validation",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Starbucks is considering a $12 million investment to build a flagship grocery that will operate for 10 years. The project requires $500,000 of working capital at launch, which will be recovered at the end of the year 10.\"",
+        "\"So then the depreciation straight line of 12 million over 10 years is 1.2 million per year.\"",
+        "\"and then the terminal value 3 million at year 10 which becomes 2.25 million after tax because the asset is fully depreciated.\""
+      ],
+      "driver_alignment": "- Discover: defined the project scope and key numeric assumptions (investment, working capital, life, WACC).\n- Implement: built and validated the cash‑flow model and depreciation schedule in code.\n- Reflect: ran sensitivity tests and discussed revenue risk, but did not justify cost/valuation choices.",
+      "reasoning": "The student clearly documented key real estate/construction cost assumptions (purchase/CapEx, working capital, depreciation, terminal value) and validated them in the implementation and sensitivity tests, demonstrating understanding. However, they did not justify the origin or reasonableness of major choices (no breakdown of the $12M, rationale for $3M terminal value or $500k WC), so the treatment is correct but incomplete."
+    },
+    {
+      "criterion_id": "criterion_14",
+      "criterion_name": "*Refer to DRIVER Framework: Assignment Guidelines for complete documentation requirements, grading criteria, and framework application guidance.*",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The decision question is does the project create value after discounting all the future cash flows at Starbucks at an 8.5 cost of capital.\"",
+        "\"I plan the Python architect. So one function to build the cash flow, one to calculate the metrics or the metrics and then one to run the sensitivity scenarios.\"",
+        "\"the revenue risk is a dominant factor... it only succeeds if the rotisserie hits its pro projected traffic and spending levels.\""
+      ],
+      "driver_alignment": "Discover — clearly defines the financial decision question and inputs; Implement — describes code architecture and calculation workflow; Reflect — interprets sensitivity results and articulates key risks and recommendation.",
+      "reasoning": "The student presents a clear problem statement, a reproducible implementation plan, quantitative results, and a focused reflection on risk—meeting the thoroughness required for PASS. Evidence from Discover, Implement, and Reflect stages shows a strong, well-communicated understanding of the analysis and its implications."
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "student_name": "Jacob Polackin",
+  "username": "jpolacki",
+  "org_defined_id": "035981714",
+  "transcript_length": 13821,
+  "overall_grade": 99.16666666666667,
+  "passed_criteria": 12,
+  "partial_criteria": 1,
+  "failed_criteria": 0,
+  "driver_stages_demonstrated": {
+    "D": true,
+    "R": true,
+    "I": true,
+    "V": true,
+    "E": true,
+    "R2": true
+  },
+  "feedback": "Excellent application of the DRIVER framework throughout your work. You clearly demonstrated 6 stages: D, R, I, V, E, R2.\n\n\nSTRENGTHS:\n- Financial Concepts Accuracy: The student demonstrates a strong, applied understanding of the three EMH forms, defines them clearly, and uses multiple concrete tests and real-world examples (simulation, AR spikes, volume, short-seller failures) to argue which forms were violated. Coverage is comprehensive and connects theory to the GME case, satisfying the threshold for PASS under the moderate conceptual standard.\n- Financial Concepts Accuracy: The student correctly defines abnormal returns, implements an event-style test (simulation, baseline normal return, AR plots), and validates/defends model choices including limitations and alternatives. While not a fully formal econometric event study (no formal significance testing), the treatment is thorough and applied, meeting the moderate-category standard for a PASS.\n- Financial Concepts Accuracy: The student explicitly addresses how quickly and accurately markets incorporated information, argues semi-strong form failure with concrete examples (public valuations vs. $483 price), implements abnormal-return tests and plots to demonstrate timing and magnitude, and validates findings against real events and model alternatives. This applied, multi-stage treatment meets the moderate standard for a thorough PASS.\n\n\nAREAS FOR IMPROVEMENT:\n- Following the DRIVER Framework: The student clearly performed validation steps (data correction, running the code, and comparing simulation results to real-world events). However, they did not cite specific external data sources or tools (e.g., finance APIs, data providers, or named references), which the rubric requires for a full PASS; therefore the evidence supports a PARTIAL score.",
+  "criteria": [
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Efficient Market Hypothesis (EMH) Forms: Understanding weak, semi-strong, and strong form efficiency",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The EMH forms: weak, semi-strong, and strong. For weak: can you beat the market just by looking at past price charts? Does the price already include all public news, like company reports? And strong: does the price even include private or insider info? It's also looking at information incorporation.\"",
+        "\"This assignment is going to go through the full investigation of the event using the DRIVER framework and testing the Efficient Market Hypothesis against behavioral finance concepts.\"",
+        "\"Semi-strong, which is clearly violated: all public financial reports said GME (and when I refer to GME, I refer to GameStop) was worth $10 to $40. The price hit $483, proving the market was not using public information rationally.\""
+      ],
+      "driver_alignment": "Define & Discover — student defines weak, semi-strong, strong forms and related concepts; Represent & Implement — they design tests (AR calculation, price/volume plots, simulation) to assess form violations; Validate & Reflect — they interpret results and conclude which EMH forms were violated and why.",
+      "reasoning": "The student demonstrates a strong, applied understanding of the three EMH forms, defines them clearly, and uses multiple concrete tests and real-world examples (simulation, AR spikes, volume, short-seller failures) to argue which forms were violated. Coverage is comprehensive and connects theory to the GME case, satisfying the threshold for PASS under the moderate conceptual standard."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Market Efficiency Testing: Event study methodology and abnormal return calculations",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Abnormal return, as seen in Session 8, measures a 'surprise' return. We'll use the KISS formula: Abnormal Return = Today's Return - Normal Average Return.\"",
+        "\"What our code does: we have a few different functions... simulate_data... run_main_analysis is the main function that checks data, does the different calculations, and plots the three-part chart showing price over time, volume over time, and abnormal returns over time.\"",
+        "\"Finally, the robustness check or self-correction. Our simple AR model used an average pre-event return. The PDF shows the CAPM model... we could have used that, but GME's beta (or riskiness) was changing every minute... Our simple model, comparing GameStop to itself, is arguably a more honest and simple way to show the deviation.\""
+      ],
+      "driver_alignment": "Represent & Implement — student designed and coded an AR-based event-test (simulation, AR calculation, plots). Validate — student checked results, reported pre-event normal return and AR spikes. Reflect — student discussed robustness and alternatives (CAPM) and justified model choice.",
+      "reasoning": "The student correctly defines abnormal returns, implements an event-style test (simulation, baseline normal return, AR plots), and validates/defends model choices including limitations and alternatives. While not a fully formal econometric event study (no formal significance testing), the treatment is thorough and applied, meeting the moderate-category standard for a PASS."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Information Incorporation: How quickly and accurately markets reflect new information",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Then finally, we see that for information incorporation, information was not incorporated rationally. Behavioral hype... the 'hype' information overwhelmed the fundamental information.\"",
+        "\"This assignment is going to go through the full investigation of the event using the DRIVER framework and testing the Efficient Market Hypothesis against behavioral finance concepts.\"",
+        "\"The normal return pre-event was 0.3813%... the bottom chart shows the abnormal returns calculations... it's near zero in the pre-event phase and shows massive, chaotic positive and negative spikes... we're validating this: it's 100% true.\""
+      ],
+      "driver_alignment": "Discover — defined the information-incorporation question and EMH forms; Represent/Implement — designed AR tests and simulation, coded plots of price/volume/AR to measure speed/accuracy of incorporation; Validate/Reflect — compared simulation results to real-world facts (short-seller failures, trading halts) and discussed model robustness/alternatives.",
+      "reasoning": "The student explicitly addresses how quickly and accurately markets incorporated information, argues semi-strong form failure with concrete examples (public valuations vs. $483 price), implements abnormal-return tests and plots to demonstrate timing and magnitude, and validates findings against real events and model alternatives. This applied, multi-stage treatment meets the moderate standard for a thorough PASS."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Abnormal return calculations attempted",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Abnormal return, as seen in Session 8, measures a 'surprise' return. We'll use the KISS formula: Abnormal Return = Today's Return - Normal Average Return.\"",
+        "\"What our code does: we have a few different functions. The simulate_data function creates the three-phase (pre-event, event, post-event) data for price and volume. run_main_analysis is the main function that checks data, does the different calculations, and plots the three-part chart showing price over time, volume over time, and abnormal returns over time.\"",
+        "\"I'm running the script now. And as we can see... this right here is the result we're getting. ... The normal return pre-event was 0.3813%... the bottom chart shows the abnormal returns calculations... it's near zero in the pre-event phase and shows massive, chaotic positive and negative spikes... we're validating this: it's 100% true.\""
+      ],
+      "driver_alignment": "Represent — student planned an AR-based test and simulation phases; Implement — student describes functions (simulate_data, run_main_analysis) and that they coded and executed the analysis; Validate — student reports running the script, provides the computed pre-event normal return and AR plot behavior, and discusses robustness/alternatives (CAPM) and justification.",
+      "reasoning": "The student explicitly defines the AR calculation, describes the implemented functions that compute and plot abnormal returns, reports having run the code with a numeric pre-event normal return and verified AR spikes, and discusses model robustness. Those concrete, executed steps and validation meet the strict requirement for demonstrating an attempted abnormal-return calculation."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "abnormal returns explained",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Abnormal return, as seen in Session 8, measures a 'surprise' return. We'll use the KISS formula: Abnormal Return = Today's Return - Normal Average Return.\"",
+        "\"What our code does: we have a few different functions. The simulate_data function creates the three-phase (pre-event, event, post-event) data for price and volume. run_main_analysis is the main function that checks data, does the different calculations, and plots the three-part chart showing price over time, volume over time, and abnormal returns over time.\"",
+        "\"The normal return pre-event was 0.3813%... the bottom chart shows the abnormal returns calculations... it's near zero in the pre-event phase and shows massive, chaotic positive and negative spikes... we're validating this: it's 100% true.\""
+      ],
+      "driver_alignment": "Discover — defined abnormal returns and relevance to the problem; Represent — planned an AR-based test and simulation phases; Implement — coded functions to calculate and plot abnormal returns; Validate/Reflect — reported numeric baseline, interpreted AR spikes, and discussed robustness/alternatives.",
+      "reasoning": "The student clearly defines abnormal returns, implements them in code (simulation + run_main_analysis), reports a numeric pre-event normal return and AR plot behavior, and defends modeling choices (robustness/CAPM alternative). That complete, applied explanation with interpretation and validation meets the moderate standard for a thorough PASS."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Define & Discover: Defined the market efficiency testing problem",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The main problem was: was the GME event a total failure?\"",
+        "\"This assignment is going to go through the full investigation of the event using the DRIVER framework and testing the Efficient Market Hypothesis against behavioral finance concepts.\"",
+        "\"Abnormal return, as seen in Session 8, measures a 'surprise' return. We'll use the KISS formula: Abnormal Return = Today's Return - Normal Average Return.\""
+      ],
+      "driver_alignment": "Discover — student explicitly states the core research question and corrects the data; Represent — student defines required concepts (EMH forms, AR) and a clear testing plan; Implement/Validate — student describes computing AR and validating results.",
+      "reasoning": "The student explicitly defines the market-efficiency testing problem, identifies the relevant EMH forms and the abnormal-return metric, and outlines a concrete plan to test it using simulation and AR calculations. This clear, multi-step statement of the problem and methodology satisfies the strict requirement for Define & Discover."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Represent: Plan or layout of analyzing market efficiency",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"For Represent, the objective is to make a clear plan for how we'll analyze the GME event and test the ideas from the 'D' stage.\"",
+        "\"Our simulation has three phases: The pre-event: price is low and stable with low trade volume. The event itself: price and volume explode upwards. And post-event: the price crashes and settles at a new level.\"",
+        "\"Our analysis plan: the market efficiency test will plot the simulated price and volume. We expect the charts will show a huge, predictable spike, not a 'random walk' which EMH predicts.\""
+      ],
+      "driver_alignment": "Represent — student explicitly lays out the analysis plan (KISS approach, three-phase simulation, specific tests to run). Discover — framed the research question and required concepts. Implement — mapped the plan to code (simulate_data, run_main_analysis) for execution.",
+      "reasoning": "The student provides an explicit, stepwise Represent plan: data design (three phases), concrete analysis steps (price/volume plots, AR test, weakness tests), and links the plan to implementation functions. This clear, documented layout satisfies the strict requirement for an explicit Represent stage."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Implement: Systematic execution of Python code to analyze market efficiency",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"As we move on, this is the beginning of my Python code.\"",
+        "\"What our code does: we have a few different functions. The simulate_data function creates the three-phase (pre-event, event, post-event) data for price and volume. run_main_analysis is the main function that checks data, does the different calculations, and plots the three-part chart showing price over time, volume over time, and abnormal returns over time.\"",
+        "\"I'm running the script now. And as we can see... the normal return pre-event was 0.3813%... the bottom chart shows the abnormal returns calculations... it's near zero in the pre-event phase and shows massive, chaotic positive and negative spikes... we're validating this: it's 100% true.\""
+      ],
+      "driver_alignment": "Represent — laid out a clear simulation and analysis plan (three phases, AR test). Implement — described explicit functions and coding workflow (simulate_data, run_main_analysis) and executed the script. Validate/Evolve — produced and interpreted multiple outputs (price/volume/AR plots, baseline return, what‑if scenario) and checked robustness.",
+      "reasoning": "The student demonstrates a systematic implementation: they translated the Represent plan into code with named functions, executed the analysis, produced multiple outputs (charts, numeric baseline), and validated results including a what‑if scenario. This organized, end‑to‑end execution meets the \"systematic implementation\" requirement for a PASS."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Validate: Data and code checks",
+      "category_name": "Following the DRIVER Framework",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"The critical first step was to verify the historical data... I found this was incorrect. The actual split-adjusted price was around four to five dollars.\"",
+        "\"To double-check our findings from the 'I' stage and make sure they make sense, we're going to check our 'abnormal' findings.\"",
+        "\"Our simple simulation captures the character of the event, and the real-world facts confirm it was one of the most abnormal trading periods in history.\""
+      ],
+      "driver_alignment": "Discover — student explicitly verified and corrected the historical price data. Implement — student ran the simulation and produced AR outputs to compare. Validate — student states they checked abnormal-return results against real-world outcomes and used those facts to confirm their findings.",
+      "reasoning": "The student clearly performed validation steps (data correction, running the code, and comparing simulation results to real-world events). However, they did not cite specific external data sources or tools (e.g., finance APIs, data providers, or named references), which the rubric requires for a full PASS; therefore the evidence supports a PARTIAL score."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "Evolve: Application of efficiency insights to beyond the assignment",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The question is: what if social media hype was only 50% as strong? And this Python code here runs that simulation.\"",
+        "\"We're going to use our analysis to explore 'what-if' questions and think about future strategy.\"",
+        "\"what this teaches us: It proves that markets are mostly efficient, but not perfectly efficient... The main lesson for most people is to avoid these gambles and stick with passive, diversified plans.\""
+      ],
+      "driver_alignment": "Evolve — explicitly runs a what‑if simulation and uses results to explore future strategy; Implement — executed the Python scenario (\"I'm running the script now\") to generate evolved outputs; Reflect — translates simulation findings into investment and policy implications.",
+      "reasoning": "The student explicitly conducted a what‑if simulation (50% hype) and reported running the code and observing results, then drew clear, actionable lessons (investment strategy and policy questions) beyond the original test. This concrete execution plus applied interpretation satisfies the strict requirement for the Evolve stage."
+    },
+    {
+      "criterion_id": "criterion_6",
+      "criterion_name": "Reflect: Reflection on the assignment and/or beyond the assignment",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The final synthesis: the GME event is a perfect case to show the limits of EMH.\"",
+        "\"The main lesson for most people is to avoid these gambles and stick with passive, diversified plans.\"",
+        "\"Finally, policy implications: what should change? The event caused Congress to hold hearings... Market rules... Gamification... And short-selling: how can a stock have 140% of its shares sold short?\""
+      ],
+      "driver_alignment": "Reflect — student explicitly synthesizes findings, draws investor takeaways, and proposes policy questions; Discover/Implement — links reflections back to the defined problem and the implemented simulation/results to justify conclusions.",
+      "reasoning": "The submission includes clear, explicit reflection that connects results to broader implications (investment strategy, short-seller risks, policy), cites concrete lessons and questions, and ties these back to the analysis. This satisfies the strict requirement for an explicit Reflect stage."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Clear explanation of EMH",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The EMH forms: weak, semi-strong, and strong. For weak: can you beat the market just by looking at past price charts? Does the price already include all public news, like company reports? And strong: does the price even include private or insider info? It's also looking at information incorporation.\"",
+        "\"Our analysis plan: the market efficiency test will plot the simulated price and volume. We expect the charts will show a huge, predictable spike, not a 'random walk' which EMH predicts.\"",
+        "\"Semi-strong, which is clearly violated: all public financial reports said GME ... was worth $10 to $40. The price hit $483, proving the market was not using public information rationally.\""
+      ],
+      "driver_alignment": "Discover — student explicitly defines EMH forms and information-incorporation concept; Represent/Implement — lays out concrete tests (AR calculation, price/volume plots, simulation) to evaluate forms; Validate/Reflect — interprets results and applies EMH concepts to explain which forms were violated.",
+      "reasoning": "The student provides clear definitions of weak, semi-strong, and strong EMH, links those definitions to measurable tests (abnormal returns, price/volume plots), and applies them to the GME case with concrete examples and conclusions. Coverage is both conceptual and applied, meeting the threshold for a thorough explanation."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Logical presentation of empirical evidence",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The critical first step of data validation: we found that the assignment claim of 4 cents in August 2020 is factually incorrect... The price was $4-5. Our simulation starts at $5.\"",
+        "\"This first chart is assuming the $5 beginning... This next plot is our kind of indicator of herding. The volume started very low, and at the time of the event, it spiked... And then finally, the bottom chart shows the abnormal returns calculations... it's near zero in the pre-event phase and shows massive, chaotic positive and negative spikes.\"",
+        "\"The limits to arbitrage: this event is a perfect example. Short-sellers... were bankrupted, such as Melvin Capital... Trading halts by Robin Hood were a market rule issue that further limited the arbitrage.\""
+      ],
+      "driver_alignment": "Discover — corrected and documented the input data before analysis; Represent/Implement — laid out simulation phases and produced multiple empirical outputs (price, volume, abnormal-return plots); Validate/Reflect — compared simulation outputs to real-world events (short-seller losses, trading halts) and used those facts to justify interpretations.",
+      "reasoning": "The student presents a clear, ordered empirical narrative: they validate input data, run a structured simulation, produce and describe multiple charts (price, volume, AR), and link those empirical patterns to real-world outcomes and theory. That sequence and the use of both simulated outputs and external events form a logical, well-supported presentation of empirical evidence, meeting the standards for PASS."
+    }
+  ],
+  "personalized_feedback": "Jacob — I’m genuinely impressed by how you’ve moved from scattered intuition to clear, repeatable reasoning. You consistently apply core finance concepts correctly (your cash-flow logic and linkage to valuation was spot-on), you integrated technological tools to enforce that logic rather than replace it, and your explanations made the chain of reasoning easy to follow. Those are concrete signs your “monkey mind” is becoming a systematic thinker: you now build models as disciplined decision tools, not just calculation machines.\n\nFor the next steps, focus on tightening the decision layer and the validation loop. In practice that means:\n- Convert key assumptions into explicit decision levers (e.g., growth rate, discount rate, working-capital days) and present business-impact metrics (NPV, IRR, payback) tied to stakeholder questions.  \n- Run structured sensitivity and scenario analyses that map to real business choices (pricing changes, capex timing, funding mix). Make a short one-page “what-to-watch” dashboard that shows which inputs move decisions most.  \n- Add a lightweight validation step: compare model outputs to simple heuristic checks (back-of-envelope, historical ranges) and document any discrepancies and why they’re acceptable.\n\nThese are small habits that lift your work from correct to decisively useful for managers.\n\nKeep treating code and AI as execution helpers and let the DRIVER framework shape your questions. Over time, that discipline will make you the person leaders rely on to turn uncertain finance problems into clear, actionable choices. I’m excited to see where you take this — you’re on a career path where systematic thinking becomes a distinctive advantage."
+}

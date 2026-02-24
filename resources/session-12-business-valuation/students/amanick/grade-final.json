@@ -1,0 +1,357 @@
+{
+  "student_name": "Aidan Manickam",
+  "username": "amanick",
+  "org_defined_id": "034350008",
+  "transcript_length": 3529,
+  "overall_grade": 92.75,
+  "passed_criteria": 21,
+  "partial_criteria": 3,
+  "failed_criteria": 0,
+  "driver_stages_demonstrated": {
+    "D": true,
+    "R": true,
+    "I": true,
+    "V": true,
+    "E": true,
+    "R2": true
+  },
+  "feedback": "Excellent application of the DRIVER framework throughout your work. You clearly demonstrated 6 stages: D, R, I, V, E, R2.\n\n\nSTRENGTHS:\n- Financial Concepts Accuracy: The submission explicitly builds an FCF-based projection and computes present values and a terminal value, and it specifies a WACC used for discounting, demonstrating correct DCF methodology. The combination of Implement and Define/Represent stages shows a coherent, applied understanding appropriate for introductory-level mastery.\n- Financial Concepts Accuracy: The submission both implements a terminal value calculation in the model and explicitly states that terminal value comprises the majority (~65%) of enterprise value, with sensitivity analysis around WACC/terminal g. This demonstrates a thorough, conceptually sound treatment consistent with a PASS.\n- Financial Concepts Accuracy: The submission explicitly sets multi-year forecast paths with declining growth across scenarios, implements interpolation to transition to a terminal period, and validates the terminal's materiality (~65% of EV). These concrete assumptions, numbers, and checks demonstrate a thorough, reasonable treatment of multi-stage growth.\n\n\nAREAS FOR IMPROVEMENT:\n- Financial Concepts Accuracy: The submission clearly models FCF from NOPAT and includes capex as a driver, showing functional understanding (Implement/Represent/Validate). However, it does not explicitly reference depreciation or working capital adjustments (or explicitly state that FCF is cash available to all capital providers), so the treatment is correct but incomplete.\n- Financial Concepts Accuracy: The student clearly used a WACC input (9%) and applied it in the DCF implementation (FCF → PVs → terminal value) and sensitivity analysis, satisfying correct application. However, they did not provide a defensible derivation or rationale for the 9% (no industry-average justification or component build-up), so the treatment is correct but not sufficiently justified for a full PASS.\n- Following the DRIVER Framework: The student demonstrates conceptual and internal validation (sanity checks, cross-method triangulation, and consistency with sector multiples) but does not cite or compare to specific external sources/tools as required for a full PASS. Thus the evidence supports a partial fulfillment of the Validate criterion.",
+  "criteria": [
+    {
+      "criterion_id": "concept_dcf_methodology",
+      "criterion_name": "Discounted Cash Flow (DCF) Methodology (Introductory Level).",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"project_scenario` using `np.linspace` for growth/margin paths, computing revenue, EBITDA, NOPAT, FCF, PVs, terminal value.\"",
+        "\"Inputs: $6B revenue, $900M EBITDA, $400M net income, 2,100 stores, WACC 9%, industry multiples (P/E 22×, EV/EBITDA 12–15×).\"",
+        "\"Narrate results: DCF summary table: downside EV ~$9.8B, base ~$11.5B, upside ~$13.6B; terminal value ~65% of EV.\""
+      ],
+      "driver_alignment": "Implement stage (explicit code to compute FCFs, PVs, terminal value); Define & Discover (explicit WACC input); Represent (FCF engine and scenario architecture).",
+      "reasoning": "The submission explicitly builds an FCF-based projection and computes present values and a terminal value, and it specifies a WACC used for discounting, demonstrating correct DCF methodology. The combination of Implement and Define/Represent stages shows a coherent, applied understanding appropriate for introductory-level mastery."
+    },
+    {
+      "criterion_id": "concept_fcf_calculation",
+      "criterion_name": "Free Cash Flow Calculation concept.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"`project_scenario` using `np.linspace` for growth/margin paths, computing revenue, EBITDA, NOPAT, FCF, PVs, terminal value.\"",
+        "\"Highlight variable map (growth rates, margin targets, capex %, WACC, terminal g, net debt, shares).\"",
+        "\"Smooth growth/margin transitions; FCF positive by mid-horizon.\""
+      ],
+      "driver_alignment": "- Implement: shows an FCF engine in code (revenue → EBITDA → NOPAT → FCF) demonstrating practical calculation.\n- Represent: variable map includes capex % as an explicit driver for FCF.\n- Validate: checks FCF trajectory (positive by mid-horizon), indicating awareness of cash-flow dynamics.",
+      "reasoning": "The submission clearly models FCF from NOPAT and includes capex as a driver, showing functional understanding (Implement/Represent/Validate). However, it does not explicitly reference depreciation or working capital adjustments (or explicitly state that FCF is cash available to all capital providers), so the treatment is correct but incomplete."
+    },
+    {
+      "criterion_id": "concept_terminal_value",
+      "criterion_name": "Terminal Value Concept.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"`project_scenario` using `np.linspace` for growth/margin paths, computing revenue, EBITDA, NOPAT, FCF, PVs, terminal value.\"",
+        "\"walk through DRIVER to triangulate DCF, comps, precedents, and synergies, ending with a bid strategy.\"",
+        "\"DCF summary table: downside EV ~$9.8B, base ~$11.5B, upside ~$13.6B; terminal value ~65% of EV.\""
+      ],
+      "driver_alignment": "Implement (explicitly computes terminal value in the projection code); Discover/Represent (sets DRIVER plan to triangulate DCF with other lenses); Reflect/Validate (reports terminal value as ~65% of EV and runs WACC vs terminal g sensitivity).",
+      "reasoning": "The submission both implements a terminal value calculation in the model and explicitly states that terminal value comprises the majority (~65%) of enterprise value, with sensitivity analysis around WACC/terminal g. This demonstrates a thorough, conceptually sound treatment consistent with a PASS."
+    },
+    {
+      "criterion_id": "concept_multi_stage_growth",
+      "criterion_name": "Multi-Stage Growth reasoning.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Outline scenario architecture: base 8→6% growth, upside 10→7%, downside 5→4%.\"",
+        "\"`project_scenario` using `np.linspace` for growth/margin paths, computing revenue, EBITDA, NOPAT, FCF, PVs, terminal value.\"",
+        "\"DCF summary table: downside EV ~$9.8B, base ~$11.5B, upside ~$13.6B; terminal value ~65% of EV.\""
+      ],
+      "driver_alignment": "- Represent: defined explicit multi-stage scenarios with higher near-term rates tapering to lower long-term rates.\n- Implement: coded smooth transitions (np.linspace) projecting to a terminal value and computing FCF/PVs.\n- Validate: quantified terminal value share and checked smooth growth/margin transitions and FCF timing.",
+      "reasoning": "The submission explicitly sets multi-year forecast paths with declining growth across scenarios, implements interpolation to transition to a terminal period, and validates the terminal's materiality (~65% of EV). These concrete assumptions, numbers, and checks demonstrate a thorough, reasonable treatment of multi-stage growth."
+    },
+    {
+      "criterion_id": "concept_ev_vs_equity",
+      "criterion_name": "Enterprise Value vs. Equity Value Bridge.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Scenario loop storing EV/equity/per-share results.\"",
+        "\"Validate ... Equity bridge uses $2.5B net debt.\"",
+        "\"Highlight variable map (growth rates, margin targets, capex %, WACC, terminal g, net debt, shares).\""
+      ],
+      "driver_alignment": "Implement — code and scenario loop explicitly compute EV, equity value, and per-share outputs.  \nValidate — equity bridge and net debt figure ($2.5B) are called out for verification.  \nRepresent — variable map lists net debt and shares as model inputs enabling the EV→Equity→Price bridge.",
+      "reasoning": "The submission explicitly implements and stores EV, equity value, and per-share results and validates the equity bridge using a stated net debt ($2.5B), with net debt and share count included in the variable map. This shows correct, applied understanding of subtracting net debt from EV and dividing equity value by shares, satisfying the criterion."
+    },
+    {
+      "criterion_id": "concept_wacc_application",
+      "criterion_name": "WACC Application.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Inputs: $6B revenue, $900M EBITDA, $400M net income, 2,100 stores, WACC 9%, industry multiples (P/E 22×, EV/EBITDA 12–15×).\"",
+        "\"`project_scenario` using `np.linspace` for growth/margin paths, computing revenue, EBITDA, NOPAT, FCF, PVs, terminal value.\"",
+        "\"WACC vs. terminal g sensitivity pivot.\""
+      ],
+      "driver_alignment": "- Define & Discover: specified WACC = 9% as an input.\n- Implement: projected FCF and computed PVs/terminal value (implying discounting of FCFF).\n- Validate: ran WACC vs. terminal g sensitivity, indicating awareness of WACC's impact.",
+      "reasoning": "The student clearly used a WACC input (9%) and applied it in the DCF implementation (FCF → PVs → terminal value) and sensitivity analysis, satisfying correct application. However, they did not provide a defensible derivation or rationale for the 9% (no industry-average justification or component build-up), so the treatment is correct but not sufficiently justified for a full PASS."
+    },
+    {
+      "criterion_id": "concept_comparables",
+      "criterion_name": "Comparable Methodology (Introductory Level).",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Inputs: $6B revenue, $900M EBITDA, $400M net income, 2,100 stores, WACC 9%, industry multiples (P/E 22×, EV/EBITDA 12–15×).\"",
+        "\"Trading comps & precedents DataFrames with implied EV.\"",
+        "\"Comps range ~$10–18B (Chipotle skew), precedents ~$10.8–13.5B.\""
+      ],
+      "driver_alignment": "- Discover/Define: specified relevant sector multiples (P/E and EV/EBITDA) and company metrics used for comparables.\n- Implement: built trading comps/precedents DataFrames and computed implied EVs using those multiples.\n- Reflect: integrated comps into the football field and discussion of ranges (e.g., Chipotle skew) to triangulate valuations.",
+      "reasoning": "The student both selected relevant peers (explicitly noting a Chipotle influence) and applied standard multiples (P/E and EV/EBITDA) to company metrics, producing implied EV ranges via comps and precedents. Implementation and reflection stages show the multiples were used in practice and integrated into the final valuation synthesis, meeting the introductory comparable methodology requirement."
+    },
+    {
+      "criterion_id": "concept_triangulation",
+      "criterion_name": "Valuation Triangulation / Sensitivity.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "[\"walk through DRIVER to triangulate DCF, comps, precedents, and synergies, ending with a bid strategy.\"]",
+        "[\"DCF summary table: downside EV ~$9.8B, base ~$11.5B, upside ~$13.6B; terminal value ~65% of EV.\"]",
+        "[\"Comps range ~$10–18B (Chipotle skew), precedents ~$10.8–13.5B.\"]"
+      ],
+      "driver_alignment": "Implement — scenario DCF, comps/precedents, synergy overlay and sensitivity grid produced the numeric triangulation;  \nValidate — affirmed multiples, synergy math, and equity bridge;  \nReflect & Recommendation — integrated results into a football-field view and a stated bid range.",
+      "reasoning": "The submission explicitly triangulates multiple valuation methods (DCF, trading comps, precedents, synergies), reports numeric ranges for each, and provides a reasoned bid range tied to financial vs. strategic buyers. Implement, Validate, and Reflect stages show both the computations and the interpretive judgment required for a thorough Valuation Triangulation / Sensitivity treatment."
+    },
+    {
+      "criterion_id": "tech_dcf_model",
+      "criterion_name": "DCF Model Structure.",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"project_scenario using `np.linspace` for growth/margin paths, computing revenue, EBITDA, NOPAT, FCF, PVs, terminal value.\"",
+        "\"Walk through blueprint: Inputs → drivers → FCF engine → DCF scenarios → comps/precedents → synergy overlay → football field.\"",
+        "\"DCF summary table: downside EV ~$9.8B, base ~$11.5B, upside ~$13.6B; terminal value ~65% of EV.\""
+      ],
+      "driver_alignment": "Represent — blueprint and variable map show model structure and sections; Implement — code snippet describes projection engine, PV and terminal value calculations and scenario storage of EV; Define/Validate — inputs (WACC) and validation notes support numeric EV and bridge consistency.",
+      "reasoning": "The submission clearly identifies projection mechanics (revenue→EBITDA→FCF), explicit PV and terminal value computation, and records scenario EV outputs with specific numeric enterprise values. Combined Represent and Implement stages provide comprehensive, concrete treatment meeting the criterion."
+    },
+    {
+      "criterion_id": "tech_projection_logic",
+      "criterion_name": "Projection Logic.",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Outline scenario architecture: base 8→6% growth, upside 10→7%, downside 5→4%.\"",
+        "\"`project_scenario` using `np.linspace` for growth/margin paths, computing revenue, EBITDA, NOPAT, FCF, PVs, terminal value.\"",
+        "\"Reiterate validation bullets: Smooth growth/margin transitions; FCF positive by mid-horizon.\""
+      ],
+      "driver_alignment": "Represent — defined multi-scenario growth paths and variable map; Implement — coded projection engine using np.linspace to evolve growth and margins and compute revenue/EBITDA/FCF; Validate — checked smooth transitions and FCF timing to ensure projections behave as intended.",
+      "reasoning": "The submission explicitly defines non-static growth trajectories and implements them programmatically (np.linspace) to evolve revenue and margins over the projection horizon, with validation checks (smooth transitions, FCF positive by mid-horizon). These elements demonstrate a thorough, applied projection logic consistent with the criterion."
+    },
+    {
+      "criterion_id": "tech_comparables_calc",
+      "criterion_name": "Comparable Multiples Calculation.",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Inputs: $6B revenue, $900M EBITDA, $400M net income, 2,100 stores, WACC 9%, industry multiples (P/E 22×, EV/EBITDA 12–15×).\"",
+        "\"Trading comps & precedents DataFrames with implied EV.\"",
+        "\"Comps range ~$10–18B (Chipotle skew), precedents ~$10.8–13.5B.\""
+      ],
+      "driver_alignment": "- Define: provided explicit peer multiples (P/E, EV/EBITDA) used as inputs.\n- Implement: code described that builds trading comps DataFrames and computes implied EV (implied value = metric × multiple).\n- Validate: explicitly states multiples are consistent with sector data and reports the resulting comps/precedent ranges.",
+      "reasoning": "The submission explicitly lists peer multiples, describes code that produces DataFrames of implied EVs, and reports the resulting comps/precedents ranges — demonstrating both the calculation (metric × multiple) and a peer-based range. The Implement and Validate stages provide concrete evidence of correct application and checking of multiples."
+    },
+    {
+      "criterion_id": "tech_sensitivity_scenario",
+      "criterion_name": "Scenario Comparison (Introductory Sensitivity).",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Outline scenario architecture: base 8→6% growth, upside 10→7%, downside 5→4%.\"",
+        "\"Narrate results: DCF summary table: downside EV ~$9.8B, base ~$11.5B, upside ~$13.6B; terminal value ~65% of EV.\"",
+        "\"Sensitivity grid showing EV swings with WACC/g.\""
+      ],
+      "driver_alignment": "- REPRESENT: defined explicit scenario architecture (growth paths) supporting multi-scenario comparison.\n- IMPLEMENT: implemented scenario loop and produced DCF outputs (EVs) and a WACC/terminal-g sensitivity pivot.\n- VALIDATE/Evolve: referenced sensitivity tables to validate and interpret how WACC/terminal g drive valuation.",
+      "reasoning": "The submission calculates values for multiple scenarios (downside, base, upside) with specific growth paths and numeric EV outcomes, and it explicitly includes a sensitivity grid/pivot showing how EV responds to WACC and terminal-growth changes. These elements satisfy both required components (multiple scenarios and identification of a key driver effect), meeting the criterion thoroughly."
+    },
+    {
+      "criterion_id": "tech_visual_summary",
+      "criterion_name": "Visual Summary of Valuation.",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"DCF summary table: downside EV ~$9.8B, base ~$11.5B, upside ~$13.6B; terminal value ~65% of EV.\"",
+        "\"Mention plan: parameter block, pandas outputs, bar/football charts, synergy calc, sensitivity grid.\"",
+        "\"Visual outputs (football field, sensitivity) match numeric tables.\""
+      ],
+      "driver_alignment": "Represent — planned the visual summary (bar/football charts, pandas outputs) as part of the blueprint.  \nImplement — produced DCF summary table and plotting code (football field, comps/precedents DataFrames).  \nValidate — explicitly checked that visual outputs align with the numeric tables.",
+      "reasoning": "The submission both describes and instantiates a clear visual summary: a DCF summary table with specific EV ranges and a football-field-style chart (with plotting code and comps/precedents tables). Validation confirms the visuals match the numeric results, demonstrating thorough treatment of the visual-summary criterion."
+    },
+    {
+      "criterion_id": "integration_parameterized_inputs",
+      "criterion_name": "Parameterized Inputs.",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Inputs: $6B revenue, $900M EBITDA, $400M net income, 2,100 stores, WACC 9%, industry multiples (P/E 22×, EV/EBITDA 12–15×).\"",
+        "\"Walk through blueprint: Inputs → drivers → FCF engine → DCF scenarios → comps/precedents → synergy overlay → football field.\"",
+        "\"`project_scenario` using `np.linspace` for growth/margin paths, computing revenue, EBITDA, NOPAT, FCF, PVs, terminal value.\" / \"Scenario loop storing EV/equity/per-share results.\" / \"Sensitivity grid showing EV swings with WACC/g.\""
+      ],
+      "driver_alignment": "- Represent: defined a variable map and scenario architecture (growth, margins, WACC, terminal g, net debt, shares).\n- Implement: parameterized code (np.linspace, scenario loop) and sensitivity pivot demonstrate inputs drive model outputs.\n- Validate: sensitivity and validation notes confirm model handles input changes and produces consistent scenario results.",
+      "reasoning": "The submission explicitly defines key inputs as variables and documents a variable map and scenario architecture. The implementation cites parameterized code (np.linspace, scenario loop) and sensitivity analysis, indicating the model responds to input changes without breaking. Together (Represent + Implement + Validate) this shows a thorough, working treatment of parameterized inputs."
+    },
+    {
+      "criterion_id": "integration_scenario_capability",
+      "criterion_name": "Scenario Capability.",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Outline scenario architecture: base 8→6% growth, upside 10→7%, downside 5→4%.\"",
+        "\"`project_scenario` using `np.linspace` for growth/margin paths, computing revenue, EBITDA, NOPAT, FCF, PVs, terminal value.\"",
+        "\"DCF summary table: downside EV ~$9.8B, base ~$11.5B, upside ~$13.6B; terminal value ~65% of EV.\""
+      ],
+      "driver_alignment": "Represent — defined explicit scenario architecture (base/upside/downside) and variable map.  \nImplement — coded scenario projection and loop storing EV/equity/per-share outcomes.  \nValidate/Evolve — reported DCF ranges and sensitivity (WACC/terminal g) tying assumptions to valuation and negotiation implications.",
+      "reasoning": "The submission clearly builds and compares multiple scenarios with numeric EV outcomes and documents the modeling approach (np.linspace projections and scenario loop). It also links key assumptions (growth, margins, WACC/terminal g) to valuation results via DCF ranges and sensitivity discussion, meeting the thoroughness required for PASS."
+    },
+    {
+      "criterion_id": "integration_comprehensive_framework",
+      "criterion_name": "Comprehensive Analysis Framework.",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"DCF summary table: downside EV ~$9.8B, base ~$11.5B, upside ~$13.6B; terminal value ~65% of EV.\"",
+        "\"walk through DRIVER to triangulate DCF, comps, precedents, and synergies, ending with a bid strategy.\"",
+        "\"Negotiation plan: open $11.0B, cap at $11.8B unless synergies verified; emphasize management rollover, speed-to-close, financing flexibility.\""
+      ],
+      "driver_alignment": "- Discover: defined mandate and inputs (mandate/assumptions framing the analysis).\n- Implement: multi-scenario DCF, comps/precedents, synergy overlay producing quantitative EV ranges.\n- Evolve/Reflect: synthesized quantitative outputs into qualitative bid strategy and negotiation plan.",
+      "reasoning": "The submission integrates concrete quantitative outputs (DCF ranges, comps, synergy add-on) with clear qualitative business judgment (negotiation/bid strategy), and explicitly follows the DRIVER flow from assumptions through analysis to recommendation. The depth and specificity across stages meet the PASS standard."
+    },
+    {
+      "criterion_id": "driver_define_discover",
+      "criterion_name": "Define & Discover: Problem Framing.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"KKR is weighing a bid for Panera—can we justify paying up when strategics are circling?\"",
+        "\"State mandate: DRIVER-structured valuation with multi-scenario DCF, comps, precedents, synergy overlay, and football field.\"",
+        "\"Negotiation plan: open $11.0B, cap at $11.8B unless synergies verified; emphasize management rollover, speed-to-close, financing flexibility.\""
+      ],
+      "driver_alignment": "Define & Discover (explicitly frames the mandate: Panera acquisition by KKR); Discover (sets critical questions on financial vs. strategic posture); Evolve (negotiation plan and management rollover explicitly identify stakeholders).",
+      "reasoning": "The submission explicitly names the valuation object (Panera) and context (KKR acquisition) and articulates critical questions around financial vs. strategic bidders. It also explicitly identifies key stakeholders (KKR, management/management rollover and strategics), meeting the strict requirement for clear, stated problem framing."
+    },
+    {
+      "criterion_id": "driver_represent",
+      "criterion_name": "Represent: Methodology Selection.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Walk through blueprint: Inputs → drivers → FCF engine → DCF scenarios → comps/precedents → synergy overlay → football field.\"",
+        "\"Highlight variable map (growth rates, margin targets, capex %, WACC, terminal g, net debt, shares).\"",
+        "\"Inputs: $6B revenue, $900M EBITDA, $400M net income, 2,100 stores, WACC 9%, industry multiples (P/E 22×, EV/EBITDA 12–15×).\""
+      ],
+      "driver_alignment": "- Represent: explicitly lays out the methodology flowchart and variable map (method selection and required assumptions).\n- Discover/Define: states mandate and key inputs (data sources and baseline assumptions).\n- Implement: demonstrates application of the selected methods (DCF scenario engine, comps/precedents DataFrames, synergy valuation).",
+      "reasoning": "The submission explicitly names and sequences the valuation methods (DCF, comps/precedents, synergy overlay) and presents a clear variable map and specific input assumptions, satisfying the strict requirement for explicit methodology selection and required data. The Represent stage, supported by Define/Discover inputs and Implement examples, provides full, defensible methodological documentation."
+    },
+    {
+      "criterion_id": "driver_implement",
+      "criterion_name": "Implement: Execution.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Walk through blueprint: Inputs → drivers → FCF engine → DCF scenarios → comps/precedents → synergy overlay → football field.\"",
+        "\"`project_scenario` using `np.linspace` for growth/margin paths, computing revenue, EBITDA, NOPAT, FCF, PVs, terminal value.\"",
+        "\"DCF summary table: downside EV ~$9.8B, base ~$11.5B, upside ~$13.6B; terminal value ~65% of EV.\""
+      ],
+      "driver_alignment": "Represent — established an organized blueprint and variable map guiding implementation.  \nImplement — demonstrated coded projection function, scenario loop, and stored outputs (EV/equity/per-share).  \nValidate/Reflect — presented numeric DCF results and visual outputs (football field/sensitivities) confirming executed analyses.",
+      "reasoning": "The submission shows a systematic execution matching the planned workflow (Inputs → drivers → FCF engine → scenarios → comps/synergies) and concrete implemented elements (projection function, scenario loop, and DCF outputs). Validation and presentation of results (tables, football field, sensitivity) confirm the methodological execution, meeting the PASS standard."
+    },
+    {
+      "criterion_id": "driver_validate",
+      "criterion_name": "Validate: Sanity Checks.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Reiterate validation bullets: Smooth growth/margin transitions; FCF positive by mid-horizon.\"",
+        "\"Multiples consistent with sector data.\"",
+        "\"walk through DRIVER to triangulate DCF, comps, precedents, and synergies, ending with a bid strategy.\""
+      ],
+      "driver_alignment": "- VALIDATE: Explicit validation checks and sanity bullets were stated (growth/margin smoothness, FCF timing, multiples consistency).\n- DISCOVER/REPRESENT/IMPLEMENT: Triangulation across DCF, comps, precedents, and scenario implementation shows intent to compare methods and perform sanity checks.",
+      "reasoning": "The student demonstrates conceptual and internal validation (sanity checks, cross-method triangulation, and consistency with sector multiples) but does not cite or compare to specific external sources/tools as required for a full PASS. Thus the evidence supports a partial fulfillment of the Validate criterion."
+    },
+    {
+      "criterion_id": "driver_evolve_reflect",
+      "criterion_name": "Evolve & Reflect: Synthesis.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Define bid range $11.0–11.8B EV with walk-away at upside DCF.\"",
+        "\"Negotiation plan: open $11.0B, cap at $11.8B unless synergies verified; emphasize management rollover, speed-to-close, financing flexibility.\"",
+        "\"Integration of models reveals how different valuation lenses converge.\""
+      ],
+      "driver_alignment": "Evolve and Reflect stages—Evolve provides an explicit bid strategy and negotiation limits; Reflect discusses model integration and how differing valuation methods align. Validate/Implement support the synthesis by producing the DCF, comps, precedents, synergies and sensitivity outputs that underpin the recommendation.",
+      "reasoning": "The student explicitly gives a bid range and negotiation plan (Evolve) and directly comments on how multiple valuation methods converge and on sensitivities (Reflect/Validate), satisfying both “final recommendation” and “reflection on method reliability.” Evidence is specific and defensible in a business context."
+    },
+    {
+      "criterion_id": "comm_methodology_explanation",
+      "criterion_name": "Methodology Explanation.",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"walk through DRIVER to triangulate DCF, comps, precedents, and synergies, ending with a bid strategy.\"",
+        "\"Walk through blueprint: Inputs → drivers → FCF engine → DCF scenarios → comps/precedents → synergy overlay → football field.\"",
+        "\"`project_scenario` using `np.linspace` for growth/margin paths, computing revenue, EBITDA, NOPAT, FCF, PVs, terminal value.\""
+      ],
+      "driver_alignment": "- Discover: framed the mandate and why multiple valuation lenses (triangulation) are needed to justify a bid.\n- Represent: laid out the stepwise analysis pipeline (inputs → drivers → FCF → scenarios → overlays → visualization).\n- Implement: described concrete implementation steps and functions used to execute the analysis.\n- Reflect/Evolve: explained choice of outputs (football field, sensitivity) to communicate and position bids.",
+      "reasoning": "The submission both justifies method selection (triangulation to reconcile DCF, comps, precedents and to distinguish financial vs. strategic bidders) and clearly outlines the analytical steps and code-level implementation (scenario projection, looped outputs, synergy calc, visualizations). These concrete explanations across Discover/Represent/Implement demonstrate a thorough, coherent methodology."
+    },
+    {
+      "criterion_id": "comm_presentation_logic",
+      "criterion_name": "Logical Flow and Presentation.",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Walk through blueprint: Inputs → drivers → FCF engine → DCF scenarios → comps/precedents → synergy overlay → football field.\"",
+        "\"Narrate results: DCF summary table: downside EV ~$9.8B, base ~$11.5B, upside ~$13.6B; terminal value ~65% of EV. ... Football field visualization aligning methods. Sensitivity grid showing EV swings with WACC/g.\"",
+        "\"Final recommendation structure: Present DCF base/upside range, overlay comps/precedents. Define bid range $11.0–11.8B EV with walk-away at upside DCF.\""
+      ],
+      "driver_alignment": "- Discover/Define: set the mandate and inputs, framing the analysis flow from question to methods.\n- Represent: provided a clear blueprint mapping inputs → model → outputs → visualization.\n- Implement: narrated code structure and verbally reported numeric outputs and visualizations.\n- Validate/Reflect: linked visuals (football field, sensitivity) back to numeric tables and delivered a concise conclusion/recommendation.",
+      "reasoning": "The submission demonstrates a clear, logical progression from inputs through modeling to outputs and a concrete conclusion, with explicit verbal descriptions of code, numeric results, and visual outputs (football field, sensitivity grid). Multiple DRIVER stages (Represent, Implement, Validate, Reflect) show coherent presentation and linkage of visuals to conclusions, meeting the criterion thoroughly."
+    },
+    {
+      "criterion_id": "comm_recommendation",
+      "criterion_name": "Actionable Recommendation.",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"DCF summary table: downside EV ~$9.8B, base ~$11.5B, upside ~$13.6B; terminal value ~65% of EV.\"",
+        "\"Comps range ~$10–18B (Chipotle skew), precedents ~$10.8–13.5B. Synergy add-on ≈$3B EV for strategics.\"",
+        "\"Define bid range $11.0–11.8B EV with walk-away at upside DCF.\" / \"Negotiation plan: open $11.0B, cap at $11.8B unless synergies verified; emphasize management rollover, speed-to-close, financing flexibility.\""
+      ],
+      "driver_alignment": "- Implement: produced DCF, comps, precedents, and synergy calculations that generate numeric EV ranges.\n- Validate: checked multiples, FCF profiles, and equity bridge to ensure outputs are consistent.\n- Evolve / Reflect: translated analytical outputs into a concrete bid strategy and negotiation plan.",
+      "reasoning": "The student gives a clear, numeric recommendation (an $11.0–11.8B EV bid range and walk-away rule) and directly supports it with specific valuation outputs (DCF ranges, comps/precedents, and quantified synergies). DRIVER stages Implement, Validate, and Evolve/Reflect show both the analytical basis and the actionable negotiation guidance, meeting the criterion thoroughly."
+    }
+  ]
+}

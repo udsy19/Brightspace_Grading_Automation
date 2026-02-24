@@ -1,0 +1,357 @@
+{
+  "student_name": "Ryan Swann",
+  "username": "swannr",
+  "org_defined_id": "037338799",
+  "transcript_length": 6744,
+  "overall_grade": 89.625,
+  "passed_criteria": 21,
+  "partial_criteria": 2,
+  "failed_criteria": 1,
+  "driver_stages_demonstrated": {
+    "D": true,
+    "R": true,
+    "I": true,
+    "V": true,
+    "E": true,
+    "R2": true
+  },
+  "feedback": "Excellent application of the DRIVER framework throughout your work. You clearly demonstrated 6 stages: D, R, I, V, E, R2.\n\n\nSTRENGTHS:\n- Financial Concepts Accuracy: The student explicitly defines free cash flow construction, parameterizes the DCF inputs in code, and states a specific WACC (9%) used in the valuation, plus sensitivity to WACC—demonstrating a thorough, applied understanding of DCF mechanics consistent with the introductory criterion.\n- Financial Concepts Accuracy: The student explicitly calculates terminal value via a perpetual growth model with stated growth scenarios and WACC, parameterizes TV in their code, and presents sensitivity results showing TV/terminal growth materially drives enterprise value. Those elements demonstrate a thorough, conceptually sound treatment meeting the criterion.\n- Financial Concepts Accuracy: The submission clearly distinguishes an explicit five-year forecast from a perpetual terminal and uses reasonable multi-stage growth assumptions (8% near-term vs. 3% terminal with upside/downside cases). Parameterization and sensitivity testing demonstrate a thorough, applied treatment consistent with a PASS.\n\n\nAREAS FOR IMPROVEMENT:\n- Financial Concepts Accuracy: The student correctly identifies EBITDA, cash taxes, CapEx, and working capital as FCF drivers and applies them in a DCF discounted by WACC, indicating understanding that FCFs feed enterprise value. However, they do not explicitly reference EBIT/NOPAT or the depreciation add-back (starting from EBITDA without clarifying tax/NOPAT adjustments), so the treatment is correct but incomplete.\n- Financial Concepts Accuracy: The student reports enterprise-value ranges and an equity valuation from a P/E, and shows modeling code, but never subtracts Net Debt (or otherwise bridges EV to Equity Value) nor divides Equity Value by share count to produce Price Per Share. Therefore the required criterion is not demonstrated.\n- Following the DRIVER Framework: The student performed external-style validation by triangulating DCF, comps, and precedents and provided sensitivity and risk discussion, demonstrating awareness of limitations (VALIDATE, REPRESENT, REFLECT). However, they did not cite specific external data sources or tools (e.g., Bloomberg/Capital IQ, specific datasets) as required for a full PASS, so the evidence meets the criterion only partially.",
+  "criteria": [
+    {
+      "criterion_id": "concept_dcf_methodology",
+      "criterion_name": "Discounted Cash Flow (DCF) Methodology (Introductory Level).",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Free cash flow is calculated as EBITDA minus cash taxes minus maintenance and growth. Capex minus in-growth. Incremental working capital.\"",
+        "\"all drives are automated in Python with assumptions parameterized for revenue growth, EBITDA margins, Capex, and working capital, weighted average cost of capital, and terminal growth.\"",
+        "\"I apply a 9% weighted average cost of capital consistent with industry norms for a scaled defensive consumer brand.\""
+      ],
+      "driver_alignment": "Represent (multi-scenario DCF as a valuation lens), Implement (Python automation and parameterization of FCF drivers and WACC), Validate (sensitivity analysis around WACC and terminal growth demonstrating discount-rate impact).",
+      "reasoning": "The student explicitly defines free cash flow construction, parameterizes the DCF inputs in code, and states a specific WACC (9%) used in the valuation, plus sensitivity to WACC—demonstrating a thorough, applied understanding of DCF mechanics consistent with the introductory criterion."
+    },
+    {
+      "criterion_id": "concept_fcf_calculation",
+      "criterion_name": "Free Cash Flow Calculation concept.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Free cash flow is calculated as EBITDA minus cash taxes minus maintenance and growth. Capex minus in-growth. Incremental working capital.\"",
+        "\"all drives are automated in Python with assumptions parameterized for revenue growth, EBITDA margins, Capex, and working capital, weighted average cost of capital, and terminal growth.\"",
+        "\"This produces stable and growing free cash flows consistent with a mature, high-quality restaurant platform for the weighted average cost of capital and terminal value.\""
+      ],
+      "driver_alignment": "- Implement: parameterized modeling/code for EBITDA, CapEx, and working capital supports practical FCF construction.\n- Represent: DCF framing and cash-flow construction statements show the concept applied to enterprise valuation.\n- Validate: Use of WACC and terminal value links the modeled FCFs to enterprise value (cash to all capital providers).",
+      "reasoning": "The student correctly identifies EBITDA, cash taxes, CapEx, and working capital as FCF drivers and applies them in a DCF discounted by WACC, indicating understanding that FCFs feed enterprise value. However, they do not explicitly reference EBIT/NOPAT or the depreciation add-back (starting from EBITDA without clarifying tax/NOPAT adjustments), so the treatment is correct but incomplete."
+    },
+    {
+      "criterion_id": "concept_terminal_value",
+      "criterion_name": "Terminal Value Concept.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I apply a 9% weighted average cost of capital consistent with industry norms for a scaled defensive consumer brand. Terminal value is calculated using a perpetual growth model with 3% growth. in the base case, 4% upside, and 2% downside.\"",
+        "\"all drives are automated in Python with assumptions parameterized for revenue growth, EBITDA margins, Capex, and working capital, weighted average cost of capital, and terminal growth.\"",
+        "\"Sensitivity analysis shows a 1% increase in weighted average cost of capital reduces value by 12%. And a 1% increase in terminal growth increases value by 15%. This confirms valuation sensitivity is driven more by long-term growth durability than short-term execution noise.\""
+      ],
+      "driver_alignment": "IMPLEMENT — parameterized modeling and code include terminal growth and TV calculation; VALIDATE — sensitivity analysis demonstrates TV/long-term growth materially drives value; REFLECT — discussion emphasizes intrinsic, long-term value over short-term execution/synergies.",
+      "reasoning": "The student explicitly calculates terminal value via a perpetual growth model with stated growth scenarios and WACC, parameterizes TV in their code, and presents sensitivity results showing TV/terminal growth materially drives enterprise value. Those elements demonstrate a thorough, conceptually sound treatment meeting the criterion."
+    },
+    {
+      "criterion_id": "concept_multi_stage_growth",
+      "criterion_name": "Multi-Stage Growth reasoning.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I'm going to begin with a five-year operating forecast, and for our revenue, revenue grows at 8% annually in the Bay Area... supported by 500 new stores over five years, digital mix increasing from 50% to 70%...\"",
+        "\"I apply a 9% weighted average cost of capital... Terminal value is calculated using a perpetual growth model with 3% growth. in the base case, 4% upside, and 2% downside.\"",
+        "\"Sensitivity analysis shows a 1% increase in weighted average cost of capital reduces value by 12%. And a 1% increase in terminal growth increases value by 15%.\""
+      ],
+      "driver_alignment": "Represent (explicit five-year forecast and multi-scenario DCF), Implement (assumptions parameterized and automated in Python), Validate (sensitivity analysis on terminal growth and WACC).",
+      "reasoning": "The submission clearly distinguishes an explicit five-year forecast from a perpetual terminal and uses reasonable multi-stage growth assumptions (8% near-term vs. 3% terminal with upside/downside cases). Parameterization and sensitivity testing demonstrate a thorough, applied treatment consistent with a PASS."
+    },
+    {
+      "criterion_id": "concept_ev_vs_equity",
+      "criterion_name": "Enterprise Value vs. Equity Value Bridge.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.0,
+      "level": "FAIL",
+      "evidence": [
+        "\"For DCF results, the DCF produces the following enterprise value ranges. Downside case approximately $9.5 billion. The base case with approximately $11.5 billion. And the upside case of approximately $13.5 billion.\"",
+        "\"Applying the 22 times P.E. ratio to $400 million of net income and implied equity value of approximately $8.5 billion.\"",
+        "\"Showing the code that I used to create all of this is right here.\""
+      ],
+      "driver_alignment": "Represent (triangulates DCF, comps, transactions) and Implement (automated Python modeling) stages provided EV and an implied equity via P/E, and Validate (football-field synthesis) summarized ranges — but none of these stages include an EV-to-Equity bridge or per-share calculation.",
+      "reasoning": "The student reports enterprise-value ranges and an equity valuation from a P/E, and shows modeling code, but never subtracts Net Debt (or otherwise bridges EV to Equity Value) nor divides Equity Value by share count to produce Price Per Share. Therefore the required criterion is not demonstrated."
+    },
+    {
+      "criterion_id": "concept_wacc_application",
+      "criterion_name": "WACC Application.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"all drives are automated in Python with assumptions parameterized for revenue growth, EBITDA margins, Capex, and working capital, weighted average cost of capital, and terminal growth.\"",
+        "\"I apply a 9% weighted average cost of capital consistent with industry norms for a scaled defensive consumer brand.\"",
+        "\"Sensitivity analysis shows a 1% increase in weighted average cost of capital reduces value by 12%.\""
+      ],
+      "driver_alignment": "Implement — WACC was parameterized and implemented in the Python model.  \nRepresent — WACC (9%) was explicitly applied in the DCF/enterprise valuation.  \nValidate — Sensitivity analysis assessed the impact of WACC on value.",
+      "reasoning": "The student explicitly parameterized WACC in their model, applied a defensible industry-consistent 9% WACC in the DCF, and ran sensitivity analysis showing its effect on FCFF valuation, demonstrating thorough and correct application."
+    },
+    {
+      "criterion_id": "concept_comparables",
+      "criterion_name": "Comparable Methodology (Introductory Level).",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Industry reference points including trading P.E. multiples around 22 times. President EBITDA multiplies between 12 and 15 times, with strategic peers trading higher, Chipotle at 35 times P.E. and McDonalds at 25 times P.E.\"",
+        "\"I will triangulate the value using three lenses. Multi-scenario DCF for intrinsic value, trading Comparables for Public Market Reference, Precedent Trends, Transactions for Control Value.\"",
+        "\"Trading Comparables. Next, I analyzed public comparables, applying the 22 times P.E. ratio to $400 million of net income and implied equity value of approximately $8.5 billion.\" / \"Proceeding transactions in the sector cluster between 12x and 15x EBITDA. Applying these multiples to Panera's ... 900 million EBITDA implies at the low end $10.8 billion while at the high end $13.5 billion.\""
+      ],
+      "driver_alignment": "Represent (triangulates valuation using comparables and precedents); Implement (automated Python modeling to compute multiples and implied values); Validate (synthesizes comps into a football-field and provides sensitivity/walk-away guidance).",
+      "reasoning": "The student clearly selected relevant peers (Chipotle, McDonald's) and applied both P/E and EBITDA multiples to Panera's metrics with explicit numeric implied valuations. Their approach is integrated into the DRIVER workflow (Represent/Implement/Validate), and the treatment is detailed enough to meet the PASS standard."
+    },
+    {
+      "criterion_id": "concept_triangulation",
+      "criterion_name": "Valuation Triangulation / Sensitivity.",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "[\"I will triangulate the value using three lenses. Multi-scenario DCF for intrinsic value, trading Comparables for Public Market Reference, Precedent Trends, Transactions for Control Value.\"]",
+        "[\"all drives are automated in Python with assumptions parameterized for revenue growth, EBITDA margins, Capex, and working capital, weighted average cost of capital, and terminal growth.\"]",
+        "[\"Sensitivity analysis shows a 1% increase in weighted average cost of capital reduces value by 12%. And a 1% increase in terminal growth increases value by 15%.\"]"
+      ],
+      "driver_alignment": "Represent (sets up triangulation of DCF, comps, precedents), Implement (models automated in Python with parameterization), Validate (football-field synthesis and sensitivity testing), Reflect (recommends $11–12.5B clearing range and walk-away at $12.5B).",
+      "reasoning": "The student clearly triangulated valuation across DCF, trading comparables, and precedent/transaction multiples, produced numeric ranges, and ran sensitivity analysis showing WACC/terminal-growth impacts. They also synthesized an overlap clearing range and gave a specific bid recommendation, demonstrating thorough, well-supported treatment of triangulation and sensitivity."
+    },
+    {
+      "criterion_id": "tech_dcf_model",
+      "criterion_name": "DCF Model Structure.",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I'm going to begin with a five-year operating forecast, and for our revenue, revenue grows at 8% annually in the Bay Area.\"",
+        "\"I will triangulate the value using three lenses. Multi-scenario DCF for intrinsic value, trading Comparables for Public Market Reference, Precedent Trends, Transactions for Control Value.\"",
+        "\"For DCF results, the DCF produces the following enterprise value ranges. Downside case approximately $9.5 billion. The base case with approximately $11.5 billion. And the upside case of approximately $13.5 billion.\""
+      ],
+      "driver_alignment": "Represent (defined multi-scenario DCF and projections), Implement (assumptions parameterized and code shown for cash flow/WACC/TV construction), Validate (football-field synthesis and reported DCF EV results).",
+      "reasoning": "The submission explicitly includes projections (five-year forecast), WACC/terminal assumptions via parameterized code, and presents discounted cash flow outputs with specific enterprise value figures across scenarios. DRIVER stages (Represent/Implement/Validate) collectively show a structured DCF and numeric EV calculation, meeting the criterion thoroughly."
+    },
+    {
+      "criterion_id": "tech_projection_logic",
+      "criterion_name": "Projection Logic.",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I'm going to begin with a five-year operating forecast, and for our revenue, revenue grows at 8% annually in the Bay Area.\"",
+        "\"For the margins, EBITDA margins expand modestly from 15% to 16.5% as digital scale improves.\"",
+        "\"all drives are automated in Python with assumptions parameterized for revenue growth, EBITDA margins, Capex, and working capital, weighted average cost of capital, and terminal growth.\""
+      ],
+      "driver_alignment": "- Represent: stated the five-year forecast and growth/margin assumptions.\n- Implement: automated projections in Python with parameterized drivers.\n- Validate: produced multi-scenario DCF outputs (base/upside/downside) and sensitivities to test projection assumptions.",
+      "reasoning": "The student explicitly built a five-year operating forecast and applied explicit revenue growth (8% p.a.) and evolving EBITDA margins (15% → 16.5%), implemented as parameterized code, and validated via multi-scenario DCF and sensitivities. This demonstrates a thorough, non-static projection logic that meets the criterion."
+    },
+    {
+      "criterion_id": "tech_comparables_calc",
+      "criterion_name": "Comparable Multiples Calculation.",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Trading Comparables. Next, I analyzed public comparables, applying the 22 times P.E. ratio to $400 million of net income and implied equity value of approximately $8.5 billion.\"",
+        "\"Using EBITDA multiples in the 11 to 13 range, consistent with scaled restaurant peers, yielders, enterprise values between $9.9 billion and $11.5 billion.\"",
+        "\"Applying these multiples to Panera's MediRoute. 900 million EBITDA implies at the low end $10.8 billion while at the high end $13.5 billion.\""
+      ],
+      "driver_alignment": "- Represent: explicitly framed a comparables lens (\"I will triangulate the value using three lenses\") showing intent to use market multiples.\n- Implement: automated modeling/code referenced (\"all drives are automated in Python... Showing the code\") supporting systematic multiple application.\n- Validate: football-field synthesis and comp clusters (\"Comps cluster between $9.5 and $11.7 billion\") used to present ranges and cross-check implied values.",
+      "reasoning": "The student explicitly multiplies peer multiples by the appropriate metrics (P/E × net income; EV/EBITDA × EBITDA) and reports implied equity/enterprise values and ranges across multiple peer multiple bands. Multiple concrete examples and a summary cluster/football-field validate the range presentation, meeting the thoroughness required for PASS."
+    },
+    {
+      "criterion_id": "tech_sensitivity_scenario",
+      "criterion_name": "Scenario Comparison (Introductory Sensitivity).",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The DCF includes Base, Upside, and Downside cases driven by Store Expansion Success, Digital Mix Penetration, Margin Leverage, Terminal Growth...\"",
+        "\"Downside case approximately $9.5 billion. The base case with approximately $11.5 billion. And the upside case of approximately $13.5 billion.\"",
+        "\"Sensitivity analysis shows a 1% increase in weighted average cost of capital reduces value by 12%. And a 1% increase in terminal growth increases value by 15%.\""
+      ],
+      "driver_alignment": "Represent (defined multi-scenario DCF and drivers), Implement (assumptions parameterized and automated in Python), Validate (sensitivity analysis and football-field synthesis presenting results).",
+      "reasoning": "The student presents at least three scenario valuations with explicit enterprise values and quantifies how key drivers (WACC and terminal growth) alter valuation, demonstrating both scenario comparison and sensitivity analysis. The Represent/Implement/Validate stages provide clear modeling, execution, and validation support, meeting the thoroughness standard for PASS."
+    },
+    {
+      "criterion_id": "tech_visual_summary",
+      "criterion_name": "Visual Summary of Valuation.",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The DCF produces the following enterprise value ranges. Downside case approximately $9.5 billion. The base case with approximately $11.5 billion. And the upside case of approximately $13.5 billion.\"",
+        "\"I will triangulate the value using three lenses. Multi-scenario DCF for intrinsic value, trading Comparables for Public Market Reference, Precedent Trends, Transactions for Control Value.\"",
+        "\"The football field synthesis across all of methods, DCF-based case centers around 11.5 billion. Comps cluster between $9.5 and $11.7 billion, and Presidents extend to 13.5 billion. The overlap zone between 1$1 and $12.5 billion represents the most defensible clearing range.\""
+      ],
+      "driver_alignment": "Represent (triangulation of three valuation lenses), Implement (automated modeling/code to generate results), Validate (explicit \"football field\" synthesis and stated ranges) — these stages show the student summarized valuation outputs across methods.",
+      "reasoning": "The student provides a clear, numeric synthesis across DCF, comps, and transaction methods, including ranges, central values, and an overlap \"clearing\" range—satisfying the requirement for a simple summary/table-like visual (football-field style). The Represent and Validate stages explicitly document the multi-method summary, and the Implement stage supports that the results were produced and summarized reliably."
+    },
+    {
+      "criterion_id": "integration_parameterized_inputs",
+      "criterion_name": "Parameterized Inputs.",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"all drives are automated in Python with assumptions parameterized for revenue growth, EBITDA margins, Capex, and working capital, weighted average cost of capital, and terminal growth.\"",
+        "\"I apply a 9% weighted average cost of capital ... Terminal value is calculated using a perpetual growth model with 3% growth. in the base case, 4% upside, and 2% downside.\"",
+        "\"Sensitivity analysis shows a 1% increase in weighted average cost of capital reduces value by 12%. And a 1% increase in terminal growth increases value by 15%.\""
+      ],
+      "driver_alignment": "Implement — parameterized assumptions and automated Python model; Represent — multi-scenario DCF (base/upside/downside) and multiples applied; Validate — sensitivity analysis demonstrating model response to input changes.",
+      "reasoning": "The student explicitly parameterizes key inputs (growth, WACC, terminal growth, margins, multiples), provides numeric baseline values, and shows scenario and sensitivity outputs (including quantified impacts), indicating the model handles input changes robustly. Those elements demonstrate a thorough, applied understanding consistent with a PASS."
+    },
+    {
+      "criterion_id": "integration_scenario_capability",
+      "criterion_name": "Scenario Capability.",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The DCF includes Base, Upside, and Downside cases driven by Store Expansion Success, Digital Mix Penetration, Margin Leverage, Terminal Growth...\"",
+        "\"all drives are automated in Python with assumptions parameterized for revenue growth, EBITDA margins, Capex, and working capital, weighted average cost of capital, and terminal growth.\"",
+        "\"Sensitivity analysis shows a 1% increase in weighted average cost of capital reduces value by 12%. And a 1% increase in terminal growth increases value by 15%.\""
+      ],
+      "driver_alignment": "Represent — built multi-scenario DCF (Base/Upside/Downside) to compare outcomes.  \nImplement — parameterized assumptions and automated modeling in Python to enable scenario runs.  \nValidate/Evolve — ran sensitivity analysis and used results to set an auctionable bid range and walk-away price.",
+      "reasoning": "The student presents explicit Bull/Base/Bear scenarios with numeric valuations and parameterized drivers, and directly links key assumptions (WACC, terminal growth, growth/margin drivers) to valuation impact via sensitivity analysis. The combination of multi-scenario DCF, coded parameterization, and validation-led bid recommendations satisfies thorough scenario capability."
+    },
+    {
+      "criterion_id": "integration_comprehensive_framework",
+      "criterion_name": "Comprehensive Analysis Framework.",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"For DCF results, the DCF produces the following enterprise value ranges. Downside case approximately $9.5 billion. The base case with approximately $11.5 billion. And the upside case of approximately $13.5 billion.\"",
+        "\"I will triangulate the value using three lenses. Multi-scenario DCF for intrinsic value, trading Comparables for Public Market Reference, Precedent Transactions for Control Value.\"",
+        "\"Recommended bid strategy, KKR should target an entry valuation of $11.5 billion to $12.0 billion. Establish a hard walk-away price at $12.5 billion.\""
+      ],
+      "driver_alignment": "- Discover: framed the core question and identified known facts/constraints informing assumptions.\n- Represent: used a structured, multi-lens valuation (DCF, comps, precedents).\n- Implement: parameterized assumptions and automated models in Python.\n- Validate/Evolve: sensitivity analysis, football-field synthesis, and an auctionable bid recommendation that combines quantitative outputs with qualitative judgment.",
+      "reasoning": "The submission presents a clear assumptions-to-analysis-to-conclusion flow, triangulates valuations across multiple quantitative methods, and explicitly integrates qualitative business judgment (bid strategy, synergies, walk-away). DRIVER stages from Discover through Evolve are evidenced, showing thorough, well-structured treatment meeting the PASS standard."
+    },
+    {
+      "criterion_id": "driver_define_discover",
+      "criterion_name": "Define & Discover: Problem Framing.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The core question is, what is the intrinsic and market-clearing valuation of Panera Bread, and how should companies, KKR approach a competitive auction with strategic bidders present?\"",
+        "\"industry's weighted average cost of capital is approximately 9% and management intends to roll 10% of equity, aligning incentives with a private equity portfolio.\"",
+        "\"Recommended bid strategy, KKR should target an entry valuation of $11.5 billion to $12.0 billion.\""
+      ],
+      "driver_alignment": "Discover stage — explicitly frames the problem, known facts, constraints, and buyer landscape (Panera as valuation object; acquisition/auction context). Represent stage — states the planned valuation approach (triangulation). Evolve/Validate stages — translate framing into an auctionable bid, confirming stakeholder focus on KKR and management.",
+      "reasoning": "The student explicitly names Panera as the valuation object and frames the task as an acquisition/auction for KKR, cites management roll as a stakeholder/alignment mechanism, and produces a recommended bid—meeting the strict requirement for explicit problem framing in the Discover/Define stages."
+    },
+    {
+      "criterion_id": "driver_represent",
+      "criterion_name": "Represent: Methodology Selection.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I will triangulate the value using three lenses. Multi-scenario DCF for intrinsic value, trading Comparables for Public Market Reference, Precedent Trends, Transactions for Control Value.\"",
+        "\"all drives are automated in Python with assumptions parameterized for revenue growth, EBITDA margins, Capex, and working capital, weighted average cost of capital, and terminal growth.\"",
+        "\"I'm going to begin with a five-year operating forecast, and for our revenue, revenue grows at 8% annually in the Bay Area.\" / \"I apply a 9% weighted average cost of capital ... Terminal value is calculated using a perpetual growth model with 3% growth.\""
+      ],
+      "driver_alignment": "Represent (explicitly lists valuation methodologies and forecasting approach); Implement (parameterization/automation of assumptions in Python); Validate (applies results from those methods to synthesize value).",
+      "reasoning": "The student explicitly lists the valuation methods (DCF, trading comps, precedent/transactions) and specifies required inputs and assumptions (5-year forecast, revenue growth, EBITDA margins, CapEx, working capital, WACC, terminal growth) with numeric examples, meeting the strict requirement for explicit methodology selection and data/assumption identification."
+    },
+    {
+      "criterion_id": "driver_implement",
+      "criterion_name": "Implement: Execution.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"all drives are automated in Python with assumptions parameterized for revenue growth, EBITDA margins, Capex, and working capital, weighted average cost of capital, and terminal growth.\"",
+        "\"Showing the code that I used to create all of this is right here.\"",
+        "\"The DCF produces the following enterprise value ranges. Downside case approximately $9.5 billion. The base case with approximately $11.5 billion. And the upside case of approximately $13.5 billion.\""
+      ],
+      "driver_alignment": "The Implement stage is directly supported by the student's statement about automation and code provision. The Represent stage is shown by the structured five-year forecast and scenario construction (base/upside/downside). The Validate stage is evidenced by the football-field synthesis and sensitivity analysis used to triangulate results.",
+      "reasoning": "The student demonstrates systematic execution of their planned valuation models: automated Python implementation, explicit offer of code, multiple scenario outputs (DCF ranges) and sensitivity/validation steps. This satisfies the moderate standard for Implementation under the DRIVER framework."
+    },
+    {
+      "criterion_id": "driver_validate",
+      "criterion_name": "Validate: Sanity Checks.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Trading Comparables. Next, I analyzed public comparables, applying the 22 times P.E. ratio to $400 million of net income and implied equity value of approximately $8.5 billion.\"",
+        "\"I will triangulate the value using three lenses. Multi-scenario DCF for intrinsic value, trading Comparables for Public Market Reference, Precedent Trends, Transactions for Control Value.\"",
+        "\"Strategic buyers can justify $1 billion to $2 billion of incremental value ... However, these synergies introduce integration risk, execution uncertainty, and overpayment risk in competitors.\" / \"Sensitivity analysis shows a 1% increase in weighted average cost of capital reduces value by 12%.\""
+      ],
+      "driver_alignment": "- REPRESENT: Triangulation across DCF, trading comps, and precedent transactions supports external validation intent.\n- IMPLEMENT: Automated model and sensitivity analysis show internal stress-testing of results.\n- VALIDATE: Football-field synthesis and comparables/transaction ranges used to sanity-check valuation.\n- REFLECT: Discussion of synergy risk and sensitivity acknowledges limitations.",
+      "reasoning": "The student performed external-style validation by triangulating DCF, comps, and precedents and provided sensitivity and risk discussion, demonstrating awareness of limitations (VALIDATE, REPRESENT, REFLECT). However, they did not cite specific external data sources or tools (e.g., Bloomberg/Capital IQ, specific datasets) as required for a full PASS, so the evidence meets the criterion only partially."
+    },
+    {
+      "criterion_id": "driver_evolve_reflect",
+      "criterion_name": "Evolve & Reflect: Synthesis.",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Recommended bid strategy, KKR should target an entry valuation of $11.5 billion to $12.0 billion.\"",
+        "\"The overlap zone between 1$1 and $12.5 billion represents the most defensible clearing range.\"",
+        "\"This confirms valuation sensitivity is driven more by long-term growth durability than short-term execution noise.\""
+      ],
+      "driver_alignment": "Evolve (explicit auctionable bid and walk-away price) and Reflect (comments on valuation sensitivity and asset dependence) are directly demonstrated; Validate (football-field synthesis and sensitivity analysis) and Represent (triangulation of DCF, comps, precedents) provide the supporting evidence used for the final recommendation and reliability commentary.",
+      "reasoning": "The student gives a clear, actionable bid range and walk-away price (Evolve) and explicitly discusses the reliability/limitations of methods (sensitivity drivers and defensible overlap from Validate), meeting both required elements. The evidence shows explicit synthesis and reflection rather than implied reasoning."
+    },
+    {
+      "criterion_id": "comm_methodology_explanation",
+      "criterion_name": "Methodology Explanation.",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I will triangulate the value using three lenses. Multi-scenario DCF for intrinsic value, trading Comparables for Public Market Reference, Precedent Trends, Transactions for Control Value.\"",
+        "\"all drives are automated in Python with assumptions parameterized for revenue growth, EBITDA margins, Capex, and working capital, weighted average cost of capital, and terminal growth.\"",
+        "\"I will begin with a five-year operating forecast... revenue grows at 8% annually... For the margins, EBITDA margins expand modestly from 15% to 16.5%... Free cash flow is calculated as EBITDA minus cash taxes minus maintenance and growth. Capex minus in-growth... I apply a 9% weighted average cost of capital... Terminal value is calculated using a perpetual growth model with 3% growth.\""
+      ],
+      "driver_alignment": "- Represent: explicitly justifies the choice of three valuation lenses and their roles (intrinsic vs market vs control).\n- Implement: documents the modeling approach, parameterization, automation in Python, and stepwise forecast/cash-flow construction.\n- Validate: presents sensitivity analysis and football-field synthesis to validate and reconcile outputs.",
+      "reasoning": "The submission clearly explains why each valuation method was chosen and details the steps taken (assumptions, forecast horizon, cash-flow calculation, WACC, terminal growth, sensitivities). Multiple DRIVER stages (Represent, Implement, Validate) provide concrete evidence of a thorough, methodical explanation, satisfying the PASS standard."
+    },
+    {
+      "criterion_id": "comm_presentation_logic",
+      "criterion_name": "Logical Flow and Presentation.",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The core question is, what is the intrinsic and market-clearing valuation of Panera Bread, and how should companies, KKR approach a competitive auction with strategic bidders present?\"",
+        "\"Showing the code that I used to create all of this is right here. Pause if you want to stop and read to analyze what my code is doing. it is using simple Python code.\"",
+        "\"The DCF produces the following enterprise value ranges. Downside case approximately $9.5 billion. The base case with approximately $11.5 billion. And the upside case of approximately $13.5 billion.\""
+      ],
+      "driver_alignment": "Discover (clear problem definition and constraints), Represent (explicit triangulation of valuation methods), Implement (describes parameterized Python automation and assumptions), Validate (football-field synthesis and sensitivities), Reflect (conclusion and recommended bid/walk-away).",
+      "reasoning": "The submission presents a clear, logical flow from problem framing (Discover) to methods (Represent), implementation details and shown code (Implement), valuation outputs and sensitivity analysis (Validate), and a concrete conclusion/recommendation (Reflect). The student verbally describes model inputs, assumptions, code presence, and explicit numeric outputs, demonstrating thorough logical flow and presentation."
+    },
+    {
+      "criterion_id": "comm_recommendation",
+      "criterion_name": "Actionable Recommendation.",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"In conclusion, Panera Bread is worth $11-12.5 billion on a statewide basis.\"",
+        "\"Downside case approximately $9.5 billion. The base case with approximately $11.5 billion. And the upside case of approximately $13.5 billion.\"",
+        "\"Applying these multiples to Panera's MediRoute. 900 million EBITDA implies at the low end $10.8 billion while at the high end $13.5 billion.\""
+      ],
+      "driver_alignment": "Represent (triangulates DCF, comps, precedents to derive valuation ranges), Implement (automated Python modeling and parameterization for scenarios), Validate (football-field synthesis and sensitivity analysis that supports the recommended range), Reflect (explicit bid strategy and walk-away recommendation).",
+      "reasoning": "The student gives a clear, numeric valuation and an actionable bidding recommendation (entry range and hard walk-away). That conclusion is directly supported by multiple valuation methods (DCF, trading comps, transaction multiples) and sensitivity/validation steps, demonstrating thorough evidence-based recommendation."
+    }
+  ]
+}

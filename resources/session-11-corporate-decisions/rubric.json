@@ -1,0 +1,367 @@
+{
+  "context_type": "llm_grading_context",
+  "context_engineering_version": "1.0",
+  "assignment_context": {
+    "session_number": 11,
+    "assignment_title": "Corporate Financial Decision Analysis",
+    "scenario": "Analyze Apple's hypothetical $90B share buyback and compare alternative capital uses (special dividend, acquisition, debt reduction) to assess stakeholder impacts, value creation vs. transfer, and signaling implications.",
+    "requirements": [
+      "Stakeholder impact analysis for shareholders, bondholders, management, employees, and large investors.",
+      "Capital allocation comparison across buyback, special dividend, strategic acquisition, and debt reduction alternatives with pros/cons.",
+      "Financial impact quantification: EPS/share count pre- and post-buyback, theoretical price effects, ROIC and FCF deployment efficiency, and capital structure changes.",
+      "Value creation assessment covering value creation vs. value transfer, opportunity cost, and long-term implications.",
+      "Governance and agency analysis: incentive alignment, signaling effects, board oversight, and stakeholder conflicts.",
+      "Technical modeling: Python-based scenario and sensitivity analysis with visualizations of stakeholder outcomes."
+    ],
+    "deliverables": [
+      "DRIVER Analysis Document showing sequential D → R → I → V → E → R work.",
+      "Video presentation covering all DRIVER stages with live code demonstration.",
+      "Executable code repository/notebook with documented assumptions, reproducible models, and outputs."
+    ],
+    "approach_framework": "DRIVER",
+    "execution_format": "Record a video walkthrough of the DRIVER stages and code execution; submit the DRIVER document and runnable notebook/repo.",
+    "constraints": [
+      "Critical gate: Define & Discover must be completed and documented before implementation; otherwise the submission receives zero."
+    ]
+  },
+  "grading_context": {
+    "assignment_id": "session11",
+    "grading_focus": "Session 11 Assignment",
+    "categories": [
+      {
+        "category_id": "financial_concepts_accuracy",
+        "category_name": "Financial Concepts Accuracy",
+        "weight": 0.5,
+        "description": "Correct application of capital structure, agency, and leverage concepts to the Apple buyback decision and its alternatives.",
+        "criteria": [
+          {
+            "criterion_id": "concept_tradeoff_theory",
+            "description": "Capital structure trade-off (Introductory Level): balance between tax benefits and financial risk.",
+            "evaluation_points": [
+              "Identifies that debt provides tax benefits (interest tax shield).",
+              "Identifies that debt increases financial risk or distress costs (qualitative is fine)."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "concept_agency_conflicts",
+            "description": "Agency conflicts across stakeholders (shareholders, bondholders, management, employees, large holders).",
+            "evaluation_points": [
+              "Identifies who gains/loses under each option and why incentives diverge.",
+              "Explains asset substitution and risk-shifting dynamics tied to leverage and buybacks."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "concept_leverage_effects",
+            "description": "Financial leverage effects (Introductory Level): how financing choice impacts risk and return.",
+            "evaluation_points": [
+              "Explains that leverage amplifies both potential returns (EPS/ROE) and risks.",
+              "Notes that debt increases the fixed obligation (interest), raising default risk."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "concept_value_and_signaling",
+            "description": "Value impact and signaling logic (apply ideas, no need to cite theory names).",
+            "evaluation_points": [
+              "Frames value impact vs. value transfer with financing vs. operating effects, even without naming MM.",
+              "Discusses signaling effects of buyback vs. dividend vs. acquisition on price and perception."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "concept_optimal_structure",
+            "description": "Optimal capital structure reasoning (Introductory Level).",
+            "evaluation_points": [
+              "Discusses factors influencing the decision (e.g., current cash pile, tax benefits, financial flexibility).",
+              "Proposes a directional preference (e.g., 'reduce debt' or 'buy back shares') supported by these factors."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "concept_value_creation_vs_transfer",
+            "description": "Value creation vs. value transfer assessment across alternatives.",
+            "evaluation_points": [
+              "Separates genuine value creation (improved cash flows/ROIC) from redistribution among stakeholders.",
+              "Addresses opportunity cost of cash deployment and long-term strategic impact."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "concept_governance",
+            "description": "Governance and incentive alignment implications (Introductory Level).",
+            "evaluation_points": [
+              "Connects the decision to basic management incentives (e.g., EPS targets or stock price).",
+              "Notes potential conflicts of interest between management and shareholders."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "concept_stakeholder_completeness",
+            "description": "Completeness of stakeholder coverage (Introductory Level).",
+            "evaluation_points": [
+              "Addresses primary groups: Shareholders, Management, and Bondholders/Lenders.",
+              "Briefly notes employees or other stakeholders without needing deep option valuation math."
+            ],
+            "weight_within_category": null
+          }
+        ],
+        "competency_level": "Financial Concepts Accuracy"
+      },
+      {
+        "category_id": "technical_implementation",
+        "category_name": "Technical Implementation",
+        "weight": 0.1,
+        "description": "Sound calculations and scenario modeling supporting the analysis.",
+        "criteria": [
+          {
+            "criterion_id": "tech_eps_sharecount",
+            "description": "EPS/share count modeling pre- and post-buyback with correct dilution and cash usage.",
+            "evaluation_points": [
+              "Handles share reduction math, cash deployment, and resulting EPS/PE effects cleanly.",
+              "States assumptions (tax rate, timing, execution price) and uses them consistently."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "tech_capital_structure_updates",
+            "description": "Capital structure and cash impact calculations for each alternative.",
+            "evaluation_points": [
+              "Updates net cash/debt, interest effects, and credit metrics for buyback vs. debt paydown.",
+              "Explains implications for WACC or coverage where applicable."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "tech_scenario_sensitivity",
+            "description": "Scenario and sensitivity analysis on key drivers.",
+            "evaluation_points": [
+              "At minimum, includes base plus one sensitivity (e.g., execution price or FCF path).",
+              "Highlights breakpoints where stakeholder preference shifts."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "tech_stakeholder_quant",
+            "description": "Stakeholder impact quantification with transparent inputs.",
+            "evaluation_points": [
+              "Shows wealth/ownership changes, option value effects, and bondholder risk exposure.",
+              "Data and assumptions are traceable in code or notebook cells."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "tech_reproducibility",
+            "description": "Evidence of validated code execution (Introductory Level).",
+            "evaluation_points": [
+              "Provides Python code or clear steps for the analysis.",
+              "Discusses results that match the code/model, implying execution."
+            ],
+            "weight_within_category": null
+          }
+        ],
+        "competency_level": "Technical Implementation"
+      },
+      {
+        "category_id": "integration_of_finance_and_technology",
+        "category_name": "Integration of Finance and Technology",
+        "weight": 0.2,
+        "description": "Automated, extensible modeling that compares options and stakeholder outcomes.",
+        "criteria": [
+          {
+            "criterion_id": "integration_option_automation",
+            "description": "Automates comparisons across buyback, dividend, acquisition, and debt paydown options.",
+            "evaluation_points": [
+              "Describes creating reusable functions or parameters to toggle alternatives.",
+              "Mentions avoiding manual copy-paste calculations across scenarios."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "integration_visuals",
+            "description": "Verbal description of visualizations or tables that clarify stakeholder impacts and capital allocation trade-offs.",
+            "evaluation_points": [
+              "Transcript clearly describes results shown in charts/tables (e.g. 'As you can see, EPS rises while...').",
+              "Verbally explains the units and scenarios shown in the visual outputs."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "integration_multistakeholder_outputs",
+            "description": "Multi-stakeholder outputs are structured and easy to adjust.",
+            "evaluation_points": [
+              "Describes separating outputs for each stakeholder group.",
+              "Mentions logging assumptions for specific stakeholder impacts."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "integration_sensitivity_engine",
+            "description": "Sensitivity/stress testing built into the model.",
+            "evaluation_points": [
+              "Describes testing key drivers (tax rate, buyback timing, FCF variability).",
+              "Explains how sensitivities alter preferred option or risk profile."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "integration_assumption_logging",
+            "description": "Data provenance and assumption logging.",
+            "evaluation_points": [
+              "Mentions that assumptions are centralized and echoed in outputs.",
+              "Verbally cites sources for Apple figures or peer data."
+            ],
+            "weight_within_category": null
+          }
+        ],
+        "competency_level": "Integration of Finance and Technology"
+      },
+      {
+        "category_id": "following_the_driver_framework",
+        "category_name": "Following the DRIVER Framework",
+        "weight": 0.1,
+        "description": "Evidence of sequential DRIVER process with the critical Define & Discover gate.",
+        "criteria": [
+          {
+            "criterion_id": "driver_define_discover",
+            "description": "Define & Discover completed before modeling and documented.",
+            "evaluation_points": [
+              "Problem statement, stakeholders, and objectives captured up front.",
+              "**Critical Gate:** If transcript indicates missing or post-hoc D-stage, score this criterion as 0 and penalize category score."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "driver_represent",
+            "description": "Represent stage maps approach, options, and data needs prior to implementation.",
+            "evaluation_points": [
+              "Describes a clear plan of models, scenarios, and metrics prior to coding.",
+              "Shows linkage from plan to implemented artifacts."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "driver_implement",
+            "description": "Implement stage executes the planned analysis with traceable steps.",
+            "evaluation_points": [
+              "Transcript indicates code sections align with the Represent plan.",
+              "Intermediate checks or commentary tie execution to goals."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "driver_validate",
+            "description": "Validate stage tests calculations, sensitivities, and reasonableness.",
+            "evaluation_points": [
+              "Mentions specific reasonableness checks (e.g., coverage, dilution bounds).",
+              "Discusses fixes or adjustments discovered during validation."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "driver_evolve",
+            "description": "Evolve stage identifies improvements or extensions.",
+            "evaluation_points": [
+              "Notes future refinements (e.g., additional scenarios, data pulls).",
+              "Connects to broader corporate finance applications."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "driver_reflect",
+            "description": "Reflect stage distills lessons about incentives and capital allocation.",
+            "evaluation_points": [
+              "Captures key insights for practitioners and personal learning.",
+              "Links reflection back to stakeholder tensions observed."
+            ],
+            "weight_within_category": null
+          }
+        ],
+        "competency_level": "Following the DRIVER Framework"
+      },
+      {
+        "category_id": "clear_communication_and_explanation",
+        "category_name": "Clear Communication and Explanation",
+        "weight": 0.1,
+        "description": "Professional storytelling, documentation, and presentation of the analysis.",
+        "criteria": [
+          {
+            "criterion_id": "comm_narrative_clarity",
+            "description": "Narrative explains agency conflicts, trade-offs, and rationale across options.",
+            "evaluation_points": [
+              "Frames conclusions for stakeholders with explicit pros/cons.",
+              "Avoids one-sided claims; acknowledges uncertainties."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "comm_assumptions_transparency",
+            "description": "Transparent assumptions, data sources, and limitations.",
+            "evaluation_points": [
+              "Verbally states input sources for Apple figures and any peer benchmarks.",
+              "Notes modeling limits or areas requiring further data."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "comm_visuals",
+            "description": "Visuals/tables are verbally described to support comprehension.",
+            "evaluation_points": [
+              "Verbally references charts/tables to explain stakeholder impact and EPS effects.",
+              "Explains units, timing, and scenarios shown in the visuals."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "comm_video",
+            "description": "Video transcript quality and coverage of DRIVER stages with code.",
+            "evaluation_points": [
+              "Clear flow, covers each stage in order, and references working code outputs.",
+              "Keeps pacing professional and focused on decision logic."
+            ],
+            "weight_within_category": null
+          },
+          {
+            "criterion_id": "comm_recommendations",
+            "description": "Actionable recommendations grounded in the analysis.",
+            "evaluation_points": [
+              "States preferred option(s) and conditions that could change the recommendation.",
+              "Connects recommendations back to stakeholder impacts and governance considerations."
+            ],
+            "weight_within_category": null
+          }
+        ],
+        "competency_level": "Clear Communication and Explanation"
+      }
+    ],
+    "rubric_levels": [
+      {
+        "level_name": "excellent",
+        "score_range": "95-100",
+        "description": "Outstanding demonstration with insightful analysis"
+      },
+      {
+        "level_name": "good",
+        "score_range": "88-94",
+        "description": "Strong understanding with minor gaps"
+      },
+      {
+        "level_name": "satisfactory",
+        "score_range": "82-87",
+        "description": "Meets core requirements"
+      },
+      {
+        "level_name": "needs_improvement",
+        "score_range": "<82",
+        "description": "Significant gaps in understanding or execution"
+      }
+    ],
+    "total_points": 100
+  },
+  "metadata": {
+    "weights_valid": true,
+    "total_categories": 5,
+    "total_criteria": 29
+  }
+}

@@ -1,0 +1,539 @@
+{
+  "student_name": "Abbey Carroll",
+  "username": "carro146",
+  "org_defined_id": "035875419",
+  "transcript_length": 5620,
+  "overall_grade": 81.7777777777778,
+  "passed_criteria": 25,
+  "partial_criteria": 11,
+  "failed_criteria": 1,
+  "driver_stages_demonstrated": {
+    "D": true,
+    "R": true,
+    "I": true,
+    "V": true,
+    "E": false,
+    "R2": true
+  },
+  "feedback": "Excellent application of the DRIVER framework throughout your work. You clearly demonstrated 5 stages: D, R, I, V, R2.\n\n\nSTRENGTHS:\n- Financial Concepts Accuracy: The student thoroughly constructed and explained the full discounted cash flow framework, correctly incorporating initial outflows, working capital, depreciation/tax effects, and terminal value, then computed NPV at the stated hurdle rate. They reinforced understanding via sensitivity to discount rate and revenues, aligning with the decision rule, demonstrating strong conceptual and applied mastery of NPV.\n- Financial Concepts Accuracy: The student explicitly states the NPV accept/reject rule, identifies NPV as the primary metric, and applies it to a base-case acceptance and a sensitivity case that turns NPV negative. The discussion is specific, linked to the modeled results, and demonstrates clear conceptual understanding across DRIVER stages, meeting the thoroughness standard for a PASS.\n- Financial Concepts Accuracy: The student computed IRR and applied it across scenarios (base 13.3%, revenue down 3.2%), and correctly noted IRR’s dependence on cash flows rather than the discount rate. Coupled with implementation detail and sensitivity validation, this demonstrates a thorough, accurate grasp consistent with a PASS under moderate strictness.\n\n\nAREAS FOR IMPROVEMENT:\n- Financial Concepts Accuracy: The student correctly determined and reported both simple and discounted payback periods and tied them to the project’s timeline, showing sound conceptual understanding. However, they did not show the cumulative cash-flow crossover details, discuss methodology, or explore payback sensitivity/implications, so coverage is correct but not thorough.\n- Financial Concepts Accuracy: The student correctly computed and interpreted the profitability index (1.242) and showed awareness of the initial outlay components, implying proper PI calculation. However, they did not detail the PV-of-benefits calculation or explicitly connect PI to PV/initial outlay beyond the brief statement, making the treatment correct but basic rather than thorough.\n- Financial Concepts Accuracy: Student correctly includes major incremental cash flows (initial capex, WC investment and recovery, depreciation tax shield, operating cash flows, terminal value) and builds a full FCF schedule. However, they don’t explicitly address excluding non-incremental items (e.g., sunk costs, allocated overhead, financing costs/interest, cannibalization or opportunity costs). Thus, the treatment is correct but not thorough, meriting PARTIAL.",
+  "criteria": [
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Net Present Value (NPV): Calculating present value of future cash flows minus initial investment",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"NPV at 8.5% a WACC is a positive 3.023 million.\"",
+        "\"I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule.\"",
+        "\"Year 0 shows the initial outflows. Free cash flow is -12.5 million which includes the capital investment plus working capital... in year 10... working capital is recovered and the terminal value of 3 million is added.\" Also: \"at 6.5% WACC, NPV increases to 4.636 million... at 10.5% WACC, NPV... falls to 1.627 million.\""
+      ],
+      "driver_alignment": "Represent: Parameterized model with assumptions (investment, WC, depreciation, terminal value, tax). Implement: Built full cash flow schedule Y0–Y10 and computed NPV at WACC. Validate/Evolve: Sensitivity to revenue and WACC confirming NPV mechanics and decision rule.",
+      "reasoning": "The student thoroughly constructed and explained the full discounted cash flow framework, correctly incorporating initial outflows, working capital, depreciation/tax effects, and terminal value, then computed NPV at the stated hurdle rate. They reinforced understanding via sensitivity to discount rate and revenues, aligning with the decision rule, demonstrating strong conceptual and applied mastery of NPV."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "NPV Decision Rule: Understanding when to accept or reject projects based on NPV",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The decision rule is straightforward. If NPV is positive at 8.5%, the project creates shareholder value.\"",
+        "\"I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule.\"",
+        "\"NPV at 8.5% a WACC is a positive 3.023 million… It's positive. So the project creates value.\" / \"NPV drops to -3.157 million turning negative\""
+      ],
+      "driver_alignment": "- Discover: Stated hurdle rate and explicit NPV decision rule.\n- Implement: Built the cash flow model enabling NPV calculation.\n- Reflect: Applied the rule to accept the project; considered a negative-NPV scenario.",
+      "reasoning": "The student explicitly states the NPV accept/reject rule, identifies NPV as the primary metric, and applies it to a base-case acceptance and a sensitivity case that turns NPV negative. The discussion is specific, linked to the modeled results, and demonstrates clear conceptual understanding across DRIVER stages, meeting the thoroughness standard for a PASS."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Internal Rate of Return (IRR): Computing the discount rate that makes NPV equal zero",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The IRR which is 13.3%. So the IRR is comfortably above the 8.5 hurdle rate.\"",
+        "\"I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule... Now, using the cash flow stream, I calculated all of the required capital budgeting metrics.\"",
+        "\"NPV drops to -3.157 million... and the IRR collapses to 3.2%... Across all scenarios the IRR itself doesn't change because IRR depends only on the cash flows and not discount rate.\""
+      ],
+      "driver_alignment": "- Represent/Implement: Built parameterized cash flows and computed IRR from them.\n- Validate: Ran sensitivity analyses showing IRR changes with cash flows and not with WACC.\n- Reflect: Interpreted IRR relative to WACC for decision-making.",
+      "reasoning": "The student computed IRR and applied it across scenarios (base 13.3%, revenue down 3.2%), and correctly noted IRR’s dependence on cash flows rather than the discount rate. Coupled with implementation detail and sensitivity validation, this demonstrates a thorough, accurate grasp consistent with a PASS under moderate strictness."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Payback Period: Determining time required to recover initial investment",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"The simple payback which is around 5.28 years... Discounted payback at around 8.21 years. The project recovers its initial outlay well before the 10-year life.\"",
+        "\"I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule.\"",
+        "\"Paycheck period falls within the project life.\""
+      ],
+      "driver_alignment": "Implement: Built the full cash flow schedule enabling payback computation. Represent: Centralized assumptions ensured the cash flows used for payback were consistent. Reflect: Reported both simple and discounted payback and interpreted recovery within project life.",
+      "reasoning": "The student correctly determined and reported both simple and discounted payback periods and tied them to the project’s timeline, showing sound conceptual understanding. However, they did not show the cumulative cash-flow crossover details, discuss methodology, or explore payback sensitivity/implications, so coverage is correct but not thorough."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "Profitability Index: Calculating present value of benefits divided by initial investment",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"and then profitability index which is 1.242 meaning every $1 invested generates around $1.24 in value.\"",
+        "\"Using the cash flow stream, I calculated all of the required capital budgeting metrics.\"",
+        "\"Year 0 shows the initial outflows. Free cash flow is -12.5 million which includes the capital investment plus working capital.\""
+      ],
+      "driver_alignment": "- Discover: Identified profitability index as a supporting metric.\n- Represent: Parameterized initial investment and working capital needed to compute PI.\n- Implement: Built the cash flow schedule and computed metrics, including PI.\n- Reflect: Interpreted PI > 1 as value creation.",
+      "reasoning": "The student correctly computed and interpreted the profitability index (1.242) and showed awareness of the initial outlay components, implying proper PI calculation. However, they did not detail the PV-of-benefits calculation or explicitly connect PI to PV/initial outlay beyond the brief statement, making the treatment correct but basic rather than thorough."
+    },
+    {
+      "criterion_id": "criterion_6",
+      "criterion_name": "Free Cash Flow Calculation: Operating cash flow less capital expenditures and working capital changes",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Year 0 shows the initial outflows. Free cash flow is -12.5 million which includes the capital investment plus working capital.\"",
+        "\"So here I or here I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule.\"",
+        "\"the table automatically calculates EBIT tax, EBIT taxes, depreciation, tax shields, operating cash flow, working capital changes, and terminal value.\" / \"in year 10, you can see a jump in free cash flow to 5.3 million because working capital is recovered and the terminal value of 3 million is added.\""
+      ],
+      "driver_alignment": "Represent and Implement stages translate the FCF logic into a parameterized model and executable function computing OCF, CapEx, and working capital changes across years. Reflect interprets FCF patterns, including WC recovery and terminal value effects.",
+      "reasoning": "The student correctly constructs free cash flow by deriving operating cash flow (via EBIT, taxes, depreciation) and adjusting for capital expenditures and working capital changes, with explicit examples at year 0 and year 10. The implementation detail and component breakdown demonstrate a thorough, accurate application consistent with the criterion."
+    },
+    {
+      "criterion_id": "criterion_7",
+      "criterion_name": "Incremental Cash Flows: Identifying only cash flows caused by the project",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"I documented all relevant case assumptions including revenue patterns over the 10 years, operating costs like cost of goods sold, labor, rent, and marketing, working capital investment, straight line depreciation, a $3 million terminal value, and the 25% corporate tax rate.\"",
+        "\"So here I or here I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule.\"",
+        "\"So the table automatically calculates EBIT tax, EBIT taxes, depreciation, tax shields, operating cash flow, working capital changes, and terminal value.\""
+      ],
+      "driver_alignment": "- Discover: Identified key cash-flow drivers (revenues, operating costs, working capital, depreciation, terminal value, taxes).\n- Represent/Implement: Built a parameterized model and full cash flow schedule that computes FCF components (tax shield, WC changes, terminal value).",
+      "reasoning": "Student correctly includes major incremental cash flows (initial capex, WC investment and recovery, depreciation tax shield, operating cash flows, terminal value) and builds a full FCF schedule. However, they don’t explicitly address excluding non-incremental items (e.g., sunk costs, allocated overhead, financing costs/interest, cannibalization or opportunity costs). Thus, the treatment is correct but not thorough, meriting PARTIAL."
+    },
+    {
+      "criterion_id": "criterion_8",
+      "criterion_name": "Operating Cash Flow: EBIT × (1-T) + Depreciation calculation",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"The table automatically calculates EBIT tax, EBIT taxes, depreciation, tax shields, operating cash flow, working capital changes, and terminal value.\"",
+        "\"I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule.\"",
+        "\"WACCC 8.5% tax rate 25% initial investment negative -12 million working capital negative0.5 million at year zero annual depreciation 1.2 2 million per year and a terminal value of 3 million at the end of year 10.\""
+      ],
+      "driver_alignment": "Discovery captured tax rate and depreciation; Represent parameterized assumptions; Implement built a schedule that computes EBIT taxes, depreciation, and operating cash flow.",
+      "reasoning": "Student shows correct conceptual understanding by identifying EBIT taxes, depreciation, and OCF within a modeled schedule and providing tax and depreciation inputs. However, they do not explicitly state or demonstrate the OCF formula EBIT × (1–T) + Depreciation or walk through numeric examples, leaving depth and thoroughness short of a PASS."
+    },
+    {
+      "criterion_id": "criterion_9",
+      "criterion_name": "Terminal Value: Treatment of salvage value and working capital recovery",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"in year 10, you can see a jump in free cash flow to 5.3 million because working capital is recovered and the terminal value of 3 million is added.\"",
+        "\"I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule.\"",
+        "\"annual depreciation 1.2 2 million per year and a terminal value of 3 million at the end of year 10.\""
+      ],
+      "driver_alignment": "- Discover: Identified assumptions for working capital and a $3M terminal value.\n- Implement: Built the cash flow schedule that adds terminal value and recovers working capital in year 10.\n- Reflect: Noted the year-10 spike consistent with working capital recovery and terminal value.",
+      "reasoning": "The student correctly includes both working capital recovery and a terminal value in the terminal year cash flow and shows this in the implemented schedule. However, they do not address after-tax treatment of salvage value or detail how the terminal value is derived, leaving the treatment conceptually correct but not thorough. Hence, PARTIAL."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Correct NPV and IRR calculations",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"NPV at 8.5% a WACC is a positive 3.023 million. ... The IRR which is 13.3%.\"",
+        "\"I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule.\"",
+        "\"Having this table clearly visible makes the upcoming calculations very easy to validate.\" / \"So now to evaluate robustness I ran two sensitivity tests.\""
+      ],
+      "driver_alignment": "- Represent: student parameterized the model and stored assumptions centrally, enabling reproducible NPV/IRR inputs.\n- Implement: student explicitly implemented a reusable function to build cash flows and produced the calculated metrics.\n- Validate: student displayed the cash flow table for verification and ran sensitivity tests (revenue and WACC) to confirm NPV/IRR behavior.",
+      "reasoning": "The student explicitly reports computed NPV and IRR values and describes implementing and running code that builds cash flows and calculates those metrics. They also show validation steps (visible table and sensitivity tests), demonstrating personal execution, block-level understanding of the cash-flow components, and ownership of the results."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Accurate cash flow projections over project life",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule.\"",
+        "\"I translated the business logic into a parameterized model.\"",
+        "\"So you can see the table here. Year 0 shows the initial outflows. Free cash flow is -12.5 million... and then finally in year 10, you can see a jump in free cash flow to 5.3 million because working capital is recovered and the terminal value of 3 million is added.\""
+      ],
+      "driver_alignment": "Represent — parameterized model and centralized assumptions support transparent projection structure.\nImplement — reusable function and printed schedule show personal execution of the cash-flow build.\nValidate — visible table, described line-item calculations, and sensitivity tests demonstrate verification of the projected cash flows.",
+      "reasoning": "The student explicitly implemented and ran a parameterized cash-flow function, produced and inspected the year-by-year FCF schedule, and described the line-item mechanics (capex, WC recovery, terminal value). They also validated robustness via sensitivity tests, meeting the strict requirement for personal execution, block-level understanding, and ownership."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Proper treatment of depreciation and taxes",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"discover step, I documented all relevant case assumptions including revenue patterns over the 10 years, operating costs like cost of goods sold, labor, rent, and marketing, working capital investment, straight line depreciation, a $3 million terminal value, and the 25% corporate tax rate.\"",
+        "\"This cell loads all of the packages and stores every assumption in one place.\"",
+        "\"This table automatically calculates EBIT tax, EBIT taxes, depreciation, tax shields, operating cash flow, working capital changes, and terminal value.\""
+      ],
+      "driver_alignment": "- Discover: explicitly lists depreciation method (straight-line) and the 25% tax rate as assumptions.\n- Represent: assumptions are centralized in a parameter table/cell for transparency.\n- Implement: a reusable function builds the cashflow schedule and explicitly computes depreciation, tax, and tax shields.\n- Validate: ran sensitivity tests and printed summaries to verify model behavior.",
+      "reasoning": "The student explicitly documented depreciation method and tax rate, centralized those assumptions, and implemented code that calculates depreciation, EBIT taxes, and tax shields within the cashflow function. They also ran and presented validation/sensitivity checks, demonstrating personal execution and understanding of how depreciation and taxes feed into cash flows."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Sensitivity analysis on key assumptions",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"This cell loads all of the packages and stores every assumption in one place.\"",
+        "\"I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule.\"",
+        "\"So now to evaluate robustness I ran two sensitivity tests. One was revenue with at - 20% scenario... NPV drops to -3.157 million... number two, WACC is plus or minus 2%. So at 6.5% WACC, NPV increases to 4.636 million. And at 10.5% WACC, NPV remains positive but falls to 1.627 million.\""
+      ],
+      "driver_alignment": "- Represent: parameterized model and centralized assumptions enabled systematic variation.\n- Implement: reusable cash-flow function demonstrates personal execution and ability to generate scenario outputs.\n- Validate: explicit statement and reported results of sensitivity tests (revenue -20%, WACC ±2%) plus NPV sensitivity visualization confirm robustness checks.",
+      "reasoning": "The student explicitly implemented a parameterized model, ran and reported concrete sensitivity scenarios on key assumptions (revenue and WACC) with numerical outcomes, and produced a visualization of NPV sensitivity. They show personal execution and block-level understanding sufficient to meet the strict technical implementation standard for this criterion."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "Scenario modeling (best/base/worst cases)",
+      "category_name": "Technical Implementation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"NPV at 8.5% a WACC is a positive 3.023 million.\"",
+        "\"So now to evaluate robustness I ran two sensitivity tests. One was revenue with at - 20% scenario. So NPV drops to -3.157 million ... Number two, WACC is plus or minus 2%.\"",
+        "\"I translated the business logic into a parameterized model.\" / \"I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule.\""
+      ],
+      "driver_alignment": "- REPRESENT: parameterized model and centralized assumptions enabled scenario inputs.\n- IMPLEMENT: reusable cash‑flow function executed the alternative scenarios.\n- VALIDATE: explicit sensitivity runs and NPV visualization used to test robustness.",
+      "reasoning": "The student clearly executed the model (implemented function, ran it) and validated results with sensitivity tests including a base case and a downside (revenue -20%) plus WACC variations, demonstrating personal execution and understanding. However they did not explicitly present a clear best‑case scenario (e.g., upside revenue case) or label a structured best/base/worst set, so scenario modeling is only partially complete."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Automation of capital budgeting calculations",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule.\"",
+        "\"The table automatically calculates EBIT tax, EBIT taxes, depreciation, tax shields, operating cash flow, working capital changes, and terminal value.\"",
+        "\"I translated the business logic into a parameterized model… stores every assumption in one place… making the model easy to update later.\""
+      ],
+      "driver_alignment": "- Represent: Converted business logic into a parameterized model to enable automation.\n- Implement: Built a reusable function that generates the full cash flow schedule and automatically computes metrics.\n- Evolve/Validate: Automated model supported sensitivity analyses and visualizations using the same workflow.",
+      "reasoning": "The student demonstrates robust automation by parameterizing assumptions and using a reusable function to auto-generate cash flows and compute NPV, IRR, paybacks, and PI. The inclusion of automated sensitivities reinforces comprehensive application. This meets a thorough, technology-enabled treatment consistent with a PASS."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Dynamic scenario and sensitivity analysis",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"So now to evaluate robustness I ran two sensitivity tests. One was revenue with at - 20% scenario... NPV drops to -3.157 million... and the IRR... 3.2% far below WACC.\"",
+        "\"I translated the business logic into a parameterized model... making the model easy to update later.\"",
+        "\"So number two, WACC is plus or minus 2%. So at 6.5% WACC, NPV increases to 4.636 million... at 10.5% WACC, NPV... falls to 1.627 million... the second chart visualizes the NPV sensitivity.\""
+      ],
+      "driver_alignment": "- Represent/Implement: Built a parameterized, reusable model enabling dynamic updates and scenario runs.\n- Validate: Performed and interpreted multiple sensitivity tests and visualized NPV sensitivity.",
+      "reasoning": "The student conducted multiple quantified sensitivity scenarios (revenue -20%, WACC ±2%), interpreted impacts on NPV/IRR, and provided a sensitivity visualization, demonstrating depth beyond a basic mention. The parameterized, reusable model supports dynamic scenario analysis, satisfying a thorough, conceptually strong treatment under moderate strictness."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Cash flow modeling with multiple phases",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule... Year 0 shows the initial outflows... From years 1 to 5, free cash flows are strong... Years 6 through 10 dip slightly... in year 10... a jump in free cash flow... because working capital is recovered and the terminal value of 3 million is added.\"",
+        "\"In the represent stage I translated the business logic into a parameterized model... stores every assumption in one place.\"",
+        "\"This first chart visualizes the free cash flows across all years... large negative year zero outflow, strong operating cash flows during years 2 through 5, slightly smaller but stable cash flows afterward and a big year 10 spike from terminal value and working capital recovery.\""
+      ],
+      "driver_alignment": "- Discover: Documented revenue patterns, working capital, depreciation, terminal value to define phases.\n- Represent: Parameterized model to encode phased assumptions.\n- Implement: Built a year-by-year cash flow function capturing phase shifts and terminal/WC recovery.\n- Validate: Visualization confirms multi-phase cash flow dynamics.",
+      "reasoning": "The student thoroughly modeled multi-phase cash flows, explicitly distinguishing Year 0, Years 1–5, Years 6–10, and Year 10 terminal/WC effects, and detailed the components driving each phase. They integrated assumptions, parameterization, implementation, and validation within DRIVER, demonstrating strong conceptual and practical mastery."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Visualization of NPV sensitivity to key drivers",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"So now to evaluate robustness I ran two sensitivity tests. One was revenue with at - 20% scenario... WACC is plus or minus 2%... at 6.5% WACC, NPV increases to 4.636 million. And at 10.5% WACC, NPV remains positive but falls to 1.627 million.\"",
+        "\"So, I structured the entire workflow using the driver framework. Define, discover, represent, implement, validate, evolve, and reflect.\"",
+        "\"the second chart visualizes the NPV sensitivity... revenue is negative 20% sends NPV deeply negative. WACC movements shift NPV up or down but keep it positive. This visualization supports the insight that revenue uncertainty is the primary risk driver...\""
+      ],
+      "driver_alignment": "Represent: centralized assumptions enable scenario changes. Implement: reusable cash flow function supports recalculation under different drivers. Validate: conducted and visualized NPV sensitivity to revenue and WACC, interpreting the results.",
+      "reasoning": "The student explicitly created and discussed a chart visualizing NPV sensitivity, with concrete scenario results for two key drivers (revenue and WACC) and clear interpretation of the primary risk. This goes beyond a mention by providing quantitative outcomes and a visualization-based insight, aligning with Implement and Validate stages."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "Demonstrates systematic investment evaluation framework",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I structured the entire workflow using the driver framework. Define, discover, represent, implement, validate, evolve, and reflect.\"",
+        "\"I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule.\"",
+        "\"Now, using the cash flow stream, I calculated all of the required capital budgeting metrics... NPV... IRR... payback... discounted payback... and then profitability index.\""
+      ],
+      "driver_alignment": "Define/Discover set the decision rule and assumptions; Represent parameterized the model; Implement created a reusable cash flow engine; Validate computed NPV/IRR/paybacks/PI; Evolve/Reflect included sensitivity tests, risks, and final recommendation.",
+      "reasoning": "The student presents a comprehensive, systematic investment evaluation: clear decision rule, structured assumptions, parameterized model, automated cash flow build, full suite of capital budgeting metrics, and sensitivity analysis. Multiple DRIVER stages are explicitly used to ensure rigor and repeatability, meeting a thorough standard for this criterion."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Define & Discover: Clear understanding of Starbucks roastery investment problem and decision criteria",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"the core question we're trying to answer, which is should Starbucks invest 12 million million in this 10-year roastery project using their 8.5% WACC as hurdle rate.\"",
+        "\"The decision rule is straightforward. If NPV is positive at 8.5%, the project creates shareholder value.\"",
+        "\"In the discover step, I documented all relevant case assumptions including revenue patterns over the 10 years, operating costs like cost of goods sold, labor, rent, and marketing, working capital investment, straight line depreciation, a $3 million terminal value, and the 25% corporate tax rate.\""
+      ],
+      "driver_alignment": "Define — explicitly states the core decision question and hurdle rate; Discover — explicitly lists documented assumptions and goals, showing the problem framing and decision criteria.",
+      "reasoning": "The student explicitly defined the investment question and a clear decision rule (NPV at 8.5%) and documented detailed assumptions in the Discover stage, meeting the strict requirement for explicit demonstration of Define & Discover. Evidence shows transparent problem framing and decision criteria that a stakeholder could defend."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Represent: Quality framework for projecting cash flows and evaluating investment",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I translated the business logic into a parameterized model.\"",
+        "\"This cell loads all of the packages and stores every assumption in one place.\"",
+        "\"I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule.\""
+      ],
+      "driver_alignment": "Represent — parameterized model, centralized assumptions, and cash‑flow structure shown.  \nImplement — reusable function and printed cash‑flow table demonstrate execution.  \nDiscover & Validate — documented assumptions and visible table/sensitivity tests support correctness and traceability.",
+      "reasoning": "The student explicitly shows a structured, parameterized framework (assumptions stored, packages loaded) and a reusable function that produces the full year‑by‑year cash flows, satisfying the Represent criterion. They also demonstrate execution and validation (printed table, sensitivity tests) and take ownership of the implementation, meeting the strict standards for this category."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Implement: Systematic NPV calculation with comprehensive sensitivity analysis",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule.\"",
+        "\"So now to evaluate robustness I ran two sensitivity tests. One was revenue with at - 20% scenario. So NVP NPV drops to -3.157 million turning negative and the IRRa collapses to 3.2% far below WACC. ... number two, WACC is plus or minus 2%.\"",
+        "\"So the table automatically calculates EBIT tax, EBIT taxes, depreciation, tax shields, operating cash flow, working capital changes, and terminal value.\""
+      ],
+      "driver_alignment": "Implemented stage (systematic cash-flow function and metric computation) supported the criterion; Represent stage (parameterized model, centralized assumptions) ensured organized inputs; Validate stage (sensitivity tests and visualizations) demonstrated robustness checks.",
+      "reasoning": "The student built a structured, reusable cash-flow model that computes NPV/IRR/payback and detailed line-item calculations, and ran targeted sensitivity analyses (revenue shock and WACC shifts) with visualizations. This shows a systematic implementation and comprehensive sensitivity evaluation, meeting the criterion."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Validate: Testing assumptions and comparing to investment hurdle rates",
+      "category_name": "Following the DRIVER Framework",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"So now to evaluate robustness I ran two sensitivity tests.\"",
+        "\"Having this table clearly visible makes the upcoming calculations very easy to validate.\"",
+        "\"One was revenue with at - 20% scenario. So NVP NPV drops to -3.157 million turning negative and the IRRa collapses to 3.2% far below WACC.\""
+      ],
+      "driver_alignment": "Validate stage (performed sensitivity tests and verification); Represent stage (made assumptions and tables visible to support validation); Discover stage (set hurdle WACC to compare results).",
+      "reasoning": "The student performed internal validation (clear verification and sensitivity analyses) demonstrating understanding of robustness testing, but did not cite or compare results to any external calculators, websites, or third-party sources. Per the rubric, this is a partial demonstration."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "Evolve: Recognition of capital budgeting applications across corporate decisions",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Strategically, the project also fits Starbucks brand. So, it showcases the roasting craft. um strengthens the premium exper experential strategy, acts as a halo store that lifts the brand globally\"",
+        "\"So now to evaluate robustness I ran two sensitivity tests. One was revenue with at - 20% scenario. So NVP NPV drops to -3.157 million turning negative and the IRRa collapses to 3.2% far below WACC. This shows the project is very sensitive to underperforming revenue.\"",
+        "\"So financially the project should be accepted. NPV is positive. IRRa significantly exceeds WACC. Profitability index is above one. Paycheck period falls within the project life... with attention to revenue risk the flagship roaster should be approved.\""
+      ],
+      "driver_alignment": "The Evolve and Reflect stages are evident: the student links capital budgeting outputs to strategic corporate choices (brand positioning, halo effects, approval recommendation). The Validate stage supports this by running sensitivity analyses (revenue, WACC) to inform decision trade-offs. Represent/Implement provide the technical basis (model and cash flows) used to draw these broader corporate conclusions.",
+      "reasoning": "The student explicitly connects financial metrics (NPV, IRR, sensitivity results) to strategic and approval decisions and discusses key corporate risks and implications, meeting the strict requirement for explicit demonstration of how capital budgeting informs corporate decisions."
+    },
+    {
+      "criterion_id": "criterion_6",
+      "criterion_name": "Reflect: Insights on investment decision-making and value creation",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"So financially the project should be accepted. NPV is positive. IRRa significantly exceeds WACC.\"",
+        "\"I structured the entire workflow using the driver framework. Define, discover, represent, implement, validate, evolve, and reflect.\"",
+        "\"This shows the project is very sensitive to underperforming revenue.\""
+      ],
+      "driver_alignment": "- Define/Discover: Explicit problem statement and decision rule (hurdle = 8.5% WACC) provided the basis for the reflective conclusion.\n- Implement/Represent: Parameterized model and cash-flow schedule gave concrete outputs (NPV, IRR, payback) used in reflection.\n- Validate: Sensitivity tests (revenue -20%, WACC ±2%) directly informed the risk-focused insights in the reflect stage.\n- Reflect: Student states clear financial recommendation, sensitivity insight, and strategic risks—closing the DRIVER loop.",
+      "reasoning": "The student explicitly documented the decision rule and assumptions (Define/Discover), produced and validated model outputs (Represent/Implement/Validate), and delivered clear reflective conclusions about value creation and key risks (Reflect). Given the explicit statements of acceptance, sensitivity to revenue, and strategic considerations, the submission meets the strict DRIVER requirement for the Reflect criterion."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Clear explanation of NPV methodology and decision logic",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The decision rule is straightforward. If NPV is positive at 8.5%, the project creates shareholder value.\"",
+        "\"I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule...the table automatically calculates EBIT, taxes, depreciation, tax shields, operating cash flow, working capital changes, and terminal value.\"",
+        "\"NPV at 8.5% a WACC is a positive 3.023 million. So this is the primary decision metric...I ran two sensitivity tests. One was revenue with a -20% scenario. So NPV drops to -3.157 million...WACC is plus or minus 2%.\""
+      ],
+      "driver_alignment": "Discover — framed the core question and explicit decision rule (hurdle = 8.5% WACC). \nRepresent/Implement — translated assumptions into a parameterized cash‑flow model and automated calculation of NPV components. \nReflect — reported NPV result, supporting metrics, and sensitivity analyses that justify the decision logic.",
+      "reasoning": "The submission clearly explains the NPV decision rule, documents how cash flows and tax/depreciation/terminal adjustments are constructed, and applies the rule with results and sensitivity scenarios. Coverage is specific and thorough enough to satisfy a knowledgeable reviewer, demonstrating strong conceptual and practical understanding."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Logical presentation of cash flow projections",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule.\"",
+        "\"WACCC 8.5% tax rate 25% initial investment negative -12 million working capital negative0.5 million at year zero annual depreciation 1.2 2 million per year and a terminal value of 3 million at the end of year 10. Having this table clearly visible makes the upcoming calculations very easy to validate.\"",
+        "\"So you can see the table here. Year 0 shows the initial outflows. Free cash flow is -12.5 million which includes the capital investment plus working capital. From years 1 to 5, free cash flows are strong... and then finally in year 10, you can see a jump in free cash flow to 5.3 million because working capital is recovered and the terminal value of 3 million is added.\""
+      ],
+      "driver_alignment": "Represent and Implement — clear parameterization and a reusable function produced the year-by-year cash flow schedule; Validate — the student used tables and charts to confirm behavior; Discover and Reflect — assumptions and sensitivity analysis contextualize and justify the projections.",
+      "reasoning": "The submission provides a detailed, logically structured cash flow model with explicit assumptions, a reusable implementation, year-level outputs, and validation visuals/sensitivity checks. These elements show thorough presentation and understanding of the cash flow projections, meeting the PASS standard."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Balanced discussion of quantitative and strategic factors",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"NPV at 8.5% a WACC is a positive 3.023 million. ... The IRR which is 13.3%... simple payback which is around 5.28 years... profitability index which is 1.242...\"",
+        "\"So, I structured the entire workflow using the driver framework.\"",
+        "\"Strategically, the project also fits Starbucks brand. So, it showcases the roasting craft. ... some of the key risks includes revenue underperformance, high labor and occupancy costs, execution and construction delays and brand risk...\""
+      ],
+      "driver_alignment": "Discover (defined the decision rule and assumptions), Represent/Implement (built a parameterized cash-flow model and calculated NPV/IRR/sensitivities), Validate/Reflect (ran sensitivity tests and summarized strategic fit and risks). These stages show both quantitative modeling and a higher-level strategic reflection.",
+      "reasoning": "The submission presents a thorough quantitative analysis (detailed cash flows, NPV/IRR/payback, sensitivity testing) but the strategic discussion, while present, is relatively brief and less developed than the financial analysis. Because both dimensions are covered but not balanced in depth, the appropriate rating is PARTIAL."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Professional video presentation demonstrating investment analysis",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"So, in this video, I'm going to be walking through my capital budgeting analysis for Starbucks's proposed flagship roaster project.\"",
+        "\"So, I structured the entire workflow using the driver framework. Define, discover, represent, implement, validate, evolve, and reflect.\"",
+        "\"NPV at 8.5% a WACC is a positive 3.023 million. So this is the primary decision metric. It's positive. So the project creates value.\""
+      ],
+      "driver_alignment": "Define/Discover — clarified the core question and decision rule (hurdle rate, NPV).  \nRepresent/Implement — documented assumptions, parameterized model, and implemented a reusable cash‑flow function.  \nValidate/Reflect — presented results, sensitivity tests, visualizations, and interpreted risks and recommendations.",
+      "reasoning": "The presentation is structured, clear, and professional, following the DRIVER stages and including specific assumptions, model implementation, quantitative results (NPV, IRR, payback, PI), and sensitivity analysis. Coverage is comprehensive and explains implications, meeting the thoroughness required for a PASS."
+    },
+    {
+      "criterion_id": "criterion_6",
+      "criterion_name": "All project cash flow assumptions specified above",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Then in the discover step, I documented all relevant case assumptions including revenue patterns over the 10 years, operating costs like cost of goods sold, labor, rent, and marketing, working capital investment, straight line depreciation, a $3 million terminal value, and the 25% corporate tax rate.\"",
+        "\"This cell loads all of the packages and stores every assumption in one place.\"",
+        "\"WACCC 8.5% tax rate 25% initial investment negative -12 million working capital negative0.5 million at year zero annual depreciation 1.2 2 million per year and a terminal value of 3 million at the end of year 10.\""
+      ],
+      "driver_alignment": "Discover — documented and listed the full set of cash‑flow assumptions (revenues, costs, WC, depreciation, tax, terminal value). Represent — centralized assumptions in a parameter table/summary for transparency. Implement — built a reusable function that constructs the year‑0 to year‑10 cash‑flow schedule using those assumptions.",
+      "reasoning": "The student explicitly listed and quantified the key cash‑flow assumptions and showed they were stored centrally and programmatically applied to produce the full cash‑flow schedule (Discover, Represent, Implement). Coverage is specific and comprehensive, meeting the threshold for a thorough treatment."
+    },
+    {
+      "criterion_id": "criterion_7",
+      "criterion_name": "Starbucks WACC: 8.5%",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"the core question we're trying to answer, which is should Starbucks invest 12 million million in this 10-year roastery project using their 8.5% WACC as hurdle rate.\"",
+        "\"WACCC 8.5% tax rate 25% initial investment negative -12 million working capital negative0.5 million...\"",
+        "\"NPV at 8.5% a WACC is a positive 3.023 million.\""
+      ],
+      "driver_alignment": "- Discover/Define: stated the core question and explicitly set 8.5% WACC as the decision hurdle.\n- Represent: documented the WACC in the parameter table so assumptions are transparent.\n- Implement/Reflect: calculated NPV using 8.5% and reported results and sensitivity analyses (±2% WACC).",
+      "reasoning": "The student clearly communicated the 8.5% WACC, used it consistently in the model, and showed results (NPV) plus sensitivity to WACC changes, demonstrating thorough and actionable explanation appropriate for this moderate-evidence criterion."
+    },
+    {
+      "criterion_id": "criterion_8",
+      "criterion_name": "Tax rate: 25%",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"and then in the discover step, I documented all relevant case assumptions including revenue patterns over the 10 years, operating costs like cost of goods sold, labor, rent, and marketing, working capital investment, straight line depreciation, a $3 million terminal value, and the 25% corporate tax rate.\"",
+        "\"So here's the printed summary. WACCC 8.5% tax rate 25% initial investment negative -12 million working capital negative0.5 million at year zero annual depreciation 1.2 2 million per year and a terminal value of 3 million at the end of year 10.\"",
+        "\"So the table automatically calculates EBIT tax, EBIT taxes, depreciation, tax shields, operating cash flow, working capital changes, and terminal value.\""
+      ],
+      "driver_alignment": "- Discover: Tax rate explicitly documented as a core assumption.\n- Represent: Tax rate stored in the parameter table/printed summary.\n- Implement: Model/function applies the tax rate when calculating EBIT taxes and tax shields.",
+      "reasoning": "The student correctly states and uses a 25% corporate tax rate (discovered, represented, and implemented in cash-flow calculations), demonstrating basic and accurate communication. However, they did not provide rationale for the chosen rate or any sensitivity/robustness checks around tax impacts, so the treatment is correct but not thorough."
+    },
+    {
+      "criterion_id": "criterion_9",
+      "criterion_name": "10-year project life",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"the core question we're trying to answer, which is should Starbucks invest 12 million million in this 10-year roastery project using their 8.5% WACC as hurdle rate.\"",
+        "\"I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule.\"",
+        "\"Discounted payback at around 8.21 years. So slightly longer but still within the project's light lifespan.\""
+      ],
+      "driver_alignment": "Discover — established the 10-year project horizon and decision framing; Represent — translated the 10-year assumptions (depreciation, terminal value) into a parameter table; Implement — built the year 0–10 cash flow function and computed metrics tied to the 10-year life; Reflect — assessed payback and terminal-value timing relative to the project life.",
+      "reasoning": "The student explicitly defined and used a 10-year horizon throughout the workflow, built a year 0–10 cash‑flow model including terminal value, and evaluated metrics (payback, discounted payback) in the context of that life. Coverage is specific and integrated into DISCOVER, REPRESENT, IMPLEMENT, and REFLECT stages, demonstrating thorough treatment of the 10-year project life."
+    },
+    {
+      "criterion_id": "criterion_10",
+      "criterion_name": "Comparable Starbucks store performance data",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.0,
+      "level": "FAIL",
+      "evidence": [
+        "\"I documented all relevant case assumptions including revenue patterns over the 10 years, operating costs like cost of goods sold, labor, rent, and marketing, working capital investment, straight line depreciation, a $3 million terminal value, and the 25% corporate tax rate.\"",
+        "\"So, I structured the entire workflow using the driver framework. Define, discover, represent, implement, validate, evolve, and reflect.\"",
+        "\"One was revenue with at - 20% scenario. So NVP NPV drops to -3.157 million... This shows the project is very sensitive to underperforming revenue.\""
+      ],
+      "driver_alignment": "Discover — student lists assumptions and inputs but does not include or reference comparable Starbucks store performance data;  \nImplement/Represent — built a parameterized model and ran scenario/sensitivity tests using assumed revenues rather than empirical comparables;  \nReflect — drew insights about revenue sensitivity based on scenarios, not on benchmark store performance.",
+      "reasoning": "The submission documents assumptions and runs sensitivity analyses but contains no comparable Starbucks store performance data or benchmarks to ground revenue assumptions. Because the criterion specifically asks for comparable store performance data and none is provided, the work fails this requirement despite appropriate DRIVER-stage modeling and sensitivity testing."
+    },
+    {
+      "criterion_id": "criterion_11",
+      "criterion_name": "Industry benchmark returns for retail locations",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"the core question we're trying to answer, which is should Starbucks invest 12 million million in this 10-year roastery project using their 8.5% WACC as hurdle rate.\"",
+        "\"I structured the entire workflow using the driver framework. Define, discover, represent, implement, validate, evolve, and reflect.\"",
+        "\"IRR which is 13.3%. So the IRR is comfortably above the 8.5 hurdle rate.\""
+      ],
+      "driver_alignment": "Discover (set decision rule and WACC hurdle); Represent/Implement (built parameterized model and cash‑flow function to compute NPV/IRR); Reflect (interpreted IRR vs. hurdle and ran WACC sensitivity).",
+      "reasoning": "The student correctly compared the project's IRR to Starbucks' WACC and conducted WACC sensitivity, demonstrating conceptual understanding of return thresholds. However, they did not cite or analyze external industry benchmark returns for retail locations (typical retail IRRs/cap rates), so the treatment is correct but incomplete."
+    },
+    {
+      "criterion_id": "criterion_12",
+      "criterion_name": "Real estate and construction cost validation",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"In the discover step, I documented all relevant case assumptions including revenue patterns over the 10 years, operating costs like cost of goods sold, labor, rent, and marketing, working capital investment, straight line depreciation, a $3 million terminal value, and the 25% corporate tax rate.\"",
+        "\"This cell loads all of the packages and stores every assumption in one place. ... WACCC 8.5% tax rate 25% initial investment negative -12 million working capital negative0.5 million at year zero annual depreciation 1.2 2 million per year and a terminal value of 3 million at the end of year 10.\"",
+        "\"So to evaluate robustness I ran two sensitivity tests. One was revenue with at - 20% scenario... number two, WACC is plus or minus 2%.\""
+      ],
+      "driver_alignment": "- Discover: documented and listed case assumptions (shows awareness of needed inputs).\n- Represent: centralized assumptions in the model and printed numeric values (clear communication).\n- Validate/Reflect: ran sensitivity analysis but limited to revenue and WACC, not to construction/real-estate cost assumptions.",
+      "reasoning": "The student clearly documented and centralized real-estate/construction inputs (initial investment, working capital, depreciation), meeting the documentation part of the criterion. However, they did not justify or validate those cost choices (no sources, benchmarking, or sensitivity analysis on the initial investment/construction costs), so the treatment is correct but incomplete."
+    },
+    {
+      "criterion_id": "criterion_14",
+      "criterion_name": "*Refer to DRIVER Framework: Assignment Guidelines for complete documentation requirements, grading criteria, and framework application guidance.*",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The decision rule is straightforward. If NPV is positive at 8.5%, the project creates shareholder value.\"",
+        "\"I implemented a reusable function that builds the entire year 0 through year 10 cash flow schedule.\"",
+        "\"NPV at 8.5% a WACC is a positive 3.023 million.\""
+      ],
+      "driver_alignment": "Discover — documented the core question, decision rule, and all case assumptions; Represent — summarized and parameterized assumptions in a visible table; Implement — built a reusable cash‑flow function and produced numeric results; Reflect — interpreted metrics, ran sensitivities, and made a clear recommendation.",
+      "reasoning": "The student provides a thorough, well-structured explanation: explicit decision rule, documented assumptions, a parameterized model, clear numeric outputs (NPV/IRR/payback/PI), sensitivity tests, visuals, and a reflective recommendation. This level of detail and organization meets the PASS standard for clear communication and explanation."
+    }
+  ]
+}

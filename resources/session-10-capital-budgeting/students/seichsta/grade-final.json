@@ -1,0 +1,539 @@
+{
+  "student_name": "Sam Eichstadt",
+  "username": "seichsta",
+  "org_defined_id": "035801901",
+  "transcript_length": 6386,
+  "overall_grade": 66.1388888888889,
+  "passed_criteria": 14,
+  "partial_criteria": 20,
+  "failed_criteria": 3,
+  "driver_stages_demonstrated": {
+    "D": true,
+    "R": true,
+    "I": true,
+    "V": true,
+    "E": true,
+    "R2": true
+  },
+  "feedback": "Excellent application of the DRIVER framework throughout your work. You clearly demonstrated 6 stages: D, R, I, V, E, R2.\n\n\nSTRENGTHS:\n- Financial Concepts Accuracy: The student correctly applies the NPV decision rule, explicitly linking positive NPV to value creation (accept) and negative NPV to value destruction (reject), and tests the rule across multiple scenarios (base, WACC ±2%, revenue −20%). Despite some inconsistent calculations elsewhere, the conceptual understanding and application are thorough enough for a PASS under moderate strictness.\n- Financial Concepts Accuracy: The student explicitly constructed an incremental cash flow schedule and included all key project-only components (capex, changes in working capital, depreciation tax shield, terminal value) while correctly excluding financing costs. The treatment of working capital recovery and the detailed, year-by-year structure show comprehensive application, satisfying a thorough, conceptually accurate understanding for this criterion.\n- Integration of Finance and Technology: The student thoroughly automated capital budgeting calculations by leveraging AI tools to build a model, generate code, compute key metrics (NPV, IRR, payback, PI), and run sensitivity analyses. Multiple automated outputs and visualizations show comprehensive application. Despite inconsistencies in results, the automation criterion is clearly met at a strong level.\n\n\nAREAS FOR IMPROVEMENT:\n- Financial Concepts Accuracy: The student correctly set up and applied the NPV framework (cash flows, WACC discounting, WC recovery, terminal value) and discussed sensitivity, showing conceptual understanding. However, base-case NPV results conflict (+$3.02M vs -$0.277M) and there’s a tax shield misstatement (“Tax shields 30% each year” with a 25% tax rate), undermining accuracy. Thus, the treatment is competent but not consistently correct, warranting PARTIAL.\n- Financial Concepts Accuracy: Student computed and applied IRR, correctly linking IRR vs. WACC to NPV sign, showing conceptual understanding. However, conflicting IRR outputs (13.25% vs 8.13%) and inconsistent NPV signs without reconciliation indicate gaps in accuracy and thoroughness. Under moderate strictness, this supports a Partial rather than a full Pass.\n- Financial Concepts Accuracy: The student computed and discussed both simple and discounted payback, demonstrating conceptual understanding. However, results are inconsistent (5.28 vs 7.11 years; discounted payback 8.21 years vs infinite) with minimal methodological explanation, limiting accuracy and depth. Thus, the criterion is only partially met.",
+  "criteria": [
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Net Present Value (NPV): Calculating present value of future cash flows minus initial investment",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"The base case results that we got using the 8.5% weighted average cost of capital net present value of 8.5% is $3.02 million.\"",
+        "\"So first I went in and I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation, tax, Shields, taxes, working capital changes and terminal value.\"",
+        "\"OK, so this tells me net present value is -277,000, IRR is 8.13%.\""
+      ],
+      "driver_alignment": "- Discover: Identified inputs and discount rate (“$12 million initial investment… WACC 8.5%… 10 years”).\n- Implement: Built cash flow schedule including WC and terminal value; computed NPV and sensitivity.\n- Reflect: Interpreted results (e.g., EBIT year 1 = 0) but revealed inconsistencies across calculations.",
+      "reasoning": "The student correctly set up and applied the NPV framework (cash flows, WACC discounting, WC recovery, terminal value) and discussed sensitivity, showing conceptual understanding. However, base-case NPV results conflict (+$3.02M vs -$0.277M) and there’s a tax shield misstatement (“Tax shields 30% each year” with a 25% tax rate), undermining accuracy. Thus, the treatment is competent but not consistently correct, warranting PARTIAL."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "NPV Decision Rule: Understanding when to accept or reject projects based on NPV",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The base case results that we got using the 8.5% weighted average cost of capital net present value of 8.5% is $3.02 million... This means the project creates value and clears the hurdle rate.\"",
+        "\"We did average cost of capital plus or minus 2%... even though it fluctuates, we are always positive.\"",
+        "\"If revenue dropped 20%... This shows the project is very sensitive to revenue. A 20% revenue drop turns a good project into a value destroying 1.\""
+      ],
+      "driver_alignment": "- Discover: Sets hurdle rate/WACC for decision context.\n- Implement: Builds cash flow schedule and computes NPV.\n- Reflect: Interprets positive NPV as value-creating and negative NPV as value-destroying; sensitivity analysis applies the accept/reject logic.",
+      "reasoning": "The student correctly applies the NPV decision rule, explicitly linking positive NPV to value creation (accept) and negative NPV to value destruction (reject), and tests the rule across multiple scenarios (base, WACC ±2%, revenue −20%). Despite some inconsistent calculations elsewhere, the conceptual understanding and application are thorough enough for a PASS under moderate strictness."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Internal Rate of Return (IRR): Computing the discount rate that makes NPV equal zero",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"The base case results that we got using the 8.5% weighted average cost of capital... The IRR is 13.25%.\"",
+        "\"I had ChatGPT kind of build me a model for free cash flow per year over the years.\"",
+        "\"OK, so this tells me net present value is -277,000, IRR is 8.13%.\""
+      ],
+      "driver_alignment": "- Discover: Defined inputs (investment, horizon, WACC) necessary for IRR assessment.\n- Implement: Built cash-flow schedule and used tools/models to compute IRR.\n- Reflect: Compared IRR to WACC and discussed sensitivity, but did not reconcile conflicting IRR results.",
+      "reasoning": "Student computed and applied IRR, correctly linking IRR vs. WACC to NPV sign, showing conceptual understanding. However, conflicting IRR outputs (13.25% vs 8.13%) and inconsistent NPV signs without reconciliation indicate gaps in accuracy and thoroughness. Under moderate strictness, this supports a Partial rather than a full Pass."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Payback Period: Determining time required to recover initial investment",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"The simple payback of this would be around 5.28 years. Discounted payback would be around 8.21 years.\"",
+        "\"So first I went in and I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation...\"",
+        "\"Payback period. We'll never make our money back... the discounted payback period is infinite... then simple payback period is 7.11 years.\""
+      ],
+      "driver_alignment": "- Discover: Defined initial outlay, working capital, and horizon needed for payback.\n- Implement: Built the cash flow schedule/model used to compute payback metrics.\n- Reflect: Interpreted outputs, acknowledging discounted payback could be infinite.",
+      "reasoning": "The student computed and discussed both simple and discounted payback, demonstrating conceptual understanding. However, results are inconsistent (5.28 vs 7.11 years; discounted payback 8.21 years vs infinite) with minimal methodological explanation, limiting accuracy and depth. Thus, the criterion is only partially met."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "Profitability Index: Calculating present value of benefits divided by initial investment",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Profitability index is 1.24, so it's positive. That's good\"",
+        "\"So first I went in and I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation...\"",
+        "\"Starbucks is considering a flagship roastery requiring a $12 million initial investment plus $500,000 in working capital.\""
+      ],
+      "driver_alignment": "- Discover: Identified initial outlay and discount rate inputs needed for PI.\n- Implement: Built cash flow schedule enabling PV computation, then reported PI.",
+      "reasoning": "The student correctly reported a PI (1.24) consistent with their NPV and initial outlay, indicating a sound conceptual grasp. However, they did not explain the PI formula (PV of benefits divided by initial investment), show the calculation, or provide deeper interpretation or sensitivity using PI. This is accurate but basic, meeting PARTIAL rather than the thoroughness required for PASS."
+    },
+    {
+      "criterion_id": "criterion_6",
+      "criterion_name": "Free Cash Flow Calculation: Operating cash flow less capital expenditures and working capital changes",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Capital expenditures, it's just that $12 million at the beginning.\"",
+        "\"So first I went in and I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation, tax, Shields, taxes, working capital changes and terminal value.\"",
+        "\"Tax shields 30% each year.\""
+      ],
+      "driver_alignment": "- Discover: Identified initial investment and working capital needs.\n- Implement: Built an incremental cash flow schedule incorporating OCF components, working capital changes, and capex to derive FCF.\n- Reflect: Checked EBIT dynamics (e.g., year one EBIT = 0), informing OCF calculation.",
+      "reasoning": "The student demonstrates a conceptual grasp of FCF by constructing a schedule that includes operating cash flow elements, capex, and working capital changes, and by explicitly citing the capex outlay. However, the stated “Tax shields 30% each year” conflicts with the given 25% tax rate, indicating an accuracy gap that undermines thoroughness. Under the moderate standard, this supports a correct but incomplete treatment—hence PARTIAL."
+    },
+    {
+      "criterion_id": "criterion_7",
+      "criterion_name": "Incremental Cash Flows: Identifying only cash flows caused by the project",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"So first I went in and I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation, tax Shields, taxes, working capital changes and terminal value.\"",
+        "\"Working capital is $500,000 at launch and fully recovered in year 10.\"",
+        "\"We haven't paid any interest.\""
+      ],
+      "driver_alignment": "- Discover: Identified project-caused cash flows (initial $12M capex, $500k working capital, 10-year horizon).\n- Implement: Built an explicit incremental cash flow schedule including capex, operating costs, depreciation tax shield, NWC changes, and terminal value while excluding financing costs.\n- Reflect: Reviewed EBIT and cash flow implications (e.g., break-even in Year 1) consistent with project-only flows.",
+      "reasoning": "The student explicitly constructed an incremental cash flow schedule and included all key project-only components (capex, changes in working capital, depreciation tax shield, terminal value) while correctly excluding financing costs. The treatment of working capital recovery and the detailed, year-by-year structure show comprehensive application, satisfying a thorough, conceptually accurate understanding for this criterion."
+    },
+    {
+      "criterion_id": "criterion_8",
+      "criterion_name": "Operating Cash Flow: EBIT × (1-T) + Depreciation calculation",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation, tax, Shields, taxes, working capital changes and terminal value.\"",
+        "\"Tax shield is depreciation times the tax rate.\"",
+        "\"Tax shields 30% each year.\""
+      ],
+      "driver_alignment": "- Discover: Identified key inputs (tax rate, depreciation schedule) needed for OCF.\n- Implement: Built a cash flow schedule including depreciation, taxes, and a tax shield line—core to EBIT(1–T)+Dep.\n- Reflect: Noted “Year one EBIT is 0,” indicating engagement with EBIT-level calculations.",
+      "reasoning": "The student shows conceptual understanding of OCF components (EBIT, taxes, depreciation) and references the tax shield mechanism, but does not explicitly compute OCF as EBIT(1–T)+Dep or demonstrate it with detailed numbers. Inconsistency between the stated 25% tax rate and “Tax shields 30% each year” weakens accuracy. Therefore, coverage is correct but basic with gaps, warranting PARTIAL."
+    },
+    {
+      "criterion_id": "criterion_9",
+      "criterion_name": "Terminal Value: Treatment of salvage value and working capital recovery",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"The working capital is $500,000 at launch and fully recovered in year 10... Terminal value is $3,000,000 in year 10.\"",
+        "\"I made the year zero to 10 incremental cash flow schedule that includes... working capital changes and terminal value.\"",
+        "\"Change in working capital... Starts out as $500,000 after in year 0, but then we recover it all by year 10... Terminal value is $3,000,000. That's what we have left at the end.\""
+      ],
+      "driver_alignment": "- Discover: Identified WC recovery and terminal value assumptions.\n- Implement: Included terminal value and WC changes in the cash flow schedule.\n- Reflect: Noted the final-year “shooting up,” implying these were added at the end.",
+      "reasoning": "The student correctly recognizes and includes both working capital recovery and terminal value in year 10, showing conceptual understanding. However, treatment is surface-level, with no discussion of after-tax salvage treatment, mechanics, or integration details, falling short of a thorough explanation required for PASS."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Correct NPV and IRR calculations",
+      "category_name": "Technical Implementation",
+      "score": 0.0,
+      "level": "FAIL",
+      "evidence": [
+        "\"The IRR is 13.25%. ... NPV is positive by about $3,000,000.\"",
+        "\"So first I went in and I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation...\"",
+        "\"OK, so this tells me net present value is -277,000, IRR is 8.13%.\""
+      ],
+      "driver_alignment": "- Represent: student explicitly built the year 0–10 incremental cash flow schedule.\n- Implement: student ran code to compute NPV/IRR (Python/Gemini) but relied on AI-produced model.\n- Validate: student reported validation metrics (NPV, IRR) but produced conflicting results and did not demonstrate block-by-block understanding or ownership.",
+      "reasoning": "The student produced cash flows but did not show explicit personal verification or a block-by-block explanation of the code; instead they relied on AI and reported inconsistent NPV/IRR results (≈$3.02M & 13.25% vs. -$277k & 8.13%), failing the strict requirement for explicit execution, understanding, and ownership."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Accurate cash flow projections over project life",
+      "category_name": "Technical Implementation",
+      "score": 0.0,
+      "level": "FAIL",
+      "evidence": [
+        "\"So first I went in and I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation, tax, Shields, taxes, working capital changes and terminal value.\"",
+        "\"I had ChatGPT kind of build me a model for free cash flow per year over the years.\"",
+        "\"I didn't create, but I asked Gemini to help me create, so put it in here. Run it and we'll see what it comes up with. OK, so this tells me net present value is -277,000, IRR is 8.13%.\""
+      ],
+      "driver_alignment": "- REPRESENT: Student lists the incremental cash flow items and the 0–10 schedule (shows intended coverage).\n- IMPLEMENT: Student states they used AI to build and run code (model execution claimed) but does not show block-by-block understanding or ownership.\n- VALIDATE: Student reports outputs (NPV/IRR) and sensitivity checks, but presents conflicting results and no verification or explanation.",
+      "reasoning": "The student documents the cash‑flow components (REPRESENT) and ran AI-generated code (IMPLEMENT), but fails the strict Technical Implementation requirements: they rely on AI without demonstrating personal, block‑by‑block understanding or ownership and do not reconcile conflicting results. Under the strict standard this lacks explicit personal verification and explanation, so it fails."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Proper treatment of depreciation and taxes",
+      "category_name": "Technical Implementation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"They use a straight line depreciation method over 10 years, so it's $1.2 million a year of depreciation.\"",
+        "\"So first I went in and I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation, tax, Shields, taxes, working capital changes and terminal value.\"",
+        "\"I had ChatGPT kind of build me a model for free cash flow per year over the years.\""
+      ],
+      "driver_alignment": "- REPRESENT: Student listed depreciation method, tax rate, and items to include (depreciation, tax, tax shields).\n- IMPLEMENT: Student states they built the year 0–10 cash flow schedule including depreciation and taxes.\n- VALIDATE: Student reports model outputs (NPV/IRR) but also shows reliance on AI-generated code with inconsistent results, indicating limited independent verification.",
+      "reasoning": "The student correctly applied straight-line depreciation and the tax-shield concept in the cash-flow schedule (explicit values and formulas shown), but did not demonstrate required personal execution, block-by-block understanding, or verification of AI-generated code—evidenced by reliance on ChatGPT/Gemini and inconsistent model outputs. Under the STRICT technical-implementation standard this meets partial credit."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Sensitivity analysis on key assumptions",
+      "category_name": "Technical Implementation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Next sensitivity analysis on impact on NPV slash IRR. So the base case, the net present value would be negative 277,000 IRR of 8.13% ... If revenue dropped. 20% net present value would be -6.457 million...\"",
+        "\"I had ChatGPT kind of build me a model for free cash flow per year over the years.\"",
+        "\"I didn't create, but I asked Gemini to help me create, so put it in here. Run it and we'll see what it comes up with. ... OK, so this tells me net present value is -277,000, IRR is 8.13%.\""
+      ],
+      "driver_alignment": "- Represent: student constructed a year 0–10 cash flow schedule and identified key assumptions (revenues, costs, depreciation, WACC).\n- Implement: student ran AI-generated code (Gemini/ChatGPT) to compute NPV/IRR and performed scenario checks (20% revenue drop, WACC ±2%).\n- Validate: student reported and interpreted results (NPV/IRR outcomes and sensitivity conclusions).",
+      "reasoning": "The student performed and reported sensitivity checks (revenue and WACC) and ran the model, demonstrating partial technical implementation. However, they relied on AI to produce the code, did not provide block-by-block explanation or demonstrate full ownership/understanding of the implementation, so the requirement for explicit personal technical understanding is not fully met."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "Scenario modeling (best/base/worst cases)",
+      "category_name": "Technical Implementation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation, tax, Shields, taxes, working capital changes and terminal value.\"",
+        "\"I had ChatGPT kind of build me a model for free cash flow per year over the years.\"",
+        "\"This shows the project is very sensitive to revenue. A 20% revenue drop turns a good project into a value destroying 1.\""
+      ],
+      "driver_alignment": "Represent — student built the year‑0–10 incremental cash flow schedule; Implement — student ran AI-generated code/models (ChatGPT/Gemini) to produce scenario outputs; Validate — student reported base-case NPV/IRR and sensitivity results (revenue -20%, WACC ±2%).",
+      "reasoning": "The submission explicitly presents base and downside scenario results and sensitivity checks, but the student relies on AI-generated code and does not demonstrate personal execution details or block‑by‑block understanding/ownership of the model. Under the strict technical-implementation standard, this warrants partial credit."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Automation of capital budgeting calculations",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I had ChatGPT kind of build me a model for free cash flow per year over the years.\"",
+        "\"So next we'll move on to this Python code that I created. I didn't create, but I asked Gemini to help me create, so put it in here. Run it and we'll see what it comes up with.\"",
+        "\"This tells me net present value is -277,000, IRR is 8.13%. ... The simple payback period is 7.11 years.\""
+      ],
+      "driver_alignment": "- Implement: Used ChatGPT to build the FCF model and ran Gemini-assisted Python code to compute NPV/IRR/payback/PI.\n- Evolve: Conducted automated sensitivity analysis and produced charts on NPV/IRR vs revenue and WACC.",
+      "reasoning": "The student thoroughly automated capital budgeting calculations by leveraging AI tools to build a model, generate code, compute key metrics (NPV, IRR, payback, PI), and run sensitivity analyses. Multiple automated outputs and visualizations show comprehensive application. Despite inconsistencies in results, the automation criterion is clearly met at a strong level."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Dynamic scenario and sensitivity analysis",
+      "category_name": "Integration of Finance and Technology",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Next sensitivity analysis on impact on NPV slash IRR.\"",
+        "\"Revenue of 20% using the 8.5% weighted average cost capital. The net present value is negative $2.75 million.\"",
+        "\"If revenue dropped 20% net present value would be -6.457 million with IRR negative .63%. If the weighted average cost of capital was 6.5%, we'd be profitable by $1.336 million. If it went up 2%, we'd be down $1.672 million.\""
+      ],
+      "driver_alignment": "- Implement: Built a cash flow model and used tools (“I had ChatGPT kind of build me a model...”; Python via Gemini) enabling sensitivity computations.\n- Evolve: Ran sensitivity analyses on revenue and WACC, presented results and charts, and commented on sensitivity.",
+      "reasoning": "The student conducted sensitivity analysis across multiple variables (revenue, WACC) with quantified impacts on NPV and IRR and used code/tools to generate scenarios, demonstrating conceptual understanding. However, results are inconsistent across sections, some units/values are unclear, and the analysis is limited to a few levers with minimal interpretation, so it lacks the depth and consistency required for a full PASS."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Cash flow modeling with multiple phases",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The revenues are for year one, $8 million, years 2 to 5, $11 million and year 6 to. Ten $9 million.\"",
+        "\"So first I went in and I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation, tax, Shields, taxes, working capital changes and terminal value.\"",
+        "\"The working capital is $500,000 at launch and fully recovered in year 10.\""
+      ],
+      "driver_alignment": "- Discover: Defined horizon, costs, WACC, and key cash flow components to be modeled.\n- Implement: Built a multi-year incremental cash flow schedule with phased revenues/costs and WC/terminal treatment; used AI tools to model and visualize FCF over phases.\n- Evolve: Ran sensitivity analyses (revenue, WACC) to assess how phase assumptions impact NPV/IRR.",
+      "reasoning": "The student models distinct operational phases (ramp year, peak years 2–5, lower years 6–10) and incorporates phase-dependent items (marketing shift, COGS linkage, WC timing, terminal value), showing a comprehensive multi-phase cash flow approach. Specific figures and iterative analysis indicate strong conceptual understanding consistent with a thorough treatment, sufficient for a PASS despite some inconsistencies elsewhere."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Visualization of NPV sensitivity to key drivers",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Net present value versus weighted average cost of capital is a decrease, a linear negative. Relationship. You can see it starts at around $4.7 million for the net present value, and then by the end it's around 1.7.\"",
+        "\"I had ChatGPT kind of build me a model for free cash flow per year over the years.\"",
+        "\"Here's a chart that shows its sensitivity to revenue and weighted average cost of capital changes.\""
+      ],
+      "driver_alignment": "- Discover: Defined project scope, horizon, and WACC hurdle.\n- Implement: Used ChatGPT/Python to build models and generate charts.\n- Evolve: Conducted and visualized sensitivity of NPV to WACC and revenue, interpreting the relationships.",
+      "reasoning": "The student explicitly produced and described visualizations of NPV sensitivity (NPV vs WACC curve, plus a chart of sensitivity to revenue and WACC), and interpreted the shape and magnitude. They also quantified effects (e.g., revenue changes) and leveraged technology to create the visuals, demonstrating thorough and applied understanding suitable for a PASS."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "Demonstrates systematic investment evaluation framework",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation, tax Shields, taxes, working capital changes and terminal value.\"",
+        "\"So to start off, I came up with this driver framework... must meet or exceed the firm's 8.5% weighted average cost of capital to justify.\"",
+        "\"The base case results... NPV... IRR... simple payback... discounted payback... Profitability index is 1.24... Next sensitivity analysis on impact on NPV slash IRR.\""
+      ],
+      "driver_alignment": "- Discover: Defined the investment, horizon, and WACC hurdle.\n- Implement: Built a detailed cash flow model and used tools (ChatGPT/Python) to compute metrics.\n- Evolve: Performed sensitivity analyses (revenue, WACC) and discussed NPV vs WACC relationship.",
+      "reasoning": "The student applied a structured capital budgeting framework: comprehensive cash-flow modeling (including depreciation, taxes, working capital, terminal value), multiple evaluation metrics (NPV, IRR, payback, PI), and systematic sensitivity analysis. This depth and alignment across Discover, Implement, and Evolve demonstrates a strong, systematic investment evaluation approach suitable for a PASS."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Define & Discover: Clear understanding of Starbucks roastery investment problem and decision criteria",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Starbucks is considering a flagship roastery requiring a $12 million initial investment plus $500,000 in working capital.\"",
+        "\"The project will operate for 10 years and must meet or exceed the firm's 8.5% weighted average cost of capital to justify.\"",
+        "\"Investment leadership needs clarity on these following questions. So if it generates positive economic value, aligns strategically with Starbucks, brand expansion carries the risks that could materially impact the financial performance and our task is to evaluate this. Decision using the full capital budgeting methods including net present value, IRR payback and sensitivity risks.\""
+      ],
+      "driver_alignment": "- Discover: Explicitly states the investment problem, timeline, cost inputs, and decision hurdle (8.5% WACC).\n- Represent: Translates discovery into a year 0–10 incremental cash flow schedule and identifies the evaluation metrics (NPV, IRR, payback, sensitivity).",
+      "reasoning": "The student explicitly defines the investment problem, key numeric inputs, horizon, and decision criteria (WACC and capital budgeting metrics), satisfying the Define & Discover requirement. They also show immediate translation into a cash-flow representation, demonstrating clear understanding and readiness for analysis."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Represent: Quality framework for projecting cash flows and evaluating investment",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation, tax, Shields, taxes, working capital changes and terminal value.\"",
+        "\"So first we're going to move to the research and gather data step. So the facts we were given is the initial investment is $12 million. They use a straight line depreciation method over 10 years... The working capital is $500,000 at launch and fully recovered in year 10... Terminal value is $3,000,000 in year 10. Discount rate is 8.5%...\"",
+        "\"Free cash flow at the beginning we have negative 12.5 million... by year 10 we get up to $4.6 million in free cash flow... base case results... net present value... $3.02 million. The IRR is 13.25%.\""
+      ],
+      "driver_alignment": "- Discover: student explicitly gathered and stated project facts and assumptions (investment, revenue schedule, depreciation, working capital, tax rate, terminal value).\n- Represent: student built an explicit year‑0 to year‑10 incremental cash‑flow schedule with line items (revenue, COGS, labor, depreciation, tax shields, working capital changes, terminal value).\n- Implement/Validate: student computed FCF, NPV, IRR and performed sensitivity analysis, demonstrating use of the representation to evaluate the investment.",
+      "reasoning": "The student explicitly constructed a detailed incremental cash‑flow framework (line items, timing, depreciation, tax shield, working capital recovery, terminal value) and applied it to compute FCF and valuation metrics. Although they used AI assistance for modeling, they clearly stated assumptions, produced the schedule, and used it to evaluate NPV/IRR and sensitivities, satisfying the Represent criterion."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Implement: Systematic NPV calculation with comprehensive sensitivity analysis",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation, tax, Shields, taxes, working capital changes and terminal value.\"",
+        "\"The base case results ... net present value of 8.5% is $3.02 million. The IRR is 13.25%.\"",
+        "\"Next sensitivity analysis on impact on NPV slash IRR. Revenue of 20% using the 8.5% weighted average cost capital. The net present value is negative $2.75 million.\""
+      ],
+      "driver_alignment": "The REPRESENT stage (detailed year‑0–10 cash flow schedule) and IMPLEMENT stage (building the free cash flow model, running NPV/IRR/payback) show systematic execution; VALIDATE and EVOLVE stages provided results and sensitivity analyses (revenue shock and WACC ±2%), demonstrating iterative verification and scenario testing.",
+      "reasoning": "The student built an organized year-by-year cash flow model including depreciation, tax shields, working capital recovery, terminal value, and produced multiple outputs (NPV, IRR, paybacks, charts) and scenario tests on revenue and WACC. Although some numerical inconsistencies appear between runs, the methodological approach is systematic and meets the moderate IMPLEMENT standard."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Validate: Testing assumptions and comparing to investment hurdle rates",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I had ChatGPT kind of build me a model for free cash flow per year over the years.\"",
+        "\"Next we'll move on to this Python code that I created. I didn't create, but I asked Gemini to help me create, so put it in here. Run it and we'll see what it comes up with.\"",
+        "\"The IRR is 13.25%. ... NPV is positive by about $3,000,000.\" / \"The IRR is above Starbucks's weighted average cost of capital of 8.5%.\""
+      ],
+      "driver_alignment": "- IMPLEMENT: used external tools (ChatGPT, Gemini/Python) to build and run the model.\n- VALIDATE: compared model outputs (NPV, IRR) directly to the firm's hurdle rate (8.5% WACC).\n- EVOLVE: performed sensitivity analysis (e.g., 20% revenue drop) to test assumptions.",
+      "reasoning": "The student explicitly used external tools (ChatGPT and Gemini/Python) to generate and cross-check results and directly compared NPV/IRR to the firm's 8.5% WACC while running sensitivity tests on key assumptions, satisfying the external validation requirement for this criterion."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "Evolve: Recognition of capital budgeting applications across corporate decisions",
+      "category_name": "Following the DRIVER Framework",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Investment leadership needs clarity on these following questions. So if it generates positive economic value, aligns strategically with Starbucks, brand expansion carries the risks that could materially impact the financial performance and our task is to evaluate this.\"",
+        "\"So first I went in and I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation, tax, Shields, taxes, working capital changes and terminal value.\"",
+        "\"Next sensitivity analysis on impact on NPV slash IRR.\""
+      ],
+      "driver_alignment": "Discover — framed corporate questions (strategic alignment, brand risk).  \nRepresent/Implement — built explicit incremental cash-flow model capturing corporate-relevant items (depreciation, working capital, terminal value).  \nEvolve — ran sensitivity analysis on NPV/IRR to assess decision risk.",
+      "reasoning": "The student explicitly linked the project to corporate concerns (strategic alignment and brand risk) and produced a detailed cash-flow model plus sensitivity analysis, showing awareness of how capital budgeting informs decisions. However, they did not fully articulate broader corporate applications (e.g., financing choices, portfolio trade-offs, capital rationing or governance implications), so the recognition is present but incomplete."
+    },
+    {
+      "criterion_id": "criterion_6",
+      "criterion_name": "Reflect: Insights on investment decision-making and value creation",
+      "category_name": "Following the DRIVER Framework",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Year one EBIT is 0. This essentially means we just break even year one.\"",
+        "\"This means the project creates value and clears the hurdle rate.\"",
+        "\"This shows the project is very sensitive to revenue. A 20% revenue drop turns a good project into a value destroying 1.\""
+      ],
+      "driver_alignment": "Discover: provided explicit project facts (investment, WACC, life) that ground the analysis.  \nValidate: NPV and IRR results used to assess value creation (\"NPV is positive... IRR is 13.25%\").  \nEvolve: sensitivity analysis examined revenue and WACC impacts, showing awareness of downside risk.  \nReflect: brief explicit statements interpreting results (break-even, value creation, sensitivity), but limited depth.",
+      "reasoning": "The student demonstrates some clear reflective insights (project creates value at base case, is highly revenue-sensitive, year‑1 break‑even) and ran sensitivity analyses that inform decision-making. However the reflection is shallow and lacks deeper discussion of strategic tradeoffs, risk mitigation, or actionable recommendations, so it only partially meets the strict requirement for an explicit, substantive Reflect stage."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Clear explanation of NPV methodology and decision logic",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Starbucks is considering a flagship roastery requiring a $12 million initial investment plus $500,000 in working capital.\"",
+        "\"So first I went in and I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation, tax, Shields, taxes, working capital changes and terminal value.\"",
+        "\"So the IRR is above Starbucks's weighted average cost of capital of 8.5%. So 13.25 is above 8.5, so NPV is positive by about $3,000,000. This means the project creates value and clears the hurdle rate.\" (contrasted with) \"OK, so this tells me net present value is -277,000, IRR is 8.13%.\""
+      ],
+      "driver_alignment": "- DISCOVER: framed the project scope and hurdle (WACC 8.5%) to evaluate value creation.\n- IMPLEMENT: built year 0–10 incremental cash flow schedule (revenues, COGS, depreciation, working capital, terminal value) and ran models/sensitivity.\n- REFLECT: interpreted results (IRR vs WACC, NPV sign) and ran sensitivity analyses, but also reported inconsistent model outputs.",
+      "reasoning": "The student demonstrates correct, practical NPV decision logic (construct FCFs, compare NPV/IRR to WACC, sensitivity to revenues/WACC) and documents key components, so understanding is present. However treatment is not thoroughly consistent or fully explicit (contradictory NPV/IRR outputs and limited explanation of discounting mechanics), so the explanation is correct but incomplete."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Logical presentation of cash flow projections",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"So first I went in and I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation, tax, Shields, taxes, working capital changes and terminal value.\"",
+        "\"The facts we were given is the initial investment is $12 million. They use a straight line depreciation method over 10 years, so it's $1.2 million a year of depreciation. The working capital is $500,000 at launch and fully recovered in year 10. The revenues are for year one, $8 million, years 2 to 5, $11 million and year 6 to. Ten $9 million.\"",
+        "\"OK, so this tells me net present value is -277,000, IRR is 8.13%.\""
+      ],
+      "driver_alignment": "- DISCOVER: Identified project scope and explicit numeric inputs (investment, revenues, depreciation, working capital).\n- IMPLEMENT: Built a year 0–10 incremental cash flow schedule and calculated FCF, NPV, IRR, paybacks, and sensitivities.\n- REFLECT: Interpreted results (e.g., \"Year one EBIT is 0\") but showed inconsistent summary outputs.",
+      "reasoning": "The student clearly structured and explained the cash-flow components and produced a year-by-year projection with sensitivity analysis (strong IMPLEMENT and DISCOVER evidence). However, conflicting summary results (multiple differing NPVs/IRRs) and small inconsistencies (e.g., tax-shield wording) reduce completeness and rigor, so the presentation is correct but not thoroughly consistent—hence PARTIAL."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Balanced discussion of quantitative and strategic factors",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"if it generates positive economic value, aligns strategically with Starbucks, brand expansion carries the risks that could materially impact the financial performance and our task is to evaluate this.\"",
+        "\"So first I went in and I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation...\"",
+        "\"The base case results that we got using the 8.5% weighted average cost of capital net present value of 8.5% is $3.02 million. The IRR is 13.25%. The simple payback of this would be around 5.28 years.\""
+      ],
+      "driver_alignment": "- Discover: raised strategic questions about alignment and brand/risk considerations.\n- Implement: executed detailed quantitative modeling (cash flows, NPV, IRR, sensitivity).\n- Reflect: made brief interpretation (e.g., year one break-even) but limited strategic synthesis.",
+      "reasoning": "The submission shows strong quantitative analysis and sensitivity testing (Implement) but only a brief, high-level mention of strategic factors (Discover) without in-depth discussion linking financial results to strategic implications. That mix meets correct understanding but is not sufficiently balanced or thorough to earn a full PASS."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Professional video presentation demonstrating investment analysis",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Hello, my name is Sam Eichsted and this is my session 10 assignment for capital budget. So to start off, I came up with this driver framework.\"",
+        "\"So first I went in and I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation, tax, Shields, taxes, working capital changes and terminal value.\"",
+        "\"So the IRR is 13.25%. The simple payback of this would be around 5.28 years. Discounted payback would be around 8.21 years. Profitability index is 1.24, so it's positive.\""
+      ],
+      "driver_alignment": "- Discover: framed the problem and key inputs (project cost, WACC, timeline).  \n- Implement: built and described a year 0–10 cash flow model and ran NPV/IRR/payback and sensitivity analyses.  \n- Reflect: interpreted results (positive NPV, IRR > WACC, sensitivity to revenue) and presented implications.",
+      "reasoning": "The presentation is well-structured and professional, clearly explaining inputs, modeling steps, and multiple valuation metrics with interpreted results. The student demonstrates thorough communication of the investment analysis and supports conclusions with sensitivity tests, meeting the PASS standard."
+    },
+    {
+      "criterion_id": "criterion_6",
+      "criterion_name": "All project cash flow assumptions specified above",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The facts we were given is the initial investment is $12 million. ... The working capital is $500,000 at launch and fully recovered in year 10. The revenues are for year one, $8 million, years 2 to 5, $11 million and year 6 to. Ten $9 million. The cost of goods sold are 40% of revenue. Labor is 2 1/2 million dollars annually. Rent and utilities is 800,000 annually. Marketing is 300K in year one and $100,000 every year after. The corporate tax rate is 25%. Terminal value is $3,000,000 in year 10. Discount rate is 8.5%...\"",
+        "\"So first I went in and I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation, tax, Shields, taxes, working capital changes and terminal value.\"",
+        "\"Year one EBIT is 0. This essentially means we just break even year one.\""
+      ],
+      "driver_alignment": "- Discover: stated core project inputs (capex, working capital, horizon, WACC) that set cash flow assumptions.\n- Implement: built year‑0 to year‑10 incremental cash flow schedule including revenues, COGS, operating costs, depreciation, taxes, WC changes, capex, and terminal value.\n- Reflect: commented on specific yearly outcomes (e.g., year 1 EBIT = 0), showing interpretation of the assumed cash flows.",
+      "reasoning": "The student enumerated virtually all necessary cash‑flow assumptions (capex, WC timing, revenue by year bands, COGS %, labor, rent, marketing schedule, depreciation method and amount, tax rate, terminal value, discount rate) and constructed the incremental FCF schedule—meeting the thoroughness standard for PASS. Minor inconsistency in one phrasing about \"tax shields 30%\" does not undermine the overall comprehensive specification of cash‑flow assumptions."
+    },
+    {
+      "criterion_id": "criterion_7",
+      "criterion_name": "Starbucks WACC: 8.5%",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"The project will operate for 10 years and must meet or exceed the firm's 8.5% weighted average cost of capital to justify.\"",
+        "\"Discount rate is 8.5%, which is the weighted average cost of capital.\"",
+        "\"So I did average cost of capital plus or minus 2%. So 6.5%... 10.5%... even though it fluctuates, we are always positive.\""
+      ],
+      "driver_alignment": "- Discover: identified the 8.5% WACC as the project's hurdle rate.\n- Implement: applied the 8.5% discount rate in NPV/IRR calculations and ran sensitivity analysis (±2%).\n- Reflect: interpreted results by comparing IRR to the 8.5% WACC and discussing NPV outcomes.",
+      "reasoning": "The student correctly identified and consistently applied the 8.5% WACC as the discount/hurdle rate and performed sensitivity analysis, showing conceptual understanding and application (Discover + Implement + Reflect). However, they did not explain how the 8.5% WACC was derived or discuss its components or justification, so the treatment is correct but basic rather than thorough."
+    },
+    {
+      "criterion_id": "criterion_8",
+      "criterion_name": "Tax rate: 25%",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The corporate tax rate is 25%.\"",
+        "\"Tax shield is depreciation times the tax rate.\"",
+        "\"So then taxes, we pay $500,000 from year two to year 5 and then $200,000 every year after that.\""
+      ],
+      "driver_alignment": "- Discover: student stated the project's factual inputs including the 25% tax rate.\n- Implement: student incorporated the tax rate into the year-by-year cash flow model (taxes and tax shields) and showed numeric tax amounts.\n- Reflect: student referenced resulting EBIT and tax outcomes when interpreting year-by-year results.",
+      "reasoning": "The student explicitly specified the 25% corporate tax rate and applied it in calculations (taxes of $500k and $200k in the relevant years) and used the tax-shield formula, demonstrating clear, correct application across the cash-flow model. A minor textual inconsistency (\"Tax shields 30%\") appears but does not undermine the demonstrated use of 25% in the calculations."
+    },
+    {
+      "criterion_id": "criterion_9",
+      "criterion_name": "10-year project life",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"The project will operate for 10 years and must meet or exceed the firm's 8.5% weighted average cost of capital to justify.\"",
+        "\"So first I went in and I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation...\"",
+        "\"They use a straight line depreciation method over 10 years, so it's $1.2 million a year of depreciation.\""
+      ],
+      "driver_alignment": "Discover: identified the 10-year project life and WACC hurdle; Implement: constructed year 0–10 incremental cash flows, applied 10-year straight-line depreciation and terminal/WC timing; Reflect: interpreted results (NPV/IRR/payback) from the 10-year model.",
+      "reasoning": "The student explicitly incorporated the 10-year horizon into the financial model (depreciation, year 0–10 cash flows, terminal value/WC timing) and produced derived metrics (NPV, IRR, payback) based on that life. This is a thorough, well-supported treatment consistent with PASS standards."
+    },
+    {
+      "criterion_id": "criterion_10",
+      "criterion_name": "Comparable Starbucks store performance data",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.0,
+      "level": "FAIL",
+      "evidence": [
+        "\"Starbucks is considering a flagship roastery requiring a $12 million initial investment plus $500,000 in working capital.\"",
+        "\"The revenues are for year one, $8 million, years 2 to 5, $11 million and year 6 to 10 $9 million.\"",
+        "\"I had ChatGPT kind of build me a model for free cash flow per year over the years.\""
+      ],
+      "driver_alignment": "- Discover: established project facts and assumptions (investment, WACC).\n- Implement: built incremental cash-flow model from those assumptions.\n- Reflect: commented on outputs (e.g., year one EBIT = 0).\nNone of these stages include benchmarking or use of comparable Starbucks store performance data.",
+      "reasoning": "The submission provides detailed project assumptions and a cash-flow model but contains no evidence of using comparable Starbucks store performance or benchmarking to validate revenue/cost assumptions. Therefore the criterion of \"Comparable Starbucks store performance data\" is not demonstrated."
+    },
+    {
+      "criterion_id": "criterion_11",
+      "criterion_name": "Industry benchmark returns for retail locations",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"The project will operate for 10 years and must meet or exceed the firm's 8.5% weighted average cost of capital to justify.\"",
+        "\"So the IRR is 13.25%. ... The IRR is above Starbucks's weighted average cost of capital of 8.5%.\"",
+        "\"So first I went in and I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation...\""
+      ],
+      "driver_alignment": "- DISCOVER: identified project scope and the firm's 8.5% WACC as a hurdle (benchmark against company cost of capital).\n- IMPLEMENT: built year 0–10 cash flows and calculated IRR/NPV to compare returns to that hurdle.\n- REFLECT: commented on year-one breakeven and sensitivity to revenue/WACC.",
+      "reasoning": "The student correctly calculated project returns (IRR, NPV) and benchmarked them to the firm's WACC, showing sensitivity analysis; however, they did not present or discuss external industry benchmark returns specific to retail locations (e.g., typical retail/flagship IRRs or market comparables). This partial treatment meets some benchmarking needs but misses the explicit industry-level comparison required for a full PASS."
+    },
+    {
+      "criterion_id": "criterion_12",
+      "criterion_name": "Real estate and construction cost validation",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"The facts we were given is the initial investment is $12 million. They use a straight line depreciation method over 10 years, so it's $1.2 million a year of depreciation. The working capital is $500,000 at launch and fully recovered in year 10. The revenues are for year one, $8 million, years 2 to 5, $11 million and year 6 to. Ten $9 million.\"",
+        "\"So first I went in and I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation, tax, Shields, taxes, working capital changes and terminal value.\"",
+        "\"I had ChatGPT kind of build me a model for free cash flow per year over the years.\""
+      ],
+      "driver_alignment": "- Discover: student lists and documents the key monetary inputs and assumptions.  \n- Implement: student built an incremental cash-flow model applying those assumptions.  \n- Reflect: student runs sensitivity analysis and interprets results but does not justify original assumption choices.",
+      "reasoning": "The student clearly documents many specific real estate/construction and operating assumptions and applies them in a cash‑flow model (Discover + Implement). However, they do not justify or source those assumption choices (no rationale for cost levels, revenue forecasts, terminal value, or depreciation choice) and rely on external tools for modeling, so treatment is correct but incomplete."
+    },
+    {
+      "criterion_id": "criterion_14",
+      "criterion_name": "*Refer to DRIVER Framework: Assignment Guidelines for complete documentation requirements, grading criteria, and framework application guidance.*",
+      "category_name": "Clear Communication and Explanation",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"Starbucks is considering a flagship roastery requiring a $12 million initial investment plus $500,000 in working capital.\"",
+        "\"So first I went in and I made the year zero to 10 incremental cash flow schedule that includes revenue, operating cost, depreciation...\"",
+        "\"Year one EBIT is 0. This essentially means we just break even year one.\""
+      ],
+      "driver_alignment": "- DISCOVER: clearly states the problem, scope, and key assumptions (investment, WACC, project life).\n- IMPLEMENT: documents building the year‑0–10 cash‑flow model, metrics (NPV, IRR, payback), and sensitivity analyses.\n- REFLECT: offers interpretation (break‑even year one) and discusses sensitivity outcomes.",
+      "reasoning": "The student follows the DRIVER structure and communicates specific assumptions, model components, and results, showing correct conceptual understanding and some sensitivity analysis. However, inconsistencies in reported outputs (multiple conflicting NPV/IRR statements) and limited reconciliation of tool-generated results reduce thoroughness, so the work meets a solid but not fully comprehensive standard."
+    }
+  ]
+}

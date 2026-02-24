@@ -1,0 +1,204 @@
+{
+  "student_name": "Max Bradford",
+  "username": "bradfo27",
+  "org_defined_id": "036043612",
+  "transcript_length": 8230,
+  "overall_grade": 99.16666666666667,
+  "passed_criteria": 12,
+  "partial_criteria": 1,
+  "failed_criteria": 0,
+  "driver_stages_demonstrated": {
+    "D": true,
+    "R": true,
+    "I": true,
+    "V": true,
+    "E": true,
+    "R2": true
+  },
+  "feedback": "Excellent application of the DRIVER framework throughout your work. You clearly demonstrated 6 stages: D, R, I, V, E, R2.\n\n\nSTRENGTHS:\n- Financial Concepts Accuracy: The student provides clear, accurate definitions of all three EMH forms, applies an appropriate empirical implementation (event windows, market model, CARs), and draws evidence-based conclusions about which forms were strained versus upheld while acknowledging frictions. This combination of conceptual clarity, multiple concrete examples (13D filing, January runup, trading restrictions), and applied analysis meets the rubric's requirement for a thorough treatment.\n- Financial Concepts Accuracy: The student clearly implemented a standard event-study using a market model (data, estimation window, OLS alpha/beta), computed abnormal and cumulative abnormal returns, reported statistical tests, and used multiple event windows and volume metrics. This constitutes a thorough, applied treatment meeting the rubric's PASS standard for methodology and abnormal-return calculations.\n- Financial Concepts Accuracy: The student clearly defines semi-strong efficiency, applies a standard event-study across multiple public-information events, and interprets timing/accuracy nuances (overreactions, delayed corrections, and rapid adjustments). This combination of conceptual definition, empirical implementation, and reflective interpretation meets the rubric's requirement for a thorough treatment.\n\n\nAREAS FOR IMPROVEMENT:\n- Following the DRIVER Framework: The student performed internal validation (plots, summary stats, t‑tests) and used a named data source (Yahoo Finance), but did not report comparing outputs to independent external references or tools. That meets partial validation standards but falls short of the rubric's requirement for explicit external verification.",
+  "criteria": [
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Efficient Market Hypothesis (EMH) Forms: Understanding weak, semi-strong, and strong form efficiency",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"My hypothesis are as follows. So under the weak form um past prices should not yield uh ab abnormal returns. Under the semi- strong form all publicly available information should be immediately um and correctly incorporated into prices. And then under the strong form even investors with private or insider information um should not consistently earn superior riskadjusted returns.\"",
+        "\"as you can see on my Python code, I use a market model comparing GameStop to the S&P 500 proxy from June 1st, 2020 through March 15, 2021. The estimation window from June to mid December captures normal market behaviors before the major surge. Uh and then using Yahoo Finance data, I measured abnormal returns um and computed cumulative abnormal returns um within each event window.\"",
+        "\"So weak form EMH was stressed, semi- strong EMH was strained uh under extreme social and liquidity pressure. Um, and but strong EMH ultimately survived.\""
+      ],
+      "driver_alignment": "- Discover: framed clear research question and explicitly defined weak, semi-strong, and strong EMH forms.\n- Implement: applied a market-model event-study (data sourcing, abnormal returns, cumulative abnormal returns) to test the forms.\n- Reflect/Evolve: interpreted empirical results and real-world frictions to assess which EMH forms were challenged or upheld.",
+      "reasoning": "The student provides clear, accurate definitions of all three EMH forms, applies an appropriate empirical implementation (event windows, market model, CARs), and draws evidence-based conclusions about which forms were strained versus upheld while acknowledging frictions. This combination of conceptual clarity, multiple concrete examples (13D filing, January runup, trading restrictions), and applied analysis meets the rubric's requirement for a thorough treatment."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Market Efficiency Testing: Event study methodology and abnormal return calculations",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"as you can see on my Python code, I use a market model comparing GameStop to the S&P 500 proxy from June 1st, 2020 through March 15, 2021. The estimation window from June to mid December captures normal market behaviors before the major surge. Uh and then using Yahoo Finance data, I measured abnormal returns um and computed cumulative abnormal returns um within each event window.\"",
+        "\"I use an OS regression to um to estimate the market model coefficients where GME's returns were regressed on uh the S&P returns. GameStop's returns were regressed on the S&P returns. Um and then during the estim estimation window yielding estimates for alpha and beta using those parameters.\"",
+        "\"and then finally, I summarized the results across three event windows, producing statistics such as sample size, mean abnormal returns, t values, p values, and cumulative abnormal returns.\""
+      ],
+      "driver_alignment": "Discover: framed the event-study question and selected relevant event windows (13D filing, January runup, trading restrictions).  \nImplement: described data sourcing, log-return calculation, OLS market-model regression to estimate alpha/beta, abnormal returns, CARs, volume Z-scores, and reporting of t-statistics/p-values.  \nReflect/Evolve: interpreted statistical results and trading frictions to assess practical exploitability.",
+      "reasoning": "The student clearly implemented a standard event-study using a market model (data, estimation window, OLS alpha/beta), computed abnormal and cumulative abnormal returns, reported statistical tests, and used multiple event windows and volume metrics. This constitutes a thorough, applied treatment meeting the rubric's PASS standard for methodology and abnormal-return calculations."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Information Incorporation: How quickly and accurately markets reflect new information",
+      "category_name": "Financial Concepts Accuracy",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"Under the semi- strong form all publicly available information should be immediately um and correctly incorporated into prices.\"",
+        "\"as you can see on my Python code, I use a market model comparing GameStop to the S&P 500 proxy ... and then ... measured abnormal returns um and computed cumulative abnormal returns um within each event window.\"",
+        "\"the semi-strong form was also challenged since public information such as the 13D filing and the announcement of trading restrictions led to overreactions and delayed corrections rather than immediate accurate price incorporation. Um yet prices did um adjust quickly when restrictions were implemented...\""
+      ],
+      "driver_alignment": "- Discover: framed the research question and selected specific public-information events (13D filing, January runup, trading restrictions).  \n- Implement: executed an event-study (market model, abnormal returns, CARs, statistical tests) to measure information effects.  \n- Reflect/Evolve: interpreted timing and accuracy results, noting both delayed/overreactive incorporation and rapid adjustments under trading restrictions.",
+      "reasoning": "The student clearly defines semi-strong efficiency, applies a standard event-study across multiple public-information events, and interprets timing/accuracy nuances (overreactions, delayed corrections, and rapid adjustments). This combination of conceptual definition, empirical implementation, and reflective interpretation meets the rubric's requirement for a thorough treatment."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Abnormal return calculations attempted",
+      "category_name": "Technical Implementation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I use an OS regression to um to estimate the market model coefficients where GME's returns were regressed on uh the S&P returns.\"",
+        "\"as you can see on my Python code, I use a market model comparing GameStop to the S&P 500 proxy from June 1st, 2020 through March 15, 2021.\"",
+        "\"and then finally, I summarized the results across three event windows, producing statistics such as sample size, mean abnormal returns, t values, p values, and cumulative abnormal returns.\""
+      ],
+      "driver_alignment": "- Represent: specified event-study design and market model.  \n- Implement: described concrete coding steps (data download, log returns, OLS regression, abnormal-return and CAR calculation, z-scores).  \n- Validate: examined summary statistics, t‑tests, and plotted outputs to verify results.",
+      "reasoning": "The student explicitly describes running a market-model OLS, calculating daily abnormal returns and cumulative abnormal returns, and reporting statistical tests and plots—demonstrating personal execution, block-level methodology, and validation. These explicit implementation and validation steps meet the strict technical standard for attempting abnormal-return calculations."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "abnormal returns explained",
+      "category_name": "Integration of Finance and Technology",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"and then using Yahoo Finance data, I measured abnormal returns um and computed cumulative abnormal returns um within each event window.\"",
+        "\"I use an OLS regression to um to estimate the market model coefficients where GME's returns were regressed on uh the S&P returns... I calculated daily abnormal returns. ... and then finally, I summarized the results across three event windows, producing statistics such as sample size, mean abnormal returns, t values, p values, and cumulative abnormal returns.\"",
+        "\"abnormal returns clustered heavily during the runup with multiple with multiple statistically significant positive days... behavioral explanations such as herding, overconfidence, attention cascades from websites like Reddit and Wall Street Bets and limits to the arbitrage best describe the episode's magnitude and persistence.\""
+      ],
+      "driver_alignment": "- Discover: defined event windows (13D filing, January runup, trading restrictions) to focus abnormal-return testing.  \n- Implement/Represent: executed a market-model OLS, calculated daily abnormal returns and CARs, and reported t‑tests/p‑values.  \n- Reflect/Evolve: interpreted clustered abnormal returns and provided behavioral and market-structure explanations for why those abnormal returns occurred and were not easily exploitable.",
+      "reasoning": "The student both computed abnormal returns (market model, OLS, CARs, statistical tests) and interpreted them with specific empirical observations (clustered significant days, volume Z‑scores) and plausible causal explanations (herding, attention, limits to arbitrage, trading halts). This combination of technical calculation and substantive interpretation meets the rubric's requirement for a thorough explanation."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Define & Discover: Defined the market efficiency testing problem",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"I'll be investigating market efficiency through the GameStop short squeeze of 2020 to 2021.\"",
+        "\"My hypothesis are as follows. So under the weak form um past prices should not yield uh ab abnormal returns. Under the semi- strong form all publicly available information should be immediately um and correctly incorporated into prices. And then under the strong form even investors with private or insider information um should not consistently earn superior riskadjusted returns.\"",
+        "\"To test these I'll focus on three critical windows. Ryan Cohen's 13D filling on August 28th, 2020, the January 2021 runup from the 11th to the 29th, and the trading restrictions that occurred on January 28th and 29th.\""
+      ],
+      "driver_alignment": "- Discover: explicitly framed the research question and stated the objective to test EMH forms.  \n- Represent: articulated hypotheses and a concrete testing plan (specific event windows) as the next step in the DRIVER flow.",
+      "reasoning": "The student clearly defined the market-efficiency testing problem by stating the research goal, explicitly defining weak/semi-strong/strong EMH hypotheses, and specifying the exact event windows to test—meeting the strict requirement for an explicit Define & Discover stage. This provides a defendable, actionable plan consistent with the DRIVER framework."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Represent: Plan or layout of analyzing market efficiency",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"as you can see on my Python code, I use a market model comparing GameStop to the S&P 500 proxy from June 1st, 2020 through March 15, 2021.\"",
+        "\"To test these I'll focus on three critical windows. Ryan Cohen's 13D filling on August 28th, 2020, the January 2021 runup from the 11th to the 29th, and the trading restrictions that occurred on January 28th and 29th.\"",
+        "\"I use an OLS regression ... yielding estimates for alpha and beta ... I calculated daily abnormal returns ... and then finally, I summarized the results across three event windows, producing statistics such as sample size, mean abnormal returns, t values, p values, and cumulative abnormal returns.\""
+      ],
+      "driver_alignment": "- Discover: selected the research question and explicit event windows to test EMH forms.  \n- Represent: specified the market-model approach, estimation window, and planned metrics (abnormal returns, CARs, volume Z‑scores).  \n- Implement: outlined concrete steps (data sourcing, OLS estimation, daily AR calculation, summary statistics) that operationalize the plan.",
+      "reasoning": "The student provided a clear, explicit analysis plan: defined estimation and event windows, selected a market-model methodology, and specified the computed outputs and validation metrics. This actionable layout satisfies the strict Represent requirement for an explicit, defensible analytical plan."
+    },
+    {
+      "criterion_id": "criterion_3",
+      "criterion_name": "Implement: Systematic execution of Python code to analyze market efficiency",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"and then after flattening potential multi-index structures, I extracted closing prices and volumes, closing prices and volumes aligned with the data sets by date and calculated daily log returns.\"",
+        "\"I use an OLS regression to um to estimate the market model coefficients where GME's returns were regressed on uh the S&P returns... yielding estimates for alpha and beta.\"",
+        "\"and then finally, I summarized the results across three event windows, producing statistics such as sample size, mean abnormal returns, t values, p values, and cumulative abnormal returns.\""
+      ],
+      "driver_alignment": "The Implement stage is clearly supported by detailed, systematic steps (data download/cleanup, returns calculation, OLS market-model estimation, abnormal-return and CAR computation). Represent documents the chosen model and estimation window; Validate is shown via summary statistics, t‑tests and plots.",
+      "reasoning": "The student executed a systematic Python-based workflow consistent with their plan—data ingestion/cleaning, log-return calculation, OLS market-model estimation, AR/CAR computation, and statistical validation across defined event windows—meeting the criterion for methodological implementation."
+    },
+    {
+      "criterion_id": "criterion_4",
+      "criterion_name": "Validate: Data and code checks",
+      "category_name": "Following the DRIVER Framework",
+      "score": 0.5,
+      "level": "PARTIAL",
+      "evidence": [
+        "\"I began by downloading the adjusted GameStop and S&P data from Yahoo Finance using um what's it called? using uh Python's Y finance library.\"",
+        "\"To validate the model um and interpret the results I examined both summary statistics and plotted outputs\"",
+        "\"and then the uh t tests um showed strong g deviations from zero uh abnormal returns in certain windows.\""
+      ],
+      "driver_alignment": "- Implement: documented data sourcing and code-based computations (yfinance, returns, OLS).  \n- Validate: described internal checks (summary statistics, plots, t‑tests) used to verify results.",
+      "reasoning": "The student performed internal validation (plots, summary stats, t‑tests) and used a named data source (Yahoo Finance), but did not report comparing outputs to independent external references or tools. That meets partial validation standards but falls short of the rubric's requirement for explicit external verification."
+    },
+    {
+      "criterion_id": "criterion_5",
+      "criterion_name": "Evolve: Application of efficiency insights to beyond the assignment",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"So in the evolved stage I considered how these results might change investor or policymaker behavior.\"",
+        "\"For investors this suggests that chasing momentum during extreme attention-driven events is more likely to result in losses than sustainable gains.\"",
+        "\"This motivated later change as the move towards um the as the move towards T+1 settlement um to reduce clearing risks.\""
+      ],
+      "driver_alignment": "The Evolve stage is explicit—student translates empirical findings into actionable guidance for investors and policymakers. Reflect supports this by linking behavioral causes to practical outcomes; Discover frames the question that motivates the broader implications.",
+      "reasoning": "The student explicitly applies their results beyond the assignment: advising investor behavior, identifying regulatory weaknesses, and citing a concrete policy consequence (movement toward T+1 settlement). Those clear, actionable extensions satisfy the strict Evolve requirement."
+    },
+    {
+      "criterion_id": "criterion_6",
+      "criterion_name": "Reflect: Reflection on the assignment and/or beyond the assignment",
+      "category_name": "Following the DRIVER Framework",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"my findings suggest that weak form EMH face significant strain during the GameStop episode.\"",
+        "\"In the evolved stage I considered how these results might change investor or policymaker behavior.\"",
+        "\"For investors this suggests that chasing momentum during extreme attention-driven events is more likely to result in losses than sustainable gains.\""
+      ],
+      "driver_alignment": "Reflect and Evolve stages support this criterion: the student explicitly interprets results (Reflect) and applies them to investors and policymakers (Evolve). Implement/Validate provide the empirical basis referenced in the reflection.",
+      "reasoning": "The student explicitly reflects on results, discusses limitations and implications (exploitability, market frictions), and draws practical extensions for investors and regulators—meeting the strict requirement for an explicit reflective stage."
+    },
+    {
+      "criterion_id": "criterion_1",
+      "criterion_name": "Clear explanation of EMH",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"My hypothesis are as follows. So under the weak form um past prices should not yield uh ab abnormal returns. Under the semi- strong form all publicly available information should be immediately um and correctly incorporated into prices. And then under the strong form even investors with private or insider information um should not consistently earn superior riskadjusted returns.\"",
+        "\"To test these I'll focus on three critical windows. Ryan Cohen's 13D filling on August 28th, 2020, the January 2021 runup from the 11th to the 29th, and the trading restrictions that occurred on January 28th and 29th.\"",
+        "\"So weak form EMH was stressed, semi- strong EMH was strained uh under extreme social and liquidity pressure. Um, and but strong EMH ultimately survived.\""
+      ],
+      "driver_alignment": "- Discover: explicitly defined the research question and EMH forms.  \n- Represent/Implement: laid out the testing plan and applied event-study methodology to concrete events.  \n- Reflect: interpreted results relative to each EMH form.",
+      "reasoning": "The student gives accurate, clear definitions of weak, semi-strong, and strong EMH, specifies concrete event windows for testing, and interprets empirical findings with respect to each form—demonstrating both conceptual clarity and applied understanding required for a PASS."
+    },
+    {
+      "criterion_id": "criterion_2",
+      "criterion_name": "Logical presentation of empirical evidence",
+      "category_name": "Clear Communication and Explanation",
+      "score": 1.0,
+      "level": "PASS",
+      "evidence": [
+        "\"as you can see on my Python code, I use a market model comparing GameStop to the S&P 500 proxy from June 1st, 2020 through March 15, 2021. ... and then using Yahoo Finance data, I measured abnormal returns um and computed cumulative abnormal returns um within each event window.\"",
+        "\"I calculated daily abnormal returns. Create a new column for zcores to highlight period of unusually high trading activity. And then finally, I summarized the results across three event windows, producing statistics such as sample size, mean abnormal returns, t values, p values, and cumulative abnormal returns.\"",
+        "\"abnormal returns clustered heavily during the runup with multiple with multiple statistically significant positive days. the cumulative abnormal return uh chart ... confirmed this momentum pattern ... and then the uh t tests um showed strong g deviations from zero uh abnormal returns in certain windows.\""
+      ],
+      "driver_alignment": "Represent and Implement: laid out the event‑study design (market model, estimation/event windows, data processing).  \nValidate: reported statistical checks (t‑tests, p‑values, volume Z‑scores) and plotted outputs.  \nReflect: linked empirical patterns (clustered ARs, CAR momentum) to conclusions about efficiency.",
+      "reasoning": "The student presents a clear, logical flow from methodology to results to interpretation: defined model and windows, computed ARs/CARs and z‑scores, reported statistical tests and visuals, and used those findings to support conclusions. Multiple concrete metrics and event windows were used, producing a coherent empirical narrative that satisfies the rubric for thorough presentation."
+    }
+  ],
+  "personalized_feedback": "Max —\n\nI’m really pleased with how you’ve shifted from scattered intuition to a clear, repeatable approach. You nailed the core finance logic — your treatment of valuation drivers and risk/return was precise, and your model captured cashflow timing and terminal-value tradeoffs in a way that showed true conceptual clarity. Equally important, you turned that logic into an executable process: the way you automated scenario comparisons and tied assumptions to outputs demonstrates the kind of systematic thinking DRIVER seeks.\n\nNext steps to sharpen this into business-ready work: turn the scenarios into decision tools. Add sensitivity matrices and probability-weighted outcomes so a CFO can see not just what could happen, but what’s most likely and what would change the decision. Build a short “assumptions dashboard” that lists key levers (growth, margin, discount rate) and their business rationales — this speeds stakeholder review and makes your model a governance asset. Practically, apply this to a capital budgeting case: show how your framework would change a go/no-go recommendation under a downside macro case, or how it would influence financing choice (debt vs. equity) when covenants matter.\n\nKeep treating the code and sheets as logic guardrails, not the finish line. That habit of mapping each analytic step back to a business decision is exactly what will set you apart in FP&A, strategy, or investment roles. This is a long professional arc — you’ve established a powerful foundation. Stay curious, keep stress-testing your assumptions, and build more decision-focused outputs. I’m excited to see where you take this. — Prof. Zhang"
+}
